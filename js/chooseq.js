@@ -8,8 +8,8 @@ $(document).ready(function(){
         success:function(examquestion){
         	for(var i = 0; i<examquestion.length; i++){
         	    var container = "";
-                 console.log(examquestion);
-                 var ques = examquestion.get('Question');
+
+                 //var ques = examquestion.get('Question');
                  var questionpic = examquestion.get('QuestionPicture');
                  var optiona = examquestion.get('OptionA');
                  var optionb = examquestion.get('OptionB');
