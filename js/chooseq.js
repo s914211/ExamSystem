@@ -19,8 +19,8 @@ $(document).ready(function(){
 })
 
 function getQuestionString(data){
-    console.log(data.get('Question'));
-    var question = data.get('Question');
+    console.log(data);
+    var ques = data.get('Question');
     var questionpic = data.get('QuestionPicture');
     var optiona = data.get('OptionA');
     var optionb = data.get('OptionB');
@@ -42,7 +42,7 @@ function getQuestionString(data){
     else if(optiondpic == undefined)
     	optiondpic = "";    	   	    
 
-    var s1 = "<h1 id='ques'>"+question+"</h1>";
+    var s1 = "<h1 id='ques'>"+ques+"</h1>";
     var s2 = "<img src='"+questionpic+"'>";
     var s3 = "<h2 id='optiona'>"+optiona+"</h2>";
     var s4 = "<img src='"+optionapic+"'>";
