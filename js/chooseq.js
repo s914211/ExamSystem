@@ -42,15 +42,20 @@ function getQuestionString(data){
         optiondpic = "";
 
     var s1 = "<h1 id='ques'>"+ques+"</h1>";
-    var s2 = "<img src='"+questionpic+"'>";
+    if(questionpic != undefined)
+        var s2 = "<img src='"+questionpic+"'>";
     var s3 = "<h2 id='optiona'>"+optiona+"</h2>";
-    var s4 = "<img src='"+optionapic+"'>";
+    if(optionapic != undefined)
+        var s4 = "<img src='"+optionapic+"'>";
     var s5 = "<h2 id='optionb'>"+optionb+"</h2>";
-    var s6 = "<img src='"+optionbpic+"'>";
+    if(optionbpic != undefined)
+        var s6 = "<img src='"+optionbpic+"'>";
     var s7 = "<h2 id='optionc'>"+optionc+"</h2>";
-    var s8 = "<img src='"+optioncpic+"'>";
+    if(optioncpic != undefined)
+        var s8 = "<img src='"+optioncpic+"'>";
     var s9 = "<h2 id='optiond'>"+optiond+"</h2>";
-    var s10 = "<img src='"+optiondpic+"'>";
+    if(optiondpic != undefined)
+        var s10 = "<img src='"+optiondpic+"'>";
 
     var s = "<div id='question'" + s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 + s9 + s10 + "</div>";
 
