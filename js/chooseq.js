@@ -19,6 +19,7 @@ $(document).ready(function(){
 })
 
 function getQuestionString(data){
+    console.log(data);
     var question = data.get('Question');
     var questionpic = data.get('QuestionPicture');
     var optiona = data.get('OptionA');
