@@ -6,48 +6,6 @@ $(document).ready(function(){
     query.limit(40);
     query.find({
         success:function(examquestion){
-
-            function getQuestionString(data){
-                console.log(data);
-                var question = data.get('Question');
-                console.log(question);
-                var questionpic = data.get('QuestionPicture');
-                var optiona = data.get('OptionA');
-                var optionb = data.get('OptionB');
-                var optionc = data.get('OptionC');
-                var optiond = data.get('OptionD');
-                var optionapic = data.get('OptionAPicture');
-                var optionbpic = data.get('OptionBPicture');
-                var optioncpic = data.get('OptionCPicture');
-                var optiondpic = data.get('OptionDPicture');
-
-                if(questionpic == undefined)
-                    questionpic = "";
-                else if(optionapic == undefined)
-                    optionapic = "";
-                else if(optionbpic == undefined)
-                    optionbpic = "";
-                 else if(optioncpic == undefined)
-                    optioncpic = "";
-                else if(optiondpic == undefined)
-                    optiondpic = "";                
-
-                var s1 = "<h1 id='ques'>"+question+"</h1>";
-                var s2 = "<img src='"+questionpic+"'>";
-                var s3 = "<h2 id='optiona'>"+optiona+"</h2>";
-                var s4 = "<img src='"+optionapic+"'>";
-                var s5 = "<h2 id='optionb'>"+optionb+"</h2>";
-                var s6 = "<img src='"+optionbpic+"'>";
-                var s7 = "<h2 id='optionc'>"+optionc+"</h2>";
-                var s8 = "<img src='"+optioncpic+"'>";
-                var s9 = "<h2 id='optiond'>"+optiond+"</h2>";
-                var s10 = "<img src='"+optiondpic+"'>";
-
-                var s = "<div id='question'" + s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 + s9 + s10 + "</div>";
-
-                return s;
-            }
-            
         	for(var i = 0; i<examquestion.length; i++){
         	    var container = "";
         	    var s = getQuestionString(examquestion);
@@ -59,3 +17,43 @@ $(document).ready(function(){
         }
     })
 })
+
+function getQuestionString(data){
+    console.log(data.get('Question'));
+    var question = data.get('Question');
+    var questionpic = data.get('QuestionPicture');
+    var optiona = data.get('OptionA');
+    var optionb = data.get('OptionB');
+    var optionc = data.get('OptionC');
+    var optiond = data.get('OptionD');
+    var optionapic = data.get('OptionAPicture');
+    var optionbpic = data.get('OptionBPicture');
+    var optioncpic = data.get('OptionCPicture');
+    var optiondpic = data.get('OptionDPicture');
+
+    if(questionpic == undefined)
+    	questionpic = "";
+    else if(optionapic == undefined)
+    	optionapic = "";
+    else if(optionbpic == undefined)
+    	optionbpic = "";
+     else if(optioncpic == undefined)
+    	optioncpic = "";
+    else if(optiondpic == undefined)
+    	optiondpic = "";    	   	    
+
+    var s1 = "<h1 id='ques'>"+question+"</h1>";
+    var s2 = "<img src='"+questionpic+"'>";
+    var s3 = "<h2 id='optiona'>"+optiona+"</h2>";
+    var s4 = "<img src='"+optionapic+"'>";
+    var s5 = "<h2 id='optionb'>"+optionb+"</h2>";
+    var s6 = "<img src='"+optionbpic+"'>";
+    var s7 = "<h2 id='optionc'>"+optionc+"</h2>";
+    var s8 = "<img src='"+optioncpic+"'>";
+    var s9 = "<h2 id='optiond'>"+optiond+"</h2>";
+    var s10 = "<img src='"+optiondpic+"'>";
+
+    var s = "<div id='question'" + s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 + s9 + s10 + "</div>";
+
+    return s;
+}
