@@ -6,10 +6,10 @@ $(document).ready(function(){
     query.limit(40);
     query.find({
         success:function(examquestion){
-        	for(var i = 0; i<examquestion.length; i++){
+        	for(var i = 0; i<=examquestion.length; i++){
         	    var container = "";
 
-                 //var ques = examquestion.get('Question');
+                 var ques = examquestion.get('Question');
                  var questionpic = examquestion.get('QuestionPicture');
                  var optiona = examquestion.get('OptionA');
                  var optionb = examquestion.get('OptionB');
