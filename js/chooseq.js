@@ -6,7 +6,7 @@ $(document).ready(function(){
     query.limit(40);
     query.find({
         success:function(examquestion){
-        	for(var i = 0; i<=examquestion.length; i++){
+        	for(var i = 0; i<examquestion.length; i++){
         	    var container = "";    
         	    var s = getQuestionString(examquestion[i]);
         	    container += s;
