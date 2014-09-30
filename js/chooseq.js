@@ -8,7 +8,30 @@ $(document).ready(function(){
         success:function(examquestion){
         	for(var i = 0; i<examquestion.length; i++){
         	    var container = "";
-        	    var s = getQuestionString(examquestion);
+
+                 var ques = examquestion.get('Question');
+                 var questionpic = examquestion.get('QuestionPicture');
+                 var optiona = examquestion.get('OptionA');
+                 var optionb = examquestion.get('OptionB');
+                 var optionc = examquestion.get('OptionC');
+                 var optiond = examquestion.get('OptionD');
+                 var optionapic = examquestion.get('OptionAPicture');
+                 var optionbpic = examquestion.get('OptionBPicture');
+                 var optioncpic = examquestion.get('OptionCPicture');
+                 var optiondpic = examquestion.get('OptionDPicture');
+
+                     if(questionpic == undefined)
+                        questionpic = "";
+                    else if(optionapic == undefined)
+                        optionapic = "";
+                    else if(optionbpic == undefined)
+                        optionbpic = "";
+                     else if(optioncpic == undefined)
+                        optioncpic = "";
+                    else if(optiondpic == undefined)
+                        optiondpic = "";    
+
+        	    var s = getQuestionString(ques, questionpic, optiona, optionapic, optionb, optionbpic, optionc, optioncpic, optiond, optiondpic);
         	    container += s;
                  var string = "<div id='questions'>" + container + "</div>";
                  $('.Questions').append(string);
@@ -18,30 +41,7 @@ $(document).ready(function(){
     })
 })
 
-function getQuestionString(data){
-    console.log(data);
-    var ques = data.get('Question');
-    var questionpic = data.get('QuestionPicture');
-    var optiona = data.get('OptionA');
-    var optionb = data.get('OptionB');
-    var optionc = data.get('OptionC');
-    var optiond = data.get('OptionD');
-    var optionapic = data.get('OptionAPicture');
-    var optionbpic = data.get('OptionBPicture');
-    var optioncpic = data.get('OptionCPicture');
-    var optiondpic = data.get('OptionDPicture');
-
-    if(questionpic == undefined)
-    	questionpic = "";
-    else if(optionapic == undefined)
-    	optionapic = "";
-    else if(optionbpic == undefined)
-    	optionbpic = "";
-     else if(optioncpic == undefined)
-    	optioncpic = "";
-    else if(optiondpic == undefined)
-    	optiondpic = "";    	   	    
-
+function getQuestionString(ques, questionpic, optiona,optionapic, optionb,optionbpic, optionc,optioncpic,optiond,optiondpic){   	    
     var s1 = "<h1 id='ques'>"+ques+"</h1>";
     var s2 = "<img src='"+questionpic+"'>";
     var s3 = "<h2 id='optiona'>"+optiona+"</h2>";
