@@ -30,17 +30,6 @@ function getQuestionString(data){
     var optioncpic = data.get('OptionCPicture');
     var optiondpic = data.get('OptionDPicture');
 
-    if(questionpic == undefined)
-        questionpic = "";
-    else if(optionapic == undefined)
-        optionapic = "";
-    else if(optionbpic == undefined)
-        optionbpic = "";
-    else if(optioncpic == undefined)
-        optioncpic = "";
-    else if(optiondpic == undefined)
-        optiondpic = "";
-
     var s1 = "<h1 id='ques'>"+ques+"</h1>";
     if(questionpic != undefined)
         var s2 = "<img src='"+questionpic+"'>";
