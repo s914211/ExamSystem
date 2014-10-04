@@ -1,38 +1,92 @@
 <html>
-  <head>
-    <meta name="generator"
-    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+
+<head>
+    <meta name="generator" content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
     <title>homepage</title>
     <link href="css/reset.css" rel="stylesheet" />
     <!-- 記得任何東西都要先reset -->
-    <script type="text/javascript"></script>
     <script src="js/buzz.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.client.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/jquery.transit.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
-  </head>
-  <body>
-    <header>
-      <div class="content">
-        <hgroup>
-          <h1>Test</h1>
-          <i>it's a test</i>
-		  <i>it's a test</i>
-		  <i>it's a test</i>
-        </hgroup>
-      </div>
-      <div class="overlay"></div>
-    </header>
-   
-    
-	
-	<section class="site">
-      <!--            <nav>
-                        <a href="">Page</a> 
-                        <a href="">Page</a> 
-                </nav> -->
-    </section>
-  </body>
+</head>
+
+<body>
+    <div class="biggest-container">
+        <div class="container" data-toggle="modal" data-target="#login">
+            <span class="login">登入</span>
+            <br/>
+            <span id="idnumber">身份證字號</span><br/><input type="text"><br/><br/> 
+            <span id="password">密碼</span><br/><input type="password"><br/><br/> 
+            <span data-toggle="modal" data-target="#sign-up" id="noaccount">沒有帳號嗎？</span>
+        </div>
+    </div>
+
+
+
+
+    <!-- Modal start-->
+    <div class="modal fade" id="sign-up" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">註冊</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+
+
+                        <span>身份證字號</span>
+                        <input type="text">
+                        <br/>
+                        <br/>
+                        <span>密碼</span>
+                        <input type="password">
+                        <br/>
+                        <br/>
+                        <span>確認密碼</span>
+                        <input type="password">
+                        <br/>
+                        <br/>
+                        <span>姓名</span>
+                        <input type="text">
+                        <br/>
+                        <br/>
+                        <span>性別</span>
+                        <select>
+                            <option>男</option>
+                            <option>女</option>
+                            </option>
+                        </select>
+                        </select>
+                        <br/>
+                        <br/>
+                        <span>E-mail</span>
+                        <input type="text">
+                        <br/>
+                        <br/>
+                        <span>聯絡電話</span>
+                        <input type="text">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">註冊</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal stop-->
+
+
+</body>
+
 </html>

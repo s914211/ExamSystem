@@ -93,4 +93,12 @@ scroller.init();
     $('#submit').attr('value','sign up');
     $('#verb').html('begin');
   }
-});
+  
+$('document').ready(function(){
+    $(this).hover(function(){
+      $('.biggest-container body').height($(window).height()); 
+      $('.biggest-container body').width($(window).width());
+        });  
+}); 
+
+
