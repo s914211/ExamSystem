@@ -48,16 +48,7 @@ body {
   border-radius: 20px;
 
 }
-.container:hover
-{
-  background-color: #096;
-   cursor: pointer;
-}
-.container:active
-{
-  background-color: #0f6;
 
-}
 .form
 {
 
