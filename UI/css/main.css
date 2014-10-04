@@ -49,6 +49,7 @@ body {
 
 }
 
+
 .form
 {
 
@@ -91,4 +92,8 @@ select
 {
   color: red;
   text-decoration: underline;
+}
+#noaccount:hover
+{
+  cursor:pointer;
 }
