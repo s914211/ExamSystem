@@ -99,6 +99,12 @@ $('document').ready(function(){
       $('.biggest-container body').height($(window).height()); 
       $('.biggest-container body').width($(window).width());
         });  
+
+$(window).resize(function(){
+
+        $('.logintext').width($('.container').width() * 0.8);
+    });
+
 }); 
 
 

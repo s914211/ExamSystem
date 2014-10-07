@@ -41,23 +41,14 @@ body {
 .container
 {
   width: 25%;
-  height: 50%;
+  height: 40%;
   margin: auto;
   background-color: #0a6;
   opacity: 0.9;
   border-radius: 20px;
 
 }
-.container:hover
-{
-  background-color: #096;
-   cursor: pointer;
-}
-.container:active
-{
-  background-color: #0f6;
 
-}
 .form
 {
 
@@ -92,7 +83,7 @@ input
 select
 {
   position: absolute;
-  left: 30%;
+  left: 39%;
   width: 100px;
   height: 28px;
 }
@@ -100,4 +91,13 @@ select
 {
   color: red;
   text-decoration: underline;
+}
+.loginbtn
+{
+  position: relative;
+  float: left;
+  width: 20%;
+  left: 6%;
+  background-color: #9c9;
+  cursor: pointer;
 }
