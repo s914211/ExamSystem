@@ -1,9 +1,9 @@
 Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa7ryzTSmMjP3ZB4fYJNFqty");
 
 addnewques = function(examquestionbank, questionbank, num){
-    var Newquesbank = Parse.Object.extend(''examquestionbank'');
+    var Newquesbank = Parse.Object.extend("'"+examquestionbank+"'");
     var newquesbank = new Newquesbank();
-    var questions = Parse.Object.extend(''questionbank'');
+    var questions = Parse.Object.extend("'"+questionbank+"'");
     var query = new Parse.Query(questions);
     query.limit(num);
     query.find({
