@@ -34,21 +34,17 @@ body {
   top: 50%;
   margin-top: -25%;
   margin-left:-35%;
-
-
-
 }
+
 .container
 {
   width: 25%;
-  height: 50%;
+  height: 40%;
   margin: auto;
   background-color: #0a6;
   opacity: 0.9;
   border-radius: 20px;
-
 }
-
 
 .form
 {
@@ -57,6 +53,7 @@ body {
   height: 600px;
   margin: auto;
 }
+
 .container > span
 {
   font-size: 1em;
@@ -65,35 +62,46 @@ body {
   margin: auto;
   position: relative;
   left: 5%;
-  
 }
+
 .modal
 {
   display: none;
 }
+
 input
 {
   position: absolute;
   left: 39%;
 }
+
 .modal-body
 {
   color: white;
   background-color: #E0000E;
 }
+
 select
 {
   position: absolute;
-  left: 30%;
+  left: 39%;
   width: 100px;
   height: 28px;
 }
+
 #noaccount
 {
   color: red;
   text-decoration: underline;
-}
-#noaccount:hover
-{
   cursor:pointer;
+}
+
+.loginbtn
+{
+  position: relative;
+  float: left;
+  width: 20%;
+  left: 6%;
+  background-color: #9c9;
+  cursor: pointer;
 }
