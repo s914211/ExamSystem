@@ -1,11 +1,12 @@
 Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa7ryzTSmMjP3ZB4fYJNFqty");
 
-addnewques = function(examquestionbank, questionbank, num){
+addnewques = function(examquestionbank, questionbankeasy, easynum, questionbanknormal, normalnum, questionbankhard, hardnum){
     var Newquesbank = Parse.Object.extend("'"+examquestionbank+"'");
     var newquesbank = new Newquesbank();
-    var questions = Parse.Object.extend("'"+questionbank+"'");
+    var questions = Parse.Object.extend("'"+questionbankeasy+"'");
     var query = new Parse.Query(questions);
-    query.limit(num);
+    query.equalTo('sealed', false);
+    query.limit(easynum);
     query.find({
         success:function(examquestion){
         	for(var i = 0; i<examquestion.length; i++){
@@ -31,7 +32,89 @@ addnewques = function(examquestionbank, questionbank, num){
         	    newquesbank.set('OptionCPicture', optioncpic);
         	    newquesbank.set('OptionDPicture', optiondpic);
         	    newquesbank.set('Answer', answer);
+                //sealed the selected question
+                examquestion[i].set('sealed', true);
         	}
+        },
+        error:function(error){
+            unsealed(questionbankeasy);
+            alert("Unsealed questions success! Please Click the button again to finish the process.");
+        }
+    })
+    var questions = Parse.Object.extend("'"+questionbanknormal+"'");
+        var query = new Parse.Query(questions);
+        query.equalTo('sealed', false);
+        query.limit(normalnum);
+        query.find({
+            success:function(examquestion){
+                for(var i = 0; i<examquestion.length; i++){
+                    var question = examquestion[i].get('Question');
+                    var questionpic = examquestion[i].get('QuestionPicture');
+                    var optiona = examquestion[i].get('OptionA');
+                    var optionb = examquestion[i].get('OptionB');
+                    var optionc = examquestion[i].get('OptionC');
+                    var optiond = examquestion[i].get('OptionD');
+                    var optionapic = examquestion[i].get('OptionAPicture');
+                    var optionbpic = examquestion[i].get('OptionBPicture');
+                    var optioncpic = examquestion[i].get('OptionCPicture');
+                    var optiondpic = examquestion[i].get('OptionDPicture');
+                    var answer = examquestion[i].get('Answer');
+                    newquesbank.set('Question', question);
+                    newquesbank.set('QuestionPicture', questionpic);
+                    newquesbank.set('OptionA', optiona);
+                    newquesbank.set('OptionB', optionb);
+                    newquesbank.set('OptionC', optionc);
+                    newquesbank.set('OptionD', optiond);
+                    newquesbank.set('OptionAPicture', optionapic);
+                    newquesbank.set('OptionBPicture', optionbpic);
+                    newquesbank.set('OptionCPicture', optioncpic);
+                    newquesbank.set('OptionDPicture', optiondpic);
+                    newquesbank.set('Answer', answer);
+                    //sealed the selected question
+                    examquestion[i].set('sealed', true);
+                }
+            },
+            error:function(error){
+                unsealed(questionbanknormal);
+                alert("Unsealed questions success! Please Click the button again to finish the process.");
+            }
+        })
+    var questions = Parse.Object.extend("'"+questionbankhard+"'");
+    var query = new Parse.Query(questions);
+    query.equalTo('sealed', false);
+    query.limit(hardnum);
+    query.find({
+        success:function(examquestion){
+            for(var i = 0; i<examquestion.length; i++){
+                var question = examquestion[i].get('Question');
+                var questionpic = examquestion[i].get('QuestionPicture');
+                var optiona = examquestion[i].get('OptionA');
+                var optionb = examquestion[i].get('OptionB');
+                var optionc = examquestion[i].get('OptionC');
+                var optiond = examquestion[i].get('OptionD');
+                var optionapic = examquestion[i].get('OptionAPicture');
+                var optionbpic = examquestion[i].get('OptionBPicture');
+                var optioncpic = examquestion[i].get('OptionCPicture');
+                var optiondpic = examquestion[i].get('OptionDPicture');
+                var answer = examquestion[i].get('Answer');
+                newquesbank.set('Question', question);
+                newquesbank.set('QuestionPicture', questionpic);
+                newquesbank.set('OptionA', optiona);
+                newquesbank.set('OptionB', optionb);
+                newquesbank.set('OptionC', optionc);
+                newquesbank.set('OptionD', optiond);
+                newquesbank.set('OptionAPicture', optionapic);
+                newquesbank.set('OptionBPicture', optionbpic);
+                newquesbank.set('OptionCPicture', optioncpic);
+                newquesbank.set('OptionDPicture', optiondpic);
+                newquesbank.set('Answer', answer);
+                //sealed the selected question
+                examquestion[i].set('sealed', true);
+            }
+        },
+        error:function(error){
+            unsealed(questionbankhard);
+            alert("Unsealed questions success! Please Click the button again to finish the process.");
         }
     })
     //addnewexam
@@ -46,6 +129,18 @@ addnewques = function(examquestionbank, questionbank, num){
         },
         error:function(error){
         	console.log(error.toString());
+        }
+    })
+}
+
+unsealed = function(questionbank){
+    var questions = Parse.Object.extend("'"+questionbank+"'");
+    var query = new Parse.Query(questions);
+    query.find({
+        success:function(examquestion){
+            for(var i = 0; i<examquestion.length; i++){
+                examquestion[i].set('sealed', false);
+            }
         }
     })
 }
