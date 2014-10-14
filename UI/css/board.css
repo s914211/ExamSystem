@@ -1,80 +1,114 @@
-body,
-    ul.navigation,
-    ul.navigation li,
-    ul.navigation ul,
-    a {
-        margin: 0;
-        padding: 0;
-        font-size: 1em;
-        text-decoration: none;
-    }
-    ul.navigation,
-    ul.navigation li {
-        list-style: none;
-    }
-    #nav {
-        display: flex;
-        height: 50px;
-    }
-    ul.navigation {
-        margin: auto;
-    }
-    li {
-        position: relative;
-        float: left;
-        width: 120px;
-    }
-    /* 選單 li 裡面連結之樣式 */
-    
-    ul.navigation li a {
-        display: block;
-        padding: 15px 0px 15px 35%;
-        background: #888;
-        color: #FFF;
-    }
-    /* 特定在第一層，以左邊灰線分隔 */
-    
-    ul.navigation > li > a {
-        border-bottom: 1px solid #CCC;
-        border-left: 1px solid #CCC;
-    }
-    ul.navigation > li > a:hover {
-        color: #666;
-        background: #DDD
-    }
-    /* 特定在第一層 > 第二層之後下拉部分之樣式 */
-    
-    ul.navigation li ul {
-        display: none;
-        float: left;
-        position: absolute;
-        left: 0;
-        margin: 0;
-    }
-    /* 當第一層選單被觸發時，指定第二層顯示 */
-    
-    ul.navigation li:hover > ul {
-        display: block;
-    }
-    /* 特定在第二層或之後下拉部分 li 之樣式 */
-    
-    ul.navigation ul li {
-        border-bottom: 2px solid #DDD;
-    }
-    /* 特定在第二層或之後下拉部分 li （最後一項不要底線）之樣式 */
-    
-    ul.navigation ul li:last-child {
-        border-bottom: none;
-    }
-    /* 第二層或之後 選單 li 之樣式 */
-    
-    ul.navigation ul a {
-        width: 90px;
-        padding: 15px 15px;
-        color: #666;
-        background: #EEE;
-    }
-    ul.navigation ul a:hover {
-        background: #CCC;
-        text-decoration: none;
-    }
+body, ul.navigation, ul.navigation li, ul.navigation ul, a {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    text-decoration: none;
+}
+ul.navigation, ul.navigation li {
+    list-style: none;
+}
+#nav {
+    display: flex;
+    height: 50px;
+}
+ul.navigation {
+    margin: auto;
+}
+li {
+    position: relative;
+    float: left;
+    width: 120px;
+}
+/* 選單 li 裡面連結之樣式 */
+
+ul.navigation li a {
+    display: block;
+    padding: 15px 0px 15px 35%;
+    background: #888;
+    color: #FFF;
+}
+/* 特定在第一層，以左邊灰線分隔 */
+
+ul.navigation > li > a {
+    border-bottom: 1px solid #CCC;
+    border-left: 1px solid #CCC;
+}
+ul.navigation > li > a:hover {
+    color: #666;
+    background: #DDD
+}
+/* 特定在第一層 > 第二層之後下拉部分之樣式 */
+
+ul.navigation li ul {
+    display: none;
+    float: left;
+    position: absolute;
+    left: 0;
+    margin: 0;
+}
+/* 當第一層選單被觸發時，指定第二層顯示 */
+
+ul.navigation li:hover > ul {
+    display: block;
+}
+/* 特定在第二層或之後下拉部分 li 之樣式 */
+
+ul.navigation ul li {
+    border-bottom: 2px solid #DDD;
+}
+/* 特定在第二層或之後下拉部分 li （最後一項不要底線）之樣式 */
+
+ul.navigation ul li:last-child {
+    border-bottom: none;
+}
+/* 第二層或之後 選單 li 之樣式 */
+
+ul.navigation ul a {
+    width: 90px;
+    padding: 15px 15px;
+    color: #666;
+    background: #EEE;
+}
+ul.navigation ul a:hover {
+    background: #CCC;
+    text-decoration: none;
+}
+.tablediv {
+    display: flex;
+    position: relative;
+    margin-top: 100px;
+    background-color: #aaa;
+    padding-bottom: 20px;
+}
+.qusselect {
+    margin: auto;
+}
+.trnormal {
+    width: 150px;
+    border: 1px solid #000;
+    background-color: white;
+}
+td {
+    width: 150px;
+    border: 1px solid #000;
+}
+.tdclick {
+    background-color: yellow;
+}
+.edit{
+    display: flex;
+    height: 200px;
+     background-color: #aaa;
+     margin-top: 30px;
+}
+span{
+    position: relative;
+    margin: auto;
+    width: 20%;
+}
+.text{
+    width: 70%;
+    left: 30%;
+    height: 100px;
+    resize:none;
+}
