@@ -5,7 +5,7 @@ body,
     a {
         margin: 0;
         padding: 0;
-        font-size: 13px;
+        font-size: 1em;
         text-decoration: none;
     }
     ul.navigation,
@@ -14,7 +14,7 @@ body,
     }
     #nav {
         display: flex;
-        height: 10%;
+        height: 50px;
     }
     ul.navigation {
         margin: auto;
@@ -22,13 +22,13 @@ body,
     li {
         position: relative;
         float: left;
-        width: 100px;
+        width: 120px;
     }
     /* 選單 li 裡面連結之樣式 */
     
     ul.navigation li a {
         display: block;
-        padding: 18px 20px;
+        padding: 15px 0px 15px 35%;
         background: #888;
         color: #FFF;
     }
@@ -69,11 +69,12 @@ body,
     /* 第二層或之後 選單 li 之樣式 */
     
     ul.navigation ul a {
-        width: 85px;
+        width: 90px;
         padding: 15px 15px;
         color: #666;
         background: #EEE;
     }
     ul.navigation ul a:hover {
         background: #CCC;
+        text-decoration: none;
     }

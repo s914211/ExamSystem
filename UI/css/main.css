@@ -18,7 +18,7 @@ body {
     height: 100%;
     min-width: 800px;
     min-height: 480px;
-    position: flex;
+    
 }
 .biggest-container {
     display: flex;
@@ -82,4 +82,9 @@ select {
     left: 6%;
     background-color: #9c9;
     cursor: pointer;
+}
+#qusselect{
+    width: 50%;
+    margin:auto;
+    left: 25%;
 }
