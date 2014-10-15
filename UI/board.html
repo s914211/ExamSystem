@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title></title>
+    <title>題庫</title>
 </head>
 
 <body>
@@ -17,12 +17,8 @@
     <title>homepage</title>
     <link href="css/reset.css" rel="stylesheet" />
     <!-- 記得任何東西都要先reset -->
-    <script src="js/buzz.min.js"></script>
     <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.client.js"></script>
-    <script src="js/jquery.transit.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="js/board.js"></script>
     <link href="../bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
@@ -50,78 +46,19 @@
                 <li>
                     <a href="#">測驗</a>
                     <ul>
-                        <li><a href="#">3 - 1</a>
+                        <li><a href="board.html">題庫</a>
 
                         </li>
                         <li>
-                            <a href="#">3 - 2</a>
+                            <a href="#">考試</a>
                         </li>
 
                     </ul>
                 </li>
         </ul>
     </div>
-    <div class="tablediv">
-        <table class="qusselect">
-            <tr class="trhead">
-                <th>題目</th>
-                <th>選項A</th>
-                <th>選項B</th>
-                <th>選項C</th>
-                <th>選項D</th>
-            </tr>
-            <tr class="trnormal">
-                <td>2006</td>
-                <td>35M</td>
-                <td>35M</td>
-                <td>35M</td>
-                <td>35M</td>
-            </tr>
-            <tr class="trnormal">
-                <td>2007</td>
-                <td>36M</td>
-                <td>36M</td>
-                <td>36M</td>
-                <td>36M</td>
-            </tr>
-            <tr class="trnormal">
-                <td>2008</td>
-                <td>37M</td>
-                <td>37M</td>
-                <td>37M</td>
-                <td>37M</td>
-            </tr>
-            <tr class="trnormal">
-                <td>2009</td>
-                <td>38M</td>
-                <td>38M</td>
-                <td>38M</td>
-                <td>38M</td>
-            </tr>
-            <tr class="trnormal">
-                <td>2010</td>
-                <td>39M</td>
-                <td>39M</td>
-                <td>39M</td>
-                <td>39M</td>
-            </tr>
-            <tr class="trnormal">
-                <td>2011</td>
-                <td>40M</td>
-                <td>40M</td>
-                <td>40M</td>
-                <td>40M</td>
-            </tr>
-            <tr class="trnormal">
-                <td>2012</td>
-                <td>41M</td>
-                <td>41M</td>
-                <td>41M</td>
-                <td>41M</td>
-            </tr>
-        </table>
-    </div>
-    <div class="edit">
+
+<div class="editdiv">
         <span>題目
 
         </span>
@@ -147,7 +84,78 @@
         </span>
         <textarea class="text"></textarea>
     </div>
- <button>修改</button>
+    <button id="editbtn">修改</button>
+    <button id="newbtn">新增</button>
+    
+    <div class="tablediv">
+        <table class="qusselect">
+            <tr class="trhead">
+                <th>ID</th>
+                <th>題目</th>
+                <th>選項A</th>
+                <th>選項B</th>
+                <th>選項C</th>
+                <th>選項D</th>
+            </tr>
+            <tr class="trnormal">
+                <td>1</td>
+                <td>2006</td>
+                <td>35M</td>
+                <td>35M</td>
+                <td>35M</td>
+                <td>35M</td>
+            </tr>
+            <tr class="trnormal">
+                <td>2</td>
+                <td>2007</td>
+                <td>36M</td>
+                <td>36M</td>
+                <td>36M</td>
+                <td>36M</td>
+            </tr>
+            <tr class="trnormal">
+                <td>3</td>
+                <td>2008</td>
+                <td>37M</td>
+                <td>37M</td>
+                <td>37M</td>
+                <td>37M</td>
+            </tr>
+            <tr class="trnormal">
+                <td>4</td>
+                <td>2009</td>
+                <td>38M</td>
+                <td>38M</td>
+                <td>38M</td>
+                <td>38M</td>
+            </tr>
+            <tr class="trnormal">
+                <td>5</td>
+                <td>2010</td>
+                <td>39M</td>
+                <td>39M</td>
+                <td>39M</td>
+                <td>39M</td>
+            </tr>
+            <tr class="trnormal">
+                <td>6</td>
+                <td>2011</td>
+                <td>40M</td>
+                <td>40M</td>
+                <td>40M</td>
+                <td>40M</td>
+            </tr>
+            <tr class="trnormal">
+                <td>7</td>
+                <td>2012</td>
+                <td>41M</td>
+                <td>41M</td>
+                <td>41M</td>
+                <td>41M</td>
+            </tr>
+        </table>
+    </div>
+    
 </body>
 
 </html>

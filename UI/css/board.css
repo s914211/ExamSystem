@@ -76,7 +76,7 @@ ul.navigation ul a:hover {
 .tablediv {
     display: flex;
     position: relative;
-    margin-top: 130px;
+    margin-top: 10px;
     padding-bottom: 20px;
 }
 .qusselect {
@@ -94,15 +94,14 @@ ul.navigation ul a:hover {
     cursor: pointer;
 }
 td {
-    max-width: 150px;
-    width: 150px;
+    width: 200px;
     border: 1px solid #000;
     word-break:break-all;
 }
 .trclick {
     background-color: yellow;
 }
-.edit {
+.editdiv {
     display: flex;
     height: 200px;
     margin-top: 30px;
@@ -120,3 +119,4 @@ span {
     resize: none;
     margin: 45px 15px 0 0;
 }
+
