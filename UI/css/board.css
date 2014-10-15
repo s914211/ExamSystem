@@ -94,8 +94,10 @@ ul.navigation ul a:hover {
     cursor: pointer;
 }
 td {
+    max-width: 150px;
     width: 150px;
     border: 1px solid #000;
+    word-break:break-all;
 }
 .trclick {
     background-color: yellow;
