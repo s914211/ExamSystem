@@ -1,4 +1,4 @@
-body, ul.navigation, ul.navigation li, ul.navigation ul, a ,div{
+body, ul.navigation, ul.navigation li, ul.navigation ul, a, div {
     margin: 0;
     padding: 0;
     font-size: 1em;
@@ -82,7 +82,7 @@ ul.navigation ul a:hover {
 .qusselect {
     margin: auto;
 }
-.trhead{
+.trhead {
     background-color: #eee;
 }
 .trnormal {
@@ -90,7 +90,7 @@ ul.navigation ul a:hover {
     border: 1px solid #000;
     background-color: white;
 }
-.trnormal:hover{
+.trnormal:hover {
     cursor: pointer;
 }
 td {
@@ -100,21 +100,21 @@ td {
 .trclick {
     background-color: yellow;
 }
-.edit{
+.edit {
     display: flex;
     height: 200px;
-     background-color: #aaa;
-     margin-top: 30px;
+    margin-top: 30px;
 }
-span{
+span {
     position: relative;
     margin: auto;
     width: 19%;
     left: 0.1%;
+    background-color: #ccc;
 }
-.text{
+.text {
     width: 70%;
     height: 100px;
-    resize:none;
-    margin: 45px 15px 0 0 ;
+    resize: none;
+    margin: 45px 15px 0 0;
 }
