@@ -9,6 +9,9 @@ signup = function(){
         var user = new Parse.User();
             user.set("username", document.getElementById('username').value);
             user.set("password", document.getElementById('password').value);
+            user.set("phonenum", document.getElementById('phonenum').value);
+            user.set("email", document.getElementById('email').value);
+            user.set("gender", document.getElementById('gender').value);
             user.signUp(null, {
                 success: function(user){
                   alert('success!!');

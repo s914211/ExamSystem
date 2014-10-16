@@ -1,6 +1,62 @@
 Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa7ryzTSmMjP3ZB4fYJNFqty");
 
-addnewques = function(examquestionbank, questionbankeasy, easynum, questionbanknormal, normalnum, questionbankhard, hardnum){
+addnewques = function(examname, easynum, normalnum, hardnum){
+    var Newquesbank = Parse.Object.extend("'" + examname + "'");
+    var newquesbank = new Newquesbank();
+    var questions = Parse.Object.extend('Questions');
+    var easyques = new Parse.Query(questions);
+    easyques.equalTo('degree', 1);
+    easyques.equalTo('sealed', false);
+    easyques.limit(easynum);
+    var normalques = new Parse.Query(questions);
+    normalques.equalTo('degree', 2);
+    normalques.equalTo('sealed', false);
+    normalques.limit(normalnum);
+    var hardques = new Parse.Query(questions);
+    hardques.equalTo('degree', 3);
+    hardques.equalTo('sealed', false);
+    hardques.limit(hardnum);
+
+    var mainQuery = Parse.Query.or(easyques, normalques, hardques);
+    mainQuery.find({
+        success:function(examquestion){
+            for(var i = 0; i<examquestion.length; i++){
+                var question = examquestion[i].get('Question');
+                var optiona = examquestion[i].get('OptionA');
+                var optionb = examquestion[i].get('OptionB');
+                var optionc = examquestion[i].get('OptionC');
+                var optiond = examquestion[i].get('OptionD');
+                var answer = examquestion[i].get('Answer');
+                newquesbank.set('Question', question);
+                newquesbank.set('OptionA', optiona);
+                newquesbank.set('OptionB', optionb);
+                newquesbank.set('OptionC', optionc);
+                newquesbank.set('OptionD', optiond);
+                newquesbank.set('Answer', answer);
+                //sealed the selected question
+                examquestion[i].set('sealed', true);
+            }
+        },
+        error:function(error){
+            unsealed();
+            alert("Unsealed questions success! Please Click the button again to finish the process.");
+        }
+    })
+}
+
+unsealed = function(){
+    var questions = Parse.Object.extend('Questions');
+    var query = new Parse.Query(questions);
+    query.find({
+        success:function(examquestion){
+            for(var i = 0; i<examquestion.length; i++){
+                examquestion[i].set('sealed', false);
+            }
+        }
+    })
+}
+
+/*addnewques = function(examquestionbank, questionbankeasy, easynum, questionbanknormal, normalnum, questionbankhard, hardnum){
     var Newquesbank = Parse.Object.extend("'"+examquestionbank+"'");
     var newquesbank = new Newquesbank();
     var questions = Parse.Object.extend("'"+questionbankeasy+"'");
@@ -11,26 +67,16 @@ addnewques = function(examquestionbank, questionbankeasy, easynum, questionbankn
         success:function(examquestion){
         	for(var i = 0; i<examquestion.length; i++){
         	    var question = examquestion[i].get('Question');
-        	    var questionpic = examquestion[i].get('QuestionPicture');
         	    var optiona = examquestion[i].get('OptionA');
         	    var optionb = examquestion[i].get('OptionB');
         	    var optionc = examquestion[i].get('OptionC');
         	    var optiond = examquestion[i].get('OptionD');
-        	    var optionapic = examquestion[i].get('OptionAPicture');
-        	    var optionbpic = examquestion[i].get('OptionBPicture');
-        	    var optioncpic = examquestion[i].get('OptionCPicture');
-        	    var optiondpic = examquestion[i].get('OptionDPicture');
         	    var answer = examquestion[i].get('Answer');
         	    newquesbank.set('Question', question);
-        	    newquesbank.set('QuestionPicture', questionpic);
         	    newquesbank.set('OptionA', optiona);
         	    newquesbank.set('OptionB', optionb);
         	    newquesbank.set('OptionC', optionc);
         	    newquesbank.set('OptionD', optiond);
-        	    newquesbank.set('OptionAPicture', optionapic);
-        	    newquesbank.set('OptionBPicture', optionbpic);
-        	    newquesbank.set('OptionCPicture', optioncpic);
-        	    newquesbank.set('OptionDPicture', optiondpic);
         	    newquesbank.set('Answer', answer);
                 //sealed the selected question
                 examquestion[i].set('sealed', true);
@@ -49,26 +95,16 @@ addnewques = function(examquestionbank, questionbankeasy, easynum, questionbankn
             success:function(examquestion){
                 for(var i = 0; i<examquestion.length; i++){
                     var question = examquestion[i].get('Question');
-                    var questionpic = examquestion[i].get('QuestionPicture');
                     var optiona = examquestion[i].get('OptionA');
                     var optionb = examquestion[i].get('OptionB');
                     var optionc = examquestion[i].get('OptionC');
                     var optiond = examquestion[i].get('OptionD');
-                    var optionapic = examquestion[i].get('OptionAPicture');
-                    var optionbpic = examquestion[i].get('OptionBPicture');
-                    var optioncpic = examquestion[i].get('OptionCPicture');
-                    var optiondpic = examquestion[i].get('OptionDPicture');
                     var answer = examquestion[i].get('Answer');
                     newquesbank.set('Question', question);
-                    newquesbank.set('QuestionPicture', questionpic);
                     newquesbank.set('OptionA', optiona);
                     newquesbank.set('OptionB', optionb);
                     newquesbank.set('OptionC', optionc);
                     newquesbank.set('OptionD', optiond);
-                    newquesbank.set('OptionAPicture', optionapic);
-                    newquesbank.set('OptionBPicture', optionbpic);
-                    newquesbank.set('OptionCPicture', optioncpic);
-                    newquesbank.set('OptionDPicture', optiondpic);
                     newquesbank.set('Answer', answer);
                     //sealed the selected question
                     examquestion[i].set('sealed', true);
@@ -92,21 +128,12 @@ addnewques = function(examquestionbank, questionbankeasy, easynum, questionbankn
                 var optionb = examquestion[i].get('OptionB');
                 var optionc = examquestion[i].get('OptionC');
                 var optiond = examquestion[i].get('OptionD');
-                var optionapic = examquestion[i].get('OptionAPicture');
-                var optionbpic = examquestion[i].get('OptionBPicture');
-                var optioncpic = examquestion[i].get('OptionCPicture');
-                var optiondpic = examquestion[i].get('OptionDPicture');
                 var answer = examquestion[i].get('Answer');
                 newquesbank.set('Question', question);
-                newquesbank.set('QuestionPicture', questionpic);
                 newquesbank.set('OptionA', optiona);
                 newquesbank.set('OptionB', optionb);
                 newquesbank.set('OptionC', optionc);
                 newquesbank.set('OptionD', optiond);
-                newquesbank.set('OptionAPicture', optionapic);
-                newquesbank.set('OptionBPicture', optionbpic);
-                newquesbank.set('OptionCPicture', optioncpic);
-                newquesbank.set('OptionDPicture', optiondpic);
                 newquesbank.set('Answer', answer);
                 //sealed the selected question
                 examquestion[i].set('sealed', true);
@@ -131,16 +158,4 @@ addnewques = function(examquestionbank, questionbankeasy, easynum, questionbankn
         	console.log(error.toString());
         }
     })
-}
-
-unsealed = function(questionbank){
-    var questions = Parse.Object.extend("'"+questionbank+"'");
-    var query = new Parse.Query(questions);
-    query.find({
-        success:function(examquestion){
-            for(var i = 0; i<examquestion.length; i++){
-                examquestion[i].set('sealed', false);
-            }
-        }
-    })
-}
+}*/
