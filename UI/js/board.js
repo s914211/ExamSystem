@@ -15,14 +15,17 @@ $(document).ready(function() {
         };
     });
     $('#newbtn').click(function() {
-        $('table').append("<tr class=\"trnormal\">" 
+
+        $('table').append(
+        	"<tr class=\"trnormal\">" 
         	+ "<td>" + $('.text').eq(0).val() + "</td>" 
         	+ "<td>" + $('.text').eq(1).val() + "</td>" 
         	+ "<td>" + $('.text').eq(2).val() + "</td>" 
         	+ "<td>" + $('.text').eq(3).val() + "</td>" 
         	+ "<td>" + $('.text').eq(4).val() + "</td>" 
-        	+ "</tr>");
-
+        	+ "</tr>"
+        );
     });
+
 
 });
