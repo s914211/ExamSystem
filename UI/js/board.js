@@ -1,23 +1,20 @@
 $(document).ready(function() {
-    $('.trnormal').click(function() {
 
-        $(this).addClass("trclick").siblings().removeClass("trclick");
-        for (i = 0; i <= 4; i++) {
 
-            $('.text').eq(i).val($('.trclick > td').eq(i).text());
-        };
-    });
 
-    $('#editbtn').click(function() {
-        for (i = 0; i <= 4; i++) {
+trclick();
 
-            $('.trclick > td').eq(i).text($('.text').eq(i).val());
-        };
-    });
+$('#editbtn').click(function() {
+    for (i = 0; i <= 4; i++) {
+
+        $('.trclick > td').eq(i).text($('.text').eq(i).val());
+    };
+});
+
     $('#newbtn').click(function() {
 
         $('table').append(
-        	"<tr class=\"trnormal\">" 
+        	"<tr class=\"trnormal\"	onclick=\"trclick()\">" 
         	+ "<td>" + $('.text').eq(0).val() + "</td>" 
         	+ "<td>" + $('.text').eq(1).val() + "</td>" 
         	+ "<td>" + $('.text').eq(2).val() + "</td>" 
@@ -29,3 +26,13 @@ $(document).ready(function() {
 
 
 });
+
+function trclick() {
+    $('.trnormal').click(function() {
+        $(this).addClass("trclick").siblings().removeClass("trclick");
+        for (i = 0; i <= 4; i++) {
+
+            $('.text').eq(i).val($('.trclick > td').eq(i).text());
+        };
+    });
+};
