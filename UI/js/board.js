@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-
-
 trclick();
 
 $('#editbtn').click(function() {
@@ -12,9 +10,9 @@ $('#editbtn').click(function() {
 });
 
     $('#newbtn').click(function() {
-
+    	$('.trnormal').removeClass('trclick');
         $('table').append(
-        	"<tr class=\"trnormal\"	onclick=\"trclick()\">" 
+        	"<tr class=\"trnormal trclick\"	onclick=\"trclick()\">" 
         	+ "<td>" + $('.text').eq(0).val() + "</td>" 
         	+ "<td>" + $('.text').eq(1).val() + "</td>" 
         	+ "<td>" + $('.text').eq(2).val() + "</td>" 
@@ -23,6 +21,14 @@ $('#editbtn').click(function() {
         	+ "</tr>"
         );
     });
+
+    $('#deletebtn').click(function() {
+
+     if (confirm("確定刪除？")) {
+         $('.trclick').remove();
+     };
+ });
+
 
 
 });

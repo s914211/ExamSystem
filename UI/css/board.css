@@ -82,8 +82,10 @@ ul.navigation ul a:hover {
 .qusselect {
     margin: auto;
 }
-.trhead {
+.thead {
     background-color: #eee;
+    width: 150px;
+
 }
 .trnormal {
     width: 150px;
@@ -120,3 +122,11 @@ span {
     margin: 45px 15px 0 0;
 }
 
+.btn {
+    position: relative;
+    width: 10%;
+    height: 50px;
+    font-size: 1em;
+    margin-left: 7.5%;
+    left: 20%;
+}
