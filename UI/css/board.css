@@ -4,6 +4,20 @@ body, ul.navigation, ul.navigation li, ul.navigation ul, a, div {
     font-size: 1em;
     text-decoration: none;
 }
+
+html, body {
+    padding: 0;
+    margin: 0;
+    background: url("../assets/classroom.jpg") center;
+    background-size: cover;
+}
+
+body {
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+}
+
 ul.navigation, ul.navigation li {
     list-style: none;
 }
@@ -56,6 +70,10 @@ ul.navigation li:hover > ul {
 ul.navigation ul li {
     border-bottom: 2px solid #DDD;
 }
+
+li span a{
+    left: 50px;
+}
 /* 特定在第二層或之後下拉部分 li （最後一項不要底線）之樣式 */
 
 ul.navigation ul li:last-child {
@@ -65,7 +83,7 @@ ul.navigation ul li:last-child {
 
 ul.navigation ul a {
     width: 90px;
-    padding: 15px 15px;
+    padding: 5px 15px;
     color: #666;
     background: #EEE;
 }
@@ -73,6 +91,8 @@ ul.navigation ul a:hover {
     background: #CCC;
     text-decoration: none;
 }
+
+/*題庫表格部分*/
 .tablediv {
     display: flex;
     position: relative;
@@ -100,13 +120,21 @@ td {
     border: 1px solid #000;
     word-break:break-all;
 }
+
+.tdsmall {
+    width: 80px;
+}
+
 .trclick {
     background-color: yellow;
 }
+
+/*題庫編輯區部分*/
+
 .editdiv {
     display: flex;
-    height: 200px;
-    margin-top: 30px;
+    height: 180px;
+    margin-top: 50px;
 }
 span {
     position: relative;
@@ -117,9 +145,19 @@ span {
 }
 .text {
     width: 70%;
-    height: 100px;
+    height: 80px;
     resize: none;
     margin: 45px 15px 0 0;
+}
+
+
+/*按鈕選項部分*/
+
+.seconddiv {
+    display: flex;
+    position: relative;
+    left: 25%;
+    width: 75%;
 }
 
 .btn {
@@ -127,6 +165,21 @@ span {
     width: 10%;
     height: 50px;
     font-size: 1em;
-    margin-left: 7.5%;
-    left: 20%;
+    margin: auto 1% 1% 1%;
 }
+.difficulty {
+    width: 20%;
+    height: 80%;
+}
+
+select{
+    position: relative;
+    width: 60%;
+    height: 80%;
+    float: left;
+}
+.difficulty span{
+    width: 35%;
+    float: left;
+}
+

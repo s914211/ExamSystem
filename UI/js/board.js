@@ -6,6 +6,8 @@ $('.trnormal').on('click', function() {
 
         $('.text').eq(i).val($('.trclick > td').eq(i).text());
     };
+    $('#dif').val($('.trclick > td').eq(5).text());
+    $('#ans').val($('.trclick > td').eq(6).text());
 });
 
 $('#editbtn').click(function() {
@@ -13,10 +15,14 @@ $('#editbtn').click(function() {
 
         $('.trclick > td').eq(i).text($('.text').eq(i).val());
     };
+    $('.trclick > td').eq(5).text($('#dif').val());
+    $('.trclick > td').eq(6).text($('#ans').val());
+
 });
 
 
-    $('#newbtn').click(function() {
+
+$('#newbtn').click(function() {
     	$('.trnormal').removeClass('trclick');
     	var tr = $("<tr class=\"trnormal trclick\"	>" 
         	+ "<td>" + $('.text').eq(0).val() + "</td>" 
@@ -24,6 +30,8 @@ $('#editbtn').click(function() {
         	+ "<td>" + $('.text').eq(2).val() + "</td>" 
         	+ "<td>" + $('.text').eq(3).val() + "</td>" 
         	+ "<td>" + $('.text').eq(4).val() + "</td>" 
+        	+ "<td class=\"tdsmall\">" + $('#dif').val() + "</td>"
+        	+ "<td class=\"tdsmall\">" + $('#ans').val() + "</td>"
         	+ "</tr>");
 
        	$('table').append(tr);
@@ -35,15 +43,22 @@ $('#editbtn').click(function() {
 
  		        $('.text').eq(i).val($('.trclick > td').eq(i).text());
  		    };
+    			$('#dif').val($('.trclick > td').eq(5).text());
+   				$('#ans').val($('.trclick > td').eq(6).text()); 		    
  		});
 
  });
 
+
+
  $('#deletebtn').click(function() {
+    $('.trclick').remove();  
+    $('.text').val("");
+    $('#dif').val("請選擇");
+    $('#ans').val("請選擇");
+});
 
-     if (confirm("確定刪除？")) {
-         $('.trclick').remove();
-     };
- });
+ 
 
+ 
 });
