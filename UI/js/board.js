@@ -62,3 +62,9 @@ $('#newbtn').click(function() {
 
  
 });
+
+function clean(){
+	$('.text').val("");
+    $('#dif').val("請選擇");
+    $('#ans').val("請選擇");
+};
