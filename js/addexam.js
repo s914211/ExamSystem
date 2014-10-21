@@ -33,8 +33,24 @@ addnewques = function(examname, easynum, normalnum, hardnum){
                 newquesbank.set('OptionC', optionc);
                 newquesbank.set('OptionD', optiond);
                 newquesbank.set('Answer', answer);
+                newquesbank.save(null, {
+                    success:function(){
+                        console.log("add new exam success!");
+                    },
+                    error:function(error){
+                        console.log(error.toString());
+                    }
+                })
                 //sealed the selected question
                 examquestion[i].set('sealed', true);
+                examquestion[i].save(null, {
+                    success:function(){
+                        console.log("sealed success!");
+                    },
+                    error:function(error){
+                        console.log(error.toString());
+                    }
+                })
             }
         },
         error:function(error){
@@ -51,6 +67,11 @@ unsealed = function(){
         success:function(examquestion){
             for(var i = 0; i<examquestion.length; i++){
                 examquestion[i].set('sealed', false);
+                examquestion[i].save(null, {
+                    success:function(){
+                        
+                    }
+                })
             }
         }
     })

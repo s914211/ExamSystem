@@ -12,7 +12,35 @@ modifyq = function(){
     			questions.set('OptionC', "front-end optionc");
     			questions.set('OptionD', "front-end optiond");
     			questions.set('Answer', "front-end answer");
+                                       questions.save(null, {
+                                           success:function(){
+                                                console.log("modifyq success!");
+                                           },
+                                           error:function(error){
+                                                console.log(error.toString());
+                                           }
+                                       })
     		}
     	}
+    })
+}
+
+addq = function(){
+    var Question = Parse.Object.extend('Questions');
+    var question = new Question();
+    question.set('Question', "front-end question");
+    question.set('Question', "front-end question");
+    question.set('OptionA', "front-end optiona");
+    question.set('OptionB', "front-end optionb");
+    question.set('OptionC', "front-end optionc");
+    question.set('OptionD', "front-end optiond");
+    question.set('Answer', "front-end answer");
+    question.save(null, {
+        success:function(){
+            console.log("add question success!");
+        },
+        error:function(error){
+            console.log(error.toString());
+        }
     })
 }
