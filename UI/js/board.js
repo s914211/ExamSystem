@@ -52,10 +52,11 @@ $('#newbtn').click(function() {
 
 
  $('#deletebtn').click(function() {
-    $('.trclick').remove();  
-    $('.text').val("");
-    $('#dif').val("請選擇");
-    $('#ans').val("請選擇");
+ 	if(confirm("確定刪除？")){
+ 	    $('.trclick').remove();  
+ 	    $('.text').val("");
+ 	    $('#dif').val("請選擇");
+ 	    $('#ans').val("請選擇");};
 });
 
  
@@ -67,4 +68,5 @@ function clean(){
 	$('.text').val("");
     $('#dif').val("請選擇");
     $('#ans').val("請選擇");
+    $('.trnormal').removeClass('trclick');
 };
