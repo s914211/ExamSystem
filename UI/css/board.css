@@ -102,11 +102,20 @@ ul.navigation ul a:hover {
 .qusselect {
     margin: auto;
 }
+
+tbody {
+    height: 280px;
+    overflow: auto;
+    display: block;
+}
+
 .thead {
     background-color: #eee;
     width: 150px;
+    display:inherit;
 
 }
+
 .trnormal {
     width: 150px;
     border: 1px solid #000;
@@ -117,12 +126,16 @@ ul.navigation ul a:hover {
 }
 td {
     width: 200px;
-    border: 1px solid #000;
+    border: 1px solid #555;
     word-break:break-all;
 }
 
 .tdsmall {
     width: 80px;
+}
+
+.tdanswer {
+    width: 97px;
 }
 
 .trclick {
