@@ -3,7 +3,6 @@ $(document).ready(function(){
     var question = Parse.Object.extend('Questions');
     var query = new Parse.Query(question);
     //query.equalTo('ExamType', 1);
-    query.limit(329);
     query.find({
         success:function(examquestion){
         	for(var i = 0; i<examquestion.length; i++){
