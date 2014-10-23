@@ -11,12 +11,17 @@ $('.trnormal').on('click', function() {
 });
 
 $('#editbtn').click(function() {
+	if($('#dif').val()=="請選擇" || $('#ans').val()=="請選擇"){
+
+	}
+	else{
     for (i = 0; i <= 4; i++) {
 
         $('.trclick > td').eq(i).text($('.text').eq(i).val());
     };
     $('.trclick > td').eq(5).text($('#dif').val());
     $('.trclick > td').eq(6).text($('#ans').val());
+    }
 
 });
 
@@ -39,7 +44,7 @@ $('#newbtn').click(function() {
     	        	+ "<td class=\"tdsmall\">" + $('#ans').val() + "</td>"
     	        	+ "</tr>");
     	
-    	       	$('table').append(tr);
+    	       	$('table').prepend(tr);
     	 		
     	 		tr.on('click', function() {
     	
@@ -52,6 +57,9 @@ $('#newbtn').click(function() {
     	   				$('#ans').val($('.trclick > td').eq(6).text()); 		    
     	 		});
     	 	};
+
+
+
 
 
  });

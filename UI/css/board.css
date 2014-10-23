@@ -93,12 +93,12 @@ ul.navigation ul a:hover {
 }
 
 /*題庫表格部分*/
+
 .tablediv {
     display: flex;
     position: relative;
     margin-top: 10px;
     padding-bottom: 10px;
-    height: 50%;
 }
 .qusselect {
     margin: auto;
