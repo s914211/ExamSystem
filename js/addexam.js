@@ -1,7 +1,22 @@
 Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa7ryzTSmMjP3ZB4fYJNFqty");
 
-addnewques = function(examname, easynum, normalnum, hardnum){
-    var Newquesbank = Parse.Object.extend("'" + examname + "'");
+$(document).ready(function(){
+    var exams = Parse.Object.extend("Exams");
+    var query = new Parse.Query(exams);
+    query.find({
+        success:function(exams){
+            if(已經報名){
+                //show the timer
+            }
+            else{
+                //line up all exams and attend button
+            }
+        }
+    })
+})
+
+addnewques = function(examname, questionbank, examtime, examdate, easynum, normalnum, hardnum){
+    var Newquesbank = Parse.Object.extend("'" + questionbank + "'");
     var newquesbank = new Newquesbank();
     var questions = Parse.Object.extend('Questions');
     var easyques = new Parse.Query(questions);
@@ -35,7 +50,7 @@ addnewques = function(examname, easynum, normalnum, hardnum){
                 newquesbank.set('Answer', answer);
                 newquesbank.save(null, {
                     success:function(){
-                        console.log("add new exam success!");
+                        console.log("update new questionbank success!");
                     },
                     error:function(error){
                         console.log(error.toString());
@@ -58,6 +73,22 @@ addnewques = function(examname, easynum, normalnum, hardnum){
             alert("Unsealed questions success! Please Click the button again to finish the process.");
         }
     })
+
+    //add new exam
+    var Exams = Parse.Object.extend('Exams');
+    var exams = new Exams();
+    exams.set('examname', examname);
+    exams.set('questionbank', questionbank);
+    exams.set('examtime', examtime);
+    exams.set('examdate', examdate);
+    exams.save(null, {
+        success:function(){
+            console.log("add new exam success!");
+        },
+        error:function(error){
+            console.log(error.toString());
+        }
+    })
 }
 
 unsealed = function(){
@@ -76,6 +107,8 @@ unsealed = function(){
         }
     })
 }
+
+
 
 /*addnewques = function(examquestionbank, questionbankeasy, easynum, questionbanknormal, normalnum, questionbankhard, hardnum){
     var Newquesbank = Parse.Object.extend("'"+examquestionbank+"'");
