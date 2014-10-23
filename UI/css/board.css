@@ -97,14 +97,16 @@ ul.navigation ul a:hover {
     display: flex;
     position: relative;
     margin-top: 10px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
+    height: 50%;
 }
 .qusselect {
     margin: auto;
+        height: 100%;
 }
 
 tbody {
-    height: 280px;
+    height: 300px;
     overflow: auto;
     display: block;
 }
@@ -112,7 +114,7 @@ tbody {
 .thead {
     background-color: #eee;
     width: 150px;
-    display:inherit;
+    display:table-header-group;
 
 }
 
@@ -146,21 +148,24 @@ td {
 
 .editdiv {
     display: flex;
-    height: 180px;
-    margin-top: 50px;
+    margin-top: 65px;
+    margin-bottom: 25px;
+    margin-right: 1%;
 }
-span {
+.editdiv span ,.difficulty span{
     position: relative;
     margin: auto;
     width: 19%;
     left: 0.1%;
+    margin-right: 1%;
+    margin-left: 1%;
     background-color: #ccc;
 }
 .text {
-    width: 70%;
+    width: 60%;
     height: 80px;
     resize: none;
-    margin: 45px 15px 0 0;
+    margin: auto;
 }
 
 
