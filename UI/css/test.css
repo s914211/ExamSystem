@@ -168,6 +168,9 @@ body {
 .numberclick {
 	background-color: #333;
 }
+.ansslecet {
+    background-color: green;
+}
 /* 前後題移動 */
 .arrow{
     position: absolute;

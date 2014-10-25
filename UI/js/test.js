@@ -35,7 +35,14 @@ $(document).ready(function() {
                     $('.qusanswer').text(ans[$('.numberclick').text()][6]);
                     break;
             }
+
         }
+        for(i = 1; i <= 40; i++)
+	{
+		if(ans[i][6]){
+			$('.number').eq(i-1).addClass('ansslecet');
+		}
+	}
     });
 
     $('.left,.right').width($(window).width() * 0.07);
@@ -112,8 +119,11 @@ $(document).ready(function() {
 
         }
 
-    });
 
+
+    });
+	
+	
 
 
 });
