@@ -12,6 +12,8 @@ $(document).ready(function() {
     $('.number').click(function() {
 
         $('.answer').removeClass('answerclick');
+        $('.testnumber').text("");
+        $('.qusanswer').text("");
         $(this).addClass('numberclick').siblings().removeClass('numberclick');
         $('.testnumber').text("第" + $(this).text() + "題，" + "你選擇的答案是");
         if (ans[$('.numberclick').text()][6]) {
@@ -44,6 +46,8 @@ $(document).ready(function() {
             alert('這是第一題');
         } else {
         	$('.answer').removeClass('answerclick');
+        	$('.testnumber').text("");
+        	$('.qusanswer').text("");
             $('.numberclick').prev().addClass('numbertoken');
             $('.numberclick').removeClass('numberclick');
             $('.numbertoken').addClass('numberclick').removeClass('numbertoken');
@@ -79,6 +83,8 @@ $(document).ready(function() {
             alert("已經是最後一題");
         } else {
         	$('.answer').removeClass('answerclick');
+        	$('.testnumber').text("");
+        	$('.qusanswer').text("");
             $('.numberclick').next().addClass('numbertoken');
             $('.numberclick').removeClass('numberclick');
             $('.numbertoken').addClass('numberclick').removeClass('numbertoken');
