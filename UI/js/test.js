@@ -43,10 +43,31 @@ $(document).ready(function() {
         if ($('.numberclick').text() == "1") {
             alert('這是第一題');
         } else {
+        	$('.answer').removeClass('answerclick');
             $('.numberclick').prev().addClass('numbertoken');
             $('.numberclick').removeClass('numberclick');
             $('.numbertoken').addClass('numberclick').removeClass('numbertoken');
             $('.testnumber').text("第" + $('.numberclick').text() + "題，" + "你選擇的答案是");
+            if (ans[$('.numberclick').text()][6]) {
+            switch (ans[$('.numberclick').text()][6]) {
+                case "A":
+                    $('.A').addClass('answerclick');
+                    $('.qusanswer').text(ans[$('.numberclick').text()][6]);
+                    break;
+                case "B":
+                    $('.B').addClass('answerclick');
+                    $('.qusanswer').text(ans[$('.numberclick').text()][6]);
+                    break;
+                case "C":
+                    $('.C').addClass('answerclick');
+                    $('.qusanswer').text(ans[$('.numberclick').text()][6]);
+                    break;
+                case "D":
+                    $('.D').addClass('answerclick');
+                    $('.qusanswer').text(ans[$('.numberclick').text()][6]);
+                    break;
+            }
+        }
 
 
 
@@ -57,10 +78,31 @@ $(document).ready(function() {
         if ($('.numberclick').text() == "40") {
             alert("已經是最後一題");
         } else {
+        	$('.answer').removeClass('answerclick');
             $('.numberclick').next().addClass('numbertoken');
             $('.numberclick').removeClass('numberclick');
             $('.numbertoken').addClass('numberclick').removeClass('numbertoken');
             $('.testnumber').text("第" + $('.numberclick').text() + "題，" + "你選擇的答案是");
+            if (ans[$('.numberclick').text()][6]) {
+            switch (ans[$('.numberclick').text()][6]) {
+                case "A":
+                    $('.A').addClass('answerclick');
+                    $('.qusanswer').text(ans[$('.numberclick').text()][6]);
+                    break;
+                case "B":
+                    $('.B').addClass('answerclick');
+                    $('.qusanswer').text(ans[$('.numberclick').text()][6]);
+                    break;
+                case "C":
+                    $('.C').addClass('answerclick');
+                    $('.qusanswer').text(ans[$('.numberclick').text()][6]);
+                    break;
+                case "D":
+                    $('.D').addClass('answerclick');
+                    $('.qusanswer').text(ans[$('.numberclick').text()][6]);
+                    break;
+            }
+        }
 
         }
 
