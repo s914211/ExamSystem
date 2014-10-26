@@ -40,7 +40,7 @@ login = function(){
   })
 };
 
-document.getElementById("loginbtn").addEventListener("click", login);
+//document.getElementById("loginbtn").addEventListener("click", login);
 
 /*login = function(){
     var user = Parse.Object.extend('User');
