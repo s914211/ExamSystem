@@ -29,8 +29,8 @@ $(document).ready(function(){
   document.getElementById("signupbtn").addEventListener("click", signup);
 
   login = function(){
-    var userid = document.getElementById('loginid');
-    var userpassword = document.getElementById('loginpassword');
+    var userid = document.getElementById('loginid').value;
+    var userpassword = document.getElementById('loginpassword').value;
     Parse.User.logIn(userid,userpassword,{
       success:function(){
         alert("login success!");
