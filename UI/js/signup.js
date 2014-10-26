@@ -37,7 +37,7 @@ login = function(){
     error:function(){
       alert("Login failed!");
     }
-  }
+  })
 };
 
 document.getElementById('loginbtn').addEventListener("click", login);
