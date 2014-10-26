@@ -20,7 +20,7 @@ $(document).ready(function(){
                     window.location.assign("UI/index.html");
                   },
                   error: function(user, error){
-                    alert('fail');
+                    alert("Error: " + error.code + " " + error.message);
                   }
               });
         }
