@@ -44,29 +44,3 @@ $(document).ready(function(){
 
   document.getElementById("loginbtn").addEventListener("click", login);
 })
-
-
-
-/*login = function(){
-    var user = Parse.Object.extend('User');
-    var query = new Parse.Query(user);
-    query.find({
-        success:function(userdata){
-            for(var i = 0; i < userdata.length; i++){
-                 var username = userdata[i].get('username');
-                 var password = userdata[i].get('password');
-                 if(username == 'front-end username'){
-                      if(password != 'front-end password'){
-                          alert("You have the wrong password!");
-                      }
-                      else{
-                          window.location.assign("");
-                      }
-                 }
-                 else{
-                     alert("You have the wrong username!");
-                 }
-            }
-        }
-    })
-}*/
