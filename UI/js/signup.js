@@ -17,7 +17,7 @@ $(document).ready(function(){
               user.signUp(null, {
                   success: function(user){
                     alert('success!!');
-                    window.location.assign("UI/index.html");
+                    window.location.assign("index.html");
                   },
                   error: function(user, error){
                     alert("Error: " + error.code + " " + error.message);
