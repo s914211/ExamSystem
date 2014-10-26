@@ -25,7 +25,7 @@ signup = function(){
       }
 };
 
-document.getElementById("signupbtn").addEventListener("click", signup);
+//document.getElementById("signupbtn").addEventListener("click", signup);
 
 login = function(){
   var userid = document.getElementById('loginid');
