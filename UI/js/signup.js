@@ -25,7 +25,7 @@ signup = function(){
       }
 };
 
-document.getElementById('signupbtn').addEventListener("click", signup);
+document.getElementById("signupbtn").addEventListener("click", signup);
 
 login = function(){
   var userid = document.getElementById('loginid');
@@ -40,7 +40,7 @@ login = function(){
   })
 };
 
-document.getElementById('loginbtn').addEventListener("click", login);
+document.getElementById("loginbtn").addEventListener("click", login);
 
 /*login = function(){
     var user = Parse.Object.extend('User');
