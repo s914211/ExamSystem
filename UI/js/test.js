@@ -78,7 +78,7 @@ for (i = 1; i <= 40; i++) {
 }
 
 function useranswer() {
-    $('.testnumber').text("第" + $(this).text() + "題，" + "你選擇的答案是");
+    $('.testnumber').text("第" + $('.numberclick').text() + "題，" + "你選擇的答案是");
     if (ans[$('.numberclick').text()][6]) {
         switch (ans[$('.numberclick').text()][6]) {
             case "A":
