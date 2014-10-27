@@ -35,8 +35,8 @@ $(document).ready(function(){
       success:function(){
         alert("login success!");
       },
-      error:function(){
-        alert("Login failed!");
+      error:function(user, error){
+        alert("Error: " + error.code + " " + error.message);
       }
     })
   };
