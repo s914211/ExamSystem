@@ -8,8 +8,8 @@ $(document).ready(function(){
         }
         else{
           var user = new Parse.User();
-              user.set("userid", document.getElementById('signupid').value);
-              user.set("username", document.getElementById('signupname').value);
+              user.set("username", document.getElementById('signupid').value);
+              user.set("name", document.getElementById('signupname').value);
               user.set("password", document.getElementById('signuppassword').value);
               user.set("phonenum", document.getElementById('signuptel').value);
               user.set("email", document.getElementById('signupemail').value);
