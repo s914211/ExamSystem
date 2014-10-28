@@ -19,7 +19,7 @@ Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa
     //about examtime
 
 
-$('.trnormal').on('click', function() {
+$('table').delegate('.trnormal','click', function() {
     $(this).addClass("trclick").siblings().removeClass("trclick");
     for (i = 0; i <= 4; i++) {
 
@@ -64,17 +64,6 @@ $('#newbtn').click(function() {
     	        	+ "</tr>");
     	
     	       	$('table').append(tr);
-    	 		
-    	 		tr.on('click', function() {
-    	
-    	 		    $(this).addClass("trclick").siblings().removeClass("trclick");
-    	 		    for (i = 0; i <= 4; i++) {
-    	
-    	 		        $('.text').eq(i).val($('.trclick > td').eq(i).text());
-    	 		    };
-    	    			$('#dif').val($('.trclick > td').eq(5).text());
-    	   				$('#ans').val($('.trclick > td').eq(6).text()); 		    
-    	 		});
     	 	};
 
 
@@ -107,17 +96,6 @@ function clean(){
     $('.trnormal').removeClass('trclick');
 };
 
-function trclick(){
-    $('.trnormal').on('click', function() {
-    $(this).addClass("trclick").siblings().removeClass("trclick");
-    for (i = 0; i <= 4; i++) {
-
-        $('.text').eq(i).val($('.trclick > td').eq(i).text());
-    };
-    $('#dif').val($('.trclick > td').eq(5).text());
-    $('#ans').val($('.trclick > td').eq(6).text());
-});
-}
 
 function getQuestionString(data){
     var quesid = data.id;       
@@ -145,7 +123,7 @@ function getQuestionString(data){
     var s6 = "<td class='tdsmall'>"+difficulties+"</h2>";
     var s7 = "<td class='tdsmall'>"+ans+"</h2>";
 
-    var s = "<tr class='trnormal' id='" +quesid +"' onclick='trclick()'>" + s1 + s2 + s3 + s4 + s5 + s6 + s7 + "</tr>";
+    var s = "<tr class='trnormal' id='" +quesid +"'>" + s1 + s2 + s3 + s4 + s5 + s6 + s7 + "</tr>";
 
     return s;
 }
