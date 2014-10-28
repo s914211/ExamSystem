@@ -3,7 +3,7 @@ $(document).ready(function() {
 Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa7ryzTSmMjP3ZB4fYJNFqty");
     var question = Parse.Object.extend('Questions');
     var query = new Parse.Query(question);
-    //query.equalTo('ExamType', 1);
+    query.limit(330);
     query.find({
         success:function(examquestion){
             console.log(examquestion.length);
