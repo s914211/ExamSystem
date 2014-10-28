@@ -63,7 +63,7 @@ $('#newbtn').click(function() {
     	        	+ "<td class=\"tdsmall\">" + $('#ans').val() + "</td>"
     	        	+ "</tr>");
     	
-    	       	$('table').prepend(tr);
+    	       	$('table').append(tr);
     	 		
     	 		tr.on('click', function() {
     	
@@ -82,6 +82,8 @@ $('#newbtn').click(function() {
 
 
  });
+
+
 
 
 
@@ -104,6 +106,18 @@ function clean(){
     $('#ans').val("請選擇");
     $('.trnormal').removeClass('trclick');
 };
+
+function trclick(){
+    $('.trnormal').on('click', function() {
+    $(this).addClass("trclick").siblings().removeClass("trclick");
+    for (i = 0; i <= 4; i++) {
+
+        $('.text').eq(i).val($('.trclick > td').eq(i).text());
+    };
+    $('#dif').val($('.trclick > td').eq(5).text());
+    $('#ans').val($('.trclick > td').eq(6).text());
+});
+}
 
 function getQuestionString(data){
     var quesid = data.id;       
@@ -131,7 +145,7 @@ function getQuestionString(data){
     var s6 = "<td class='tdsmall'>"+difficulties+"</h2>";
     var s7 = "<td class='tdsmall'>"+ans+"</h2>";
 
-    var s = "<tr class='trnormal' id='"+quesid +"'>" + s1 + s2 + s3 + s4 + s5 + s6 + s7 + "</tr>";
+    var s = "<tr class='trnormal' id='" +quesid +"' onclick='trclick()'>" + s1 + s2 + s3 + s4 + s5 + s6 + s7 + "</tr>";
 
     return s;
 }
