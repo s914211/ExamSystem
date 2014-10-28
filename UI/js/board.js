@@ -1,38 +1,6 @@
 $(document).ready(function() {
 
 Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa7ryzTSmMjP3ZB4fYJNFqty");
-
-function getQuestionString(data){
-    var quesid = data.id;       
-    var ques = data.get('Question');
-    var optiona = data.get('OptionA');
-    var optionb = data.get('OptionB');
-    var optionc = data.get('OptionC');
-    var optiond = data.get('OptionD');
-    var degree = data.get('degree');
-    var difficulties = "";
-    if(degree == 1)
-        difficulties = "易";
-    else if(degree == 2)
-        difficulties = "中";
-    else
-        difficulties = "難";
-
-    var ans = data.get('Answer');
-
-    var s1 = "<td>"+ques+"</h1>";
-    var s2 = "<td>"+optiona+"</h2>";
-    var s3 = "<td>"+optionb+"</h2>";
-    var s4 = "<td>"+optionc+"</h2>";
-    var s5 = "<td>"+optiond+"</h2>";
-    var s6 = "<td class='tdsmall'>"+difficulties+"</h2>";
-    var s7 = "<td class='tdsmall'>"+ans+"</h2>";
-
-    var s = "<tr class='trnormal' id='"+quesid +"'>" + s1 + s2 + s3 + s4 + s5 + s6 + s7 + "</tr>";
-
-    return s;
-}
-
     var question = Parse.Object.extend('Questions');
     var query = new Parse.Query(question);
     //query.equalTo('ExamType', 1);
@@ -42,9 +10,8 @@ function getQuestionString(data){
                 var container = "";    
                 var s = getQuestionString(examquestion[i]);
                 container += s;
-                 //var string = "<div id='questions'>" + container + "</div>";
-                 $('.Questions').append(container);
-                 container = "";
+                $('.Questions').append(container);
+                container = "";
             }
         }
     })
@@ -137,3 +104,34 @@ function clean(){
     $('#ans').val("請選擇");
     $('.trnormal').removeClass('trclick');
 };
+
+function getQuestionString(data){
+    var quesid = data.id;       
+    var ques = data.get('Question');
+    var optiona = data.get('OptionA');
+    var optionb = data.get('OptionB');
+    var optionc = data.get('OptionC');
+    var optiond = data.get('OptionD');
+    var degree = data.get('degree');
+    var difficulties = "";
+    if(degree == 1)
+        difficulties = "易";
+    else if(degree == 2)
+        difficulties = "中";
+    else
+        difficulties = "難";
+
+    var ans = data.get('Answer');
+
+    var s1 = "<td>"+ques+"</h1>";
+    var s2 = "<td>"+optiona+"</h2>";
+    var s3 = "<td>"+optionb+"</h2>";
+    var s4 = "<td>"+optionc+"</h2>";
+    var s5 = "<td>"+optiond+"</h2>";
+    var s6 = "<td class='tdsmall'>"+difficulties+"</h2>";
+    var s7 = "<td class='tdsmall'>"+ans+"</h2>";
+
+    var s = "<tr class='trnormal' id='"+quesid +"'>" + s1 + s2 + s3 + s4 + s5 + s6 + s7 + "</tr>";
+
+    return s;
+}
