@@ -6,7 +6,7 @@ Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa
     //query.equalTo('ExamType', 1);
     query.find({
         success:function(examquestion){
-            console.log(examquetion.length);
+            console.log(examquestion.length);
             for(var i = 0; i<examquestion.length; i++){
                 var container = "";    
                 var s = getQuestionString(examquestion[i]);
