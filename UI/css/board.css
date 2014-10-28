@@ -129,7 +129,7 @@ tbody {
 td {
     width: 200px;
     border: 1px solid #555;
-    word-break:break-all;
+    word-break:keep-all;
 }
 
 .tdsmall {
