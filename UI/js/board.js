@@ -66,6 +66,7 @@ $('#newbtn').click(function() {
     	        	+ "</tr>");
     	
     	       	$('table').append(tr);
+                       addq($('.text').eq(0).val(), $('.text').eq(1).val(), $('.text').eq(2).val(), $('.text').eq(3).val(), $('#dif').val(), $('#ans').val());
     	 	};
 
 
@@ -177,19 +178,18 @@ deleteq = function(questionid){
     })
 }
 
-addq = function(){
+addq = function(ques, optiona, optionb, optionc, optiond, ans){
     var Question = Parse.Object.extend('Questions');
     var question = new Question();
-    question.set('Question', "new question");
-    question.set('OptionA', "new optiona");
-    question.set('OptionB', "new optionb");
-    question.set('OptionC', "new optionc");
-    question.set('OptionD', "new optiond");
-    question.set('Answer', "new answer");
+    question.set('Question', ques);
+    question.set('OptionA', optiona);
+    question.set('OptionB', optionb);
+    question.set('OptionC', optionc);
+    question.set('OptionD', optiond);
+    question.set('Answer', ans);
     question.save(null, {
         success:function(){
-            console.log("add question success!");
-            //window.location.href="http://s914211.github.io/ExamSystem/dashboard.html";
+            alert("add question success!");
         },
         error:function(error){
             console.log(error.toString());
