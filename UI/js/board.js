@@ -42,7 +42,15 @@ $('#editbtn').click(function() {
                 $('.trclick > td').eq(5).text($('#dif').val());
                 $('.trclick > td').eq(6).text($('#ans').val());
                 var quesid = localStorage.getItem('quesid');
-                modifyq(quesid, $('.text').eq(0).val(), $('.text').eq(1).val(), $('.text').eq(2).val(), $('.text').eq(3).val(), $('#dif').val(), $('#ans').val());
+                var degree = 0;
+                if($('#dif').val() == "難")
+                    degree = 3;
+                else if($('#dif').val() == "中")
+                    degree = 2;
+                else if($('#dif').val() == "易")
+                    degree = 1;
+
+                modifyq(quesid, $('.text').eq(0).val(), $('.text').eq(1).val(), $('.text').eq(2).val(), $('.text').eq(3).val(), $('.text').eq(4).val(), degree, $('#ans').val());
             }
 });
 
@@ -66,7 +74,14 @@ $('#newbtn').click(function() {
     	        	+ "</tr>");
     	
     	       	$('table').append(tr);
-                       addq($('.text').eq(0).val(), $('.text').eq(1).val(), $('.text').eq(2).val(), $('.text').eq(3).val(), $('#dif').val(), $('#ans').val());
+                       var degree = 0;
+                       if($('#dif').val() == "難")
+                           degree = 3;
+                       else if($('#dif').val() == "中")
+                           degree = 2;
+                       else if($('#dif').val() == "易")
+                           degree = 1;
+                       addq($('.text').eq(0).val(), $('.text').eq(1).val(), $('.text').eq(2).val(), $('.text').eq(3).val(), $('.text').eq(4).val(), degree, $('#ans').val());
     	 	};
 
 
@@ -133,7 +148,7 @@ function getQuestionString(data){
     return s;
 }
 
-modifyq = function(questionid, ques, optiona, optionb, optionc, optiond, ans){
+modifyq = function(questionid, ques, optiona, optionb, optionc, optiond, degree, ans){
     var questions = Parse.Object.extend('Questions');
     var query = new Parse.Query(questions);
     query.equalTo('objectId', questionid);
@@ -144,6 +159,7 @@ modifyq = function(questionid, ques, optiona, optionb, optionc, optiond, ans){
             question.set('OptionB', optionb);
             question.set('OptionC', optionc);
             question.set('OptionD', optiond);
+            question.set('degree', degree);
             question.set('Answer', ans);
                           question.save(null, {
                                     success:function(){
@@ -178,7 +194,7 @@ deleteq = function(questionid){
     })
 }
 
-addq = function(ques, optiona, optionb, optionc, optiond, ans){
+addq = function(ques, optiona, optionb, optionc, optiond, degree, ans){
     var Question = Parse.Object.extend('Questions');
     var question = new Question();
     question.set('Question', ques);
@@ -186,6 +202,8 @@ addq = function(ques, optiona, optionb, optionc, optiond, ans){
     question.set('OptionB', optionb);
     question.set('OptionC', optionc);
     question.set('OptionD', optiond);
+    question.set('degree', degree);
+    question.set('sealed', true);
     question.set('Answer', ans);
     question.save(null, {
         success:function(){
