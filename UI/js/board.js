@@ -84,6 +84,8 @@ $('#newbtn').click(function() {
  	    $('.text').val("");
  	    $('#dif').val("請選擇");
  	    $('#ans').val("請選擇");};
+           var quesid = localStorage.getItem('quesid');
+           deleteq(quesid);
 });
 
  
@@ -150,6 +152,47 @@ modifyq = function(questionid, ques, optiona, optionb, optionc, optiond, ans){
                                             console.log(error.toString());
                                     }
                           })
+        }
+    })
+}
+
+deleteq = function(questionid){
+    var questions = Parse.Object.extend('Questions');
+    var query = new Parse.Query(questions);
+    query.equalTo('objectId', questionid);
+    query.first({
+        success:function(question){
+            question.destroy({
+                success:function(results){
+                    alert("delete question success!");
+                },
+                error:function(error){
+                    console.log(error.toString());
+                }
+            })
+        },
+        error:function(error){
+            console.log(error.toString());
+        }
+    })
+}
+
+addq = function(){
+    var Question = Parse.Object.extend('Questions');
+    var question = new Question();
+    question.set('Question', "new question");
+    question.set('OptionA', "new optiona");
+    question.set('OptionB', "new optionb");
+    question.set('OptionC', "new optionc");
+    question.set('OptionD', "new optiond");
+    question.set('Answer', "new answer");
+    question.save(null, {
+        success:function(){
+            console.log("add question success!");
+            //window.location.href="http://s914211.github.io/ExamSystem/dashboard.html";
+        },
+        error:function(error){
+            console.log(error.toString());
         }
     })
 }
