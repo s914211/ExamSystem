@@ -3,10 +3,9 @@ $(document).ready(function() {
 Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa7ryzTSmMjP3ZB4fYJNFqty");
     var question = Parse.Object.extend('Questions');
     var query = new Parse.Query(question);
-    query.limit(330);
+    query.limit(500);
     query.find({
         success:function(examquestion){
-            console.log(examquestion.length);
             for(var i = 0; i<examquestion.length; i++){
                 var container = "";    
                 var s = getQuestionString(examquestion[i]);
@@ -28,6 +27,8 @@ $('table').delegate('.trnormal','click', function() {
     };
     $('#dif').val($('.trclick > td').eq(5).text());
     $('#ans').val($('.trclick > td').eq(6).text());
+    var id = $(this).attr('id');
+    localStorage['quesid'] = id;
 });
 
 $('#editbtn').click(function() {
@@ -35,14 +36,14 @@ $('#editbtn').click(function() {
 
 	}
 	else{
-    for (i = 0; i <= 4; i++) {
-
-        $('.trclick > td').eq(i).text($('.text').eq(i).val());
-    };
-    $('.trclick > td').eq(5).text($('#dif').val());
-    $('.trclick > td').eq(6).text($('#ans').val());
-    }
-
+                for (i = 0; i <= 4; i++) {
+                    $('.trclick > td').eq(i).text($('.text').eq(i).val());
+                };
+                $('.trclick > td').eq(5).text($('#dif').val());
+                $('.trclick > td').eq(6).text($('#ans').val());
+                var quesid = localStorage.getItem('quesid');
+                modifyq(quesid, $('.text').eq(0).val(), $('.text').eq(1).val(), $('.text').eq(2).val(), $('.text').eq(3).val(), $('#dif').val(), $('#ans').val());
+            }
 });
 
 
@@ -127,4 +128,28 @@ function getQuestionString(data){
     var s = "<tr class='trnormal' id='" +quesid +"'>" + s1 + s2 + s3 + s4 + s5 + s6 + s7 + "</tr>";
 
     return s;
+}
+
+modifyq = function(questionid, ques, optiona, optionb, optionc, optiond, ans){
+    var questions = Parse.Object.extend('Questions');
+    var query = new Parse.Query(questions);
+    query.equalTo('objectId', questionid);
+    query.first({
+        success:function(question){
+            question.set('Question', ques);
+            question.set('OptionA', optiona);
+            question.set('OptionB', optionb);
+            question.set('OptionC', optionc);
+            question.set('OptionD', optiond);
+            question.set('Answer', ans);
+                          question.save(null, {
+                                    success:function(){
+                                            alert("modify question success!");
+                                    },
+                                    error:function(error){
+                                            console.log(error.toString());
+                                    }
+                          })
+        }
+    })
 }
