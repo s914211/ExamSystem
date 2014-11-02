@@ -3,8 +3,8 @@ $(document).ready(function() {
 
     var question = Parse.Object.extend('example');
         var query = new Parse.Query(question);
-        query.equalTo('no', 1);
-        query.find({
+        query.equalTo('no', '1');
+        query.first({
             success:function(examquestion){
                 var ques = examquestion.get('Question');
                 var optiona = examquestion.get('OptionA');
@@ -34,12 +34,11 @@ $(document).ready(function() {
         $('.qusanswer').text("");
         $(this).addClass('numberclick').siblings().removeClass('numberclick');
         useranswer();
-        alert($(this).text());
 
         var question = Parse.Object.extend('example');
         var query = new Parse.Query(question);
         query.equalTo('no', $(this).text());
-        query.find({
+        query.first({
             success:function(examquestion){
                 var ques = examquestion.get('Question');
                 var optiona = examquestion.get('OptionA');
