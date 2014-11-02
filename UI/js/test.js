@@ -1,5 +1,19 @@
 $(document).ready(function() {
+    Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa7ryzTSmMjP3ZB4fYJNFqty");
 
+    var question = Parse.Object.extend('example');
+        var query = new Parse.Query(question);
+        query.equalTo('no', 1);
+        query.find({
+            success:function(examquestion){
+                var ques = examquestion.get('Question');
+                var optiona = examquestion.get('OptionA');
+                var optionb = examquestion.get('OptionB');
+                var optionc = examquestion.get('OptionC');
+                var optiond = examquestion.get('OptionD'); 
+                document.getElementById("bigdiv").innerHTML = "<div class='question'> <div class='quscontent'>"+ques + " </div> </div> <div class='content'> <div class='answer A'> <div class='choiceimg'></div>"+optiona+" <span class='choice'>A</span> </div> <div class='answer B'> <div class='choiceimg'></div>"+optionb+" <span class='choice'>B</span> </div> <div class='answer C'><div class='choiceimg'></div>"+optionc+"<span class='choice'>C</span></div><div class='answer D'><div class='choiceimg'></div>"+optiond+"<span class='choice'>D</span></div></div>";
+            }
+        })
 
     $('.answer').click(function() {
         $(this).addClass("answerclick").siblings().removeClass("answerclick");
@@ -20,6 +34,22 @@ $(document).ready(function() {
         $('.qusanswer').text("");
         $(this).addClass('numberclick').siblings().removeClass('numberclick');
         useranswer();
+        alert($(this).text());
+
+        var question = Parse.Object.extend('example');
+        var query = new Parse.Query(question);
+        query.equalTo('no', $(this).text());
+        query.find({
+            success:function(examquestion){
+                var ques = examquestion.get('Question');
+                var optiona = examquestion.get('OptionA');
+                var optionb = examquestion.get('OptionB');
+                var optionc = examquestion.get('OptionC');
+                var optiond = examquestion.get('OptionD'); 
+                document.getElementById("bigdiv").innerHTML = "<div class='question'> <div class='quscontent'>"+ques + " </div> </div> <div class='content'> <div class='answer A'> <div class='choiceimg'></div>"+optiona+" <span class='choice'>A</span> </div> <div class='answer B'> <div class='choiceimg'></div>"+optionb+" <span class='choice'>B</span> </div> <div class='answer C'><div class='choiceimg'></div>"+optionc+"<span class='choice'>C</span></div><div class='answer D'><div class='choiceimg'></div>"+optiond+"<span class='choice'>D</span></div></div>";
+            }
+        })
+
 
     });
 
