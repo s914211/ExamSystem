@@ -1,215 +1,178 @@
 Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa7ryzTSmMjP3ZB4fYJNFqty");
 
 $(document).ready(function(){
-    var exams = Parse.Object.extend("Exams");
+    /*var exams = Parse.Object.extend("Exams");
     var query = new Parse.Query(exams);
     query.find({
         success:function(exams){
-            if(已經報名){
+            if(){
                 //show the timer
             }
             else{
                 //line up all exams and attend button
             }
         }
+    })*/
+
+    $("#submit").click(function(){
+        var examname = document.getElementById("examname").value;
+        var examtime = document.getElementById("examtime").value;
+        //var examdate = document.getElementById("examdate").value;
+        var hard = document.getElementById("hardnum").value;
+        var normal = document.getElementById("normalnum").value;
+        var easy = document.getElementById("easynum").value;
+        addnewques(examname, examtime, easy, normal, hard);
     })
 })
 
-addnewques = function(examname, questionbank, examtime, examdate, easynum, normalnum, hardnum){
-    var Newquesbank = Parse.Object.extend("'" + questionbank + "'");
-    var newquesbank = new Newquesbank();
+addnewques = function(examname, examtime, easynum, normalnum, hardnum){
+    var count = 1;
     var questions = Parse.Object.extend('Questions');
     var easyques = new Parse.Query(questions);
     easyques.equalTo('degree', 1);
     easyques.equalTo('sealed', false);
     easyques.limit(easynum);
+    easyques.find({
+        success:function(easyquestion){
+            console.log(easyquestion);
+            for(var i = 0; i<easyquestion.length; i++){
+                var Newques = Parse.Object.extend("QuesBank");
+                var newques = new Newques();
+                var question = easyquestion[i].get('Question');
+                var optiona = easyquestion[i].get('OptionA');
+                var optionb = easyquestion[i].get('OptionB');
+                var optionc = easyquestion[i].get('OptionC');
+                var optiond = easyquestion[i].get('OptionD');
+                var answer = easyquestion[i].get('Answer');
+                newques.set('examname', examname);
+                newques.set('Question', question);
+                newques.set('OptionA', optiona);
+                newques.set('OptionB', optionb);
+                newques.set('OptionC', optionc);
+                newques.set('OptionD', optiond);
+                newques.set('Answer', answer);
+                newques.set('no', count);
+                newques.save(null, {
+                    success:function(){
+                        count++;
+                        console.log("update new easyques success!");
+                    },
+                    error:function(error){
+                        unsealed(1);
+                    }
+                })
+            }
+        }
+    })
+
+    var questions = Parse.Object.extend('Questions');
     var normalques = new Parse.Query(questions);
     normalques.equalTo('degree', 2);
     normalques.equalTo('sealed', false);
     normalques.limit(normalnum);
-    var hardques = new Parse.Query(questions);
-    hardques.equalTo('degree', 3);
-    hardques.equalTo('sealed', false);
-    hardques.limit(hardnum);
-
-    var mainQuery = Parse.Query.or(easyques, normalques, hardques);
-    mainQuery.find({
-        success:function(examquestion){
-            for(var i = 0; i<examquestion.length; i++){
-                var question = examquestion[i].get('Question');
-                var optiona = examquestion[i].get('OptionA');
-                var optionb = examquestion[i].get('OptionB');
-                var optionc = examquestion[i].get('OptionC');
-                var optiond = examquestion[i].get('OptionD');
-                var answer = examquestion[i].get('Answer');
-                newquesbank.set('Question', question);
-                newquesbank.set('OptionA', optiona);
-                newquesbank.set('OptionB', optionb);
-                newquesbank.set('OptionC', optionc);
-                newquesbank.set('OptionD', optiond);
-                newquesbank.set('Answer', answer);
-                newquesbank.save(null, {
+    normalques.find({
+        success:function(normalquestion){
+            console.log(normalquestion);
+            for(var i = 0; i<normalquestion.length; i++){
+                var Newques = Parse.Object.extend("QuesBank");
+                var newques = new Newques();
+                var question = normalquestion[i].get('Question');
+                var optiona = normalquestion[i].get('OptionA');
+                var optionb = normalquestion[i].get('OptionB');
+                var optionc = normalquestion[i].get('OptionC');
+                var optiond = normalquestion[i].get('OptionD');
+                var answer = normalquestion[i].get('Answer');
+                newques.set('examname', examname);
+                newques.set('Question', question);
+                newques.set('OptionA', optiona);
+                newques.set('OptionB', optionb);
+                newques.set('OptionC', optionc);
+                newques.set('OptionD', optiond);
+                newques.set('Answer', answer);
+                newques.set('no', count);
+                newques.save(null, {
                     success:function(){
-                        console.log("update new questionbank success!");
+                        count++;
+                        console.log("update new normalques success!");
                     },
                     error:function(error){
-                        console.log(error.toString());
-                    }
-                })
-                //sealed the selected question
-                examquestion[i].set('sealed', true);
-                examquestion[i].save(null, {
-                    success:function(){
-                        console.log("sealed success!");
-                    },
-                    error:function(error){
-                        console.log(error.toString());
+                        unsealed(2);
                     }
                 })
             }
-        },
-        error:function(error){
-            unsealed();
-            alert("Unsealed questions success! Please Click the button again to finish the process.");
         }
     })
+
+    var questions = Parse.Object.extend('Questions');
+    var hardques = new Parse.Query(questions);
+    hardques.equalTo('degree', 3);
+    hardques.equalTo('sealed', false);
+    hardques.limit(normalnum);
+    hardques.find({
+        success:function(hardquestion){
+            console.log(hardquestion);
+            for(var i = 0; i<hardquestion.length; i++){
+                var Newques = Parse.Object.extend("QuesBank");
+                var newques = new Newques();
+                var question = hardquestion[i].get('Question');
+                var optiona = hardquestion[i].get('OptionA');
+                var optionb = hardquestion[i].get('OptionB');
+                var optionc = hardquestion[i].get('OptionC');
+                var optiond = hardquestion[i].get('OptionD');
+                var answer = hardquestion[i].get('Answer');
+                newques.set('examname', examname);
+                newques.set('Question', question);
+                newques.set('OptionA', optiona);
+                newques.set('OptionB', optionb);
+                newques.set('OptionC', optionc);
+                newques.set('OptionD', optiond);
+                newques.set('Answer', answer);
+                newques.set('no', count);
+                newques.save(null, {
+                    success:function(){
+                        count++;
+                        console.log("update new hardques success!");
+                    },
+                    error:function(error){
+                        unsealed(3);
+                    }
+                })
+            }
+        }
+    })
+
+    
 
     //add new exam
     var Exams = Parse.Object.extend('Exams');
     var exams = new Exams();
     exams.set('examname', examname);
-    exams.set('questionbank', questionbank);
     exams.set('examtime', examtime);
-    exams.set('examdate', examdate);
+    exams.set('examdate', undefined);
     exams.save(null, {
         success:function(){
             console.log("add new exam success!");
         },
         error:function(error){
-            console.log(error.toString());
+            console.log("Error: " + error.code + " " + error.message);
         }
     })
 }
 
-unsealed = function(){
+unsealed = function(degree){
     var questions = Parse.Object.extend('Questions');
     var query = new Parse.Query(questions);
+    query.equalTo('degree', degree);
     query.find({
         success:function(examquestion){
             for(var i = 0; i<examquestion.length; i++){
                 examquestion[i].set('sealed', false);
                 examquestion[i].save(null, {
                     success:function(){
-                        
+                        console.log("unsealed success!");
                     }
                 })
             }
         }
     })
 }
-
-
-
-/*addnewques = function(examquestionbank, questionbankeasy, easynum, questionbanknormal, normalnum, questionbankhard, hardnum){
-    var Newquesbank = Parse.Object.extend("'"+examquestionbank+"'");
-    var newquesbank = new Newquesbank();
-    var questions = Parse.Object.extend("'"+questionbankeasy+"'");
-    var query = new Parse.Query(questions);
-    query.equalTo('sealed', false);
-    query.limit(easynum);
-    query.find({
-        success:function(examquestion){
-        	for(var i = 0; i<examquestion.length; i++){
-        	    var question = examquestion[i].get('Question');
-        	    var optiona = examquestion[i].get('OptionA');
-        	    var optionb = examquestion[i].get('OptionB');
-        	    var optionc = examquestion[i].get('OptionC');
-        	    var optiond = examquestion[i].get('OptionD');
-        	    var answer = examquestion[i].get('Answer');
-        	    newquesbank.set('Question', question);
-        	    newquesbank.set('OptionA', optiona);
-        	    newquesbank.set('OptionB', optionb);
-        	    newquesbank.set('OptionC', optionc);
-        	    newquesbank.set('OptionD', optiond);
-        	    newquesbank.set('Answer', answer);
-                //sealed the selected question
-                examquestion[i].set('sealed', true);
-        	}
-        },
-        error:function(error){
-            unsealed(questionbankeasy);
-            alert("Unsealed questions success! Please Click the button again to finish the process.");
-        }
-    })
-    var questions = Parse.Object.extend("'"+questionbanknormal+"'");
-        var query = new Parse.Query(questions);
-        query.equalTo('sealed', false);
-        query.limit(normalnum);
-        query.find({
-            success:function(examquestion){
-                for(var i = 0; i<examquestion.length; i++){
-                    var question = examquestion[i].get('Question');
-                    var optiona = examquestion[i].get('OptionA');
-                    var optionb = examquestion[i].get('OptionB');
-                    var optionc = examquestion[i].get('OptionC');
-                    var optiond = examquestion[i].get('OptionD');
-                    var answer = examquestion[i].get('Answer');
-                    newquesbank.set('Question', question);
-                    newquesbank.set('OptionA', optiona);
-                    newquesbank.set('OptionB', optionb);
-                    newquesbank.set('OptionC', optionc);
-                    newquesbank.set('OptionD', optiond);
-                    newquesbank.set('Answer', answer);
-                    //sealed the selected question
-                    examquestion[i].set('sealed', true);
-                }
-            },
-            error:function(error){
-                unsealed(questionbanknormal);
-                alert("Unsealed questions success! Please Click the button again to finish the process.");
-            }
-        })
-    var questions = Parse.Object.extend("'"+questionbankhard+"'");
-    var query = new Parse.Query(questions);
-    query.equalTo('sealed', false);
-    query.limit(hardnum);
-    query.find({
-        success:function(examquestion){
-            for(var i = 0; i<examquestion.length; i++){
-                var question = examquestion[i].get('Question');
-                var questionpic = examquestion[i].get('QuestionPicture');
-                var optiona = examquestion[i].get('OptionA');
-                var optionb = examquestion[i].get('OptionB');
-                var optionc = examquestion[i].get('OptionC');
-                var optiond = examquestion[i].get('OptionD');
-                var answer = examquestion[i].get('Answer');
-                newquesbank.set('Question', question);
-                newquesbank.set('OptionA', optiona);
-                newquesbank.set('OptionB', optionb);
-                newquesbank.set('OptionC', optionc);
-                newquesbank.set('OptionD', optiond);
-                newquesbank.set('Answer', answer);
-                //sealed the selected question
-                examquestion[i].set('sealed', true);
-            }
-        },
-        error:function(error){
-            unsealed(questionbankhard);
-            alert("Unsealed questions success! Please Click the button again to finish the process.");
-        }
-    })
-    //addnewexam
-    var Exams = Parse.Object.extend('Exams');
-    var exams = new Exams();
-    exams.set('examname', "front-end examname");
-    exams.set('examtime', "front-end examtime");
-    exams.set('questionbank', examquestionbank);
-    exams.save(null,{
-        success:function(results){
-            console.log("Add exam success!");
-        },
-        error:function(error){
-        	console.log(error.toString());
-        }
-    })
-}*/
