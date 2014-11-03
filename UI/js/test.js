@@ -15,17 +15,17 @@ $(document).ready(function() {
             }
         })
 
-    $('.answer').click(function() {
+    $('#bigdiv').delegate('.answer','click',function() {
         $(this).addClass("answerclick").siblings().removeClass("answerclick");
         $(".qusanswer").text($(this).children(".choice").text());
-        ans[$('.numberclick').text()][6] = $(this).children('.choice').text();
+        userans[$('.numberclick').text()][6] = $(this).children('.choice').text();
     });
 
 
 
-    $('.number,.left,.right').click(function() {
+    $('body').delegate('.number,.left,.right','click',function() {
         for (i = 1; i <= 40; i++) {
-            if (ans[i][6]) {
+            if (userans[i][6]) {
                 $('.number').eq(i - 1).addClass('ansslecet');
             }
         }
@@ -37,7 +37,7 @@ $(document).ready(function() {
 
         var question = Parse.Object.extend('example');
         var query = new Parse.Query(question);
-        query.equalTo('no', $(this).text());
+        query.equalTo('no', $('.numberclick').text());
         query.first({
             success:function(examquestion){
                 var ques = examquestion.get('Question');
@@ -45,9 +45,9 @@ $(document).ready(function() {
                 var optionb = examquestion.get('OptionB');
                 var optionc = examquestion.get('OptionC');
                 var optiond = examquestion.get('OptionD'); 
-                document.getElementById("bigdiv").innerHTML = "<div class='question'> <div class='quscontent'>"+ques + " </div> </div> <div class='content'> <div class='answer A'> <div class='choiceimg'></div>"+optiona+" <span class='choice'>A</span> </div> <div class='answer B'> <div class='choiceimg'></div>"+optionb+" <span class='choice'>B</span> </div> <div class='answer C'><div class='choiceimg'></div>"+optionc+"<span class='choice'>C</span></div><div class='answer D'><div class='choiceimg'></div>"+optiond+"<span class='choice'>D</span></div></div>";
+                document.getElementById("bigdiv").innerHTML = "<div class='question'> <div class='quscontent'>"+ ques + " </div> </div> <div class='content'> <div class='answer A'> <div class='choiceimg'></div>"+optiona+" <span class='choice'>A</span> </div> <div class='answer B'> <div class='choiceimg'></div>"+optionb+" <span class='choice'>B</span> </div> <div class='answer C'><div class='choiceimg'></div>"+optionc+"<span class='choice'>C</span></div><div class='answer D'><div class='choiceimg'></div>"+optiond+"<span class='choice'>D</span></div></div>";
             }
-        })
+        });
 
 
     });
@@ -55,7 +55,7 @@ $(document).ready(function() {
     $('.left,.right').width($(window).width() * 0.07);
     $('.left,.right').height($(window).width() * 0.07);
 
-    $('.left').click(function() {
+    $('.arrow').delegate('.left','click',function() {
         if ($('.numberclick').text() == "1") {
             alert('這是第一題');
         } else {
@@ -69,10 +69,11 @@ $(document).ready(function() {
 
 
 
+
         }
     });
 
-    $('.right').click(function() {
+    $('.arrow').delegate('.right','click',function() {
         if ($('.numberclick').text() == "40") {
             alert("已經是最後一題");
         } else {
@@ -83,6 +84,7 @@ $(document).ready(function() {
             $('.numberclick').removeClass('numberclick');
             $('.numbertoken').addClass('numberclick').removeClass('numbertoken');
             useranswer();
+
 
         }
 
@@ -101,30 +103,30 @@ $(window).resize(function() {
 });
 
 
-var ans = new Array();
+var userans = new Array();
 for (i = 1; i <= 40; i++) {
-    ans[i] = Array(6);
+    userans[i] = Array(6);
 }
 
 function useranswer() {
     $('.testnumber').text("第" + $('.numberclick').text() + "題，" + "你選擇的答案是");
-    if (ans[$('.numberclick').text()][6]) {
-        switch (ans[$('.numberclick').text()][6]) {
+    if (userans[$('.numberclick').text()][6]) {
+        switch (userans[$('.numberclick').text()][6]) {
             case "A":
                 $('.A').addClass('answerclick');
-                $('.qusanswer').text(ans[$('.numberclick').text()][6]);
+                $('.qusanswer').text(userans[$('.numberclick').text()][6]);
                 break;
             case "B":
                 $('.B').addClass('answerclick');
-                $('.qusanswer').text(ans[$('.numberclick').text()][6]);
+                $('.qusanswer').text(userans[$('.numberclick').text()][6]);
                 break;
             case "C":
                 $('.C').addClass('answerclick');
-                $('.qusanswer').text(ans[$('.numberclick').text()][6]);
+                $('.qusanswer').text(userans[$('.numberclick').text()][6]);
                 break;
             case "D":
                 $('.D').addClass('answerclick');
-                $('.qusanswer').text(ans[$('.numberclick').text()][6]);
+                $('.qusanswer').text(userans[$('.numberclick').text()][6]);
                 break;
         }
 
