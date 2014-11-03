@@ -17,15 +17,15 @@ $(document).ready(function(){
     $("#submit").click(function(){
         var examname = document.getElementById("examname").value;
         var examtime = document.getElementById("examtime").value;
-        //var examdate = document.getElementById("examdate").value;
+        var examdate = document.getElementById("examdate").value;
         var hard = document.getElementById("hardnum").value;
         var normal = document.getElementById("normalnum").value;
         var easy = document.getElementById("easynum").value;
-        addnewques(examname, examtime, easy, normal, hard);
+        addnewques(examname, examtime, examdate, easy, normal, hard);
     })
 })
 
-addnewques = function(examname, examtime, easynum, normalnum, hardnum){
+addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum){
     var count = 1;
     var questions = Parse.Object.extend('Questions');
     var easyques = new Parse.Query(questions);
@@ -34,7 +34,6 @@ addnewques = function(examname, examtime, easynum, normalnum, hardnum){
     easyques.limit(easynum);
     easyques.find({
         success:function(easyquestion){
-            console.log(easyquestion);
             for(var i = 0; i<easyquestion.length; i++){
                 var Newques = Parse.Object.extend("QuesBank");
                 var newques = new Newques();
@@ -44,6 +43,21 @@ addnewques = function(examname, examtime, easynum, normalnum, hardnum){
                 var optionc = easyquestion[i].get('OptionC');
                 var optiond = easyquestion[i].get('OptionD');
                 var answer = easyquestion[i].get('Answer');
+                
+                /*var today = new Date();
+                var dd = today.getDate();
+                var mm = today.getMonth()+1; //January is 0!
+                var yyyy = today.getFullYear();
+
+                if(dd<10) {
+                    dd='0'+dd
+                } 
+
+                if(mm<10) {
+                    mm='0'+mm
+                } 
+                today = yyyy + '-' + mm + '-' + dd;
+                console.log(today);*/
                 newques.set('examname', examname);
                 newques.set('Question', question);
                 newques.set('OptionA', optiona);
@@ -51,7 +65,7 @@ addnewques = function(examname, examtime, easynum, normalnum, hardnum){
                 newques.set('OptionC', optionc);
                 newques.set('OptionD', optiond);
                 newques.set('Answer', answer);
-                newques.set('no', count);
+                newques.set('no', ""+count+"");
                 newques.save(null, {
                     success:function(){
                         count++;
@@ -72,7 +86,6 @@ addnewques = function(examname, examtime, easynum, normalnum, hardnum){
     normalques.limit(normalnum);
     normalques.find({
         success:function(normalquestion){
-            console.log(normalquestion);
             for(var i = 0; i<normalquestion.length; i++){
                 var Newques = Parse.Object.extend("QuesBank");
                 var newques = new Newques();
@@ -89,7 +102,7 @@ addnewques = function(examname, examtime, easynum, normalnum, hardnum){
                 newques.set('OptionC', optionc);
                 newques.set('OptionD', optiond);
                 newques.set('Answer', answer);
-                newques.set('no', count);
+                newques.set('no', ""+count+"");
                 newques.save(null, {
                     success:function(){
                         count++;
@@ -110,7 +123,6 @@ addnewques = function(examname, examtime, easynum, normalnum, hardnum){
     hardques.limit(normalnum);
     hardques.find({
         success:function(hardquestion){
-            console.log(hardquestion);
             for(var i = 0; i<hardquestion.length; i++){
                 var Newques = Parse.Object.extend("QuesBank");
                 var newques = new Newques();
@@ -127,7 +139,7 @@ addnewques = function(examname, examtime, easynum, normalnum, hardnum){
                 newques.set('OptionC', optionc);
                 newques.set('OptionD', optiond);
                 newques.set('Answer', answer);
-                newques.set('no', count);
+                newques.set('no', ""+count+"");
                 newques.save(null, {
                     success:function(){
                         count++;
@@ -147,8 +159,8 @@ addnewques = function(examname, examtime, easynum, normalnum, hardnum){
     var Exams = Parse.Object.extend('Exams');
     var exams = new Exams();
     exams.set('examname', examname);
-    exams.set('examtime', examtime);
-    exams.set('examdate', undefined);
+    exams.set('examtime', parseInt(examtime));
+    exams.set('examdate', examdate.toString());
     exams.save(null, {
         success:function(){
             console.log("add new exam success!");
