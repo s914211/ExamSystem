@@ -3,21 +3,21 @@ $(document).ready(function() {
 
     var question = Parse.Object.extend('example');
     var query = new Parse.Query(question);
-    query.equalTo("no","01");
+    query.equalTo("no", "01");
     query.first({
-        success: function(examquestion) {            
-                $('.qussmall').text(examquestion.get('Question'));
-                $('.spanA').text(examquestion.get('OptionA'));
-                $('.spanB').text(examquestion.get('OptionB'));
-                $('.spanC').text(examquestion.get('OptionC'));
-                $('.spanD').text(examquestion.get('OptionD'));                          
+        success: function(examquestion) {
+            $('.qussmall').text(examquestion.get('Question'));
+            $('.spanA').text(examquestion.get('OptionA'));
+            $('.spanB').text(examquestion.get('OptionB'));
+            $('.spanC').text(examquestion.get('OptionC'));
+            $('.spanD').text(examquestion.get('OptionD'));
         }
     });
     save();
-    $('#bigdiv').fadeOut(100);
+    $('#bigdiv,.arrow').fadeOut(100);
     $('.notification').fadeIn(100);
-    $('.notification').fadeOut(1000);
-    $('#bigdiv').fadeIn(2000);
+    $('.notification').fadeOut(2000);
+    $('#bigdiv,.arrow').fadeIn(2000);
 
 
     $('#bigdiv').delegate('.answer', 'click', function() {
@@ -78,14 +78,19 @@ $(document).ready(function() {
     });
 
 
+    var con = ".header,.exam,.question,.content,.footer";
+    var click = ".number,.arrow,.answer";
+
     $('.handin').click(function() {
-        $('.header,.exam,.question,.content,.footer').addClass('opacity');
+        $(con).addClass('opacity');
         $('.handlog').slideDown(200);
+        $(click).hide();
     });
 
     $('.handno').click(function() {
-        $('.header,.exam,.question,.content,.footer').toggleClass('opacity');
+        $(con).toggleClass('opacity');
         $('.handlog').slideUp(200);
+        $(click).show();
     });
 
 
