@@ -8,12 +8,13 @@ $(document).ready(function(){
         }
         else{
           var user = new Parse.User();
-              user.set("username", document.getElementById('signupid').value);
+              user.set("username", document.getElementById('signupemail').value);
               user.set("name", document.getElementById('signupname').value);
               user.set("password", document.getElementById('signuppassword').value);
               user.set("phonenum", document.getElementById('signuptel').value);
               user.set("email", document.getElementById('signupemail').value);
               user.set("gender", document.getElementById('signupgender').value);
+              user.set("idcardnum", document.getElementById('signupid').value);
               user.signUp(null, {
                   success: function(user){
                     alert('success!!');
