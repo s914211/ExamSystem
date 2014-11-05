@@ -3,24 +3,19 @@ $(document).ready(function() {
 
     var question = Parse.Object.extend('example');
     var query = new Parse.Query(question);
-    $('#bigdiv').fadeOut(100);
-    $('.notification').fadeIn(100);
-    query.equalTo('no', '1');
+    query.equalTo("no","01");
     query.first({
-        success: function(examquestion) {
-            var ques = examquestion.get('Question');
-            var optiona = examquestion.get('OptionA');
-            var optionb = examquestion.get('OptionB');
-            var optionc = examquestion.get('OptionC');
-            var optiond = examquestion.get('OptionD');
-            $('.qussmall').text(ques);
-            $('.spanA').text(optiona);
-            $('.spanB').text(optionb);
-            $('.spanC').text(optionc);
-            $('.spanD').text(optiond);
+        success: function(examquestion) {            
+                $('.qussmall').text(examquestion.get('Question'));
+                $('.spanA').text(examquestion.get('OptionA'));
+                $('.spanB').text(examquestion.get('OptionB'));
+                $('.spanC').text(examquestion.get('OptionC'));
+                $('.spanD').text(examquestion.get('OptionD'));                          
         }
     });
     save();
+    $('#bigdiv').fadeOut(100);
+    $('.notification').fadeIn(100);
     $('.notification').fadeOut(1000);
     $('#bigdiv').fadeIn(2000);
 
@@ -47,11 +42,7 @@ $(document).ready(function() {
         $('.qusanswer').text("");
         $(this).addClass('numberclick').siblings().removeClass('numberclick');
         useranswer();
-        $('.qussmall').text(userans[$('.numberclick').text()][0]);
-        $('.spanA').text(userans[$('.numberclick').text()][1]);
-        $('.spanB').text(userans[$('.numberclick').text()][2]);
-        $('.spanC').text(userans[$('.numberclick').text()][3]);
-        $('.spanD').text(userans[$('.numberclick').text()][4]);
+        content();
     });
 
 
@@ -89,12 +80,12 @@ $(document).ready(function() {
 
     $('.handin').click(function() {
         $('.header,.exam,.question,.content,.footer').addClass('opacity');
-        $('.handlog').fadeIn(100);
+        $('.handlog').slideDown(200);
     });
 
     $('.handno').click(function() {
-    	$('.header,.exam,.question,.content,.footer').toggleClass('opacity');
-    	$('.handlog').fadeOut(100);
+        $('.header,.exam,.question,.content,.footer').toggleClass('opacity');
+        $('.handlog').slideUp(200);
     });
 
 
@@ -156,4 +147,12 @@ function save() {
         }
     });
 
+}
+
+function content() {
+    $('.qussmall').text(userans[$('.numberclick').text()][0]);
+    $('.spanA').text(userans[$('.numberclick').text()][1]);
+    $('.spanB').text(userans[$('.numberclick').text()][2]);
+    $('.spanC').text(userans[$('.numberclick').text()][3]);
+    $('.spanD').text(userans[$('.numberclick').text()][4]);
 }
