@@ -47,7 +47,6 @@ $(document).ready(function() {
         $('.qusanswer').text("");
         $(this).addClass('numberclick').siblings().removeClass('numberclick');
         useranswer();
-
         $('.qussmall').text(userans[$('.numberclick').text()][0]);
         $('.spanA').text(userans[$('.numberclick').text()][1]);
         $('.spanB').text(userans[$('.numberclick').text()][2]);
