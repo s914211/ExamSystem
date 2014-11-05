@@ -4,7 +4,6 @@ $(document).ready(function() {
     var question = Parse.Object.extend('example');
     var query = new Parse.Query(question);
     query.equalTo('no', '1');
-
     query.first({
         success: function(examquestion) {
             var ques = examquestion.get('Question');
@@ -12,41 +11,28 @@ $(document).ready(function() {
             var optionb = examquestion.get('OptionB');
             var optionc = examquestion.get('OptionC');
             var optiond = examquestion.get('OptionD');
-            document.getElementById("bigdiv").innerHTML = "<div class='question'> <div class='quscontent'>" + ques + " </div> </div> <div class='content'> <div class='answer A'> <div class='choiceimg'></div>" + optiona + " <span class='choice'>A</span> </div> <div class='answer B'> <div class='choiceimg'></div>" + optionb + " <span class='choice'>B</span> </div> <div class='answer C'><div class='choiceimg'></div>" + optionc + "<span class='choice'>C</span></div><div class='answer D'><div class='choiceimg'></div>" + optiond + "<span class='choice'>D</span></div></div>";
-
+            $('.quscontent').text(ques);
+            $('.spanA').text(optiona);
+            $('.spanB').text(optionb);
+            $('.spanC').text(optionc);
+            $('.spanD').text(optiond);
         }
-    })
+    });
+    save();
+
 
     $('#bigdiv').delegate('.answer', 'click', function() {
         $(this).addClass("answerclick").siblings().removeClass("answerclick");
         $(".qusanswer").text($(this).children(".choice").text());
-        userans[$('.numberclick').text()][6] = $(this).children('.choice').text();
+        userans[$('.numberclick').text()][5] = $(this).children('.choice').text();
     });
 
 
 
     $('body').delegate('.number,.left,.right', 'click', function() {
 
-        var question = Parse.Object.extend('example');
-        var query = new Parse.Query(question);
-        query.equalTo('no', $('.numberclick').text());
-        query.first({
-            success: function(examquestion) {
-                var ques = examquestion.get('Question');
-                var optiona = examquestion.get('OptionA');
-                var optionb = examquestion.get('OptionB');
-                var optionc = examquestion.get('OptionC');
-                var optiond = examquestion.get('OptionD');
-                $('.quscontent').text(ques);
-                $('.spanA').text(optiona);
-                $('.spanB').text(optionb);
-                $('.spanC').text(optionc);
-                $('.spanD').text(optiond);
-            }
-        });
-
         for (i = 1; i <= 40; i++) {
-            if (userans[i][6]) {
+            if (userans[i][5]) {
                 $('.number').eq(i - 1).addClass('ansslecet');
             }
         }
@@ -56,8 +42,11 @@ $(document).ready(function() {
         $(this).addClass('numberclick').siblings().removeClass('numberclick');
         useranswer();
 
-
-
+        $('.quscontent').text(userans[$('.numberclick').text()][0]);
+        $('.spanA').text(userans[$('.numberclick').text()][1]);
+        $('.spanB').text(userans[$('.numberclick').text()][2]);
+        $('.spanC').text(userans[$('.numberclick').text()][3]);
+        $('.spanD').text(userans[$('.numberclick').text()][4]);
 
     });
 
@@ -119,25 +108,46 @@ for (i = 1; i <= 40; i++) {
 
 function useranswer() {
     $('.testnumber').text("第" + $('.numberclick').text() + "題，" + "你選擇的答案是");
-    if (userans[$('.numberclick').text()][6]) {
-        switch (userans[$('.numberclick').text()][6]) {
+    if (userans[$('.numberclick').text()][5]) {
+        switch (userans[$('.numberclick').text()][5]) {
             case "A":
                 $('.A').addClass('answerclick');
-                $('.qusanswer').text(userans[$('.numberclick').text()][6]);
+                $('.qusanswer').text(userans[$('.numberclick').text()][5]);
                 break;
             case "B":
                 $('.B').addClass('answerclick');
-                $('.qusanswer').text(userans[$('.numberclick').text()][6]);
+                $('.qusanswer').text(userans[$('.numberclick').text()][5]);
                 break;
             case "C":
                 $('.C').addClass('answerclick');
-                $('.qusanswer').text(userans[$('.numberclick').text()][6]);
+                $('.qusanswer').text(userans[$('.numberclick').text()][5]);
                 break;
             case "D":
                 $('.D').addClass('answerclick');
-                $('.qusanswer').text(userans[$('.numberclick').text()][6]);
+                $('.qusanswer').text(userans[$('.numberclick').text()][5]);
                 break;
         }
 
     }
+}
+
+function save() {
+
+
+
+    var question = Parse.Object.extend('example');
+    var query = new Parse.Query(question);
+    query.find({
+        success: function(examquestion) {
+            for (var i = 1; i <= examquestion.length; i++) {
+
+                userans[i][0] = examquestion[i - 1].get('Question');
+                userans[i][1] = examquestion[i - 1].get('OptionA');
+                userans[i][2] = examquestion[i - 1].get('OptionB');
+                userans[i][3] = examquestion[i - 1].get('OptionC');
+                userans[i][4] = examquestion[i - 1].get('OptionD');
+            }
+        }
+    });
+
 }

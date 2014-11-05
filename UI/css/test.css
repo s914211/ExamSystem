@@ -211,3 +211,17 @@ body {
 .left:active ,.right:active {
     opacity: 1;
 }
+.notification {
+    position: fixed;
+    top:20%;
+    left: 30%;
+    width: 40%;
+    height: 60%;    
+    background:linear-gradient(60deg,#AA3300,#773300,#553300);
+    z-index: 600;
+    display: none;
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    border-radius: 100px;
+    }
