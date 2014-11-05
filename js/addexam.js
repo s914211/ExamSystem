@@ -26,7 +26,7 @@ $(document).ready(function(){
 })
 
 addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum){
-    var count = 1;
+    var count = 0;
     var questions = Parse.Object.extend('Questions');
     var easyques = new Parse.Query(questions);
     easyques.equalTo('degree', 1);
@@ -43,7 +43,7 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
                 var optionc = easyquestion[i].get('OptionC');
                 var optiond = easyquestion[i].get('OptionD');
                 var answer = easyquestion[i].get('Answer');
-                
+                count++;
                 /*var today = new Date();
                 var dd = today.getDate();
                 var mm = today.getMonth()+1; //January is 0!
@@ -68,7 +68,6 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
                 newques.set('no', ""+count+"");
                 newques.save(null, {
                     success:function(){
-                        count++;
                         console.log("update new easyques success!");
                     },
                     error:function(error){
@@ -95,6 +94,7 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
                 var optionc = normalquestion[i].get('OptionC');
                 var optiond = normalquestion[i].get('OptionD');
                 var answer = normalquestion[i].get('Answer');
+                count++;
                 newques.set('examname', examname);
                 newques.set('Question', question);
                 newques.set('OptionA', optiona);
@@ -105,7 +105,6 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
                 newques.set('no', ""+count+"");
                 newques.save(null, {
                     success:function(){
-                        count++;
                         console.log("update new normalques success!");
                     },
                     error:function(error){
@@ -132,6 +131,7 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
                 var optionc = hardquestion[i].get('OptionC');
                 var optiond = hardquestion[i].get('OptionD');
                 var answer = hardquestion[i].get('Answer');
+                count++;
                 newques.set('examname', examname);
                 newques.set('Question', question);
                 newques.set('OptionA', optiona);
@@ -142,7 +142,6 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
                 newques.set('no', ""+count+"");
                 newques.save(null, {
                     success:function(){
-                        count++;
                         console.log("update new hardques success!");
                     },
                     error:function(error){
