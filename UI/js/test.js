@@ -3,6 +3,8 @@ $(document).ready(function() {
 
     var question = Parse.Object.extend('example');
     var query = new Parse.Query(question);
+    $('#bigdiv').fadeOut(100);
+    $('.notification').fadeIn(100);
     query.equalTo('no', '1');
     query.first({
         success: function(examquestion) {
@@ -11,7 +13,7 @@ $(document).ready(function() {
             var optionb = examquestion.get('OptionB');
             var optionc = examquestion.get('OptionC');
             var optiond = examquestion.get('OptionD');
-            $('.quscontent').text(ques);
+            $('.qussmall').text(ques);
             $('.spanA').text(optiona);
             $('.spanB').text(optionb);
             $('.spanC').text(optionc);
@@ -19,6 +21,8 @@ $(document).ready(function() {
         }
     });
     save();
+    $('.notification').fadeOut(1000);
+    $('#bigdiv').fadeIn(2000);
 
 
     $('#bigdiv').delegate('.answer', 'click', function() {
@@ -36,22 +40,25 @@ $(document).ready(function() {
                 $('.number').eq(i - 1).addClass('ansslecet');
             }
         }
+        $('.span,.qussmall').fadeOut(10);
+        $('.span,.qussmall').fadeIn(100);
         $('.answer').removeClass('answerclick');
         $('.testnumber').text("");
         $('.qusanswer').text("");
         $(this).addClass('numberclick').siblings().removeClass('numberclick');
         useranswer();
 
-        $('.quscontent').text(userans[$('.numberclick').text()][0]);
+        $('.qussmall').text(userans[$('.numberclick').text()][0]);
         $('.spanA').text(userans[$('.numberclick').text()][1]);
         $('.spanB').text(userans[$('.numberclick').text()][2]);
         $('.spanC').text(userans[$('.numberclick').text()][3]);
         $('.spanD').text(userans[$('.numberclick').text()][4]);
-
     });
+
 
     $('.left,.right').width($(window).width() * 0.07);
     $('.left,.right').height($(window).width() * 0.07);
+
 
     $('.arrow').delegate('.left', 'click', function() {
         if ($('.numberclick').text() == "1") {
@@ -63,13 +70,9 @@ $(document).ready(function() {
             $('.numberclick').prev().addClass('numbertoken');
             $('.numberclick').removeClass('numberclick');
             $('.numbertoken').addClass('numberclick').removeClass('numbertoken');
-
-
-
-
-
         }
     });
+
 
     $('.arrow').delegate('.right', 'click', function() {
         if ($('.numberclick').text() == "40") {
@@ -81,16 +84,19 @@ $(document).ready(function() {
             $('.numberclick').next().addClass('numbertoken');
             $('.numberclick').removeClass('numberclick');
             $('.numbertoken').addClass('numberclick').removeClass('numbertoken');
-
-
-
         }
-
-
-
     });
 
 
+    $('.handin').click(function() {
+        $('.header,.exam,.question,.content,.footer').addClass('opacity');
+        $('.handlog').fadeIn(100);
+    });
+
+    $('.handno').click(function() {
+    	$('.header,.exam,.question,.content,.footer').toggleClass('opacity');
+    	$('.handlog').fadeOut(100);
+    });
 
 
 });

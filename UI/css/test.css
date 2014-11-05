@@ -213,15 +213,76 @@ body {
 }
 .notification {
     position: fixed;
-    top:20%;
-    left: 30%;
-    width: 40%;
-    height: 60%;    
-    background:linear-gradient(60deg,#AA3300,#773300,#553300);
+    top:45%;
+    left: 35%;
+    width: 30%;
+    height: 10%;    
+    background-color:#777700;
     z-index: 600;
     display: none;
     text-align: center;
     font-size: 3em;
     font-weight: bold;
     border-radius: 100px;
+    }
+
+    .handin {
+        position: fixed;
+        top:9%;
+        right: 5%;
+        width: 10%;
+        height: 10%;
+        border-radius: 15px;
+        font-size: 2em;
+        font-family: "Microsoft JhengHei"
+    }
+    .opacity {
+        opacity: 0.2;
+    }
+
+    .handlog {
+        position: fixed;
+        display: none;
+        z-index: 600;
+        width: 20%;
+        height: 30%;
+        top:30%;
+        left: 40%;
+        background-color: #BBCC00;
+        text-align: center;       
+        border-radius: 10px;
+    }
+
+    .handtext {
+        position: absolute;
+        top:10%;
+        left: 10%;
+        height: 30%;
+        width: 80%;        
+        background-color: #AAAA55;
+        font-size: 2em;
+    }
+    .handyes {
+        position: absolute;
+        top:45%;
+        left: 10%;
+        height: 30%;
+        width: 25%;
+        background-color: #77AA00;
+        margin-left: 10%;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 2em;        
+    }
+    .handno {
+        position: absolute;
+        top:45%;
+        left: 45%;
+        height: 30%;
+        width: 25%;
+        background-color: #77AA00;
+        margin-left: 10%;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 2em;        
     }
