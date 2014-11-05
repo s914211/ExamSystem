@@ -142,6 +142,7 @@ function save() {
 
     var question = Parse.Object.extend('example');
     var query = new Parse.Query(question);
+    query.ascending("no");
     query.find({
         success: function(examquestion) {
             for (var i = 1; i <= examquestion.length; i++) {
