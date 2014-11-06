@@ -99,6 +99,10 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
                 var optiond = normalquestion[i].get('OptionD');
                 var answer = normalquestion[i].get('Answer');
                 count++;
+                if(count<10)
+                    count = "0"+count;
+                else
+                    return count;
                 newques.set('examname', examname);
                 newques.set('Question', question);
                 newques.set('OptionA', optiona);
@@ -136,6 +140,10 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
                 var optiond = hardquestion[i].get('OptionD');
                 var answer = hardquestion[i].get('Answer');
                 count++;
+                if(count<10)
+                    count = "0"+count;
+                else
+                    return count;
                 newques.set('examname', examname);
                 newques.set('Question', question);
                 newques.set('OptionA', optiona);
