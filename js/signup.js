@@ -21,7 +21,8 @@ $(document).ready(function(){
                     window.location.assign("index.html");
                   },
                   error: function(user, error){
-                    alert("Error: " + error.code + " " + error.message);
+                    alert("You have the wrong email or password!");
+                    //alert("Error: " + error.code + " " + error.message);
                   }
               });
         }
@@ -48,7 +49,8 @@ $(document).ready(function(){
             window.location.assign("test.html");
           },
           error:function(user, error){
-            alert("Error: " + error.code + " " + error.message);
+            alert("You have the wrong email or password!");
+            //alert("Error: " + error.code + " " + error.message);
           }
         })
     }
