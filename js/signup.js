@@ -32,14 +32,26 @@ $(document).ready(function(){
   login = function(){
     var userid = document.getElementById('loginid').value;
     var userpassword = document.getElementById('loginpassword').value;
-    Parse.User.logIn(userid,userpassword,{
-      success:function(){
-        alert("login success!");
-      },
-      error:function(user, error){
-        alert("Error: " + error.code + " " + error.message);
-      }
-    })
+    if(userid == "admin" && userpassword =="admin"){
+        Parse.User.logIn(userid,userpassword,{
+        success:function(){
+          window.location.assign("pageForAdministrator.html");
+        },
+        error:function(user, error){
+          alert("Error: " + error.code + " " + error.message);
+        }
+      })
+    }
+    else{
+        Parse.User.logIn(userid,userpassword,{
+          success:function(){
+            window.location.assign("test.html");
+          },
+          error:function(user, error){
+            alert("Error: " + error.code + " " + error.message);
+          }
+        })
+    }
   };
 
 
