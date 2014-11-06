@@ -46,8 +46,6 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
                 count++;
                 if(count<10)
                     count = "0"+count;
-                else
-                    return count;
                 /*var today = new Date();
                 var dd = today.getDate();
                 var mm = today.getMonth()+1; //January is 0!
@@ -101,8 +99,6 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
                 count++;
                 if(count<10)
                     count = "0"+count;
-                else
-                    return count;
                 newques.set('examname', examname);
                 newques.set('Question', question);
                 newques.set('OptionA', optiona);
@@ -142,8 +138,6 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
                 count++;
                 if(count<10)
                     count = "0"+count;
-                else
-                    return count;
                 newques.set('examname', examname);
                 newques.set('Question', question);
                 newques.set('OptionA', optiona);
