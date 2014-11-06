@@ -1,0 +1,625 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Roboto:300);
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
+/* line 5, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 10, ../sass/screen.scss */
+html {
+  min-height: 100%;
+}
+
+/* line 14, ../sass/screen.scss */
+body {
+  font-family: "Roboto";
+}
+
+/* line 18, ../sass/screen.scss */
+a {
+  text-decoration: none;
+}
+
+/* NAVBAR */
+/* line 25, ../sass/screen.scss */
+.navbar {
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #666;
+  background-color: #ddd;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+/* line 34, ../sass/screen.scss */
+.navbar .tabs {
+  height: 56px;
+  text-align: center;
+  font-size: 150%;
+  background-color: white;
+}
+/* line 39, ../sass/screen.scss */
+.navbar .tabs div {
+  display: inline-block;
+  margin: 0;
+}
+/* line 44, ../sass/screen.scss */
+.navbar .tabs a {
+  display: block;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  border-bottom: 2px solid #87d3b7;
+}
+
+/* line 55, ../sass/screen.scss */
+.tab_questions {
+  display: none;
+  padding: 30px 0;
+}
+
+/* line 60, ../sass/screen.scss */
+.current a {
+  color: #fff;
+  background: #87d3b7;
+}
+
+/*====add_button==============================================================*/
+/* line 69, ../sass/screen.scss */
+.blocks.add {
+  background-color: #E6E6E6;
+  box-shadow: none;
+}
+
+/* line 74, ../sass/screen.scss */
+.icon_add {
+  height: 150px;
+  width: 150px;
+  color: gray;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -75px;
+  margin-top: -75px;
+}
+
+/* line 85, ../sass/screen.scss */
+.ripple_add {
+  cursor: pointer;
+}
+
+/*===========================================================================================fab=*/
+/* line 93, ../sass/screen.scss */
+.fab {
+  position: absolute;
+  overflow: hidden;
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0.2s;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  z-index: 10;
+  cursor: pointer;
+  color: #fff;
+}
+/* line 103, ../sass/screen.scss */
+.fab.green {
+  background-color: #0f9d58;
+  right: 10px;
+  top: 50%;
+  margin-top: -28px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+/* line 113, ../sass/screen.scss */
+.fab:active {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+  transition-delay: 0s;
+}
+/* line 118, ../sass/screen.scss */
+.fab > core-icon {
+  margin: 16px;
+}
+/* line 122, ../sass/screen.scss */
+.fab > core-icon::shadow path {
+  fill: #fff;
+}
+
+/* ==========================================================Icon Button=*/
+/* line 131, ../sass/screen.scss */
+.icon-button {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+}
+/* line 136, ../sass/screen.scss */
+.icon-button core-icon {
+  margin: 13px;
+  transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* line 142, ../sass/screen.scss */
+.icon-button:hover core-icon {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+/* line 147, ../sass/screen.scss */
+.icon-button paper-ripple {
+  overflow: hidden;
+  color: #646464;
+}
+
+/* line 158, ../sass/screen.scss */
+.three_points {
+  height: 30px;
+  width: 30px;
+  right: 0px;
+  cursor: pointer;
+}
+/* line 164, ../sass/screen.scss */
+.three_points core-icon {
+  height: 16px;
+  width: 16px;
+  margin: 7px;
+}
+
+/* line 174, ../sass/screen.scss */
+.trash_can {
+  right: 30px;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+/* line 180, ../sass/screen.scss */
+.trash_can core-icon {
+  height: 16px;
+  width: 16px;
+  margin: 7px;
+}
+
+/* line 193, ../sass/screen.scss */
+.blur {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+/* line 202, ../sass/screen.scss */
+.modal-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 153, 0.75);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+/* line 216, ../sass/screen.scss */
+.modal-wrapper.open {
+  opacity: 1;
+  visibility: visible;
+}
+/* line 220, ../sass/screen.scss */
+.modal-wrapper.open .modal {
+  margin-top: -200px;
+  opacity: 1;
+}
+
+/* line 230, ../sass/screen.scss */
+.modal {
+  width: 600px;
+  height: 400px;
+  display: block;
+  margin: 50% 0 0 -300px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+/* line 246, ../sass/screen.scss */
+.modal_header {
+  width: 90%;
+  height: 32px;
+  padding: 1.5em 5%;
+  overflow: hidden;
+  background: #01bce5;
+}
+
+/* line 254, ../sass/screen.scss */
+.btn_close {
+  width: 32px;
+  height: 32px;
+  display: block;
+  float: right;
+}
+
+/* line 263, ../sass/screen.scss */
+.form_newExam {
+  padding: 5%;
+}
+
+/* line 267, ../sass/screen.scss */
+.form_step2 {
+  display: none;
+}
+/* line 270, ../sass/screen.scss */
+.form_step2.state2 {
+  display: block;
+}
+
+/* line 275, ../sass/screen.scss */
+.form_step1.state2 {
+  /*  .XXX.XXX  => class ="XXX XXX"              */
+  display: none;
+  /*  .XXX .XXX => class ="XXX"裡面的class="XXX" */
+}
+
+/* -------------------------------form starting stylings  */
+/* line 281, ../sass/screen.scss */
+.Form_Question {
+  position: relative;
+  margin-bottom: 45px;
+}
+
+/* line 286, ../sass/screen.scss */
+input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+/* line 294, ../sass/screen.scss */
+input:focus {
+  outline: none;
+  /*focus時會跑出outline，要隱藏掉*/
+}
+
+/*  ==========================================================================LABEL== */
+/* line 302, ../sass/screen.scss */
+label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+/* line 316, ../sass/screen.scss */
+input:focus ~ label, input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+/* line 323, ../sass/screen.scss */
+.bar {
+  position: relative;
+  display: block;
+  width: 300px;
+}
+/* line 328, ../sass/screen.scss */
+.bar::before, .bar::after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #5264AE;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+/* line 340, ../sass/screen.scss */
+.bar::before {
+  left: 50%;
+}
+/* line 344, ../sass/screen.scss */
+.bar::after {
+  right: 50%;
+}
+
+/* active state */
+/* line 351, ../sass/screen.scss */
+input:focus ~ .bar::before, input:focus ~ .bar::after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+/* line 356, ../sass/screen.scss */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active state */
+/* line 367, ../sass/screen.scss */
+input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+/* line 387, ../sass/screen.scss */
+.btn_submitModal {
+  display: none;
+}
+/* line 390, ../sass/screen.scss */
+.btn_submitModal.state2 {
+  display: inline;
+}
+
+/* line 395, ../sass/screen.scss */
+.btn_nextModal.state2 {
+  display: none;
+}
+
+/* =================================================================================blocks css */
+/* line 400, ../sass/screen.scss */
+.blocks {
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 6px 6px 11px 0px rgba(0, 0, 0, 0.67);
+  border-radius: 5%;
+  background-color: #F1EBE4;
+}
+/* line 411, ../sass/screen.scss */
+.blocks .img_container {
+  height: 100px;
+  display: table-cell;
+  /*----------->置中方法*/
+  text-align: center;
+  vertical-align: middle;
+}
+/* line 418, ../sass/screen.scss */
+.blocks img {
+  width: 200px;
+}
+
+/* line 424, ../sass/screen.scss */
+.blocks_title {
+  padding-top: 20px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* line 430, ../sass/screen.scss */
+.blocks_text {
+  height: 100px;
+  padding-left: 20px;
+}
+
+/* fontawesome */
+/* line 440, ../sass/screen.scss */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+/* line 444, ../sass/screen.scss */
+.confirm_circle {
+  display: none;
+}
+
+/* line 447, ../sass/screen.scss */
+.square {
+  z-index: 2;
+  height: 250px;
+  width: 250px;
+  background: #373737;
+  border-radius: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+/* line 462, ../sass/screen.scss */
+.main {
+  text-align: center;
+  font-family: cambria;
+}
+/* line 466, ../sass/screen.scss */
+.main span {
+  color: #d35454;
+  font-size: 28px;
+  display: block;
+  position: relative;
+  margin-top: 20px;
+}
+/* line 474, ../sass/screen.scss */
+.main strong {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #fff;
+  position: relative;
+  display: block;
+  font-size: 18px;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+/* line 484, ../sass/screen.scss */
+.main p {
+  font-size: 12px;
+  color: #a9a9a9;
+}
+
+/* line 490, ../sass/screen.scss */
+.inner-square {
+  height: 125px;
+  width: 125px;
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+  line-height: 100px;
+  font-size: 40px;
+  color: #fff;
+  text-align: center;
+}
+
+/* line 502, ../sass/screen.scss */
+.left {
+  left: 0;
+  background: #8dc058;
+}
+
+/* line 507, ../sass/screen.scss */
+.left span {
+  padding-left: 20px;
+}
+
+/* line 511, ../sass/screen.scss */
+.right {
+  right: 0;
+  background: #d35454;
+}
+
+/* line 516, ../sass/screen.scss */
+.right span {
+  padding-right: 20px;
+}
+
+/* line 523, ../sass/screen.scss */
+.confirmCircle_wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 153, 0.75);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+/* line 537, ../sass/screen.scss */
+.confirmCircle_wrapper.open {
+  opacity: 1;
+}
+/* line 540, ../sass/screen.scss */
+.confirmCircle_wrapper.open .confirm_circle {
+  display: block;
+}

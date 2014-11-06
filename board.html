@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>題庫</title>
+		<link href="css/reset.css" rel="stylesheet" />
+		<!-- 記得任何東西都要先reset -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/board.js"></script>
+		<script src="https://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
+		<link href="../bootstrap/css/bootstrap.css" rel="stylesheet" />
+
+		<link href="css/board.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div id="nav">
+			<ul class="navigation">
+
+				<li>
+					<a href="#">公告</a>
+				</li>
+
+				<li>
+					<a href="#">報名</a>
+				</li>
+
+				<li>
+					<a href="#">測驗</a>
+					<ul>
+						<li>
+							<span><a href="">題庫</a></span>
+						</li>
+						<li>
+							<span><a href="#">考試</a></span>
+						</li>
+					</ul>
+				</li>
+
+			</ul>
+		</div>
+
+		<div class="editdiv">
+
+			<span>題目</span>
+			<textarea class="text"></textarea>
+
+			<span>選項A</span>
+			<textarea class="text"></textarea>
+
+			<span>選項B</span>
+			<textarea class="text"></textarea>
+
+			<span>選項C</span>
+			<textarea class="text"></textarea>
+
+			<span>選項D</span>
+			<textarea class="text"></textarea>
+
+		</div>
+		<div class="seconddiv">
+			<div class="difficulty">
+
+				<span>難易度</span>
+				<select id="dif">
+					<option>請選擇</option>
+					<option>難</option>
+					<option>中</option>
+					<option>易</option>
+				</select>
+
+				<span>答案</span>
+				<select id="ans">
+					<option>請選擇</option>
+					<option>A</option>
+					<option>B</option>
+					<option>C</option>
+					<option>D</option>
+				</select>
+
+			</div>
+
+			<button class="btn" id="editbtn">修改</button>
+			<button class="btn" id="newbtn">新增</button>
+			<button class="btn" id="deletebtn">刪除</button>
+			<button class="btn" onclick="clean()">清空</button>
+		</div>
+
+		<div class="tablediv">
+			<table class="qusselect">
+			<thead>
+				<tr class="thead">
+					<td>題目</td>
+					<td>選項A</td>
+					<td>選項B</td>
+					<td>選項C</td>
+					<td>選項D</td>
+					<td class="tdsmall">難易度</td>
+					<td class="tdanswer">答案</td>
+				</tr>
+			</thead>
+			<tbody class="Questions">
+				<tr class="trnormal">
+					<td>test1</td>
+					<td>test2</td>
+					<td>test3</td>
+					<td>test4</td>
+					<td>test5</td>
+					<td class="tdsmall">難</td>
+					<td class="tdsmall">A</td>
+				</tr>
+			</tbody>
+
+
+			</table>
+		</div>
+
+	</body>
+
+</html>

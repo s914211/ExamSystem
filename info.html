@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>個人資料</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/info.css" rel="stylesheet" />
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/info.js"></script>
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="content">
+        <div class="smallcont">
+            <div class="conttitle">個人資料</div>
+
+            <div class="rownoedit">
+                <span class="userinfo">姓名</span>
+                <label class="blank">王老五</label>
+            </div>
+            <div class="rownoedit">
+                <span class="userinfo">性別</span>
+                <label class="blank">男</label>
+            </div>
+            <div class="rownoedit">
+                <span class="userinfo">身份證字號</span>
+                <label class="blank">H123456789</label>
+            </div>
+            <div class="row">
+                <span class="userinfo">E-mail</span>
+                <input type="text" class="blank">
+            </div>
+            <div class="row">
+                <span class="userinfo">行動電話</span>
+                <input type="text" class="blank">
+            </div>
+            <div class="row">
+                <span class="userinfo">出生年月日</span>
+                <input type="date" class="blank" max="2020-12-31" min="1900-01-01">
+            </div>
+            <div class="row">
+                <select class="county"></select>
+                <select></select>
+                <span class="address">地址</span>
+                <textarea class="smallblank" rows="2"></textarea>
+            </div>
+            <div class="row">
+                <span class="userinfo">確認密碼</span>
+                <input type="password" class="blank">
+            </div>
+            <input type="submit" value="修改" class="editbtn">
+        </div>
+
+
+        <div class="smallcont">
+            <div class="conttitle">密碼修改</div>
+            <div class="row">
+                <span class="userinfo">舊密碼</span>
+                <input type="password" class="blank">
+            </div>
+            <div class="row">
+                <span class="userinfo">輸入新密碼</span>
+                <input type="password" class="blank">
+            </div>
+            <div class="row">
+                <span class="userinfo">確認新密碼</span>
+                <input type="password" class="blank">
+            </div>
+            <input type="submit" value="修改" class="editbtn">
+        </div>
+
+    </div>
+
+
+    <div class="footer"></div>
+</body>
+
+</html>
