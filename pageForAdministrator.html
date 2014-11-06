@@ -10,6 +10,7 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/board.js"></script>
+  <script src="js/addexam.js"></script>
   <script src="https://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
   <link href="../bootstrap/css/bootstrap.css" rel="stylesheet" />
   <link href="css/board.css" rel="stylesheet">
@@ -93,21 +94,21 @@
       <div class="form_newExam">
         <form class="form_step1">
           <div class="Form_Question">      
-            <input type="text" required>
+            <input type="text" required id="examname">
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>Examination Name</label>
           </div>
 
           <div class="Form_Question">      
-            <input type="text" required>
+            <input type="number" required id="examtime">
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>Time Needed</label>
           </div>
 
           <div class="Form_Question">      
-            <input type="text" required>
+            <input type="date" required id="examdate">
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>Examination Date</label>
@@ -116,21 +117,21 @@
 
         <form class="form_step2">
           <div class="Form_Question">      
-            <input type="text" required>
+            <input type="text" required id="easynum">
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>How Many Questions From Easy?</label>
           </div>
 
           <div class="Form_Question">      
-            <input type="text" required>
+            <input type="text" required id="normalnum">
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>How Many Questions From Medium?</label>
           </div>
 
           <div class="Form_Question">      
-            <input type="text" required>
+            <input type="text" required id="hardnum">
             <span class="highlight"></span>
             <span class="bar"></span>
             <label>How Many Questions From Hard?</label>

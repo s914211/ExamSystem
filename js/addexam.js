@@ -14,7 +14,7 @@ $(document).ready(function(){
         }
     })*/
 
-    $("#submit").click(function(){
+    $(".btn_submitModal").click(function(){
         var examname = document.getElementById("examname").value;
         var examtime = document.getElementById("examtime").value;
         var examdate = document.getElementById("examdate").value;
