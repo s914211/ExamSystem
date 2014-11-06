@@ -44,6 +44,10 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
                 var optiond = easyquestion[i].get('OptionD');
                 var answer = easyquestion[i].get('Answer');
                 count++;
+                if(count<10)
+                    count = "0"+count;
+                else
+                    return count;
                 /*var today = new Date();
                 var dd = today.getDate();
                 var mm = today.getMonth()+1; //January is 0!
