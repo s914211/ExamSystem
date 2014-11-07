@@ -3,12 +3,12 @@
 @import "compass/css3";
 @import url(http://fonts.googleapis.com/css?family=Roboto:300);
 
-
 // color
 $green: #87d3b7;
 
 html {
   min-height: 100%;
+  overflow:hidden;
 }
 
 body { 
@@ -43,14 +43,24 @@ a {
 
 		a {
 			display: block;
+      outline: none;
+      padding: 10px;
+      border: 2px solid $green;
+      margin-top:4px;
 			text-decoration: none;
 			-webkit-transition: all 0.2s ease-in-out;
 			-moz-transition: all 0.2s ease-in-out;
 			transition: all 0.2s ease-in-out;
-			border-bottom: 2px solid $green;
+
 		}
 	}
 }
+
+.tab_exams,.tab_questions{
+  height: 100%;
+  background: url("../assets/classroom.jpg");
+}
+
 
 .tab_questions {
 	display: none;
@@ -62,6 +72,12 @@ a {
 	background: $green;
 }
 
+
+
+#blocks_container{
+  width: 980px;
+  margin: auto;
+}
 
 
 
@@ -312,6 +328,12 @@ label          {
 	-webkit-transition:0.2s ease all;
 }
 
+#date_label{
+  background-color:white;
+  padding:2px;
+}
+
+
 /* active state */
 input:focus ~ label, input:valid ~ label    {
   top:-20px;
@@ -536,6 +558,7 @@ input:focus ~ .highlight {
 
   &.open{
   	opacity:1;
+    visibility: visible;
 
   	.confirm_circle{
   		display: block;

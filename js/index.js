@@ -1,28 +1,31 @@
 
 $(document).ready(function() { 
+	var page_height=$(window).height();
+	var pade_width=$(window).width();
+	$("#blocks_container").css("height",page_height-56);
 
-	    // ================================================================tabs交換效果
-		var tab_now;
-		$('.navbar').addClass('active').find('> .tabs div:eq(0)').addClass('current');
-		//預設幫上面tabs選項第一個加上current這個class
+    // ================================================================tabs交換效果
+	var tab_now;
+	$('.navbar').addClass('active').find('> .tabs div:eq(0)').addClass('current');
+	//預設幫上面tabs選項第一個加上current這個class
+	
+	$('.tabs div a').click(function () { 
+	 	var navbar = $(this).closest('.navbar'),            //就navbar 
+	 		index = $(this).closest('div').index();			//點中的那個tab編號(0 or 1)
+	 		         
+	 	navbar.find('.tabs > div').removeClass('current');  //移除current
+	 	$(this).closest('div').addClass('current');			//幫點中那一個tab加current
+
+	 	if (index==1) {
+	 		$(".tab_exams").slideUp(); 
+	 		$(".tab_questions").slideDown();
+	 	} else{
+	 		$(".tab_questions").slideUp(); 
+	 		$(".tab_exams").slideDown();
+	 	};
 		
-		$('.tabs div a').click(function () { 
-		 	var navbar = $(this).closest('.navbar'),            //就navbar 
-		 		index = $(this).closest('div').index();			//點中的那個tab編號(0 or 1)
-		 		         
-		 	navbar.find('.tabs > div').removeClass('current');  //移除current
-		 	$(this).closest('div').addClass('current');			//幫點中那一個tab加current
-
-		 	if (index==1) {
-		 		$(".tab_exams").slideUp(); 
-		 		$(".tab_questions").slideDown();
-		 	} else{
-		 		$(".tab_questions").slideUp(); 
-		 		$(".tab_exams").slideDown();
-		 	};
-			
-		 	// g.preventDefault();                                 //不確定幹嘛...
-		});
+	 	// g.preventDefault();                                 //不確定幹嘛...
+	});
 });
 
 //=========================================================================刪除考試，按下垃圾桶
@@ -52,24 +55,27 @@ function Close_ConfirmWrapper(){
 	$(".confirmCircle_wrapper").removeClass("open");
 }
 
-// function Delete_Exam(e){           //用e指定滑鼠點擊目標
-// 	$(e.target).parent().parent('div').remove();	
-// }
-
 
 //=================================================================================新增考試
 $(document).on("click",".add",function(){
 	Open_ModalWrapper();
 });
 $(document).on("click",".btn_nextModal",function(){
+	var exam_name=$("#examname").val();
+	var time_needed=$("#examtime").val();
+
 	var nowState="state2";
 	$(".form_step1").toggleClass(nowState);
 	$(".form_step2").toggleClass(nowState);
 	$(".btn_submitModal").toggleClass(nowState);
 	$(".btn_nextModal").toggleClass(nowState);
 });
+
+var num=0;
 $(document).on("click",".btn_submitModal",function(){
+	num++;
 	AddExam();
+
 	Close_ModalWrapper();
 });
 $(document).on("click",".btn_close",function(){
@@ -92,7 +98,7 @@ function Back_To_State1(){
 	$(".btn_submitModal").removeClass("state2");
 }
 function AddExam(){
- 	var newExamBlock=$('<div class ="blocks"><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="icon-button trash_can"><core-icon icon="delete"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div> <div class="fab green"><core-icon icon="create"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div></div>');
-	$(".tab_exams").prepend(newExamBlock);
+ 	var newExamBlock=$('<div class ="blocks" id="blocks_added_'+num+'"><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="icon-button trash_can"><core-icon icon="delete"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div> <div class="fab green"><core-icon icon="create"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div></div>');
+	$("#blocks_container").prepend(newExamBlock);
  }
 
