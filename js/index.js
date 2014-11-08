@@ -61,8 +61,9 @@ $(document).on("click",".add",function(){
 	Open_ModalWrapper();
 });
 $(document).on("click",".btn_nextModal",function(){
-	var exam_name=$("#examname").val();
-	var time_needed=$("#examtime").val();
+	exam_name=$("#examname").val();
+	time_needed=$("#examtime").val();
+	exam_date=$("#date_label").val();
 
 	var nowState="state2";
 	$(".form_step1").toggleClass(nowState);
@@ -71,11 +72,11 @@ $(document).on("click",".btn_nextModal",function(){
 	$(".btn_nextModal").toggleClass(nowState);
 });
 
-var num=0;
+blocks_number=0;
 $(document).on("click",".btn_submitModal",function(){
-	num++;
+	blocks_number++;
 	AddExam();
-
+	$("#blocks_added_"+blocks_number+" div:eq(3)").append('<p class="blocks_title">'+exam_name+'</p><p>'+time_needed+'  minutes</p>');
 	Close_ModalWrapper();
 });
 $(document).on("click",".btn_close",function(){
@@ -87,6 +88,7 @@ function Open_ModalWrapper(){
 	$('.tab_exams').toggleClass('blur');	
 }
 function Close_ModalWrapper(){
+	$("input").val("");
 	$(".modal-wrapper").removeClass("open");
 	$(".tab_exams").removeClass("blur");
 	Back_To_State1();
@@ -98,7 +100,12 @@ function Back_To_State1(){
 	$(".btn_submitModal").removeClass("state2");
 }
 function AddExam(){
- 	var newExamBlock=$('<div class ="blocks" id="blocks_added_'+num+'"><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="icon-button trash_can"><core-icon icon="delete"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div> <div class="fab green"><core-icon icon="create"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div></div>');
+ 	var newExamBlock=$('<div class ="blocks" id="blocks_added_'+blocks_number+'"><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="icon-button trash_can"><core-icon icon="delete"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div> <div class="fab green"><core-icon icon="create"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"></div><div class="img_container"><img src   ="assets/1.jpg" /></div></div>');
 	$("#blocks_container").prepend(newExamBlock);
  }
 
+function onlyNum(){  //限制input輸入數字
+	if(!(event.keyCode==46)&&!(event.keyCode==8)&&!(event.keyCode==37)&&!(event.keyCode==39))
+	if(!((event.keyCode>=48&&event.keyCode<=57)||(event.keyCode>=96&&event.keyCode<=105)))
+	event.returnValue=false;
+}
