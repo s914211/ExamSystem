@@ -63,7 +63,8 @@ $(document).on("click",".add",function(){
 $(document).on("click",".btn_nextModal",function(){
 	exam_name=$("#examname").val();
 	time_needed=$("#examtime").val();
-	exam_date=$("#date_label").val();
+	exam_date=$("#examdate").val();
+	console.log(exam_date);
 
 	var nowState="state2";
 	$(".form_step1").toggleClass(nowState);
@@ -76,7 +77,7 @@ blocks_number=0;
 $(document).on("click",".btn_submitModal",function(){
 	blocks_number++;
 	AddExam();
-	$("#blocks_added_"+blocks_number+" div:eq(3)").append('<p class="blocks_title">'+exam_name+'</p><p>'+time_needed+'  minutes</p>');
+	$("#blocks_added_"+blocks_number+" div:eq(3)").append('<p class="blocks_title">'+exam_name+'</p><p>'+time_needed+'  minutes</p><p>'+exam_date+'</p>');
 	Close_ModalWrapper();
 });
 $(document).on("click",".btn_close",function(){
