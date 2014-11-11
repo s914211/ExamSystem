@@ -64,21 +64,33 @@ $(document).on("click",".btn_nextModal",function(){
 	exam_name=$("#examname").val();
 	time_needed=$("#examtime").val();
 	exam_date=$("#examdate").val();
-	console.log(exam_date);
-
-	var nowState="state2";
-	$(".form_step1").toggleClass(nowState);
-	$(".form_step2").toggleClass(nowState);
-	$(".btn_submitModal").toggleClass(nowState);
-	$(".btn_nextModal").toggleClass(nowState);
+	if(exam_name && time_needed && exam_date != ""){
+		var nowState="state2";
+		$(".form_step1").toggleClass(nowState);
+		$(".form_step2").toggleClass(nowState);
+		$(".btn_submitModal").toggleClass(nowState);
+		$(".btn_nextModal").toggleClass(nowState);
+	}
+	else{
+		alert("請確認每個欄位皆有輸入值！");
+	}
 });
 
 blocks_number=0;
 $(document).on("click",".btn_submitModal",function(){
-	blocks_number++;
-	AddExam();
-	$("#blocks_added_"+blocks_number+" div:eq(3)").append('<p class="blocks_title">'+exam_name+'</p><p>'+time_needed+'  minutes</p><p>'+exam_date+'</p>');
-	Close_ModalWrapper();
+	hard=$("#hardnum").val();
+	normal=$("#normalnum").val();
+	easy=$("#easynum").val();
+	var numhard = parseInt(hard);
+    var numnormal = parseInt(normal);
+    var numeasy = parseInt(easy);
+	if(numhard + numnormal + numeasy == 40){
+		blocks_number++;
+		AddExam();
+		$("#blocks_added_"+blocks_number+" div:eq(3)").append('<p class="blocks_title">'+exam_name+'</p><p>'+time_needed+'  minutes</p><p>'+exam_date+'</p>');
+		Close_ModalWrapper();
+		forreload();
+	}
 });
 $(document).on("click",".btn_close",function(){
 	Close_ModalWrapper();
@@ -109,4 +121,8 @@ function onlyNum(){  //限制input輸入數字
 	if(!(event.keyCode==46)&&!(event.keyCode==8)&&!(event.keyCode==37)&&!(event.keyCode==39))
 	if(!((event.keyCode>=48&&event.keyCode<=57)||(event.keyCode>=96&&event.keyCode<=105)))
 	event.returnValue=false;
+}
+
+function forreload() {
+    location.reload();
 }

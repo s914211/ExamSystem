@@ -1,18 +1,27 @@
 Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa7ryzTSmMjP3ZB4fYJNFqty");
 
 $(document).ready(function(){
-    /*var exams = Parse.Object.extend("Exams");
+
+function AddExam(id){
+    var newExamBlock=$('<div class ="blocks" id="'+id+'"><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="icon-button trash_can"><core-icon icon="delete"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div> <div class="fab green"><core-icon icon="create"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"></div><div class="img_container"><img src   ="assets/1.jpg" /></div></div>');
+    $("#blocks_container").prepend(newExamBlock);
+ }
+
+
+    var exams = Parse.Object.extend("Exams");
     var query = new Parse.Query(exams);
     query.find({
         success:function(exams){
-            if(){
-                //show the timer
-            }
-            else{
-                //line up all exams and attend button
+            for(var i = 0; i<exams.length; i++){
+                var examid = exams[i].id;
+                var examname = exams[i].get("examname");
+                var examtime = exams[i].get("examtime");
+                var examdate = exams[i].get("examdate");
+                AddExam(examid);
+                $("#"+examid+" div:eq(3)").append('<p class="blocks_title">'+examname+'</p><p>'+examtime+'  minutes</p><p>'+examdate+'</p>');
             }
         }
-    })*/
+    })
 
     $(".btn_submitModal").click(function(){
         var examname = document.getElementById("examname").value;
@@ -21,7 +30,15 @@ $(document).ready(function(){
         var hard = document.getElementById("hardnum").value;
         var normal = document.getElementById("normalnum").value;
         var easy = document.getElementById("easynum").value;
-        addnewques(examname, examtime, examdate, easy, normal, hard);
+        var numhard = parseInt(hard);
+        var numnormal = parseInt(normal);
+        var numeasy = parseInt(easy);
+        if(numhard + numnormal + numeasy == 40){
+            addnewques(examname, examtime, examdate, easy, normal, hard);    
+        }
+        else{
+                alert("抽題總數不為40，請重新輸入抽題數目！");
+            }
     })
 })
 
