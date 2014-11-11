@@ -48,39 +48,48 @@ $(document).ready(function() {
 	            }
 	        }
 	    })
-
-	    /*$(".btn_submitModal").click(function(){
-	        var examname = document.getElementById("examname").value;
-	        var examtime = document.getElementById("examtime").value;
-	        var examdate = document.getElementById("examdate").value;
-	        var hard = document.getElementById("hardnum").value;
-	        var normal = document.getElementById("normalnum").value;
-	        var easy = document.getElementById("easynum").value;
-	        var numhard = parseInt(hard);
-	        var numnormal = parseInt(normal);
-	        var numeasy = parseInt(easy);
-	        if(numhard + numnormal + numeasy == 40){
-	            addnewques(examname, examtime, examdate, easy, normal, hard); 
-	        }
-	        else{
-	                alert("抽題總數不為40，請重新輸入抽題數目！");
-	            }
-	    })*/
-
 });
 
 //=========================================================================刪除考試，按下垃圾桶
-$(document).on("click",".trash_can",Show_Confirm);
+$(document).on("click",".trash_can",function(e){
+    var examid = $(this).parent().attr('id');
+    Show_ConfirmWrapper();
+    // ------------------------------------------------------------刪除block
+    var div_clicked=$(e.target).parent().parent('div');
+    $(".inner-square.left").click(function(){   //點左邊，確認刪除
+        var exam = Parse.Object.extend("Exams");
+        var query = new Parse.Query(exam);
+        query.equalTo('objectId', examid);
+        query.first({
+            success:function(exam){
+                exam.destroy({
+                    success:function(){
+                        console.log("Delete exam success!");
+                    }
+                })
+                var examname = exam.get("examname");
+                var quesbank = Parse.Object.extend("QuesBank");
+                var query = new Parse.Query(quesbank);
+                query.equalTo('examname', examname);
+                query.find({
+                    success:function(ques){
+                        for(var i = 0; i<ques.length; i++){
+                            ques[i].destroy({
+                                success:function(){
+                                    console.log("Delete ques from quesbank success!");
+                                }
+                            })
+                        }
+                    }
+                })
+            }
+        })
 
-function Show_Confirm(e){
-	Show_ConfirmWrapper();
-	// ------------------------------------------------------------刪除block
-	var div_clicked=$(e.target).parent().parent('div');
-	$(".inner-square.left").click(function(){   //點左邊，確認刪除
-		div_clicked.remove();
-		Close_ConfirmWrapper();
-	});
-}
+        div_clicked.remove();
+        Close_ConfirmWrapper();
+    });
+});
+
 //----------------------------------------------------------------點右邊沒事
 $(document).on("click",".inner-square.right",function(){
 	Close_ConfirmWrapper();
