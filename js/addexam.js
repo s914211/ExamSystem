@@ -34,7 +34,7 @@ function AddExam(id){
         var numnormal = parseInt(normal);
         var numeasy = parseInt(easy);
         if(numhard + numnormal + numeasy == 40){
-            addnewques(examname, examtime, examdate, easy, normal, hard);    
+            addnewques(examname, examtime, examdate, easy, normal, hard); 
         }
         else{
                 alert("抽題總數不為40，請重新輸入抽題數目！");
@@ -51,48 +51,62 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
     easyques.limit(easynum);
     easyques.find({
         success:function(easyquestion){
-            for(var i = 0; i<easyquestion.length; i++){
-                var Newques = Parse.Object.extend("QuesBank");
-                var newques = new Newques();
-                var question = easyquestion[i].get('Question');
-                var optiona = easyquestion[i].get('OptionA');
-                var optionb = easyquestion[i].get('OptionB');
-                var optionc = easyquestion[i].get('OptionC');
-                var optiond = easyquestion[i].get('OptionD');
-                var answer = easyquestion[i].get('Answer');
-                count++;
-                if(count<10)
-                    count = "0"+count;
-                /*var today = new Date();
-                var dd = today.getDate();
-                var mm = today.getMonth()+1; //January is 0!
-                var yyyy = today.getFullYear();
+            if(easyquestion.length<easynum){
+                    unsealed(1);
+            }
+            else{
+                for(var i = 0; i<easyquestion.length; i++){
+                    var Newques = Parse.Object.extend("QuesBank");
+                    var newques = new Newques();
+                    var question = easyquestion[i].get('Question');
+                    var optiona = easyquestion[i].get('OptionA');
+                    var optionb = easyquestion[i].get('OptionB');
+                    var optionc = easyquestion[i].get('OptionC');
+                    var optiond = easyquestion[i].get('OptionD');
+                    var answer = easyquestion[i].get('Answer');
+                    count++;
+                    if(count<10)
+                        count = "0"+count;
+                    /*var today = new Date();
+                    var dd = today.getDate();
+                    var mm = today.getMonth()+1; //January is 0!
+                    var yyyy = today.getFullYear();
 
-                if(dd<10) {
-                    dd='0'+dd
-                } 
+                    if(dd<10) {
+                        dd='0'+dd
+                    } 
 
-                if(mm<10) {
-                    mm='0'+mm
-                } 
-                today = yyyy + '-' + mm + '-' + dd;
-                console.log(today);*/
-                newques.set('examname', examname);
-                newques.set('Question', question);
-                newques.set('OptionA', optiona);
-                newques.set('OptionB', optionb);
-                newques.set('OptionC', optionc);
-                newques.set('OptionD', optiond);
-                newques.set('Answer', answer);
-                newques.set('no', ""+count+"");
-                newques.save(null, {
-                    success:function(){
-                        console.log("update new easyques success!");
-                    },
-                    error:function(error){
-                        unsealed(1);
-                    }
-                })
+                    if(mm<10) {
+                        mm='0'+mm
+                    } 
+                    today = yyyy + '-' + mm + '-' + dd;
+                    console.log(today);*/
+                    newques.set('examname', examname);
+                    newques.set('Question', question);
+                    newques.set('OptionA', optiona);
+                    newques.set('OptionB', optionb);
+                    newques.set('OptionC', optionc);
+                    newques.set('OptionD', optiond);
+                    newques.set('Answer', answer);
+                    newques.set('no', ""+count+"");
+                    newques.save(null, {
+                        success:function(){
+                            //console.log("update new easyques success!");
+                        },
+                        error:function(error){
+                            unsealed(1);
+                        }
+                    })
+                    easyquestion[i].set('sealed', true);
+                    easyquestion[i].save(null,{
+                        success:function(){
+                            //console.log("question sealed success!");
+                        },
+                        error:function(error){
+
+                        }
+                    })
+                }
             }
         }
     })
@@ -104,34 +118,48 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
     normalques.limit(normalnum);
     normalques.find({
         success:function(normalquestion){
-            for(var i = 0; i<normalquestion.length; i++){
-                var Newques = Parse.Object.extend("QuesBank");
-                var newques = new Newques();
-                var question = normalquestion[i].get('Question');
-                var optiona = normalquestion[i].get('OptionA');
-                var optionb = normalquestion[i].get('OptionB');
-                var optionc = normalquestion[i].get('OptionC');
-                var optiond = normalquestion[i].get('OptionD');
-                var answer = normalquestion[i].get('Answer');
-                count++;
-                if(count<10)
-                    count = "0"+count;
-                newques.set('examname', examname);
-                newques.set('Question', question);
-                newques.set('OptionA', optiona);
-                newques.set('OptionB', optionb);
-                newques.set('OptionC', optionc);
-                newques.set('OptionD', optiond);
-                newques.set('Answer', answer);
-                newques.set('no', ""+count+"");
-                newques.save(null, {
-                    success:function(){
-                        console.log("update new normalques success!");
-                    },
-                    error:function(error){
-                        unsealed(2);
-                    }
-                })
+            if(normalquestion.length<normalnum){
+                    unsealed(2);
+            }
+            else{
+                for(var i = 0; i<normalquestion.length; i++){
+                    var Newques = Parse.Object.extend("QuesBank");
+                    var newques = new Newques();
+                    var question = normalquestion[i].get('Question');
+                    var optiona = normalquestion[i].get('OptionA');
+                    var optionb = normalquestion[i].get('OptionB');
+                    var optionc = normalquestion[i].get('OptionC');
+                    var optiond = normalquestion[i].get('OptionD');
+                    var answer = normalquestion[i].get('Answer');
+                    count++;
+                    if(count<10)
+                        count = "0"+count;
+                    newques.set('examname', examname);
+                    newques.set('Question', question);
+                    newques.set('OptionA', optiona);
+                    newques.set('OptionB', optionb);
+                    newques.set('OptionC', optionc);
+                    newques.set('OptionD', optiond);
+                    newques.set('Answer', answer);
+                    newques.set('no', ""+count+"");
+                    newques.save(null, {
+                        success:function(){
+                            //console.log("update new normalques success!");
+                        },
+                        error:function(error){
+                            unsealed(2);
+                        }
+                    })
+                    normalquestion[i].set('sealed', true);
+                    normalquestion[i].save(null,{
+                        success:function(){
+                            //console.log("question sealed success!");
+                        },
+                        error:function(error){
+
+                        }
+                    })
+                }
             }
         }
     })
@@ -140,37 +168,51 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
     var hardques = new Parse.Query(questions);
     hardques.equalTo('degree', 3);
     hardques.equalTo('sealed', false);
-    hardques.limit(normalnum);
+    hardques.limit(hardnum);
     hardques.find({
         success:function(hardquestion){
-            for(var i = 0; i<hardquestion.length; i++){
-                var Newques = Parse.Object.extend("QuesBank");
-                var newques = new Newques();
-                var question = hardquestion[i].get('Question');
-                var optiona = hardquestion[i].get('OptionA');
-                var optionb = hardquestion[i].get('OptionB');
-                var optionc = hardquestion[i].get('OptionC');
-                var optiond = hardquestion[i].get('OptionD');
-                var answer = hardquestion[i].get('Answer');
-                count++;
-                if(count<10)
-                    count = "0"+count;
-                newques.set('examname', examname);
-                newques.set('Question', question);
-                newques.set('OptionA', optiona);
-                newques.set('OptionB', optionb);
-                newques.set('OptionC', optionc);
-                newques.set('OptionD', optiond);
-                newques.set('Answer', answer);
-                newques.set('no', ""+count+"");
-                newques.save(null, {
-                    success:function(){
-                        console.log("update new hardques success!");
-                    },
-                    error:function(error){
-                        unsealed(3);
-                    }
-                })
+            if(hardquestion.length<hardnum){
+                unsealed(3);
+            }
+            else{
+                for(var i = 0; i<hardquestion.length; i++){
+                    var Newques = Parse.Object.extend("QuesBank");
+                    var newques = new Newques();
+                    var question = hardquestion[i].get('Question');
+                    var optiona = hardquestion[i].get('OptionA');
+                    var optionb = hardquestion[i].get('OptionB');
+                    var optionc = hardquestion[i].get('OptionC');
+                    var optiond = hardquestion[i].get('OptionD');
+                    var answer = hardquestion[i].get('Answer');
+                    count++;
+                    if(count<10)
+                        count = "0"+count;
+                    newques.set('examname', examname);
+                    newques.set('Question', question);
+                    newques.set('OptionA', optiona);
+                    newques.set('OptionB', optionb);
+                    newques.set('OptionC', optionc);
+                    newques.set('OptionD', optiond);
+                    newques.set('Answer', answer);
+                    newques.set('no', ""+count+"");
+                    newques.save(null, {
+                        success:function(){
+                            //console.log("update new hardques success!");
+                        },
+                        error:function(error){
+                            unsealed(3);
+                        }
+                    })
+                    hardquestion[i].set('sealed', true);
+                    hardquestion[i].save(null,{
+                        success:function(){
+                            //console.log("question sealed success!");
+                        },
+                        error:function(error){
+
+                        }
+                    })
+                }
             }
         }
     })
