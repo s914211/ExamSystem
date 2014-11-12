@@ -1,6 +1,7 @@
 
 $(document).ready(function() {
 	Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa7ryzTSmMjP3ZB4fYJNFqty"); 
+           localStorage.removeItem("sign");
 	var page_height=$(window).height();
 	var pade_width=$(window).width();
 	$("#blocks_container").css("height",page_height-56);
@@ -135,12 +136,23 @@ $(document).on("click",".btn_submitModal",function(){
 	var numnormal = parseInt(normal);
 	var numeasy = parseInt(easy);
 	if(numhard + numnormal + numeasy == 40){
-		addnewques(exam_name, time_needed, exam_date, easy, normal, hard);
-		blocks_number++;
-		AddExam();
-		$("#blocks_added_"+blocks_number+" div:eq(3)").append('<p class="blocks_title">'+exam_name+'</p><p>'+time_needed+'  minutes</p><p>'+exam_date+'</p>');
-		alert("new exam success!");
-		Close_ModalWrapper();
+                    if(addnewques(exam_name, time_needed, exam_date, easy, normal, hard)){
+                        
+                    }
+                    else{
+                        setTimeout(function(){
+                            if(localStorage.getItem("sign") != "no"){
+                                addnewexam(exam_name, time_needed, exam_date);
+                                /*blocks_number++;
+                                AddExam();
+                                $("#blocks_added_"+blocks_number+" div:eq(3)").append('<p class="blocks_title">'+exam_name+'</p><p>'+time_needed+'  minutes</p><p>'+exam_date+'</p>');*/
+                                Close_ModalWrapper();
+                            }
+                            else{
+                                Close_ModalWrapper();
+                            }
+                        },1000); 
+                    }
 	}
 	else{
 		alert("抽題總數不為40，請重新輸入抽題數目！");
@@ -188,6 +200,7 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
         success:function(easyquestion){
             if(easyquestion.length<easynum){
                     unsealed(1);
+                    localStorage.setItem("sign", "no");
                     alert("There's no enough questions in question bank. Unsealing now~");
             }
             else{
@@ -233,16 +246,21 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
                             unsealed(1);
                         }
                     })
-                    // easyquestion[i].set('sealed', true);
-                    // easyquestion[i].save(null,{
-                    //     success:function(){
-                    //         //console.log("question sealed success!");
-                    //     },
-                    //     error:function(error){
+                    easyquestion[i].set('sealed', true);
+                    easyquestion[i].save(null,{
+                        success:function(){
+                            //console.log("question sealed success!");
+                        },
+                        error:function(error){
 
-                    //     }
-                    // })
+                        }
+                    })
                 }
+                if(easynum != 0){
+                    alert("EasyQues query success!");
+                    var sign = "ok";
+                    return sign;  
+                }     
             }
         }
     })
@@ -256,7 +274,8 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
         success:function(normalquestion){
             if(normalquestion.length<normalnum){
                     unsealed(2);
-                    alert("There's no enough questions in question bank. Unsealing now~");
+                    localStorage.setItem("sign", "no");
+                    alert("There's no enough questions in question bank. Unsealing now~");           
             }
             else{
                 for(var i = 0; i<normalquestion.length; i++){
@@ -287,15 +306,18 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
                             unsealed(2);
                         }
                     })
-                    // normalquestion[i].set('sealed', true);
-                    // normalquestion[i].save(null,{
-                    //     success:function(){
-                    //         //console.log("question sealed success!");
-                    //     },
-                    //     error:function(error){
+                    normalquestion[i].set('sealed', true);
+                    normalquestion[i].save(null,{
+                        success:function(){
+                            //console.log("question sealed success!");
+                        },
+                        error:function(error){
 
-                    //     }
-                    // })
+                        }
+                    })
+                }
+                if(normalnum != 0){
+                    alert("NormalQues query success!");
                 }
             }
         }
@@ -310,6 +332,7 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
         success:function(hardquestion){
             if(hardquestion.length<hardnum){
                 unsealed(3);
+                localStorage.setItem("sign", "no");
                 alert("There's no enough questions in question bank. Unsealing now~");
             }
             else{
@@ -341,20 +364,22 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
                             unsealed(3);
                         }
                     })
-                    // hardquestion[i].set('sealed', true);
-                    // hardquestion[i].save(null,{
-                    //     success:function(){
-                    //         //console.log("question sealed success!");
-                    //     },
-                    //     error:function(error){
+                    hardquestion[i].set('sealed', true);
+                    hardquestion[i].save(null,{
+                        success:function(){
+                            //console.log("question sealed success!");
+                        },
+                        error:function(error){
 
-                    //     }
-                    // })
+                        }
+                    })
+                }
+                if(hardnum != 0){
+                    alert("HardQues query success!");
                 }
             }
         }
     })
-	addnewexam(examname, examtime, examdate);
 }
 
 addnewexam = function(examname, examtime, examdate){
@@ -365,7 +390,11 @@ addnewexam = function(examname, examtime, examdate){
     exams.set('examdate', examdate.toString());
     exams.save(null, {
         success:function(){
-            console.log("add new exam success!");
+            alert("Add new exam success!");
+            setTimeout(function(){
+                alert("Auto refresh the page!");
+                location.reload();
+            },3500); 
         },
         error:function(error){
             console.log("Error: " + error.code + " " + error.message);
@@ -387,7 +416,8 @@ unsealed = function(degree){
                     }
                 })
             }
-            alert("Unsealed success! Please type the examdata again!");
+            alert("Unsealed success! Please enter exam data again!");
+            Close_ModalWrapper();
         }
     })
 }
