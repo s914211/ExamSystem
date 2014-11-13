@@ -653,3 +653,28 @@ input:focus ~ .highlight {
 .confirmCircle_wrapper.open .confirm_circle {
   display: block;
 }
+
+/* line 577, ../sass/screen.scss */
+.confirmPreview_wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 153, 0.75);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+/* line 591, ../sass/screen.scss */
+.confirmPreview_wrapper.open {
+  opacity: 1;
+  visibility: visible;
+}
+/* line 595, ../sass/screen.scss */
+.confirmPreview_wrapper.open .confirm_circle {
+  display: block;
+}

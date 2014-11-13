@@ -52,11 +52,24 @@ $(document).ready(function() {
 });
 
 // =====================================================================預覽考試
-// $(document).on("click",".fab.green",function()
+$(document).on("click",".fab.green",function(e){
+    Show_ConfirmPreview();
+});
 
-// function 
+$(document).on("click",".inner-square.right",function(){
+    Close_ConfirmPreview();
+});
 
 
+function Show_ConfirmPreview(){
+    $('.tab_exams').toggleClass('blur');    
+    $(".confirmPreview_wrapper").toggleClass("open");    
+} 
+
+function Close_ConfirmPreview(){
+    $('.tab_exams').removeClass('blur');    
+    $(".confirmPreview_wrapper").removeClass("open");
+}
 
 
 
