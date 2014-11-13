@@ -51,6 +51,15 @@ $(document).ready(function() {
 	    })
 });
 
+// =====================================================================預覽考試
+// $(document).on("click",".fab.green",function()
+
+// function 
+
+
+
+
+
 //=========================================================================刪除考試，按下垃圾桶
 $(document).on("click",".trash_can",function(e){
     var examid = $(this).parent().attr('id');
@@ -189,6 +198,14 @@ function onlyNum(){  //限制input輸入數字
 	event.returnValue=false;
 }
 
+
+
+
+
+
+
+
+// ==================================================================================back end
 addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum){
     var count = 0;
     var questions = Parse.Object.extend('Questions');
