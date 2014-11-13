@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Administrator</title>
+  <link href="css/reset.css" rel="stylesheet" />
+  <script src="https://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/board.js"></script>
+  <link href="css/board.css" rel="stylesheet">
+
+
+  <script src="js/index.js"></script>   
+  <link rel="stylesheet" href="stylesheets/screen.css" media="screen" type="text/css" />
+  <link rel="import" href="http://www.polymer-project.org/components/core-icons/core-icons.html">
+  <link rel="import" href="http://www.polymer-project.org/components/paper-ripple/paper-ripple.html">
+
+
+  
+</head>
+
+<body>
+
+  <div class="header">
+
+    <div class="navbar">
+      <div class="left_button">
+        <div class="icon-button">
+          <core-icon icon="menu"></core-icon>
+          <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
+        </div>
+      </div>
+
+      <div class="tabs">
+          <div><a href="#">Exams</a></div><!--
+       --><div><a href="#">Questions</a></div><!--
+     -->
+     <!-- 加註解符號是為了讓Tab中間沒有縫隙 -->
+   </div>
+
+ </div>
+</div>
+
+<!-- 內容 -->
+<div class="tab_exams">
+  <div id="blocks_container">
+    <div class ="blocks"> 
+      <div class="icon-button three_points">
+        <core-icon icon="more-vert"></core-icon>
+        <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
+      </div> 
+
+      <div class="icon-button trash_can">
+        <core-icon icon="delete"></core-icon>
+        <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
+      </div> 
+
+      <div class="fab green">
+        <core-icon icon="create"></core-icon>
+        <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
+      </div>  
+      <div class ="blocks_text">  
+        <p class="blocks_title">woodsman</p>  
+        <p>Logs are nice, I own a few myself.</p>  
+      </div>
+      <div class="img_container">
+        <img src   ="assets/1.jpg" />
+      </div>  
+    </div>   	
+    <div class ="blocks add"> 
+      <core-icon icon="add-box" class="icon_add"></core-icon>
+      <paper-ripple class="recenteringTouch ripple_add" fit></paper-ripple>
+    </div>
+  </div>
+</div>
+
+<div class="modal-wrapper">
+  <div class="modal">
+    <div class="modal_header">
+      <a class="btn_close">
+        <div class="icon-button">
+          <core-icon icon="close"></core-icon>
+          <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
+        </div>
+      </a>
+    </div>
+    <div class="form_newExam">
+      <form class="form_step1">
+        <div class="Form_Question">      
+          <input type="text" required id="examname">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Examination Name</label>
+        </div>
+
+        <div class="Form_Question">      
+          <input type="number" required id="examtime" onkeydown="onlyNum();" style="ime-ode:Disabled">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Time Needed</label>
+        </div>
+
+        <div class="Form_Question" id="date_input">      
+          <input type="date" required id="examdate" value="123">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label id="date_label">Examination Date</label>
+        </div>
+      </form>
+
+      <form class="form_step2">
+        <div class="Form_Question">      
+          <input type="number" required id="easynum">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>How Many Questions From Easy?</label>
+        </div>
+
+        <div class="Form_Question">      
+          <input type="number" required id="normalnum">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>How Many Questions From Medium?</label>
+        </div>
+
+        <div class="Form_Question">      
+          <input type="number" required id="hardnum">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>How Many Questions From Hard?</label>
+        </div>
+      </form>
+    </div>
+
+
+    <div class="modal_footer">
+
+      <a class="btn_nextModal">
+        <div class="icon-button">
+          <core-icon icon="arrow-forward"></core-icon>
+          <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
+        </div>
+      </a>
+
+      <a class="btn_submitModal">
+        <div class="icon-button">
+          <core-icon icon="file-upload"></core-icon>
+          <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<div class="confirmCircle_wrapper">
+  <div class="confirm_circle">
+
+    <div class="square">
+      <div class="main">
+        <span class='fontawesome-trash'></span>
+        <strong>Delete?</strong>
+        <p>This will delete the content</p>
+      </div>
+      <div class="inner-square left">
+        <span class='fontawesome-ok'></span>
+      </div>
+      <div class="inner-square right">
+        <span class='fontawesome-remove'></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="tab_questions" >
+  <div class="editdiv">
+
+    <span>題目</span>
+    <textarea class="text"></textarea>
+
+    <span>選項A</span>
+    <textarea class="text"></textarea>
+
+    <span>選項B</span>
+    <textarea class="text"></textarea>
+
+    <span>選項C</span>
+    <textarea class="text"></textarea>
+
+    <span>選項D</span>
+    <textarea class="text"></textarea>
+
+  </div>
+  <div class="seconddiv">
+    <div class="difficulty">
+
+      <span>難易度</span>
+      <select id="dif">
+        <option>請選擇</option>
+        <option>難</option>
+        <option>中</option>
+        <option>易</option>
+      </select>
+
+      <span>答案</span>
+      <select id="ans">
+        <option>請選擇</option>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+        <option>D</option>
+      </select>
+
+    </div>
+
+    <button class="btn" id="editbtn">修改</button>
+    <button class="btn" id="newbtn">新增</button>
+    <button class="btn" id="deletebtn">刪除</button>
+    <button class="btn" onclick="clean()">清空</button>
+  </div>
+
+  <div class="tablediv">
+    <table class="qusselect">
+      <thead>
+        <tr class="thead">
+          <td>題目</td>
+          <td>選項A</td>
+          <td>選項B</td>
+          <td>選項C</td>
+          <td>選項D</td>
+          <td class="tdsmall">難易度</td>
+          <td class="tdanswer">答案</td>
+        </tr>
+      </thead>
+      <tbody class="Questions">
+        <tr class="trnormal">
+          <td>test1</td>
+          <td>test2</td>
+          <td>test3</td>
+          <td>test4</td>
+          <td>test5</td>
+          <td class="tdsmall">難</td>
+          <td class="tdsmall">A</td>
+        </tr>
+      </tbody>
+
+
+    </table>
+  </div>   
+</div>
+
+</body>
+
+</html>

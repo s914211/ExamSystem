@@ -30,7 +30,7 @@ $(document).ready(function() {
 	});
 
 	function AddExam(id){
-	    var newExamBlock=$('<div class ="blocks" id="'+id+'"><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="icon-button trash_can"><core-icon icon="delete"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div> <div class="fab green"><core-icon icon="create"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"></div><div class="img_container"><img src   ="assets/1.jpg" /></div></div>');
+	    var newExamBlock=$('<div class ="blocks" id="'+id+'"><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="icon-button trash_can"><core-icon icon="delete"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div> <div class="fab green" id="attendbtn"><core-icon icon="create"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"></div><div class="img_container"><img src   ="assets/1.jpg" /></div></div>');
 	    $("#blocks_container").prepend(newExamBlock);
 	 }
 
@@ -179,7 +179,7 @@ function Back_To_State1(){
 	$(".btn_submitModal").removeClass("state2");
 }
 function AddExam(){
- 	var newExamBlock=$('<div class ="blocks" id="blocks_added_'+blocks_number+'"><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="icon-button trash_can"><core-icon icon="delete"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div> <div class="fab green"><core-icon icon="create"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"></div><div class="img_container"><img src   ="assets/1.jpg" /></div></div>');
+ 	var newExamBlock=$('<div class ="blocks" id="blocks_added_'+blocks_number+'"><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="icon-button trash_can"><core-icon icon="delete"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div> <div class="fab green" id="attendbtn"><core-icon icon="create"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"></div><div class="img_container"><img src   ="assets/1.jpg" /></div></div>');
 	$("#blocks_container").prepend(newExamBlock);
  }
 
@@ -421,3 +421,25 @@ unsealed = function(degree){
         }
     })
 }
+
+//about attend a exam
+
+$(document).on("click","#attendbtn",function(){
+    var examid = $(this).parent().attr('id');
+    var exam = Parse.Object.extend("Exams");
+    var query = new Parse.Query(exam);
+    query.equalTo("objectId", examid);
+    query.first({
+        success:function(exam){
+            var Examrecord = Parse.Object.extend("ExamRecord");
+            var examrecord = new Examrecord();
+            examrecord.set("user", Parse.User.current());
+            examrecord.set("exam", exam);
+            examrecord.save(null,{
+                success:function(result){
+                    console.log("attend exam success!");
+                }
+            })
+        }
+    })
+});

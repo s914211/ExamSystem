@@ -36,7 +36,7 @@ $(document).ready(function(){
     if(userid == "admin" && userpassword =="admin"){
         Parse.User.logIn(userid,userpassword,{
         success:function(){
-          window.location.assign("pageForAdministrator.html");
+          window.location.assign("attendexam.html");
         },
         error:function(user, error){
           alert("Error: " + error.code + " " + error.message);
@@ -46,7 +46,7 @@ $(document).ready(function(){
     else{
         Parse.User.logIn(userid,userpassword,{
           success:function(){
-            window.location.assign("test.html");
+            window.location.assign("attendexam.html");
           },
           error:function(user, error){
             alert("You have the wrong email or password!");
