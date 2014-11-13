@@ -1,8 +1,9 @@
 $(document).ready(function() {
     Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa7ryzTSmMjP3ZB4fYJNFqty");
-
-    var question = Parse.Object.extend('example');
+    var localexamname = localStorage.getItem("examname");
+    var question = Parse.Object.extend('QuesBank');
     var query = new Parse.Query(question);
+    query.equalTo("examname", localexamname);
     query.equalTo("no", "01");
     query.first({
         success: function(examquestion) {
@@ -136,7 +137,8 @@ function save() {
 
 
 
-    var question = Parse.Object.extend('example');
+    var localexamname = localStorage.getItem("examname");
+    var question = Parse.Object.extend('QuesBank');
     var query = new Parse.Query(question);
     query.ascending("no");
     query.find({

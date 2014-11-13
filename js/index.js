@@ -424,7 +424,7 @@ unsealed = function(degree){
 
 //about attend a exam
 
-$(document).on("click","#attendbtn",function(){
+/*$(document).on("click","#attendbtn",function(){
     var examid = $(this).parent().attr('id');
     var exam = Parse.Object.extend("Exams");
     var query = new Parse.Query(exam);
@@ -442,4 +442,21 @@ $(document).on("click","#attendbtn",function(){
             })
         }
     })
+});*/
+
+//show test
+
+$(document).on("click","#attendbtn",function(){
+    var examid = $(this).parent().attr('id');
+    var exam = Parse.Object.extend("Exams");
+    var query = new Parse.Query(exam);
+    query.equalTo("objectId", examid);
+    query.first({
+        success:function(exam){
+            var examname = exam.get("examname");
+            localStorage.setItem("examname", examname);
+            alert("Enter the exam!");
+            window.location.assign("test.html");
+        }
+    })    
 });
