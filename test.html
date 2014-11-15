@@ -2,17 +2,31 @@
 <html>
 
 <head>
+  <meta charset="UTF-8">
     <title>題目</title>
     <link href="css/reset.css" rel="stylesheet" />
     <script src="js/jquery.min.js"></script>
     <script src="js/test.js"></script>
     <script src="https://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
     <link href="css/test.css" rel="stylesheet" />
+    <link href="stylesheets/test.css" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="stylesheet" href="stylesheets/screen.css" media="screen" type="text/css" />
+    <link rel="import" href="http://www.polymer-project.org/components/core-icons/core-icons.html">
+    <link rel="import" href="http://www.polymer-project.org/components/paper-ripple/paper-ripple.html">
+
 </head>
 
 <body>
-    <div class="header"></div>
+    <div class="header">
+        <div class="left_button">
+          <div class="icon-button">
+            <core-icon icon="menu"></core-icon>
+            <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
+          </div>
+        </div>
+    </div>
 
     <div class="exam">
         <div class="examleft">

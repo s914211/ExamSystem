@@ -67,7 +67,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 18, ../sass/screen.scss */
+/* line 18, ../sass/test.scss */
 html, body {
   min-height: 100%;
   height: 100%;
@@ -75,72 +75,31 @@ html, body {
   font-family: "Roboto";
 }
 
-/* line 25, ../sass/screen.scss */
-a {
-  text-decoration: none;
-}
-
-/* NAVBAR */
-/* line 32, ../sass/screen.scss */
-.navbar {
-  top: 0;
-  left: 0;
-  right: 0;
-  color: #666;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-  z-index: 1;
-}
-/* line 40, ../sass/screen.scss */
-.navbar .tabs {
-  height: 56px;
-  text-align: center;
-  font-size: 150%;
+/* line 25, ../sass/test.scss */
+.header {
   background-color: #d6ce85;
 }
-/* line 46, ../sass/screen.scss */
-.navbar .tabs div {
-  display: inline-block;
-  margin: 0;
-}
-/* line 51, ../sass/screen.scss */
-.navbar .tabs a {
-  color: #0f9d58;
-  display: block;
-  outline: none;
-  padding: 10px;
-  border: 2px solid #0f9d58;
-  margin-top: 4px;
-  text-decoration: none;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-/* line 65, ../sass/screen.scss */
-.navbar .tabs .current a {
-  color: #d6ce85;
-  background-color: #0f9d58;
-}
 
-/* line 74, ../sass/screen.scss */
+/* line 32, ../sass/test.scss */
 .tab_exams, .tab_questions {
   height: 100%;
   background: url("../assets/classroom.jpg");
 }
 
-/* line 80, ../sass/screen.scss */
+/* line 38, ../sass/test.scss */
 .tab_questions {
   display: none;
   padding: 30px 0;
 }
 
-/* line 85, ../sass/screen.scss */
+/* line 43, ../sass/test.scss */
 #blocks_container {
   width: 980px;
   margin: auto;
 }
 
 /*====add_button==============================================================*/
-/* line 93, ../sass/screen.scss */
+/* line 51, ../sass/test.scss */
 .add_blocks {
   box-shadow: none;
   cursor: pointer;
@@ -154,20 +113,20 @@ a {
   box-shadow: none;
   border-radius: 5%;
 }
-/* line 107, ../sass/screen.scss */
+/* line 65, ../sass/test.scss */
 .add_blocks .icon_add {
   height: 200px;
   width: 200px;
   color: #d6d1a3;
 }
 
-/* line 118, ../sass/screen.scss */
+/* line 76, ../sass/test.scss */
 .ripple_add {
   cursor: pointer;
 }
 
 /*===========================================================================================fab=*/
-/* line 126, ../sass/screen.scss */
+/* line 84, ../sass/test.scss */
 .fab {
   position: absolute;
   overflow: hidden;
@@ -178,7 +137,7 @@ a {
   cursor: pointer;
   color: #d6ce85;
 }
-/* line 136, ../sass/screen.scss */
+/* line 94, ../sass/test.scss */
 .fab.green {
   background-color: #0f9d58;
   right: 10px;
@@ -188,73 +147,73 @@ a {
   height: 56px;
   border-radius: 50%;
 }
-/* line 146, ../sass/screen.scss */
+/* line 104, ../sass/test.scss */
 .fab:active {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
   transition-delay: 0s;
 }
-/* line 151, ../sass/screen.scss */
+/* line 109, ../sass/test.scss */
 .fab > core-icon {
   margin: 16px;
 }
-/* line 155, ../sass/screen.scss */
+/* line 113, ../sass/test.scss */
 .fab > core-icon::shadow path {
   fill: #fff;
 }
 
 /* ==========================================================Icon Button=*/
-/* line 164, ../sass/screen.scss */
+/* line 122, ../sass/test.scss */
 .icon-button {
   position: absolute;
   width: 56px;
   height: 56px;
 }
-/* line 169, ../sass/screen.scss */
+/* line 127, ../sass/test.scss */
 .icon-button core-icon {
   margin: 13px;
   transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* line 175, ../sass/screen.scss */
+/* line 133, ../sass/test.scss */
 .icon-button:hover core-icon {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
-/* line 180, ../sass/screen.scss */
+/* line 138, ../sass/test.scss */
 .icon-button paper-ripple {
   overflow: hidden;
   color: #646464;
 }
 
-/* line 191, ../sass/screen.scss */
+/* line 149, ../sass/test.scss */
 .three_points {
   height: 30px;
   width: 30px;
   right: 0px;
   cursor: pointer;
 }
-/* line 197, ../sass/screen.scss */
+/* line 155, ../sass/test.scss */
 .three_points core-icon {
   height: 16px;
   width: 16px;
   margin: 7px;
 }
 
-/* line 207, ../sass/screen.scss */
+/* line 165, ../sass/test.scss */
 .trash_can {
   right: 30px;
   height: 30px;
   width: 30px;
   cursor: pointer;
 }
-/* line 213, ../sass/screen.scss */
+/* line 171, ../sass/test.scss */
 .trash_can core-icon {
   height: 16px;
   width: 16px;
   margin: 7px;
 }
 
-/* line 226, ../sass/screen.scss */
+/* line 184, ../sass/test.scss */
 .blur {
   -webkit-filter: blur(5px);
   -moz-filter: blur(5px);
@@ -263,7 +222,7 @@ a {
   filter: blur(5px);
 }
 
-/* line 235, ../sass/screen.scss */
+/* line 193, ../sass/test.scss */
 .modal-wrapper {
   width: 100%;
   height: 100%;
@@ -278,18 +237,18 @@ a {
   -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
-/* line 249, ../sass/screen.scss */
+/* line 207, ../sass/test.scss */
 .modal-wrapper.open {
   opacity: 1;
   visibility: visible;
 }
-/* line 253, ../sass/screen.scss */
+/* line 211, ../sass/test.scss */
 .modal-wrapper.open .modal {
   margin-top: -200px;
   opacity: 1;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 221, ../sass/test.scss */
 .modal {
   width: 600px;
   height: 400px;
@@ -306,7 +265,7 @@ a {
   transition: all 0.5s ease-in-out;
 }
 
-/* line 279, ../sass/screen.scss */
+/* line 237, ../sass/test.scss */
 .modal_header {
   width: 90%;
   height: 32px;
@@ -315,7 +274,7 @@ a {
   background: #01bce5;
 }
 
-/* line 287, ../sass/screen.scss */
+/* line 245, ../sass/test.scss */
 .btn_close {
   width: 32px;
   height: 32px;
@@ -323,21 +282,21 @@ a {
   float: right;
 }
 
-/* line 296, ../sass/screen.scss */
+/* line 254, ../sass/test.scss */
 .form_newExam {
   padding: 5%;
 }
 
-/* line 300, ../sass/screen.scss */
+/* line 258, ../sass/test.scss */
 .form_step2 {
   display: none;
 }
-/* line 303, ../sass/screen.scss */
+/* line 261, ../sass/test.scss */
 .form_step2.state2 {
   display: block;
 }
 
-/* line 308, ../sass/screen.scss */
+/* line 266, ../sass/test.scss */
 .form_step1.state2 {
   /*  .XXX.XXX  => class ="XXX XXX"              */
   display: none;
@@ -345,13 +304,13 @@ a {
 }
 
 /* -------------------------------form starting stylings  */
-/* line 314, ../sass/screen.scss */
+/* line 272, ../sass/test.scss */
 .Form_Question {
   position: relative;
   margin-bottom: 45px;
 }
 
-/* line 319, ../sass/screen.scss */
+/* line 277, ../sass/test.scss */
 input {
   font-size: 18px;
   padding: 10px 10px 10px 5px;
@@ -360,13 +319,13 @@ input {
   border: none;
   border-bottom: 1px solid #757575;
 }
-/* line 327, ../sass/screen.scss */
+/* line 285, ../sass/test.scss */
 input:focus {
   outline: none;
   /*focus時會跑出outline，要隱藏掉*/
 }
 
-/* line 334, ../sass/screen.scss */
+/* line 292, ../sass/test.scss */
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -374,7 +333,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 /*  ==========================================================================LABEL== */
-/* line 343, ../sass/screen.scss */
+/* line 301, ../sass/test.scss */
 label {
   color: #999;
   font-size: 18px;
@@ -388,14 +347,14 @@ label {
   -webkit-transition: 0.2s ease all;
 }
 
-/* line 356, ../sass/screen.scss */
+/* line 314, ../sass/test.scss */
 #date_label {
   background-color: white;
   padding: 2px;
 }
 
 /* active state */
-/* line 363, ../sass/screen.scss */
+/* line 321, ../sass/test.scss */
 input:focus ~ label, input:valid ~ label {
   top: -20px;
   font-size: 14px;
@@ -403,13 +362,13 @@ input:focus ~ label, input:valid ~ label {
 }
 
 /* BOTTOM BARS ================================= */
-/* line 370, ../sass/screen.scss */
+/* line 328, ../sass/test.scss */
 .bar {
   position: relative;
   display: block;
   width: 300px;
 }
-/* line 375, ../sass/screen.scss */
+/* line 333, ../sass/test.scss */
 .bar::before, .bar::after {
   content: '';
   height: 2px;
@@ -421,23 +380,23 @@ input:focus ~ label, input:valid ~ label {
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-/* line 387, ../sass/screen.scss */
+/* line 345, ../sass/test.scss */
 .bar::before {
   left: 50%;
 }
-/* line 391, ../sass/screen.scss */
+/* line 349, ../sass/test.scss */
 .bar::after {
   right: 50%;
 }
 
 /* active state */
-/* line 398, ../sass/screen.scss */
+/* line 356, ../sass/test.scss */
 input:focus ~ .bar::before, input:focus ~ .bar::after {
   width: 50%;
 }
 
 /* HIGHLIGHTER ================================== */
-/* line 403, ../sass/screen.scss */
+/* line 361, ../sass/test.scss */
 .highlight {
   position: absolute;
   height: 60%;
@@ -449,7 +408,7 @@ input:focus ~ .bar::before, input:focus ~ .bar::after {
 }
 
 /* active state */
-/* line 414, ../sass/screen.scss */
+/* line 372, ../sass/test.scss */
 input:focus ~ .highlight {
   -webkit-animation: inputHighlighter 0.3s ease;
   -moz-animation: inputHighlighter 0.3s ease;
@@ -484,22 +443,22 @@ input:focus ~ .highlight {
     background: transparent;
   }
 }
-/* line 434, ../sass/screen.scss */
+/* line 392, ../sass/test.scss */
 .btn_submitModal {
   display: none;
 }
-/* line 437, ../sass/screen.scss */
+/* line 395, ../sass/test.scss */
 .btn_submitModal.state2 {
   display: inline;
 }
 
-/* line 442, ../sass/screen.scss */
+/* line 400, ../sass/test.scss */
 .btn_nextModal.state2 {
   display: none;
 }
 
 /* =================================================================================blocks css */
-/* line 447, ../sass/screen.scss */
+/* line 405, ../sass/test.scss */
 .blocks {
   margin: 20px;
   width: 200px;
@@ -511,43 +470,43 @@ input:focus ~ .highlight {
   border-radius: 5%;
   background-color: #d6d1a3;
 }
-/* line 458, ../sass/screen.scss */
+/* line 416, ../sass/test.scss */
 .blocks .img_container {
   height: 100px;
   display: table-cell;
   /*----------->置中方法*/
   text-align: center;
 }
-/* line 464, ../sass/screen.scss */
+/* line 422, ../sass/test.scss */
 .blocks img {
   width: 200px;
 }
 
-/* line 470, ../sass/screen.scss */
+/* line 428, ../sass/test.scss */
 .blocks_title {
   padding-top: 20px;
   font-size: 20px;
   margin-bottom: 10px;
 }
 
-/* line 476, ../sass/screen.scss */
+/* line 434, ../sass/test.scss */
 .blocks_text {
   height: 100px;
   padding-left: 20px;
 }
 
 /* fontawesome */
-/* line 486, ../sass/screen.scss */
+/* line 444, ../sass/test.scss */
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
 }
 
-/* line 490, ../sass/screen.scss */
+/* line 448, ../sass/test.scss */
 .confirm_circle {
   display: none;
 }
 
-/* line 493, ../sass/screen.scss */
+/* line 451, ../sass/test.scss */
 .square {
   z-index: 2;
   height: 250px;
@@ -563,12 +522,12 @@ input:focus ~ .highlight {
   margin: auto;
 }
 
-/* line 508, ../sass/screen.scss */
+/* line 466, ../sass/test.scss */
 .main {
   text-align: center;
   font-family: cambria;
 }
-/* line 512, ../sass/screen.scss */
+/* line 470, ../sass/test.scss */
 .main span {
   color: #d35454;
   font-size: 28px;
@@ -576,7 +535,7 @@ input:focus ~ .highlight {
   position: relative;
   margin-top: 20px;
 }
-/* line 520, ../sass/screen.scss */
+/* line 478, ../sass/test.scss */
 .main strong {
   font-family: 'Open Sans Condensed', sans-serif;
   color: #fff;
@@ -586,13 +545,13 @@ input:focus ~ .highlight {
   margin-top: 5px;
   text-transform: uppercase;
 }
-/* line 530, ../sass/screen.scss */
+/* line 488, ../sass/test.scss */
 .main p {
   font-size: 12px;
   color: #a9a9a9;
 }
 
-/* line 536, ../sass/screen.scss */
+/* line 494, ../sass/test.scss */
 .inner-square {
   height: 125px;
   width: 125px;
@@ -605,29 +564,29 @@ input:focus ~ .highlight {
   text-align: center;
 }
 
-/* line 548, ../sass/screen.scss */
+/* line 506, ../sass/test.scss */
 .left {
   left: 0;
   background: #8dc058;
 }
 
-/* line 553, ../sass/screen.scss */
+/* line 511, ../sass/test.scss */
 .left span {
   padding-left: 20px;
 }
 
-/* line 557, ../sass/screen.scss */
+/* line 515, ../sass/test.scss */
 .right {
   right: 0;
   background: #d35454;
 }
 
-/* line 562, ../sass/screen.scss */
+/* line 520, ../sass/test.scss */
 .right span {
   padding-right: 20px;
 }
 
-/* line 569, ../sass/screen.scss */
+/* line 527, ../sass/test.scss */
 .confirmCircle_wrapper {
   width: 100%;
   height: 100%;
@@ -642,17 +601,17 @@ input:focus ~ .highlight {
   -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
-/* line 583, ../sass/screen.scss */
+/* line 541, ../sass/test.scss */
 .confirmCircle_wrapper.open {
   opacity: 1;
   visibility: visible;
 }
-/* line 587, ../sass/screen.scss */
+/* line 545, ../sass/test.scss */
 .confirmCircle_wrapper.open .confirm_circle {
   display: block;
 }
 
-/* line 593, ../sass/screen.scss */
+/* line 551, ../sass/test.scss */
 .confirmPreview_wrapper {
   width: 100%;
   height: 100%;
@@ -667,12 +626,12 @@ input:focus ~ .highlight {
   -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
-/* line 607, ../sass/screen.scss */
+/* line 565, ../sass/test.scss */
 .confirmPreview_wrapper.open {
   opacity: 1;
   visibility: visible;
 }
-/* line 611, ../sass/screen.scss */
+/* line 569, ../sass/test.scss */
 .confirmPreview_wrapper.open .confirm_circle {
   display: block;
 }

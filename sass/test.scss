@@ -22,53 +22,11 @@ html, body {
   font-family: "Roboto";
 }
 
-a {
-  text-decoration: none;
+.header{
+  background-color: $greyLight;
 }
 
 
-/* NAVBAR */
-
-.navbar {
-  top       : 0;
-  left      : 0;
-  right     : 0;
-  color     : #666;
-  box-shadow: 0 0 8px rgba(0,0,0,0.3);
-  z-index   : 1;
-
-	.tabs{
-    height          : 56px;
-    text-align      : center;
-    font-size       : 150%;
-    background-color: $greyLight;
-
-		div {
-      display: inline-block;
-      margin : 0;
-		}
-
-		a {
-      color: $green2;
-      display           : block;
-      outline           : none;
-      padding           : 10px;
-      border            : 2px solid $green2;
-      margin-top        :4px;
-      text-decoration   : none;
-      -webkit-transition: all 0.2s ease-in-out;
-      -moz-transition   : all 0.2s ease-in-out;
-      transition        : all 0.2s ease-in-out;
-
-		}
-
-    .current a {
-      color: $greyLight;
-      background-color: $green2;
-    }
-
-	}
-}
 
 
 .tab_exams,.tab_questions{
