@@ -5,13 +5,20 @@
 
 // color
 $green: #87d3b7;
+$green2:#0f9d58;
 
-html {
+$grey:#d6d1a3;
+$greenDark:#32ab86;
+$greenMid:#75bd82;
+$greenLight:#b3c785;
+$greyLight:#d6ce85;
+
+
+
+html, body {
   min-height: 100%;
+  height:100%;
   overflow:hidden;
-}
-
-body { 
   font-family: "Roboto";
 }
 
@@ -23,38 +30,46 @@ a {
 /* NAVBAR */
 
 .navbar {
-	top: 0;
-	left: 0;
-	right: 0;
-	color: #666;
-	background-color: #ddd;
-	box-shadow: 0 0 8px rgba(0,0,0,0.3);
-	z-index: 1;
+  top       : 0;
+  left      : 0;
+  right     : 0;
+  color     : #666;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  z-index   : 1;
 
 	.tabs{
-		height: 56px;
-  		text-align: center;
-  		font-size: 150%;
-  		background-color: white;
+    height          : 56px;
+    text-align      : center;
+    font-size       : 150%;
+    background-color: $greyLight;
+
 		div {
-			display: inline-block;
-			margin: 0;
+      display: inline-block;
+      margin : 0;
 		}
 
 		a {
-			display: block;
-      outline: none;
-      padding: 10px;
-      border: 2px solid $green;
-      margin-top:4px;
-			text-decoration: none;
-			-webkit-transition: all 0.2s ease-in-out;
-			-moz-transition: all 0.2s ease-in-out;
-			transition: all 0.2s ease-in-out;
+      color: $green2;
+      display           : block;
+      outline           : none;
+      padding           : 10px;
+      border            : 2px solid $green2;
+      margin-top        :4px;
+      text-decoration   : none;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition   : all 0.2s ease-in-out;
+      transition        : all 0.2s ease-in-out;
 
 		}
+
+    .current a {
+      color: $greyLight;
+      background-color: $green2;
+    }
+
 	}
 }
+
 
 .tab_exams,.tab_questions{
   height: 100%;
@@ -63,16 +78,9 @@ a {
 
 
 .tab_questions {
-	display: none;
-	padding: 30px 0;
+  display: none;
+  padding: 30px 0;
 }
-
-.current a {
-	color: #fff;
-	background: $green;
-}
-
-
 
 #blocks_container{
   width: 980px;
@@ -82,20 +90,22 @@ a {
 
 
 /*====add_button==============================================================*/
-.blocks.add {
-    background-color: #E6E6E6;
-    box-shadow      : none;
-}
+.add_blocks {
+  // background-color: $grey;
+  display: inline-block;
+  box-shadow      : none;
+    cursor: pointer;
 
-.icon_add{
-  height     : 150px;
-  width      : 150px;
-  color      : gray;
+  .icon_add{
+  height     : 200px;
+  width      : 200px;
+  color      : $greenMid;
   position   : absolute;
-  top        : 50%;
-  left       : 50%;
-  margin-left: -75px;
-  margin-top : -75px;
+  // top        : 50%;
+  // left       : 50%;
+  // margin-left: -100px;
+  // margin-top : -100px;
+  }
 }
 
 .ripple_add{
@@ -436,7 +446,7 @@ input:focus ~ .highlight {
     position        : relative;
     box-shadow      : 6px 6px 11px 0px rgba(0,0,0,0.67);
     border-radius   : 5%;
-    background-color: #F1EBE4;
+    background-color: $grey;
 
     .img_container{
 		height: 100px;

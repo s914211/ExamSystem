@@ -25,23 +25,23 @@
 
 <body>
 
-  <div class="header">
-
-    <div class="navbar">
-      <div class="left_button">
-        <div class="icon-button">
-          <core-icon icon="menu"></core-icon>
-          <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
-        </div>
+<div class="header">
+  <div class="navbar">
+    <div class="left_button">
+      <div class="icon-button">
+        <core-icon icon="menu"></core-icon>
+        <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
       </div>
+    </div>
 
-      <div class="tabs">
-          <div><a href="#">Exams</a></div><!--
-       --><div><a href="#">Questions</a></div><!--
-     -->
-     <!-- 加註解符號是為了讓Tab中間沒有縫隙 -->
-      </div>
- </div>
+    <div class="tabs">
+        <div><a href="#">Exams</a></div><!--
+     --><div><a href="#">Questions</a></div><!--
+   -->
+   <!-- 加註解符號是為了讓Tab中間沒有縫隙 -->
+    </div>
+  </div>
+</div>
 <!-- 內容 -->
 <div class="tab_exams">
   <div id="blocks_container">
@@ -68,9 +68,8 @@
         <img src   ="assets/1.jpg" />
       </div>  
     </div>   	
-    <div class ="blocks add"> 
+    <div class ="add_blocks"> 
       <core-icon icon="add-box" class="icon_add"></core-icon>
-      <paper-ripple class="recenteringTouch ripple_add" fit></paper-ripple>
     </div>
   </div>
 </div>
@@ -190,6 +189,86 @@
     </div>
   </div>
 </div>
+
+<div class="modal-wrapper threePointsWrapper">
+  <div class="modal">
+    <div class="modal_header">
+      <a class="btn_close threePointsModal">
+        <div class="icon-button">
+          <core-icon icon="close"></core-icon>
+          <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
+        </div>
+      </a>
+    </div>
+    <div class="form_newExam threePointsForm">
+      <form class="form_step1">
+        <div class="Form_Question">      
+          <input type="text" required id="examname">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Examination Name</label>
+        </div>
+
+        <div class="Form_Question">      
+          <input type="number" required id="examtime" onkeydown="onlyNum();" style="ime-ode:Disabled">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Time Needed</label>
+        </div>
+
+        <div class="Form_Question" id="date_input">      
+          <input type="date" required id="examdate" value="123">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label id="date_label">Examination Date</label>
+        </div>
+      </form>
+
+      <form class="form_step2">
+        <div class="Form_Question">      
+          <input type="number" required id="easynum" onkeydown="onlyNum();" style="ime-ode:Disabled">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>How Many Questions From Easy?</label>
+        </div>
+
+        <div class="Form_Question">      
+          <input type="number" required id="normalnum" onkeydown="onlyNum();" style="ime-ode:Disabled">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>How Many Questions From Medium?</label>
+        </div>
+
+        <div class="Form_Question">      
+          <input type="number" required id="hardnum" onkeydown="onlyNum();" style="ime-ode:Disabled">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>How Many Questions From Hard?</label>
+        </div>
+      </form>
+    </div>
+
+
+    <div class="modal_footer">
+
+      <a class="btn_nextModal">
+        <div class="icon-button">
+          <core-icon icon="arrow-forward"></core-icon>
+          <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
+        </div>
+      </a>
+
+      <a class="btn_submitModal">
+        <div class="icon-button">
+          <core-icon icon="file-upload"></core-icon>
+          <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
 
 <div class="tab_questions" >
   <div class="editdiv">

@@ -1,10 +1,9 @@
 
 $(document).ready(function() {
 	Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa7ryzTSmMjP3ZB4fYJNFqty"); 
-           localStorage.removeItem("sign");
-	var page_height=$(window).height();
-	var pade_width=$(window).width();
-	$("#blocks_container").css("height",page_height-56);
+    localStorage.removeItem("sign");
+
+
 
     // ================================================================tabs交換效果
 	var tab_now;
@@ -72,6 +71,29 @@ function Close_ConfirmPreview(){
 }
 
 
+// ------------------------------------------------------------------------------threePoints
+
+$(document).on('click', '.three_points', function(event) {
+    Show_ThreePointsWrapper();
+});
+
+$(document).on("click",".three_points.btn_close",function(){
+    Close_ThreePointsWrapper();
+});
+
+function Show_ThreePointsWrapper(){
+    $('.tab_exams').toggleClass('blur');    
+    $(".modal-wrapper.threePointsWrapper").toggleClass("open");    
+}
+
+function Close_ThreePointsWrapper(){
+    $('.tab_exams').removeClass('blur');    
+    $(".modal-wrapper.threePointsWrapper").removeClass("open");
+}
+
+
+
+
 
 //=========================================================================刪除考試，按下垃圾桶
 $(document).on("click",".trash_can",function(e){
@@ -130,7 +152,7 @@ function Close_ConfirmWrapper(){
 
 
 //=================================================================================新增考試
-$(document).on("click",".add",function(){
+$(document).on("click",".add_blocks",function(){
 	Open_ModalWrapper();
 });
 $(document).on("click",".btn_nextModal",function(){
