@@ -156,9 +156,9 @@ $(document).on("click",".add_blocks",function(){
 	Open_ModalWrapper();
 });
 $(document).on("click",".btn_nextModal",function(){
-	exam_name=$("#examname").val();
-	time_needed=$("#examtime").val();
-	exam_date=$("#examdate").val();
+	var exam_name=$("#exam_name").val();
+	var time_needed=$("#exam_time").val();
+	var exam_date=$("#exam_date").val();
 	if(exam_name && time_needed && exam_date != ""){
 		var nowState="state2";
 		$(".form_step1").toggleClass(nowState);
@@ -173,9 +173,9 @@ $(document).on("click",".btn_nextModal",function(){
 
 blocks_number=0;
 $(document).on("click",".btn_submitModal",function(){
-	hard=$("#hardnum").val();
-	normal=$("#normalnum").val();
-	easy=$("#easynum").val();
+	var hard=$("#hardnum").val();
+	var normal=$("#normalnum").val();
+	var easy=$("#easynum").val();
 	var numhard = parseInt(hard);
 	var numnormal = parseInt(normal);
 	var numeasy = parseInt(easy);
@@ -507,8 +507,10 @@ $(document).on("click","#attendbtn",function(){
         success:function(exam){
             var examname = exam.get("examname");
             localStorage.setItem("examname", examname);
-            alert("Enter the exam!");
-            window.location.assign("test.html");
         }
     })    
+});
+
+$(document).on("click","#confirmexam",function(){
+    window.location.assign("test.html");
 });

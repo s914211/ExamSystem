@@ -87,21 +87,21 @@
     <div class="form_newExam">
       <form class="form_step1">
         <div class="Form_Question">      
-          <input type="text" required id="examname">
+          <input type="text" required id="exam_name">
           <span class="highlight"></span>
           <span class="bar"></span>
           <label>Examination Name</label>
         </div>
 
         <div class="Form_Question">      
-          <input type="number" required id="examtime" onkeydown="onlyNum();" style="ime-ode:Disabled">
+          <input type="number" required id="exam_time" onkeydown="onlyNum();" style="ime-ode:Disabled">
           <span class="highlight"></span>
           <span class="bar"></span>
           <label>Time Needed</label>
         </div>
 
         <div class="Form_Question" id="date_input">      
-          <input type="date" required id="examdate" value="123">
+          <input type="date" required id="exam_date" value="123">
           <span class="highlight"></span>
           <span class="bar"></span>
           <label id="date_label">Examination Date</label>
@@ -180,7 +180,7 @@
         <strong>Preview?</strong>
         <p>You want to preview the exam?</p>
       </div>
-      <div class="inner-square left">
+      <div class="inner-square left" id="confirmexam">
         <span class='fontawesome-ok'></span>
       </div>
       <div class="inner-square right">
