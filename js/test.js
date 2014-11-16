@@ -1,3 +1,39 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// =================================================================pagination
+
+$('a').on('click', function(e){
+  $(e).preventDefault();
+});
+
+$('.pagination li').on('click', function(){
+    console.log($(this));
+  $(this).siblings().removeClass('active');
+  $(this).addClass('active');
+  
+})
+
+
+
+
+
+
+
+
 $(document).ready(function() {
     Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa7ryzTSmMjP3ZB4fYJNFqty");
     var localexamname = localStorage.getItem("examname");
@@ -163,3 +199,5 @@ function content() {
     $('.spanC').text(userans[$('.numberclick').text()][3]);
     $('.spanD').text(userans[$('.numberclick').text()][4]);
 }
+
+

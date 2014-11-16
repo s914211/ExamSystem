@@ -228,3 +228,61 @@ html, body {
   overflow: hidden;
   color: #646464;
 }
+
+/* line 196, ../sass/test.scss */
+.pagination {
+  display: block;
+}
+/* line 198, ../sass/test.scss */
+.pagination li {
+  float: left;
+  list-style: none;
+  font-family: Helvetica, Helvetica Neue,sans-serif;
+  color: #444;
+}
+/* line 203, ../sass/test.scss */
+.pagination li a {
+  display: block;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  position: relative;
+  margin-right: 1px;
+  text-decoration: none;
+}
+
+/* line 217, ../sass/test.scss */
+.pagination li a:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.75);
+  -webkit-transform: scale(0);
+  border-radius: 100px;
+  -webkit-transition: all .25s;
+}
+
+/* line 230, ../sass/test.scss */
+.pagination li a:hover {
+  color: transparent;
+}
+
+/* line 234, ../sass/test.scss */
+.pagination li a:hover:before {
+  -webkit-transform: scale(0.3);
+  box-shadow: inset 0 0 0 4px rgba(0, 0, 0, 0.75);
+}
+
+/* line 239, ../sass/test.scss */
+.pagination li.active a:before {
+  -webkit-transform: scale(1);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.75);
+}
+
+/* line 244, ../sass/test.scss */
+.pagination li.active a:hover {
+  color: black;
+}
