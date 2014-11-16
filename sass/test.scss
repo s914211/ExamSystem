@@ -53,6 +53,10 @@ html, body {
     float:right;
   }
 
+  .testnumber{
+    margin: 20px;
+  }
+
   #bigdiv{
     position: relative;
 
@@ -70,6 +74,39 @@ html, body {
 
     .options_list{
       margin-left: 500px;
+      text-align: left;
+
+      .answer{
+        margin: 20px;
+        
+
+        label {
+            display: inline-block; //為啥一定要這個哩...
+            width: 50px;
+            line-height: 50px;
+            text-align: center;
+            border: 1px solid #999;
+            border-radius: 50%;
+            box-shadow: 0 0 0 45px #FFF inset;
+            transition: 200ms all;
+            cursor: pointer;
+        }
+
+        input:checked + label {
+            box-shadow: 0 0 0 -1px #FFF inset;
+            color: #FFF;
+            background: #7EB634;
+            border-color: #7EB634;
+        }
+        input {
+            display: none;
+        }
+      }
+
+
+
+
+
     }
   }
 }
@@ -87,53 +124,6 @@ html, body {
 
 
 
-.tab_exams,.tab_questions{
-  height: 100%;
-  background: url("../assets/classroom.jpg");
-}
-
-
-.tab_questions {
-  display: none;
-  padding: 30px 0;
-}
-
-#blocks_container{
-  width: 980px;
-  margin: auto;
-}
-
-
-
-/*====add_button==============================================================*/
-.add_blocks {
-  box-shadow    : none;
-  cursor        : pointer;
-  vertical-align: baseline;
-  margin        : 20px;
-  width         : 200px;
-  height        : 200px;
-  overflow      : hidden;
-  display       : inline-block;
-  position      : relative;
-  box-shadow    : none;
-  border-radius : 5%;
-
-
-  .icon_add{
-  height     : 200px;
-  width      : 200px;
-  color      : $grey;
-  // top        : 50%;
-  // left       : 50%;
-  // margin-left: -100px;
-  // margin-top : -100px;
-  }
-}
-
-.ripple_add{
-  cursor: pointer;
-}
 
 
 /*===========================================================================================fab=*/
@@ -198,434 +188,4 @@ html, body {
 		color: #646464;
 	}
 
-}
-
-
-//=================================================================================little navbar
-
-
-.three_points {
-	height:30px; 
-	width:30px;
-	right: 0px;
-	cursor  :pointer;
-
-	core-icon{
-		height: 16px;
-		width: 16px;
-		margin: 7px;
-	}
-}
-
-
-
-
-.trash_can {
-	right : 30px;
-	height:30px; 
-	width :30px;
-	cursor:pointer;
-	
-	core-icon{
-		height: 16px;
-		width: 16px;
-		margin: 7px;
-	}
-}
-
-
-
-
-
-//=========================================================================modal-wrapper=
-
-.blur{
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
-}
-
-
-.modal-wrapper{
-  width:100%;
-  height:100%;
-  position:fixed;
-  top:0; left:0;
-  background:rgba(255,257,153,0.75);
-  visibility:hidden;
-  opacity:0;
-
-  -webkit-transition: all 0.25s ease-in-out;
-  -moz-transition: all 0.25s ease-in-out;
-  -o-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
-
-  &.open{
-  	opacity:1;
-  	visibility: visible;
-
-  	.modal{
-  		margin-top:-200px;
-  		opacity:1;	
-  	}
-
-
-  }
-}
-
-
-.modal{
-  width:600px;
-  height:400px;
-  display:block;
-  margin:50% 0 0 -300px;
-  position:relative;
-  top:50%; left:50%;
-  background:#fff;
-  opacity:0;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-
-
-.modal_header{
-  width:90%;
-  height:32px;
-  padding:1.5em 5%;
-  overflow:hidden;
-  background:#01bce5;
-}
-
-.btn_close{
-  width:32px;
-  height:32px;
-  display:block;
-  float:right;
-}
-
-
-//=========================================================================================form
-.form_newExam{
-  padding: 5%;
-}
-
-.form_step2{
-  display: none;
-  
-  &.state2{
-  	display: block;
-  }
-}
-
-.form_step1.state2{                        /*  .XXX.XXX  => class ="XXX XXX"              */
-  display: none;                           /*  .XXX .XXX => class ="XXX"裡面的class="XXX" */         
-}
-
-
-/* -------------------------------form starting stylings  */
-.Form_Question        { 
-  position:relative; 
-  margin-bottom:45px; 
-}
-
-input         {
-	font-size:18px;
-	padding:10px 10px 10px 5px;
-	display:block;
-	width:300px;
-	border:none;
-	border-bottom:1px solid #757575;
-
-  &:focus{
-  	outline: none; /*focus時會跑出outline，要隱藏掉*/
-  }
-}
-
-
-//Turn Off Number Input Spinners
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
-}
-
-
-
-/*  ==========================================================================LABEL== */
-label          {
-	color:#999; 
-	font-size:18px;
-	font-weight:normal;
-	position:absolute;
-	pointer-events:none;
-	left:5px;
-	top:10px;
-	transition:0.2s ease all; 
-	-moz-transition:0.2s ease all; 
-	-webkit-transition:0.2s ease all;
-}
-
-#date_label{
-  background-color:white;
-  padding:2px;
-}
-
-
-/* active state */
-input:focus ~ label, input:valid ~ label    {
-  top:-20px;
-  font-size:14px;
-  color:#5264AE;
-}
-
-/* BOTTOM BARS ================================= */
-.bar  { 
-	position:relative;
-	display:block;
-	width:300px; 
-
-	&::before, &::after{
-		content:'';
-		height:2px; 
-		width:0;
-		bottom:1px; 
-		position:absolute;
-		background:#5264AE; 
-		transition:0.2s ease all; 
-		-moz-transition:0.2s ease all; 
-		-webkit-transition:0.2s ease all;
-	}
-
-	&::before{
-		left: 50%;
-	}
-
-	&::after{
-		right: 50%
-	}
-}
-
-
-/* active state */
-input:focus ~ .bar::before, input:focus ~ .bar::after {
-  width:50%;
-}
-
-/* HIGHLIGHTER ================================== */
-.highlight {
-  position:absolute;
-  height:60%; 
-  width:100px; 
-  top:25%; 
-  left:0;
-  pointer-events:none;
-  opacity:0.5;
-}
-
-/* active state */
-input:focus ~ .highlight {
-  -webkit-animation:inputHighlighter 0.3s ease;
-  -moz-animation:inputHighlighter 0.3s ease;
-  animation:inputHighlighter 0.3s ease;
-}
-
-/* ANIMATIONS ================ */
-@-webkit-keyframes inputHighlighter {
-  from { background:#5264AE; }
-  to  { width:0; background:transparent; }
-}
-@-moz-keyframes inputHighlighter {
-  from { background:#5264AE; }
-  to  { width:0; background:transparent; }
-}
-@keyframes inputHighlighter {
-  from { background:#5264AE; }
-  to  { width:0; background:transparent; }
-}
-
-.btn_submitModal{
-  display: none;
-  
-  &.state2{
-  	display: inline;
-  }
-}
-
-.btn_nextModal.state2{
-  display: none;
-}
-
-/* =================================================================================blocks css */
-.blocks {
-    margin          : 20px;
-    width           : 200px;
-    height          : 200px;
-    display         : inline-block;
-    overflow        : hidden;
-    position        : relative;
-    box-shadow      : 6px 6px 11px 0px rgba(0,0,0,0.67);
-    border-radius   : 5%;
-    background-color: $grey;
-
-    .img_container{
-		height: 100px;
-  	display:table-cell;    /*----------->置中方法*/
-  	text-align:center;
-	}
-
-	img{
-		width: 200px;
-	}
-
-}
-
-.blocks_title{
-  padding-top  : 20px;
-  font-size    : 20px;
-  margin-bottom: 10px;
-}
-
-.blocks_text{
-    height: 100px;
-    padding-left: 20px;
-}
-
-// =============================================================================deleteConfirm
-@import url(http://weloveiconfonts.com/api/?family=fontawesome);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
-
-/* fontawesome */
-[class*="fontawesome-"]:before {
-  font-family: 'FontAwesome', sans-serif;
-}
-
-.confirm_circle{
-  display: none;
-}
-.square{
-  z-index:2;
-  height:250px;
-  width:250px;
-  background:#373737;
-  border-radius:100%;
-  position:absolute;
-  overflow:hidden;
-  top:0;
-  left:0;
-  bottom:0;
-  right:0;
-  margin:auto;
-}
-
-.main{
-	text-align:center;
-	font-family:cambria;
-
-	span{
-		color:#d35454;
-		font-size:28px;
-		display:block;
-		position:relative;
-		margin-top:20px;
-	}
-
-	strong{
-		font-family: 'Open Sans Condensed', sans-serif;
-		color:#fff;
-		position:relative;
-		display:block;
-		font-size:18px;
-		margin-top:5px;
-		text-transform:uppercase;
-	}
-
-	p{
-		font-size: 12px;
-		color: #a9a9a9;
-	}
-}
-
-.inner-square{
-  height:125px;
-  width:125px;
-  position:absolute;
-  bottom:0;
-  cursor:pointer;
-  line-height:100px;
-  font-size:40px;
-  color:#fff;
-  text-align:center;
-}
-
-.left{
-  left:0;
-  background:#8dc058;
-}
-
-.left span{
-  padding-left:20px;
-}
-
-.right{
-  right:0;
-  background:#d35454;
-}
-
-.right span{
-  padding-right:20px;
-}
-
-
-
-
-.confirmCircle_wrapper{
-  width:100%;
-  height:100%;
-  position:fixed;
-  top:0; left:0;
-  background:rgba(255,257,153,0.75);
-  visibility:hidden;
-  opacity:0;
-
-  -webkit-transition: all 0.25s ease-in-out;
-  -moz-transition: all 0.25s ease-in-out;
-  -o-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
-
-  &.open{
-  	opacity:1;
-    visibility: visible;
-
-  	.confirm_circle{
-  		display: block;
-  	}
-  }
-}
-
-.confirmPreview_wrapper{
-  width:100%;
-  height:100%;
-  position:fixed;
-  top:0; left:0;
-  background:rgba(255,257,153,0.75);
-  visibility:hidden;
-  opacity:0;
-
-  -webkit-transition: all 0.25s ease-in-out;
-  -moz-transition: all 0.25s ease-in-out;
-  -o-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
-
-  &.open{
-    opacity:1;
-    visibility: visible;
-
-    .confirm_circle{
-      display: block;
-    }
-  }
 }
