@@ -107,15 +107,144 @@ html, body {
 .sheet .handin {
   float: right;
 }
-/* line 56, ../sass/test.scss */
+/* line 75, ../sass/test.scss */
+.sheet #pagination_arrows {
+  display: inline;
+}
+/* line 79, ../sass/test.scss */
+.sheet button {
+  display: inline;
+  -webkit-appearance: none;
+  background: transparent;
+  border: 0;
+  outline: 0;
+}
+/* line 87, ../sass/test.scss */
+.sheet .paginate {
+  display: inline;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transform: translate3d(0, 0, 0);
+}
+/* line 94, ../sass/test.scss */
+.sheet .paginate i {
+  position: absolute;
+  width: 50px;
+  height: 5px;
+  border-radius: 2.5px;
+  background: #87d3b7;
+  transition: all 0.15s ease;
+}
+/* line 105, ../sass/test.scss */
+.sheet .paginate.left i {
+  transform-origin: 0% 50%;
+}
+/* line 66, ../sass/test.scss */
+.sheet .paginate.left i:first-child {
+  transform: translate(0, -1px) rotate(40deg);
+}
+/* line 70, ../sass/test.scss */
+.sheet .paginate.left i:last-child {
+  transform: translate(0, 1px) rotate(-40deg);
+}
+/* line 66, ../sass/test.scss */
+.sheet .paginate.left:hover i:first-child {
+  transform: translate(0, -1px) rotate(30deg);
+}
+/* line 70, ../sass/test.scss */
+.sheet .paginate.left:hover i:last-child {
+  transform: translate(0, 1px) rotate(-30deg);
+}
+/* line 66, ../sass/test.scss */
+.sheet .paginate.left:active i:first-child {
+  transform: translate(1px, -1px) rotate(25deg);
+}
+/* line 70, ../sass/test.scss */
+.sheet .paginate.left:active i:last-child {
+  transform: translate(1px, 1px) rotate(-25deg);
+}
+/* line 66, ../sass/test.scss */
+.sheet .paginate.left[data-state=disabled] i:first-child {
+  transform: translate(-5px, 0) rotate(0deg);
+}
+/* line 70, ../sass/test.scss */
+.sheet .paginate.left[data-state=disabled] i:last-child {
+  transform: translate(-5px, 0) rotate(0deg);
+}
+/* line 66, ../sass/test.scss */
+.sheet .paginate.left[data-state=disabled]:hover i:first-child {
+  transform: translate(-5px, 0) rotate(0deg);
+}
+/* line 70, ../sass/test.scss */
+.sheet .paginate.left[data-state=disabled]:hover i:last-child {
+  transform: translate(-5px, 0) rotate(0deg);
+}
+/* line 130, ../sass/test.scss */
+.sheet .paginate.right i {
+  transform-origin: 100% 50%;
+}
+/* line 66, ../sass/test.scss */
+.sheet .paginate.right i:first-child {
+  transform: translate(0, 1px) rotate(40deg);
+}
+/* line 70, ../sass/test.scss */
+.sheet .paginate.right i:last-child {
+  transform: translate(0, -1px) rotate(-40deg);
+}
+/* line 66, ../sass/test.scss */
+.sheet .paginate.right:hover i:first-child {
+  transform: translate(0, 1px) rotate(30deg);
+}
+/* line 70, ../sass/test.scss */
+.sheet .paginate.right:hover i:last-child {
+  transform: translate(0, -1px) rotate(-30deg);
+}
+/* line 66, ../sass/test.scss */
+.sheet .paginate.right:active i:first-child {
+  transform: translate(1px, 1px) rotate(25deg);
+}
+/* line 70, ../sass/test.scss */
+.sheet .paginate.right:active i:last-child {
+  transform: translate(1px, -1px) rotate(-25deg);
+}
+/* line 66, ../sass/test.scss */
+.sheet .paginate.right[data-state=disabled] i:first-child {
+  transform: translate(5px, 0) rotate(0deg);
+}
+/* line 70, ../sass/test.scss */
+.sheet .paginate.right[data-state=disabled] i:last-child {
+  transform: translate(5px, 0) rotate(0deg);
+}
+/* line 66, ../sass/test.scss */
+.sheet .paginate.right[data-state=disabled]:hover i:first-child {
+  transform: translate(5px, 0) rotate(0deg);
+}
+/* line 70, ../sass/test.scss */
+.sheet .paginate.right[data-state=disabled]:hover i:last-child {
+  transform: translate(5px, 0) rotate(0deg);
+}
+/* line 153, ../sass/test.scss */
+.sheet .paginate[data-state=disabled] {
+  opacity: 0.3;
+  cursor: default;
+}
+/* line 161, ../sass/test.scss */
+.sheet .counter {
+  color: #87d3b7;
+  width: 100%;
+  font-size: 30px;
+  font-family: Helvetica, sans-serif;
+}
+/* line 216, ../sass/test.scss */
 .sheet .testnumber {
   margin: 20px;
 }
-/* line 60, ../sass/test.scss */
+/* line 220, ../sass/test.scss */
 .sheet #bigdiv {
   position: relative;
 }
-/* line 63, ../sass/test.scss */
+/* line 223, ../sass/test.scss */
 .sheet #bigdiv .question_content {
   position: absolute;
   left: 0px;
@@ -124,20 +253,20 @@ html, body {
   display: -webkit-flex;
   display: flex;
 }
-/* line 71, ../sass/test.scss */
+/* line 231, ../sass/test.scss */
 .sheet #bigdiv .qussmall {
   margin: auto;
 }
-/* line 75, ../sass/test.scss */
+/* line 235, ../sass/test.scss */
 .sheet #bigdiv .options_list {
   margin-left: 500px;
   text-align: left;
 }
-/* line 79, ../sass/test.scss */
+/* line 239, ../sass/test.scss */
 .sheet #bigdiv .options_list .answer {
   margin: 20px;
 }
-/* line 83, ../sass/test.scss */
+/* line 243, ../sass/test.scss */
 .sheet #bigdiv .options_list .answer label {
   display: inline-block;
   width: 50px;
@@ -149,19 +278,19 @@ html, body {
   transition: 200ms all;
   cursor: pointer;
 }
-/* line 95, ../sass/test.scss */
+/* line 255, ../sass/test.scss */
 .sheet #bigdiv .options_list .answer input:checked + label {
   box-shadow: 0 0 0 -1px #FFF inset;
   color: #FFF;
   background: #7EB634;
   border-color: #7EB634;
 }
-/* line 101, ../sass/test.scss */
+/* line 261, ../sass/test.scss */
 .sheet #bigdiv .options_list .answer input {
   display: none;
 }
 
-/* line 114, ../sass/test.scss */
+/* line 274, ../sass/test.scss */
 .line {
   width: 80%;
   height: 1px;
@@ -170,7 +299,7 @@ html, body {
 }
 
 /*===========================================================================================fab=*/
-/* line 132, ../sass/test.scss */
+/* line 292, ../sass/test.scss */
 .fab {
   position: absolute;
   overflow: hidden;
@@ -181,7 +310,7 @@ html, body {
   cursor: pointer;
   color: #d6ce85;
 }
-/* line 142, ../sass/test.scss */
+/* line 302, ../sass/test.scss */
 .fab.green {
   background-color: #0f9d58;
   right: 10px;
@@ -191,56 +320,59 @@ html, body {
   height: 56px;
   border-radius: 50%;
 }
-/* line 152, ../sass/test.scss */
+/* line 312, ../sass/test.scss */
 .fab:active {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
   transition-delay: 0s;
 }
-/* line 157, ../sass/test.scss */
+/* line 317, ../sass/test.scss */
 .fab > core-icon {
   margin: 16px;
 }
-/* line 161, ../sass/test.scss */
+/* line 321, ../sass/test.scss */
 .fab > core-icon::shadow path {
   fill: #fff;
 }
 
 /* ==========================================================Icon Button=*/
-/* line 170, ../sass/test.scss */
+/* line 330, ../sass/test.scss */
 .icon-button {
   position: absolute;
   width: 56px;
   height: 56px;
 }
-/* line 175, ../sass/test.scss */
+/* line 335, ../sass/test.scss */
 .icon-button core-icon {
   margin: 13px;
   transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* line 181, ../sass/test.scss */
+/* line 341, ../sass/test.scss */
 .icon-button:hover core-icon {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
-/* line 186, ../sass/test.scss */
+/* line 346, ../sass/test.scss */
 .icon-button paper-ripple {
   overflow: hidden;
   color: #646464;
 }
 
-/* line 196, ../sass/test.scss */
+/* line 358, ../sass/test.scss */
 .pagination {
   display: block;
+  width: 980px;
+  margin: 0 auto;
+  text-align: center;
 }
-/* line 198, ../sass/test.scss */
+/* line 363, ../sass/test.scss */
 .pagination li {
-  float: left;
+  display: inline-block;
   list-style: none;
   font-family: Helvetica, Helvetica Neue,sans-serif;
   color: #444;
 }
-/* line 203, ../sass/test.scss */
+/* line 368, ../sass/test.scss */
 .pagination li a {
   display: block;
   width: 40px;
@@ -251,7 +383,7 @@ html, body {
   text-decoration: none;
 }
 
-/* line 217, ../sass/test.scss */
+/* line 390, ../sass/test.scss */
 .pagination li a:before {
   position: absolute;
   content: '';
@@ -260,29 +392,29 @@ html, body {
   width: 100%;
   height: 100%;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.75);
-  -webkit-transform: scale(0);
   border-radius: 100px;
-  -webkit-transition: all .25s;
+  -webkit-transform: scale(0);
+  -webkit-transition: all 0.25s;
 }
 
-/* line 230, ../sass/test.scss */
+/* line 404, ../sass/test.scss */
 .pagination li a:hover {
   color: transparent;
 }
 
-/* line 234, ../sass/test.scss */
+/* line 408, ../sass/test.scss */
 .pagination li a:hover:before {
   -webkit-transform: scale(0.3);
   box-shadow: inset 0 0 0 4px rgba(0, 0, 0, 0.75);
 }
 
-/* line 239, ../sass/test.scss */
+/* line 413, ../sass/test.scss */
 .pagination li.active a:before {
   -webkit-transform: scale(1);
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.75);
 }
 
-/* line 244, ../sass/test.scss */
+/* line 418, ../sass/test.scss */
 .pagination li.active a:hover {
   color: black;
 }
