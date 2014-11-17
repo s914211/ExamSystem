@@ -77,18 +77,19 @@ $(document).on('click', '.three_points', function(event) {
     Show_ThreePointsWrapper();
 });
 
-$(document).on("click",".three_points.btn_close",function(){
+$(document).on('click', '#threePointsWrapper_closeBtn', function(){
+    console.log("123");
     Close_ThreePointsWrapper();
 });
 
 function Show_ThreePointsWrapper(){
     $('.tab_exams').toggleClass('blur');    
-    $(".modal-wrapper.threePointsWrapper").toggleClass("open");    
+    $("#modal_for_threePoints").toggleClass("open");    
 }
 
 function Close_ThreePointsWrapper(){
     $('.tab_exams').removeClass('blur');    
-    $(".modal-wrapper.threePointsWrapper").removeClass("open");
+    $("#modal_for_threePoints").removeClass("open");
 }
 
 
@@ -207,12 +208,12 @@ $(document).on("click",".btn_close",function(){
 });
 
 function Open_ModalWrapper(){
-	$('.modal-wrapper').toggleClass('open');
+	$('#modal_for_add').toggleClass('open');
 	$('.tab_exams').toggleClass('blur');	
 }
 function Close_ModalWrapper(){
 	$("input").val("");
-	$(".modal-wrapper").removeClass("open");
+	$("#modal_for_add").removeClass("open");
 	$(".tab_exams").removeClass("blur");
 	Back_To_State1();
 }
