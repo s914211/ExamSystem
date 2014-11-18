@@ -17,79 +17,6 @@ body {
     height: 100%;
 }
 
-ul.navigation, ul.navigation li {
-    list-style: none;
-}
-#nav {
-    display: flex;
-    height: 50px;
-}
-ul.navigation {
-    margin: auto;
-}
-li {
-    position: relative;
-    float: left;
-    width: 120px;
-}
-/* 選單 li 裡面連結之樣式 */
-
-ul.navigation li a {
-    display: block;
-    padding: 15px 0px 15px 35%;
-    background: #888;
-    color: #FFF;
-}
-/* 特定在第一層，以左邊灰線分隔 */
-
-ul.navigation > li > a {
-    border-bottom: 1px solid #CCC;
-    border-left: 1px solid #CCC;
-}
-ul.navigation > li > a:hover {
-    color: #666;
-    background: #DDD
-}
-/* 特定在第一層 > 第二層之後下拉部分之樣式 */
-
-ul.navigation li ul {
-    display: none;
-    float: left;
-    position: absolute;
-    left: 0;
-    margin: 0;
-}
-/* 當第一層選單被觸發時，指定第二層顯示 */
-
-ul.navigation li:hover > ul {
-    display: block;
-}
-/* 特定在第二層或之後下拉部分 li 之樣式 */
-
-ul.navigation ul li {
-    border-bottom: 2px solid #DDD;
-}
-
-li span a{
-    left: 50px;
-}
-/* 特定在第二層或之後下拉部分 li （最後一項不要底線）之樣式 */
-
-ul.navigation ul li:last-child {
-    border-bottom: none;
-}
-/* 第二層或之後 選單 li 之樣式 */
-
-ul.navigation ul a {
-    width: 90px;
-    padding: 5px 15px;
-    color: #666;
-    background: #EEE;
-}
-ul.navigation ul a:hover {
-    background: #CCC;
-    text-decoration: none;
-}
 
 /*題庫表格部分*/
 
@@ -147,7 +74,7 @@ td {
 
 .editdiv {
     display: flex;
-    margin-top: 65px;
+    margin-top: 15px;
     margin-bottom: 25px;
     margin-right: 1%;
 }
