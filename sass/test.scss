@@ -41,23 +41,24 @@ html, body {
   background-color: white;
   box-shadow   : 6px 6px 11px 0px rgba(0,0,0,0.67);
   border-radius: 5%;
-  text-align: center;
+  // text-align: center;
   font-size: 20px;
   
   .exam_title{
     font-size: 40px;
     margin: 20px;
+    text-align: center;
   }
 
   .handin{
     float:right;
   }
+}
 
 
 
-
-$size: 50px;
-$thickness: 5px;
+$size: 25px;
+$thickness: 2px;
 $angle: 40deg;
 $angleHover: 30deg;
 $angleActive: 25deg;
@@ -72,12 +73,16 @@ $angleActive: 25deg;
   }
 }
 
+
 #pagination_arrows{
-  display: inline;
+  text-align: right;
+  right:0;
+  span{
+    color: transparent;
+  }
 }
 
 button {
-  display: inline;
   -webkit-appearance: none;
   background: transparent;
   border: 0;
@@ -85,18 +90,17 @@ button {
 }
 
 .paginate {
-  display: inline;
-  width: $size;
-  height: $size;
+  width: $size !important;
+  height: $size !important;  
   cursor: pointer;
   transform: translate3d(0,0,0); // fixes flicker in webkit
 
   i {
     position: absolute;
-    width: $size;
-    height: $thickness;
+    width: $size ;
+    height: $thickness ; 
     border-radius: $thickness / 2;
-    background: $green;
+    background: $greenDark;
     transition: all 0.15s ease;
   }
 
@@ -159,13 +163,60 @@ button {
 
 
 .counter {
+  line-height: 100px;
   color: $green;
-  width: 100%;
-  font-size: 30px;
+  display: inline;
+  font-size: $size;
   font-family: Helvetica, sans-serif;
 }
 
-
+/*---Page Switcher
+--------------------------------------*/
+ #pre, #next {
+    position: fixed;
+    top: 45%;
+    text-align: center;
+    height: 90px;
+    width: 90px;
+    background: #000;
+    opacity: 0.75;
+    color: #fff;
+    transition: all .3s ease-in;
+    -webkit-transition: all .3s ease-in;
+    cursor: pointer;
+}
+#pre {
+    // display: none;
+    left: -70px;
+    border-radius: 0px 100% 100% 0px;
+}
+#next {
+    right: -70px;
+    border-radius: 100% 0px 0px 100%;
+}
+#pre a, #next a {
+    display: block;
+    max-width: 100%;
+    font-size: 20px;
+    color: #fff;
+    position: relative;
+    top: 39%;
+    cursor: pointer;
+}
+#pre a {
+    left: 17%;
+}
+#next a {
+    right: 17%;
+}
+#pre:hover {
+    transition: 0.2s ease-in;
+    left: -50px;
+}
+#next:hover {
+    transition: 0.2s ease-in;
+    right: -50px;
+}
 
 
 
@@ -262,12 +313,6 @@ button {
             display: none;
         }
       }
-
-
-
-
-
-    }
   }
 }
 
