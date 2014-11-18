@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Student</title>
+
+    <link href="css/reset.css" rel="stylesheet" />
+
+    <script src="https://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/student.js"></script>
+    <link rel="stylesheet" href="stylesheets/screen.css" media="screen" type="text/css" />
+    <link rel="import" href="http://www.polymer-project.org/components/core-icons/core-icons.html">
+    <link rel="import" href="http://www.polymer-project.org/components/paper-ripple/paper-ripple.html">
+
+
+
+</head>
+
+<body>
+
+    <div class="header">
+
+        <div class="navbar">
+            <div class="left_button">
+                <div class="icon-button">
+                    <core-icon icon="menu"></core-icon>
+                    <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
+                </div>
+            </div>
+
+            <div class="tabs">
+                <div><a href="#">tab_exams</a>
+                </div>
+                <!--
+       -->
+                <div><a href="#">tab_questions</a>
+                </div>
+                <!--
+       -->
+                <!-- 加註解符號是為了讓Tab中間沒有縫隙 -->
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 內容 -->
+    <div class="tab_exams">
+
+        <div class="blocks">
+            <div class="icon-button three_points">
+                <core-icon icon="more-vert"></core-icon>
+                <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
+            </div>
+            
+
+            <div class="fab green">
+                <core-icon icon="assignment"></core-icon>
+                <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
+            </div>
+            <div class="blocks_text">
+                <p class="blocks_title">woodsman</p>
+                <p>Logs are nice, I own a few myself.</p>
+            </div>
+
+            <div class="img_container">
+                <img src="assets/1.jpg" />
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="modal-wrapper">
+        <div class="modal">
+            <div class="modal_header">
+                <a class="btn_close">
+                    <div class="icon-button">
+                        <core-icon icon="close"></core-icon>
+                        <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
+                    </div>
+                </a>
+            </div>           
+
+
+            <div class="modal_footer">
+
+                <a class="btn_nextModal">
+                    <div class="icon-button">
+                        <core-icon icon="arrow-forward"></core-icon>
+                        <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
+                    </div>
+                </a>
+
+                <a class="btn_submitModal">
+                    <div class="icon-button">
+                        <core-icon icon="file-upload"></core-icon>
+                        <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="confirmCircle_wrapper">
+        <div class="confirm_circle">
+
+            <div class="square">
+                <div class="main">
+                    <span class='fontawesome-trash'></span>
+                    <strong>Delete?</strong>
+                    <p>This will delete the content</p>
+                </div>
+                <div class="inner-square left">
+                    <span class='fontawesome-ok'></span>
+                </div>
+                <div class="inner-square right">
+                    <span class='fontawesome-remove'></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="tab_questions">
+    </div>
+
+</body>
+
+</html>
