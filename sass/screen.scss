@@ -3,15 +3,22 @@
 @import "compass/css3";
 @import url(http://fonts.googleapis.com/css?family=Roboto:300);
 
-
 // color
 $green: #87d3b7;
+$green2:#0f9d58;
 
-html {
+$grey:#d6d1a3;
+$greenDark:#32ab86;
+$greenMid:#75bd82;
+$greenLight:#b3c785;
+$greyLight:#d6ce85;
+
+
+
+html, body {
   min-height: 100%;
-}
-
-body { 
+  height:100%;
+  overflow:hidden;
   font-family: "Roboto";
 }
 
@@ -23,63 +30,89 @@ a {
 /* NAVBAR */
 
 .navbar {
-	top: 0;
-	left: 0;
-	right: 0;
-	color: #666;
-	background-color: #ddd;
-	box-shadow: 0 0 8px rgba(0,0,0,0.3);
-	z-index: 1;
+  top       : 0;
+  left      : 0;
+  right     : 0;
+  color     : #666;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  z-index   : 1;
 
 	.tabs{
-		height: 56px;
-  		text-align: center;
-  		font-size: 150%;
-  		background-color: white;
+    height          : 56px;
+    text-align      : center;
+    font-size       : 150%;
+    background-color: $greyLight;
+
 		div {
-			display: inline-block;
-			margin: 0;
+      display: inline-block;
+      margin : 0;
 		}
 
 		a {
-			display: block;
-			text-decoration: none;
-			-webkit-transition: all 0.2s ease-in-out;
-			-moz-transition: all 0.2s ease-in-out;
-			transition: all 0.2s ease-in-out;
-			border-bottom: 2px solid $green;
+      color: $green2;
+      display           : block;
+      outline           : none;
+      padding           : 10px;
+      border            : 2px solid $green2;
+      margin-top        :4px;
+      text-decoration   : none;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition   : all 0.2s ease-in-out;
+      transition        : all 0.2s ease-in-out;
+
 		}
+
+    .current a {
+      color: $greyLight;
+      background-color: $green2;
+    }
+
 	}
 }
 
+
+.tab_exams,.tab_questions{
+  height: 100%;
+  background: url("../assets/classroom.jpg");
+}
+
+
 .tab_questions {
-	display: none;
-	padding: 30px 0;
+  display: none;
+  padding: 30px 0;
 }
 
-.current a {
-	color: #fff;
-	background: $green;
+#blocks_container{
+  width: 980px;
+  margin: auto;
 }
-
 
 
 
 /*====add_button==============================================================*/
-.blocks.add {
-    background-color: #E6E6E6;
-    box-shadow      : none;
-}
+.add_blocks {
+  box-shadow    : none;
+  cursor        : pointer;
+  vertical-align: baseline;
+  margin        : 20px;
+  width         : 200px;
+  height        : 200px;
+  overflow      : hidden;
+  display       : inline-block;
+  position      : relative;
+  box-shadow    : none;
+  border-radius : 5%;
 
-.icon_add{
-  height     : 150px;
-  width      : 150px;
-  color      : gray;
-  position   : absolute;
-  top        : 50%;
-  left       : 50%;
-  margin-left: -75px;
-  margin-top : -75px;
+
+  .icon_add{
+  height     : 200px;
+  width      : 200px;
+  color      : $grey;
+  // top        : 50%;
+  // left       : 50%;
+  // margin-left: -100px;
+  // margin-top : -100px;
+  }
 }
 
 .ripple_add{
@@ -98,7 +131,7 @@ a {
 	box-shadow      : 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 	z-index         : 10;
 	cursor          :pointer;
-	color           : #fff;
+	color           : $greyLight;
 	
 	&.green{
 		background-color: #0f9d58;
@@ -240,6 +273,12 @@ a {
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+  span{
+    text-align: center;
+    width: 100%;
+    font-size: 150%;
+    color: white;
+  }
 }
 
 
@@ -248,7 +287,7 @@ a {
   height:32px;
   padding:1.5em 5%;
   overflow:hidden;
-  background:#01bce5;
+  background:$green;
 }
 
 .btn_close{
@@ -297,6 +336,14 @@ input         {
 }
 
 
+//Turn Off Number Input Spinners
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
 
 /*  ==========================================================================LABEL== */
 label          {
@@ -311,6 +358,12 @@ label          {
 	-moz-transition:0.2s ease all; 
 	-webkit-transition:0.2s ease all;
 }
+
+#date_label{
+  background-color:white;
+  padding:2px;
+}
+
 
 /* active state */
 input:focus ~ label, input:valid ~ label    {
@@ -406,13 +459,12 @@ input:focus ~ .highlight {
     position        : relative;
     box-shadow      : 6px 6px 11px 0px rgba(0,0,0,0.67);
     border-radius   : 5%;
-    background-color: #F1EBE4;
+    background-color: $grey;
 
     .img_container{
 		height: 100px;
-  		display:table-cell;    /*----------->置中方法*/
-  		text-align:center;
-  		vertical-align : middle;
+  	display:table-cell;    /*----------->置中方法*/
+  	text-align:center;
 	}
 
 	img{
@@ -536,9 +588,34 @@ input:focus ~ .highlight {
 
   &.open{
   	opacity:1;
+    visibility: visible;
 
   	.confirm_circle{
   		display: block;
   	}
+  }
+}
+
+.confirmPreview_wrapper{
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:0; left:0;
+  background:rgba(255,257,153,0.75);
+  visibility:hidden;
+  opacity:0;
+
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+
+  &.open{
+    opacity:1;
+    visibility: visible;
+
+    .confirm_circle{
+      display: block;
+    }
   }
 }

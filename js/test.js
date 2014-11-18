@@ -1,8 +1,56 @@
+
+// =================================================================pagination
+
+
+
+
+
+
+
+$('.pagination li').on('click', function(e){
+  $(".pagination li").removeClass('active');
+  $(this).addClass('active');  
+})
+
+
+
+// =================================================================pagination-arrows
+
+var pr = document.querySelector( '.paginate.left' );
+var pl = document.querySelector( '.paginate.right' );
+
+pr.onclick = slide.bind( this, -1 );
+pl.onclick = slide.bind( this, 1 );
+
+var index = 0, total = 5;
+
+function slide(offset) {
+  index = Math.min( Math.max( index + offset, 0 ), total - 1 );
+
+  document.querySelector( '.counter' ).innerHTML = ( index + 1 ) + ' / ' + total;
+
+  pr.setAttribute( 'data-state', index === 0 ? 'disabled' : '' );
+  pl.setAttribute( 'data-state', index === total - 1 ? 'disabled' : '' );
+}
+
+slide(0);
+
+
+
+
+
+
+
+
+
+
+
 $(document).ready(function() {
     Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa7ryzTSmMjP3ZB4fYJNFqty");
-
-    var question = Parse.Object.extend('example');
+    var localexamname = localStorage.getItem("examname");
+    var question = Parse.Object.extend('QuesBank');
     var query = new Parse.Query(question);
+    query.equalTo("examname", localexamname);
     query.equalTo("no", "01");
     query.first({
         success: function(examquestion) {
@@ -136,7 +184,8 @@ function save() {
 
 
 
-    var question = Parse.Object.extend('example');
+    var localexamname = localStorage.getItem("examname");
+    var question = Parse.Object.extend('QuesBank');
     var query = new Parse.Query(question);
     query.ascending("no");
     query.find({
@@ -161,3 +210,5 @@ function content() {
     $('.spanC').text(userans[$('.numberclick').text()][3]);
     $('.spanD').text(userans[$('.numberclick').text()][4]);
 }
+
+

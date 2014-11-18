@@ -21,7 +21,8 @@ $(document).ready(function(){
                     window.location.assign("index.html");
                   },
                   error: function(user, error){
-                    alert("Error: " + error.code + " " + error.message);
+                    alert("You have the wrong email or password!");
+                    //alert("Error: " + error.code + " " + error.message);
                   }
               });
         }
@@ -32,14 +33,27 @@ $(document).ready(function(){
   login = function(){
     var userid = document.getElementById('loginid').value;
     var userpassword = document.getElementById('loginpassword').value;
-    Parse.User.logIn(userid,userpassword,{
-      success:function(){
-        alert("login success!");
-      },
-      error:function(user, error){
-        alert("Error: " + error.code + " " + error.message);
-      }
-    })
+    if(userid == "admin" && userpassword =="admin"){
+        Parse.User.logIn(userid,userpassword,{
+        success:function(){
+          window.location.assign("attendexam.html");
+        },
+        error:function(user, error){
+          alert("Error: " + error.code + " " + error.message);
+        }
+      })
+    }
+    else{
+        Parse.User.logIn(userid,userpassword,{
+          success:function(){
+            window.location.assign("attendexam.html");
+          },
+          error:function(user, error){
+            alert("You have the wrong email or password!");
+            //alert("Error: " + error.code + " " + error.message);
+          }
+        })
+    }
   };
 
 

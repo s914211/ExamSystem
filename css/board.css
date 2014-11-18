@@ -8,7 +8,6 @@ body, ul.navigation, ul.navigation li, ul.navigation ul, a, div {
 html, body {
     padding: 0;
     margin: 0;
-    background: url("../assets/classroom.jpg") center;
     background-size: cover;
 }
 

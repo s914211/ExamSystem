@@ -1,5 +1,6 @@
 
 $(document).ready(function() { 
+	Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa7ryzTSmMjP3ZB4fYJNFqty");
 
 	    // ================================================================tabs交換效果
 		var tab_now;
@@ -23,34 +24,40 @@ $(document).ready(function() {
 			
 		 	// g.preventDefault();                                 //不確定幹嘛...
 		});
+
+		$('.fab').click(function(){
+			$('.fab').removeClass('green').addClass('red').html('<core-icon icon="create" aria-label="create" role="img"><svg viewBox="0 0 24 24" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" fit="" style="pointer-events: none; display: block;"><g><path d="M3 17.25v3.75h3.75l11.06-11.06-3.75-3.75-11.06 11.06zm17.71-10.21c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></g></svg></core-icon>');
+
+		});
+
 });
 
 //=========================================================================刪除考試，按下垃圾桶
-$(document).on("click",".trash_can",Show_Confirm);
+// $(document).on("click",".fab",Show_Confirm);
 
-function Show_Confirm(e){
-	Show_ConfirmWrapper();
-	// ------------------------------------------------------------刪除block
-	var div_clicked=$(e.target).parent().parent('div');
-	$(".inner-square.left").click(function(){   //點左邊，確認刪除
-		div_clicked.remove();
-		Close_ConfirmWrapper();
-	});
-}
-//----------------------------------------------------------------點右邊沒事
-$(document).on("click",".inner-square.right",function(){
-	Close_ConfirmWrapper();
-});
+// function Show_Confirm(e){
+// 	Show_ConfirmWrapper();
+// 	// ------------------------------------------------------------刪除block
+// 	var div_clicked=$(e.target).parent().parent('div');
+// 	$(".inner-square.left").click(function(){   //點左邊，確認刪除
+// 		div_clicked.remove();
+// 		Close_ConfirmWrapper();
+// 	});
+// }
+// //----------------------------------------------------------------點右邊沒事        (我先註解掉，你要用就改)
+// $(document).on("click",".inner-square.right",function(){
+// 	Close_ConfirmWrapper();
+// });
 
-function Show_ConfirmWrapper(){
-	$('.tab_exams').toggleClass('blur');	
-	$(".confirmCircle_wrapper").toggleClass("open");	
-}
+// function Show_ConfirmWrapper(){
+// 	$('.tab_exams').toggleClass('blur');	
+// 	$(".confirmCircle_wrapper").toggleClass("open");	
+// }
 
-function Close_ConfirmWrapper(){
-	$('.tab_exams').removeClass('blur');	
-	$(".confirmCircle_wrapper").removeClass("open");
-}
+// function Close_ConfirmWrapper(){
+// 	$('.tab_exams').removeClass('blur');	
+// 	$(".confirmCircle_wrapper").removeClass("open");
+// }
 
 // function Delete_Exam(e){           //用e指定滑鼠點擊目標
 // 	$(e.target).parent().parent('div').remove();	
