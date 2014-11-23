@@ -2,6 +2,7 @@ $(document).ready(function() {
     Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa7ryzTSmMjP3ZB4fYJNFqty");
     
     getexam();
+    scoresearch();
 
 
 
@@ -147,4 +148,22 @@ function getexam() {
             }
         }
     });
+}
+
+function scoresearch() {
+	var examrecord = Parse.Object.extend('ExamRecord');
+    var query = new Parse.Query(examrecord);
+    query.equalTo('user',Parse.User.current());
+    query.find({
+        success:function(exams){
+            for (i = 0; i < exams.length; i++) {
+                
+                var exam = exams[i].get('exam');
+                var examblock = '<div class="blocks"><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="fab green"><core-icon icon="assignment"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"><p class="blocks_title">' + examname + '</p><p class"blocks_date"></p><p class="blocks_time"></p></div><div class="img_container"><img src="assets/1.jpg" /></div></div>';
+
+                $(".tab_questions").append(examblock);
+            }
+            
+        }
+    })   
 }
