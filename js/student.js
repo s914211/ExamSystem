@@ -1,6 +1,6 @@
 $(document).ready(function() {
     Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa7ryzTSmMjP3ZB4fYJNFqty");
-    
+
     getexam();
     scoresearch();
 
@@ -52,7 +52,7 @@ $(document).ready(function() {
     });
 
 
-	
+
 
     //=========================================================================刪除考試，按下垃圾桶
     $(document).on("click", ".red", Show_Confirm);
@@ -131,17 +131,17 @@ $(document).ready(function() {
 });
 
 function getexam() {
-	var exam = Parse.Object.extend('Exams');
+    var exam = Parse.Object.extend('Exams');
     var query = new Parse.Query(exam);
     query.find({
         success: function(exams) {
 
-            for (j = 0; j < exams.length; j++) {
+            for (i = 0; i < exams.length; i++) {
 
-                var examid = exams[j].id;
-                var examname = exams[j].get('examname');
-                var examdate = exams[j].get('examdate');
-                var examtime = exams[j].get('examtime');
+                var examid = exams[i].id;
+                var examname = exams[i].get('examname');
+                var examdate = exams[i].get('examdate');
+                var examtime = exams[i].get('examtime');
                 var examblock = '<div class="blocks" ' + 'id="' + examid + '"' + '><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="fab green"><core-icon icon="assignment"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"><p class="blocks_title">' + examname + '</p><p class"blocks_date">' + examdate + '</p><p class="blocks_time">' + examtime + '分鐘' + '</p></div><div class="img_container"><img src="assets/1.jpg" /></div></div>';
 
                 $(".tab_exams").append(examblock);
@@ -151,19 +151,20 @@ function getexam() {
 }
 
 function scoresearch() {
-	var examrecord = Parse.Object.extend('ExamRecord');
+    var examrecord = Parse.Object.extend('ExamRecord');
     var query = new Parse.Query(examrecord);
-    query.equalTo('user',Parse.User.current());
+    query.include('exam');
+    query.equalTo('user', Parse.User.current());
     query.find({
-        success:function(exams){
+        success: function(exams) {
             for (i = 0; i < exams.length; i++) {
-                
-                var exam = exams[i].get('exam');
-                var examblock = '<div class="blocks"><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="fab green"><core-icon icon="assignment"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"><p class="blocks_title">' + exam + '</p><p class"blocks_date"></p><p class="blocks_time"></p></div><div class="img_container"><img src="assets/1.jpg" /></div></div>';
+                var examname = exams[i].get('exam').get('examname');
+                var examblock = '<div class="blocks"><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="fab green"><core-icon icon="assignment"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"><p class="blocks_title">' + examname + '</p><p class"blocks_date"></p><p class="blocks_time"></p></div><div class="img_container"><img src="assets/1.jpg" /></div></div>';
 
                 $(".tab_questions").append(examblock);
+
             }
-            
         }
-    })   
+
+    });
 }
