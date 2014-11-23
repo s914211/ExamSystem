@@ -159,7 +159,7 @@ function scoresearch() {
             for (i = 0; i < exams.length; i++) {
                 
                 var exam = exams[i].get('exam');
-                var examblock = '<div class="blocks"><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="fab green"><core-icon icon="assignment"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"><p class="blocks_title">' + examname + '</p><p class"blocks_date"></p><p class="blocks_time"></p></div><div class="img_container"><img src="assets/1.jpg" /></div></div>';
+                var examblock = '<div class="blocks"><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="fab green"><core-icon icon="assignment"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"><p class="blocks_title">' + exam + '</p><p class"blocks_date"></p><p class="blocks_time"></p></div><div class="img_container"><img src="assets/1.jpg" /></div></div>';
 
                 $(".tab_questions").append(examblock);
             }
