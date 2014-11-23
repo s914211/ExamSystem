@@ -202,6 +202,7 @@ function save() {
     var localexamname = localStorage.getItem("examname");
     var question = Parse.Object.extend('QuesBank');
     var query = new Parse.Query(question);
+    query.equalTo("examname", localexamname);
     query.ascending("no");
     query.find({
         success: function(examquestion) {
@@ -224,6 +225,46 @@ function content() {
     $('.spanB').text(userans[$('.numberclick').text()][2]);
     $('.spanC').text(userans[$('.numberclick').text()][3]);
     $('.spanD').text(userans[$('.numberclick').text()][4]);
+}
+
+function calculatescore(){
+    var localexamname = localStorage.getItem("examname");
+    var question = Parse.Object.extend('QuesBank');
+    var query = new Parse.Query(question);
+    query.equalTo("examname", localexamname);
+    query.ascending("no");
+    query.find({
+        success:function(examquestion){
+            var correctnum = 0;
+            for(var i = 1; i <= examquestion.length; i++){
+                var quesanswer = examquestion[i].get('Answer');
+                if(quesanswer == userans[i][5]){
+                    correctnum++;
+                }
+            }
+            var exam = Parse.Object.extend('Exams');
+            var query = new Parse.Query(exam);
+            query.equalTo("examname", localexamname);
+            query.find({
+                success:function(exam){
+                    var examrecord = Parse.Object.extend('ExamRecord');
+                    var query = new Parse.Query(examrecord);
+                    query.equalTo("user", Parse.User.current());
+                    query.equalTo("exam", exam);
+                    query.first({
+                        success:function(userrecord){
+                            userrecord.set("score", correctnum);
+                            userrecord.save(null,{
+                                success:function(result){
+                                    console.log("User exam score save success!");
+                                }
+                            })
+                        }
+                    })
+                }
+            })
+        }
+    })
 }
 
 
