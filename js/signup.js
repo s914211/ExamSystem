@@ -46,7 +46,7 @@ $(document).ready(function(){
     else{
         Parse.User.logIn(userid,userpassword,{
           success:function(){
-            window.location.assign("attendexam.html");
+            window.location.assign("pageForStudent.html");
           },
           error:function(user, error){
             alert("You have the wrong email or password!");
