@@ -155,19 +155,20 @@ input {
   border: none;
   border-bottom: 1px solid #87d3b7;
   background-color: transparent;
+  position: relative;
 }
-/* line 117, ../sass/index.scss */
+/* line 118, ../sass/index.scss */
 input:focus {
   outline: none;
   /*focus時會跑出outline，要隱藏掉*/
 }
 
 /*  =====LABEL======================================================================= */
-/* line 127, ../sass/index.scss */
+/* line 128, ../sass/index.scss */
 label {
   color: #87d3b7;
   font-size: 18px;
-  font-weight: normal;
+  font-weight: 200;
   position: absolute;
   pointer-events: none;
   top: 0px;
@@ -177,7 +178,7 @@ label {
 }
 
 /* active state */
-/* line 144, ../sass/index.scss */
+/* line 145, ../sass/index.scss */
 input:focus ~ label, input:valid ~ label {
   top: -10px;
   font-size: 14px;
@@ -185,13 +186,13 @@ input:focus ~ label, input:valid ~ label {
 }
 
 /* BOTTOM BARS ================================= */
-/* line 151, ../sass/index.scss */
+/* line 152, ../sass/index.scss */
 .bar {
   position: relative;
   display: block;
   width: 300px;
 }
-/* line 156, ../sass/index.scss */
+/* line 157, ../sass/index.scss */
 .bar::before, .bar::after {
   content: '';
   height: 2px;
@@ -203,23 +204,23 @@ input:focus ~ label, input:valid ~ label {
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-/* line 169, ../sass/index.scss */
+/* line 170, ../sass/index.scss */
 .bar::before {
   left: 50%;
 }
-/* line 173, ../sass/index.scss */
+/* line 174, ../sass/index.scss */
 .bar::after {
   right: 50%;
 }
 
 /* active state */
-/* line 180, ../sass/index.scss */
+/* line 181, ../sass/index.scss */
 input:focus ~ .bar::before, input:focus ~ .bar::after {
   width: 50%;
 }
 
 /* HIGHLIGHTER ================================== */
-/* line 185, ../sass/index.scss */
+/* line 186, ../sass/index.scss */
 .highlight {
   position: absolute;
   height: 60%;
@@ -231,7 +232,7 @@ input:focus ~ .bar::before, input:focus ~ .bar::after {
 }
 
 /* active state */
-/* line 196, ../sass/index.scss */
+/* line 197, ../sass/index.scss */
 input:focus ~ .highlight {
   -webkit-animation: inputHighlighter 0.3s ease;
   -moz-animation: inputHighlighter 0.3s ease;
@@ -266,7 +267,7 @@ input:focus ~ .highlight {
     background: transparent;
   }
 }
-/* line 219, ../sass/index.scss */
+/* line 220, ../sass/index.scss */
 .icon-button {
   display: inline-block;
   z-index: 2;
@@ -275,23 +276,23 @@ input:focus ~ .highlight {
   height: 25px;
   width: 25px;
 }
-/* line 227, ../sass/index.scss */
+/* line 228, ../sass/index.scss */
 .icon-button core-icon {
   transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* line 232, ../sass/index.scss */
+/* line 233, ../sass/index.scss */
 .icon-button:hover core-icon {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
-/* line 237, ../sass/index.scss */
+/* line 238, ../sass/index.scss */
 .icon-button paper-ripple {
   overflow: hidden;
   color: #646464;
 }
 
-/* line 244, ../sass/index.scss */
+/* line 245, ../sass/index.scss */
 .blur {
   -webkit-filter: blur(5px);
   -moz-filter: blur(5px);
@@ -300,14 +301,14 @@ input:focus ~ .highlight {
   filter: blur(5px);
 }
 
-/* line 252, ../sass/index.scss */
+/* line 253, ../sass/index.scss */
 .modal-wrapper {
   width: 100%;
   height: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(255, 255, 153, 0.75);
+  background: #d6d1a3;
   visibility: hidden;
   opacity: 0;
   z-index: 3;
@@ -316,26 +317,24 @@ input:focus ~ .highlight {
   -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
-/* line 267, ../sass/index.scss */
+/* line 268, ../sass/index.scss */
 .modal-wrapper.open {
   opacity: 1;
   visibility: visible;
 }
-/* line 271, ../sass/index.scss */
+/* line 272, ../sass/index.scss */
 .modal-wrapper.open .modal {
-  margin-top: -200px;
+  margin-top: 50px;
   opacity: 1;
 }
 
-/* line 281, ../sass/index.scss */
+/* line 280, ../sass/index.scss */
 .modal {
-  width: 600px;
-  height: 400px;
-  display: block;
-  margin: 50% 0 0 -300px;
   position: relative;
-  top: 50%;
-  left: 50%;
+  margin-top: 50%;
+  width: 400px;
+  display: block;
+  margin: 0 auto;
   background: #fff;
   opacity: 0;
   z-index: 4;
@@ -344,22 +343,23 @@ input:focus ~ .highlight {
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
-/* line 297, ../sass/index.scss */
+/* line 294, ../sass/index.scss */
 .modal span {
   text-align: center;
-  width: 100%;
   font-size: 150%;
   color: white;
 }
 
-/* line 306, ../sass/index.scss */
+/* line 302, ../sass/index.scss */
 .modal_header {
+  font-family: 'Exo', sans-serif;
+  font-weight: 200;
   padding: 1.5em 5%;
   overflow: hidden;
   background: #87d3b7;
 }
 
-/* line 313, ../sass/index.scss */
+/* line 312, ../sass/index.scss */
 .btn_close {
   width: 32px;
   height: 32px;
@@ -367,17 +367,40 @@ input:focus ~ .highlight {
   float: right;
 }
 
-/* line 321, ../sass/index.scss */
+/* line 320, ../sass/index.scss */
+.form_register {
+  padding: 5%;
+}
+/* line 322, ../sass/index.scss */
 .form_register input:focus ~ label, .form_register input:valid ~ label {
   top: -10px;
   font-size: 14px;
   color: grey;
 }
-/* line 326, ../sass/index.scss */
-.form_register label {
-  position: static;
+/* line 327, ../sass/index.scss */
+.form_register .Form_Question {
+  position: relative;
+  margin-bottom: 45px;
 }
-/* line 329, ../sass/index.scss */
-.form_register div {
-  margin-left: 5px;
+/* line 330, ../sass/index.scss */
+.form_register .Form_Question.lastOne {
+  margin-bottom: 0px;
+}
+/* line 334, ../sass/index.scss */
+.form_register label {
+  top: 10px;
+  left: 5px;
+}
+
+/* line 341, ../sass/index.scss */
+.modal_footer .icon-button {
+  padding-left: 85%;
+  color: #0f9d58;
+  width: 40px;
+  height: 40px;
+}
+/* line 347, ../sass/index.scss */
+.modal_footer .icon-button core-icon {
+  width: 40px;
+  height: 40px;
 }

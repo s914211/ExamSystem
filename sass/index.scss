@@ -113,6 +113,7 @@ input   {
   border:none;
   border-bottom:1px solid $green;
   background-color: transparent;
+  position: relative;
 
   &:focus{
     outline: none; /*focus時會跑出outline，要隱藏掉*/
@@ -127,7 +128,7 @@ input   {
 label          {
   color:$green; 
   font-size:18px;
-  font-weight:normal;
+  font-weight:200;
   position:absolute;
   pointer-events:none;
   top: 0px;
@@ -254,7 +255,7 @@ input:focus ~ .highlight {
   height:100%;
   position:fixed;
   top:0; left:0;
-  background:rgba(255,257,153,0.75);
+  background:$grey;
   visibility:hidden;
   opacity:0;
   z-index: 3;
@@ -269,26 +270,22 @@ input:focus ~ .highlight {
     visibility: visible;
 
     .modal{
-      margin-top:-200px;
+      margin-top:50px;
       opacity:1;  
     }
-
-
   }
 }
 
 
 .modal{
-  width:600px;
-  height:400px;
+  position: relative;
+  margin-top: 50%;
+  width:400px;
   display:block;
-  margin:50% 0 0 -300px;
-  position:relative;
-  top:50%; left:50%;
+  margin:0 auto;
   background:#fff;
   opacity:0;
   z-index: 4;
-
 
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -296,7 +293,6 @@ input:focus ~ .highlight {
   transition: all 0.5s ease-in-out;
   span{
     text-align: center;
-    width: 100%;
     font-size: 150%;
     color: white;
   }
@@ -305,9 +301,12 @@ input:focus ~ .highlight {
 
 .modal_header{
 
+  font-family: 'Exo', sans-serif;
+  font-weight: 200;
   padding:1.5em 5%;
   overflow:hidden;
   background:$green;
+
 }
 
 .btn_close{
@@ -317,16 +316,37 @@ input:focus ~ .highlight {
   float:right;
 }
 
+
 .form_register{
-  input:focus ~ label, input:valid ~ label    {
-  top:-10px;
-  font-size:14px;
-  color:grey;
+    padding: 5%;
+    input:focus ~ label, input:valid ~ label    {
+    top:-10px;
+    font-size:14px;
+    color:grey;
+  }
+  .Form_Question{
+    position: relative;
+    margin-bottom:45px;
+    &.lastOne{
+      margin-bottom: 0px;
+    } 
   }
   label{
-    position: static;
+    top: 10px;
+    left:5px;
   }
-  div{
-    margin-left: 5px;
+}
+
+.modal_footer{
+  .icon-button{
+    padding-left: 85%;
+    color:$green2;
+    width: 40px;
+    height: 40px;
+
+    core-icon{
+      width: 40px;
+      height: 40px;
+    }
   }
 }

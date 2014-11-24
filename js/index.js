@@ -110,9 +110,6 @@ $("#noaccount").on("click",function(){
 });
 
 
-
-
-
 function Open_ModalWrapper(){
     $('#modal_for_register').toggleClass('open');
     $(".login").toggleClass('blur');
@@ -131,3 +128,8 @@ function onlyNum(){  //限制input輸入數字
     if(!((event.keyCode>=48&&event.keyCode<=57)||(event.keyCode>=96&&event.keyCode<=105)))
     event.returnValue=false;
 }
+
+$(".btn_close").on('click', function() {
+    Close_ModalWrapper();
+    /* Act on the event */
+});
