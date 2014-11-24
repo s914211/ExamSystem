@@ -6,13 +6,13 @@
 // color
 $green: #87d3b7;
 $green2:#0f9d58;
-
 $grey:#d6d1a3;
+
+
 $greenDark:#32ab86;
 $greenMid:#75bd82;
 $greenLight:#b3c785;
 $greyLight:#d6ce85;
-
 
 
 html, body {
@@ -26,6 +26,11 @@ a {
   text-decoration: none;
 }
 
+
+
+.left_button{
+  color: white;
+}
 
 /* NAVBAR */
 
@@ -41,7 +46,7 @@ a {
     height          : 56px;
     text-align      : center;
     font-size       : 150%;
-    background-color: $greyLight;
+    background-color: $green;
 
 		div {
       display: inline-block;
@@ -49,11 +54,11 @@ a {
 		}
 
 		a {
-      color: $green2;
+      color: white;
       display           : block;
       outline           : none;
       padding           : 10px;
-      border            : 2px solid $green2;
+      border            : 2px solid white;
       margin-top        :4px;
       text-decoration   : none;
       -webkit-transition: all 0.2s ease-in-out;
@@ -63,28 +68,45 @@ a {
 		}
 
     .current a {
-      color: $greyLight;
-      background-color: $green2;
+      color: $green;
+      background-color: white;
     }
 
 	}
 }
 
 
-.tab_exams,.tab_questions{
+.bg_picture{
+  width: 100%;
   height: 100%;
-  background: url("../assets/classroom.jpg");
+  z-index: -10;
+  position: fixed;
+  opacity: 0.7;
+  background    : url("../assets/books.jpg"); 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+;
+
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
 }
 
+.tab_exams,.tab_questions{
+  height        : 100%;
+}
 
 .tab_questions {
   display: none;
   padding: 30px 0;
 }
 
-#blocks_container{
-  width: 980px;
-  margin: auto;
+.blocks_container{
+  position: absolute;
 }
 
 
@@ -120,7 +142,7 @@ a {
 }
 
 
-/*===========================================================================================fab=*/
+/*============fab================================================================================*/
 
 
 .fab {	
@@ -131,10 +153,10 @@ a {
 	box-shadow      : 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 	z-index         : 10;
 	cursor          :pointer;
-	color           : $greyLight;
+	color           : white;
 	
 	&.green{
-		background-color: #0f9d58;
+		background-color: $green2;
 		right           : 10px;
 		top             : 50%;
 		margin-top      : -28px;
@@ -183,6 +205,9 @@ a {
 	}
 
 }
+
+
+
 
 
 //=================================================================================little navbar
@@ -357,12 +382,14 @@ label          {
 	transition:0.2s ease all; 
 	-moz-transition:0.2s ease all; 
 	-webkit-transition:0.2s ease all;
+
+  .date_label{
+    background-color:white;
+    padding:2px;
+  }
 }
 
-#date_label{
-  background-color:white;
-  padding:2px;
-}
+
 
 
 /* active state */
@@ -451,26 +478,26 @@ input:focus ~ .highlight {
 
 /* =================================================================================blocks css */
 .blocks {
-    margin          : 20px;
-    width           : 200px;
-    height          : 200px;
-    display         : inline-block;
-    overflow        : hidden;
-    position        : relative;
-    box-shadow      : 6px 6px 11px 0px rgba(0,0,0,0.67);
-    border-radius   : 5%;
-    background-color: $grey;
+  color: #494441;
+  margin          : 20px;
+  width           : 200px;
+  height          : 200px;
+  display         : inline-block;
+  overflow        : hidden;
+  position        : relative;
+  box-shadow      : 6px 6px 11px 0px rgba(0,0,0,0.67);
+  border-radius   : 5%;
+  background-color: $grey;
 
-    .img_container{
-		height: 100px;
-  	display:table-cell;    /*----------->置中方法*/
-  	text-align:center;
+  .img_container{
+  	height: 100px;
+    background-color: white;
 	}
 
 	img{
-		width: 200px;
+  	width: 200px;
+    margin-top: 18.5px;
 	}
-
 }
 
 .blocks_title{
@@ -484,49 +511,65 @@ input:focus ~ .highlight {
     padding-left: 20px;
 }
 
-// =============================================================================deleteConfirm
-@import url(http://weloveiconfonts.com/api/?family=fontawesome);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
 
-/* fontawesome */
-[class*="fontawesome-"]:before {
-  font-family: 'FontAwesome', sans-serif;
-}
+
+
+// =============================================================================deleteConfirm
+// @import url(http://weloveiconfonts.com/api/?family=fontawesome);
+// @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
+
+// /* fontawesome */                         Import icon fonts pool
+// [class*="fontawesome-"]:before {
+//   font-family: 'FontAwesome', sans-serif;
+// }
+// 用法: <span class='fontawesome-trash'></span>
+// 放在class裡
+
 
 .confirm_circle{
   display: none;
 }
+
 .square{
-  z-index:2;
-  height:250px;
-  width:250px;
-  background:#373737;
+  z-index      :2;
+  height       :250px;
+  width        :250px;
+  background   :#373737;
   border-radius:100%;
-  position:absolute;
-  overflow:hidden;
-  top:0;
-  left:0;
-  bottom:0;
-  right:0;
-  margin:auto;
+  position     :absolute;
+  overflow     :hidden;
+  top          :0;
+  left         :0;
+  bottom       :0;
+  right        :0;
+  margin       :auto;
 }
 
-.main{
+.confirm_main{
 	text-align:center;
-	font-family:cambria;
 
-	span{
-		color:#d35454;
-		font-size:28px;
-		display:block;
-		position:relative;
-		margin-top:20px;
-	}
+  .icon-button{
+    position: static;
+    margin  : 0 auto;
+    
+    core-icon{
+      color: white;
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+	// span{
+	// 	color:#d35454;
+	// 	font-size:28px;
+	// 	display:block;
+	// 	position:relative;
+	// 	margin-top:20px;
+	// }
 
 	strong{
 		font-family: 'Open Sans Condensed', sans-serif;
 		color:#fff;
-		position:relative;
 		display:block;
 		font-size:18px;
 		margin-top:5px;
@@ -548,7 +591,17 @@ input:focus ~ .highlight {
   line-height:100px;
   font-size:40px;
   color:#fff;
-  text-align:center;
+
+  .icon-button{
+    left: 62.5px;
+    margin-left:-28px;
+    top: 20px;
+    core-icon{
+      height: 30px;
+      width: 30px;
+    }
+  }
+
 }
 
 .left{
@@ -556,18 +609,12 @@ input:focus ~ .highlight {
   background:#8dc058;
 }
 
-.left span{
-  padding-left:20px;
-}
-
 .right{
   right:0;
   background:#d35454;
 }
 
-.right span{
-  padding-right:20px;
-}
+
 
 
 

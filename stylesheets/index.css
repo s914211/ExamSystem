@@ -1,0 +1,286 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
+/* line 5, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 18, ../sass/index.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 25, ../sass/index.scss */
+html, body {
+  min-height: 100%;
+  height: 100%;
+  font-family: "微軟正黑體", "Microsoft JhengHei";
+}
+
+/* line 32, ../sass/index.scss */
+.bg_picture {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../assets/old_books.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  -webkit-filter: blur(3px);
+  z-index: 0;
+}
+
+/* line 49, ../sass/index.scss */
+.grad {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, rgba(0, 0, 0, 0.65)));
+  /* Chrome,Safari4+ */
+  z-index: 1;
+  opacity: 0.7;
+}
+
+/* line 58, ../sass/index.scss */
+.header {
+  font-family: 'Exo', sans-serif;
+  position: absolute;
+  top: calc(50% - 35px);
+  left: calc(50% - 255px);
+  z-index: 2;
+}
+/* line 65, ../sass/index.scss */
+.header #title {
+  color: #87d3b7;
+  font-size: 35px;
+  font-weight: 200;
+}
+/* line 71, ../sass/index.scss */
+.header #title span {
+  color: white;
+}
+/* line 76, ../sass/index.scss */
+.header #noaccount {
+  text-align: center;
+  margin-top: 26px;
+  color: #d6d1a3;
+  cursor: pointer;
+}
+
+/* line 88, ../sass/index.scss */
+.login {
+  position: absolute;
+  top: calc(50% - 75px);
+  left: calc(50% - 50px);
+  height: 150px;
+  width: 350px;
+  padding: 10px;
+  z-index: 2;
+  margin-left: 15px;
+}
+/* line 98, ../sass/index.scss */
+.login .textbox {
+  position: relative;
+  margin-bottom: 45px;
+}
+/* line 103, ../sass/index.scss */
+.login input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid #87d3b7;
+  background-color: transparent;
+}
+/* line 111, ../sass/index.scss */
+.login input:focus {
+  outline: none;
+  /*focus時會跑出outline，要隱藏掉*/
+}
+
+/*  =====LABEL======================================================================= */
+/* line 119, ../sass/index.scss */
+label {
+  color: #87d3b7;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  top: 0px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+/* line 136, ../sass/index.scss */
+input:focus ~ label, input:valid ~ label {
+  top: -10px;
+  font-size: 14px;
+  color: white;
+}
+
+/* BOTTOM BARS ================================= */
+/* line 143, ../sass/index.scss */
+.bar {
+  position: relative;
+  display: block;
+  width: 300px;
+}
+/* line 148, ../sass/index.scss */
+.bar::before, .bar::after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #87d3b7;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+/* line 161, ../sass/index.scss */
+.bar::before {
+  left: 50%;
+}
+/* line 165, ../sass/index.scss */
+.bar::after {
+  right: 50%;
+}
+
+/* active state */
+/* line 172, ../sass/index.scss */
+input:focus ~ .bar::before, input:focus ~ .bar::after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+/* line 177, ../sass/index.scss */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 300px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active state */
+/* line 188, ../sass/index.scss */
+input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #87d3b7;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+/* line 211, ../sass/index.scss */
+.icon-button {
+  display: inline-block;
+  z-index: 10;
+  cursor: pointer;
+  color: white;
+}
+/* line 217, ../sass/index.scss */
+.icon-button core-icon {
+  height: 25px;
+  width: 25px;
+  transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* line 225, ../sass/index.scss */
+.icon-button:hover core-icon {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
