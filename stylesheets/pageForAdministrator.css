@@ -1,0 +1,699 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Roboto:300);
+/* line 5, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 18, ../sass/pageForAdministrator.scss */
+html, body {
+  min-height: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Roboto";
+}
+
+/* line 25, ../sass/pageForAdministrator.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 31, ../sass/pageForAdministrator.scss */
+.left_button {
+  color: white;
+}
+
+/* NAVBAR */
+/* line 37, ../sass/pageForAdministrator.scss */
+.navbar {
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #666;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+/* line 45, ../sass/pageForAdministrator.scss */
+.navbar .tabs {
+  height: 56px;
+  text-align: center;
+  font-size: 150%;
+  background-color: #87d3b7;
+}
+/* line 51, ../sass/pageForAdministrator.scss */
+.navbar .tabs div {
+  display: inline-block;
+  margin: 0;
+}
+/* line 56, ../sass/pageForAdministrator.scss */
+.navbar .tabs a {
+  color: white;
+  display: block;
+  outline: none;
+  padding: 10px;
+  border: 2px solid white;
+  margin-top: 4px;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 70, ../sass/pageForAdministrator.scss */
+.navbar .tabs .current a {
+  color: #87d3b7;
+  background-color: white;
+}
+
+/* line 79, ../sass/pageForAdministrator.scss */
+.bg_picture {
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  position: fixed;
+  opacity: 0.7;
+  background: url("../assets/books.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+}
+
+/* line 99, ../sass/pageForAdministrator.scss */
+.tab_exams, .tab_questions {
+  height: 100%;
+}
+
+/* line 103, ../sass/pageForAdministrator.scss */
+.tab_questions {
+  display: none;
+  padding: 30px 0;
+}
+
+/* line 108, ../sass/pageForAdministrator.scss */
+.blocks_container {
+  position: absolute;
+}
+
+/*====add_button==============================================================*/
+/* line 115, ../sass/pageForAdministrator.scss */
+.add_blocks {
+  box-shadow: none;
+  cursor: pointer;
+  vertical-align: baseline;
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  box-shadow: none;
+  border-radius: 5%;
+}
+/* line 129, ../sass/pageForAdministrator.scss */
+.add_blocks .icon_add {
+  height: 200px;
+  width: 200px;
+  color: #d6d1a3;
+}
+
+/* line 140, ../sass/pageForAdministrator.scss */
+.ripple_add {
+  cursor: pointer;
+}
+
+/*============fab================================================================================*/
+/* line 148, ../sass/pageForAdministrator.scss */
+.fab {
+  position: absolute;
+  overflow: hidden;
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0.2s;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  z-index: 10;
+  cursor: pointer;
+  color: white;
+}
+/* line 158, ../sass/pageForAdministrator.scss */
+.fab.green {
+  background-color: #0f9d58;
+  right: 10px;
+  top: 50%;
+  margin-top: -28px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+/* line 168, ../sass/pageForAdministrator.scss */
+.fab:active {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+  transition-delay: 0s;
+}
+/* line 173, ../sass/pageForAdministrator.scss */
+.fab > core-icon {
+  margin: 16px;
+}
+/* line 177, ../sass/pageForAdministrator.scss */
+.fab > core-icon::shadow path {
+  fill: #fff;
+}
+
+/* ==========================================================Icon Button=*/
+/* line 186, ../sass/pageForAdministrator.scss */
+.icon-button {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+}
+/* line 191, ../sass/pageForAdministrator.scss */
+.icon-button core-icon {
+  margin: 13px;
+  transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* line 197, ../sass/pageForAdministrator.scss */
+.icon-button:hover core-icon {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+/* line 202, ../sass/pageForAdministrator.scss */
+.icon-button paper-ripple {
+  overflow: hidden;
+  color: #646464;
+}
+
+/* line 216, ../sass/pageForAdministrator.scss */
+.three_points {
+  height: 30px;
+  width: 30px;
+  right: 0px;
+  cursor: pointer;
+}
+/* line 222, ../sass/pageForAdministrator.scss */
+.three_points core-icon {
+  height: 16px;
+  width: 16px;
+  margin: 7px;
+}
+
+/* line 232, ../sass/pageForAdministrator.scss */
+.trash_can {
+  right: 30px;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+/* line 238, ../sass/pageForAdministrator.scss */
+.trash_can core-icon {
+  height: 16px;
+  width: 16px;
+  margin: 7px;
+}
+
+/* line 251, ../sass/pageForAdministrator.scss */
+.blur {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+/* line 260, ../sass/pageForAdministrator.scss */
+.modal-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 153, 0.75);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+/* line 274, ../sass/pageForAdministrator.scss */
+.modal-wrapper.open {
+  opacity: 1;
+  visibility: visible;
+}
+/* line 278, ../sass/pageForAdministrator.scss */
+.modal-wrapper.open .modal {
+  margin-top: -200px;
+  opacity: 1;
+}
+
+/* line 288, ../sass/pageForAdministrator.scss */
+.modal {
+  width: 600px;
+  height: 400px;
+  display: block;
+  margin: 50% 0 0 -300px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+/* line 301, ../sass/pageForAdministrator.scss */
+.modal span {
+  text-align: center;
+  width: 100%;
+  font-size: 150%;
+  color: white;
+}
+
+/* line 310, ../sass/pageForAdministrator.scss */
+.modal_header {
+  width: 90%;
+  height: 32px;
+  padding: 1.5em 5%;
+  overflow: hidden;
+  background: #87d3b7;
+}
+
+/* line 318, ../sass/pageForAdministrator.scss */
+.btn_close {
+  width: 32px;
+  height: 32px;
+  display: block;
+  float: right;
+}
+
+/* line 327, ../sass/pageForAdministrator.scss */
+.form_newExam {
+  padding: 5%;
+}
+
+/* line 331, ../sass/pageForAdministrator.scss */
+.form_step2 {
+  display: none;
+}
+/* line 334, ../sass/pageForAdministrator.scss */
+.form_step2.state2 {
+  display: block;
+}
+
+/* line 339, ../sass/pageForAdministrator.scss */
+.form_step1.state2 {
+  /*  .XXX.XXX  => class ="XXX XXX"              */
+  display: none;
+  /*  .XXX .XXX => class ="XXX"裡面的class="XXX" */
+}
+
+/* -------------------------------form starting stylings  */
+/* line 345, ../sass/pageForAdministrator.scss */
+.Form_Question {
+  position: relative;
+  margin-bottom: 45px;
+}
+
+/* line 350, ../sass/pageForAdministrator.scss */
+input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+/* line 358, ../sass/pageForAdministrator.scss */
+input:focus {
+  outline: none;
+  /*focus時會跑出outline，要隱藏掉*/
+}
+
+/* line 365, ../sass/pageForAdministrator.scss */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*  ==========================================================================LABEL== */
+/* line 374, ../sass/pageForAdministrator.scss */
+label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+/* line 386, ../sass/pageForAdministrator.scss */
+label .date_label {
+  background-color: white;
+  padding: 2px;
+}
+
+/* active state */
+/* line 396, ../sass/pageForAdministrator.scss */
+input:focus ~ label, input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+/* line 403, ../sass/pageForAdministrator.scss */
+.bar {
+  position: relative;
+  display: block;
+  width: 300px;
+}
+/* line 408, ../sass/pageForAdministrator.scss */
+.bar::before, .bar::after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #5264AE;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+/* line 420, ../sass/pageForAdministrator.scss */
+.bar::before {
+  left: 50%;
+}
+/* line 424, ../sass/pageForAdministrator.scss */
+.bar::after {
+  right: 50%;
+}
+
+/* active state */
+/* line 431, ../sass/pageForAdministrator.scss */
+input:focus ~ .bar::before, input:focus ~ .bar::after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+/* line 436, ../sass/pageForAdministrator.scss */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active state */
+/* line 447, ../sass/pageForAdministrator.scss */
+input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+/* line 467, ../sass/pageForAdministrator.scss */
+.btn_submitModal {
+  display: none;
+}
+/* line 470, ../sass/pageForAdministrator.scss */
+.btn_submitModal.state2 {
+  display: inline;
+}
+
+/* line 475, ../sass/pageForAdministrator.scss */
+.btn_nextModal.state2 {
+  display: none;
+}
+
+/* =================================================================================blocks css */
+/* line 480, ../sass/pageForAdministrator.scss */
+.blocks {
+  color: #494441;
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 6px 6px 11px 0px rgba(0, 0, 0, 0.67);
+  border-radius: 5%;
+  background-color: #d6d1a3;
+}
+/* line 492, ../sass/pageForAdministrator.scss */
+.blocks .img_container {
+  height: 100px;
+  background-color: white;
+}
+/* line 497, ../sass/pageForAdministrator.scss */
+.blocks img {
+  width: 200px;
+  margin-top: 18.5px;
+}
+
+/* line 503, ../sass/pageForAdministrator.scss */
+.blocks_title {
+  padding-top: 20px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* line 509, ../sass/pageForAdministrator.scss */
+.blocks_text {
+  height: 100px;
+  padding-left: 20px;
+}
+
+/* line 529, ../sass/pageForAdministrator.scss */
+.confirm_circle {
+  display: none;
+}
+
+/* line 533, ../sass/pageForAdministrator.scss */
+.square {
+  z-index: 2;
+  height: 250px;
+  width: 250px;
+  background: #373737;
+  border-radius: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+/* line 548, ../sass/pageForAdministrator.scss */
+.confirm_main {
+  text-align: center;
+}
+/* line 551, ../sass/pageForAdministrator.scss */
+.confirm_main .icon-button {
+  position: static;
+  margin: 0 auto;
+}
+/* line 555, ../sass/pageForAdministrator.scss */
+.confirm_main .icon-button core-icon {
+  color: white;
+  height: 30px;
+  width: 30px;
+}
+/* line 570, ../sass/pageForAdministrator.scss */
+.confirm_main strong {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+/* line 579, ../sass/pageForAdministrator.scss */
+.confirm_main p {
+  font-size: 12px;
+  color: #a9a9a9;
+}
+
+/* line 585, ../sass/pageForAdministrator.scss */
+.inner-square {
+  height: 125px;
+  width: 125px;
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+  line-height: 100px;
+  font-size: 40px;
+  color: #fff;
+}
+/* line 595, ../sass/pageForAdministrator.scss */
+.inner-square .icon-button {
+  left: 62.5px;
+  margin-left: -28px;
+  top: 20px;
+}
+/* line 599, ../sass/pageForAdministrator.scss */
+.inner-square .icon-button core-icon {
+  height: 30px;
+  width: 30px;
+}
+
+/* line 607, ../sass/pageForAdministrator.scss */
+.left {
+  left: 0;
+  background: #8dc058;
+}
+
+/* line 612, ../sass/pageForAdministrator.scss */
+.right {
+  right: 0;
+  background: #d35454;
+}
+
+/* line 622, ../sass/pageForAdministrator.scss */
+.confirmCircle_wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 153, 0.75);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+/* line 636, ../sass/pageForAdministrator.scss */
+.confirmCircle_wrapper.open {
+  opacity: 1;
+  visibility: visible;
+}
+/* line 640, ../sass/pageForAdministrator.scss */
+.confirmCircle_wrapper.open .confirm_circle {
+  display: block;
+}
+
+/* line 646, ../sass/pageForAdministrator.scss */
+.confirmPreview_wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 153, 0.75);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+/* line 660, ../sass/pageForAdministrator.scss */
+.confirmPreview_wrapper.open {
+  opacity: 1;
+  visibility: visible;
+}
+/* line 664, ../sass/pageForAdministrator.scss */
+.confirmPreview_wrapper.open .confirm_circle {
+  display: block;
+}
