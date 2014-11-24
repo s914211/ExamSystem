@@ -3,6 +3,8 @@ $(document).ready(function() {
 
     getexam();
     scoresearch();
+    checkenroll();
+    showscore();
 
 
 
@@ -30,25 +32,27 @@ $(document).ready(function() {
     });
 
     $('.tab_exams').delegate('.green', 'click', function() {
-        $(this).removeClass('green').addClass('red').html('<core-icon icon="create" aria-label="create" role="img"><svg viewBox="0 0 24 24" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" fit="" style="pointer-events: none; display: block;"><g><path d="M3 17.25v3.75h3.75l11.06-11.06-3.75-3.75-11.06 11.06zm17.71-10.21c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></g></svg></core-icon>');
+        if (confirm("確定報名？")) {
+            $(this).removeClass('green').addClass('red').html('<core-icon icon="create" aria-label="create" role="img"><svg viewBox="0 0 24 24" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" fit="" style="pointer-events: none; display: block;"><g><path d="M3 17.25v3.75h3.75l11.06-11.06-3.75-3.75-11.06 11.06zm17.71-10.21c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></g></svg></core-icon>');
 
-        var examid = $(this).parent().attr('id');
-        var exam = Parse.Object.extend("Exams");
-        var query = new Parse.Query(exam);
-        query.equalTo("objectId", examid);
-        query.first({
-            success: function(exam) {
-                var Examrecord = Parse.Object.extend("ExamRecord");
-                var examrecord = new Examrecord();
-                examrecord.set("user", Parse.User.current());
-                examrecord.set("exam", exam);
-                examrecord.save(null, {
-                    success: function(result) {
-                        console.log("attend exam success!");
-                    }
-                });
-            }
-        });
+            var examid = $(this).parent().attr('id');
+            var exam = Parse.Object.extend("Exams");
+            var query = new Parse.Query(exam);
+            query.equalTo("objectId", examid);
+            query.first({
+                success: function(exam) {
+                    var Examrecord = Parse.Object.extend("ExamRecord");
+                    var examrecord = new Examrecord();
+                    examrecord.set("user", Parse.User.current());
+                    examrecord.set("exam", exam);
+                    examrecord.save(null, {
+                        success: function(result) {
+                            alert("attend exam success!");
+                        }
+                    });
+                }
+            });
+        }
     });
 
 
@@ -159,7 +163,9 @@ function scoresearch() {
         success: function(exams) {
             for (i = 0; i < exams.length; i++) {
                 var examname = exams[i].get('exam').get('examname');
-                var examblock = '<div class="blocks"><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="fab green"><core-icon icon="assignment"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"><p class="blocks_title">' + examname + '</p><p class"blocks_date"></p><p class="blocks_time"></p></div><div class="img_container"><img src="assets/1.jpg" /></div></div>';
+                var examdate = exams[i].get('exam').get('examdate');
+                var score = exams[i].get('score');
+                var examblock = '<div class="blocks"><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="fab green"><core-icon icon="search"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"><p class="blocks_title">' + examname + '</p><p class"blocks_date">' + examdate + '</p><p class="blocks_time"></p></div><div class="img_container"><img src="assets/1.jpg" /></div></div>';
 
                 $(".tab_questions").append(examblock);
 
@@ -167,4 +173,38 @@ function scoresearch() {
         }
 
     });
+}
+
+function checkenroll() {
+    var examrecord = Parse.Object.extend('ExamRecord');
+    var query = new Parse.Query(examrecord);
+    query.include('exam');
+    query.equalTo('user', Parse.User.current());
+    query.find({
+        success: function(exams) {
+            for (i = 0; i < exams.length; i++) {
+                var id = exams[i].get('exam').id;
+
+                var sid = "#" + id + " .green";
+                console.log(id + blocksid + sid);
+                for (j = 0; j < $('.blocks').length; j++) {
+                    var blocksid = $('.blocks').eq(j).attr('id');
+                    if (id == blocksid) {
+                        $(sid).removeClass('green').addClass('red').html('<core-icon icon="create" aria-label="create" role="img"><svg viewBox="0 0 24 24" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" fit="" style="pointer-events: none; display: block;"><g><path d="M3 17.25v3.75h3.75l11.06-11.06-3.75-3.75-11.06 11.06zm17.71-10.21c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></g></svg></core-icon>');
+                    }
+                }
+
+            }
+        }
+
+    });
+}
+
+function showscore() {
+	$('.tab_questions').delegate('.green','click',function(){
+		$('.checkscore').fadeIn(500);
+	});
+	$('.checkscore').click(function(){
+		$('.checkscore').fadeOut(500);
+	});
 }
