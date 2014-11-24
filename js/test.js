@@ -1,19 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // =================================================================pagination
 
 
@@ -22,35 +6,34 @@
 
 
 
-$('.pagination li').on('click', function(e){
-  $(".pagination li").removeClass('active');
-  $(this).addClass('active');  
+$('.pagination li').on('click', function(e) {
+    $(".pagination li").removeClass('active');
+    $(this).addClass('active');
 })
 
 
 
 // =================================================================pagination-arrows
 
-var pr = document.querySelector( '.paginate.left' );
-var pl = document.querySelector( '.paginate.right' );
+var pr = document.querySelector('.paginate.left');
+var pl = document.querySelector('.paginate.right');
 
-pr.onclick = slide.bind( this, -1 );
-pl.onclick = slide.bind( this, 1 );
+pr.onclick = slide.bind(this, -1);
+pl.onclick = slide.bind(this, 1);
 
-var index = 0, total = 5;
+var index = 0,
+    total = 5;
 
 function slide(offset) {
-  index = Math.min( Math.max( index + offset, 0 ), total - 1 );
+    index = Math.min(Math.max(index + offset, 0), total - 1);
 
-  document.querySelector( '.counter' ).innerHTML = ( index + 1 ) + ' / ' + total;
+    document.querySelector('.counter').innerHTML = (index + 1) + ' / ' + total;
 
-  pr.setAttribute( 'data-state', index === 0 ? 'disabled' : '' );
-  pl.setAttribute( 'data-state', index === total - 1 ? 'disabled' : '' );
+    pr.setAttribute('data-state', index === 0 ? 'disabled' : '');
+    pl.setAttribute('data-state', index === total - 1 ? 'disabled' : '');
 }
 
 slide(0);
-
-
 
 
 
@@ -86,7 +69,7 @@ $(document).ready(function() {
     $('#bigdiv').delegate('.answer', 'click', function() {
         $(this).addClass("answerclick").siblings().removeClass("answerclick");
         $(".qusanswer").text($(this).children(".choice").text());
-        userans[$('.numberclick').text()][5] = $(this).children('.choice').text();
+        userans[$('.active').text()][5] = $(this).children('.choice').text();
     });
 
 
@@ -227,18 +210,18 @@ function content() {
     $('.spanD').text(userans[$('.numberclick').text()][4]);
 }
 
-function calculatescore(){
+function calculatescore() {
     var localexamname = localStorage.getItem("examname");
     var question = Parse.Object.extend('QuesBank');
     var query = new Parse.Query(question);
     query.equalTo("examname", localexamname);
     query.ascending("no");
     query.find({
-        success:function(examquestion){
+        success: function(examquestion) {
             var correctnum = 0;
-            for(var i = 1; i <= examquestion.length; i++){
+            for (var i = 1; i <= examquestion.length; i++) {
                 var quesanswer = examquestion[i].get('Answer');
-                if(quesanswer == userans[i][5]){
+                if (quesanswer == userans[i][5]) {
                     correctnum++;
                 }
             }
@@ -246,16 +229,16 @@ function calculatescore(){
             var query = new Parse.Query(exam);
             query.equalTo("examname", localexamname);
             query.find({
-                success:function(exam){
+                success: function(exam) {
                     var examrecord = Parse.Object.extend('ExamRecord');
                     var query = new Parse.Query(examrecord);
                     query.equalTo("user", Parse.User.current());
                     query.equalTo("exam", exam);
                     query.first({
-                        success:function(userrecord){
+                        success: function(userrecord) {
                             userrecord.set("score", correctnum);
-                            userrecord.save(null,{
-                                success:function(result){
+                            userrecord.save(null, {
+                                success: function(result) {
                                     console.log("User exam score save success!");
                                 }
                             })
@@ -267,4 +250,10 @@ function calculatescore(){
     })
 }
 
-
+function cleanradio() {
+    var all_rbl = $("input[type=radio]");
+    all_rbl.each(function() {
+        var rbl_name = $(this).attr("name");
+        $("input[type=radio][name*='" + rbl_name + "']:first").attr("checked", false)
+    });
+}
