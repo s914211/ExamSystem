@@ -4,11 +4,6 @@
     <meta name="generator" content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
     <title>homepage</title>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.transit.min.js"></script>
-    <script src="js/index.js"></script>
-    <script src="https://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
-    <script src="js/signup.js"></script>
     <link href="stylesheets/index.css" rel="stylesheet" />
     <link rel="import" href="http://www.polymer-project.org/components/core-icons/core-icons.html">
     <link rel="import" href="http://www.polymer-project.org/components/paper-ripple/paper-ripple.html">
@@ -17,8 +12,10 @@
 </head>
 
 <body>
-<div class="bg_picture"></div>
-<div class="grad"></div>    
+<div class="bg_picture">   
+</div>
+<div class="grad">
+</div>    
     <div class="header">
         <div id="title">Member<span>Login</span></div>
         <div id="noaccount">No accounts yet ?</div>
@@ -46,19 +43,18 @@
     </div>
 
 
-    <div class="modal-wrapper" id="modal_for_add">
+    <div class="modal-wrapper" id="modal_for_register">
         <div class="modal">
             <div class="modal_header">
-              <span> Add a new Exam!</span>
+              <span>Regist a new account!</span>
                 <a class="btn_close">
                     <div class="icon-button">
                         <core-icon icon="close"></core-icon>
-                        <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
                     </div>
                 </a>
             </div>
-            <div class="form_newExam">
-                <form class="form_step1">
+            <div class="form">
+                <form class="form_register">
                     <div class="Form_Question">
                         <input type="text" required id="examname">
                         <span class="highlight"></span>
@@ -66,7 +62,7 @@
                         <label>Email</label>
                     </div>
                     <div class="Form_Question">
-                        <input type="date" required id="examdate" onkeydown="onlyNum()">
+                        <input type="text" required id="examdate" onkeydown="onlyNum()">
                         <span class="highlight"></span>
                         <span class="bar"></span>
                         <label class="date_label">Phone Number</label>
@@ -80,7 +76,7 @@
                     </div>
 
                     <div class="Form_Question">
-                        <input type="date" required id="examdate" onkeydown="onlyNum()">
+                        <input type="text" required id="examdate" onkeydown="onlyNum()">
                         <span class="highlight"></span>
                         <span class="bar"></span>
                         <label class="date_label">Confirm Password</label>
@@ -90,17 +86,9 @@
 
 
             <div class="modal_footer">
-                <a class="btn_nextModal">
-                    <div class="icon-button">
-                        <core-icon icon="arrow-forward"></core-icon>
-                        <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
-                    </div>
-                </a>
-
                 <a class="btn_submitModal">
                     <div class="icon-button">
                         <core-icon icon="file-upload"></core-icon>
-                        <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
                     </div>
                 </a>
             </div>
@@ -203,6 +191,11 @@
 
     <!-- Modal stop-->
 
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.transit.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="https://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
+    <script src="js/signup.js"></script>
 
 </body>
 

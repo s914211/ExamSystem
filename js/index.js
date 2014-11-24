@@ -101,3 +101,33 @@ $('document').ready(function() {
     });
 
 });
+
+
+
+//彈出modal============================================
+$("#noaccount").on("click",function(){
+    Open_ModalWrapper();
+});
+
+
+
+
+
+function Open_ModalWrapper(){
+    $('#modal_for_register').toggleClass('open');
+    $(".login").toggleClass('blur');
+    $(".header").toggleClass('blur');    
+}
+function Close_ModalWrapper(){
+    $("input").val("");
+    $("#modal_for_register").removeClass("open");
+    $(".login").removeClass("blur");
+    $(".header").removeClass('blur');  
+}
+
+
+function onlyNum(){  //限制input輸入數字
+    if(!(event.keyCode==46)&&!(event.keyCode==8)&&!(event.keyCode==37)&&!(event.keyCode==39))
+    if(!((event.keyCode>=48&&event.keyCode<=57)||(event.keyCode>=96&&event.keyCode<=105)))
+    event.returnValue=false;
+}
