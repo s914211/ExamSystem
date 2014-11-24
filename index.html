@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <meta name="generator" content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+    <meta charset="UTF-8" name="generator" content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
     <title>homepage</title>
 
     <link href="stylesheets/index.css" rel="stylesheet" />
@@ -31,7 +31,7 @@
             </div>
             <div class="textbox">
                 <input type="password" id="password" name="password" required />
-                <div class="icon-button">
+                <div class="icon-button" id="loginbtn">
                     <core-icon icon="input"></core-icon>
                 </div>
                 <span class="highlight"></span>
@@ -56,27 +56,27 @@
             <div class="form">
                 <form class="form_register">
                     <div class="Form_Question">
-                        <input type="text" required id="examname">
+                        <input type="text" required id="signupemail">
                         <span class="highlight"></span>
                         <span class="bar"></span>
                         <label>Email</label>
                     </div>
                     <div class="Form_Question">
-                        <input type="text" required id="examdate" onkeydown="onlyNum()">
+                        <input type="text" required id="signuptel" onkeydown="onlyNum()">
                         <span class="highlight"></span>
                         <span class="bar"></span>
                         <label class="date_label">Phone Number</label>
                     </div>
 
                     <div class="Form_Question">
-                        <input type="text" required id="examtime" onkeydown="onlyNum()">
+                        <input type="text" required id="signuppassword" onkeydown="onlyNum()">
                         <span class="highlight"></span>
                         <span class="bar"></span>
-                        <label>Passsword</label>
+                        <label>Password</label>
                     </div>
 
                     <div class="Form_Question lastOne">
-                        <input type="text" required id="examdate" onkeydown="onlyNum()">
+                        <input type="text" required id="signupcpassword" onkeydown="onlyNum()">
                         <span class="highlight"></span>
                         <span class="bar"></span>
                         <label class="date_label">Confirm Password</label>
@@ -86,7 +86,7 @@
 
 
             <div class="modal_footer">
-                <a class="btn_submitModal">
+                <a class="btn_submitModal" id="signupbtn">
                     <div class="icon-button">
                         <core-icon icon="file-upload"></core-icon>
                     </div>
