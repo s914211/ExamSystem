@@ -48,7 +48,7 @@ $(document).ready(function() {
     var localexamname = localStorage.getItem("examname");
     var question = Parse.Object.extend('QuesBank');
     var query = new Parse.Query(question);
-    query.equalTo("examname", localexamname);
+    query.equalTo("examname", "測試用");
     query.equalTo("no", "01");
     query.first({
         success: function(examquestion) {
@@ -67,26 +67,24 @@ $(document).ready(function() {
 
 
     $('#bigdiv').delegate('.answer', 'click', function() {
-        $(this).addClass("answerclick").siblings().removeClass("answerclick");
-        $(".qusanswer").text($(this).children(".choice").text());
-        userans[$('.active').text()][5] = $(this).children('.choice').text();
+
+
+        userans[$('.active').children('a').text()][5] = $(this).children('.choice').text();
     });
 
 
 
-    $('body').delegate('.number,.left,.right', 'click', function() {
+    $('body').delegate('.pagination>li,#pre,#next', 'click', function() {
 
-        for (i = 1; i <= 40; i++) {
-            if (userans[i][5]) {
-                $('.number').eq(i - 1).addClass('ansslecet');
-            }
-        }
+        // for (i = 1; i <= 40; i++) {
+        //     if (userans[i][5]) {
+        //         $('.number').eq(i - 1).addClass('ansslecet');
+        //     }
+        // }
         $('.span,.qussmall').fadeOut(10);
-        $('.span,.qussmall').fadeIn(100);
-        $('.answer').removeClass('answerclick');
+        $('.span,.qussmall').fadeIn(100);        
         $('.testnumber').text("");
-        $('.qusanswer').text("");
-        $(this).addClass('numberclick').siblings().removeClass('numberclick');
+        cleanradio();
         useranswer();
         content();
     });
@@ -96,30 +94,54 @@ $(document).ready(function() {
     $('.left,.right').height($(window).width() * 0.07);
 
 
-    $('.arrow').delegate('.left', 'click', function() {
-        if ($('.numberclick').text() == "1") {
+    $(document).delegate('#pre', 'click', function() {
+        if ($('.active').children('a').text() == "1") {
             alert('這是第一題');
-        } else {
-            $('.answer').removeClass('answerclick');
+        } else if ($('.active').children('a').text() == "21") {
             $('.testnumber').text("");
-            $('.qusanswer').text("");
-            $('.numberclick').prev().addClass('numbertoken');
-            $('.numberclick').removeClass('numberclick');
-            $('.numbertoken').addClass('numberclick').removeClass('numbertoken');
+
+            $('.Q1_Q20 li').last().addClass('activetoken');
+            $('.active').removeClass('active');
+            $('.activetoken').addClass('active').removeClass('activetoken');
+            cleanradio();
+            useranswer();
+            content();
+        } else {
+
+            $('.testnumber').text("");
+
+            $('.active').prev().addClass('activetoken');
+            $('.active').removeClass('active');
+            $('.activetoken').addClass('active').removeClass('activetoken');
+            cleanradio();
+            useranswer();
+            content();
         }
     });
 
 
-    $('.arrow').delegate('.right', 'click', function() {
-        if ($('.numberclick').text() == "40") {
+    $(document).delegate('#next', 'click', function() {
+        if ($('.active').children('a').text() == "40") {
             alert("已經是最後一題");
-        } else {
-            $('.answer').removeClass('answerclick');
+        } else if ($('.active').children('a').text() == "20") {
             $('.testnumber').text("");
-            $('.qusanswer').text("");
-            $('.numberclick').next().addClass('numbertoken');
-            $('.numberclick').removeClass('numberclick');
-            $('.numbertoken').addClass('numberclick').removeClass('numbertoken');
+
+            $('.Q21_Q40 li').first().addClass('activetoken');
+            $('.active').removeClass('active');
+            $('.activetoken').addClass('active').removeClass('activetoken');
+            cleanradio();
+            useranswer();
+            content();
+        } else {
+
+            $('.testnumber').text("");
+
+            $('.active').next().addClass('activetoken');
+            $('.active').removeClass('active');
+            $('.activetoken').addClass('active').removeClass('activetoken');
+            cleanradio();
+            useranswer();
+            content();
         }
     });
 
@@ -154,24 +176,20 @@ for (i = 1; i <= 40; i++) {
 }
 
 function useranswer() {
-    $('.testnumber').text("第" + $('.numberclick').text() + "題，" + "你選擇的答案是");
-    if (userans[$('.numberclick').text()][5]) {
-        switch (userans[$('.numberclick').text()][5]) {
+    $('.testnumber').text("第" + $('.active').children('a').text() + "題");
+    if (userans[$('.active').children('a').text()][5]) {
+        switch (userans[$('.active').children('a').text()][5]) {
             case "A":
-                $('.A').addClass('answerclick');
-                $('.qusanswer').text(userans[$('.numberclick').text()][5]);
+            $("input[type=radio][id='options_A']").attr("checked", true);
                 break;
             case "B":
-                $('.B').addClass('answerclick');
-                $('.qusanswer').text(userans[$('.numberclick').text()][5]);
+            $("input[type=radio][id='options_B']").attr("checked", true);
                 break;
             case "C":
-                $('.C').addClass('answerclick');
-                $('.qusanswer').text(userans[$('.numberclick').text()][5]);
+            $("input[type=radio][id='options_C']").attr("checked", true);
                 break;
             case "D":
-                $('.D').addClass('answerclick');
-                $('.qusanswer').text(userans[$('.numberclick').text()][5]);
+            $("input[type=radio][id='options_D']").attr("checked", true);
                 break;
         }
 
@@ -185,7 +203,7 @@ function save() {
     var localexamname = localStorage.getItem("examname");
     var question = Parse.Object.extend('QuesBank');
     var query = new Parse.Query(question);
-    query.equalTo("examname", localexamname);
+    query.equalTo("examname", "測試用");
     query.ascending("no");
     query.find({
         success: function(examquestion) {
@@ -203,11 +221,11 @@ function save() {
 }
 
 function content() {
-    $('.qussmall').text(userans[$('.numberclick').text()][0]);
-    $('.spanA').text(userans[$('.numberclick').text()][1]);
-    $('.spanB').text(userans[$('.numberclick').text()][2]);
-    $('.spanC').text(userans[$('.numberclick').text()][3]);
-    $('.spanD').text(userans[$('.numberclick').text()][4]);
+    $('.qussmall').text(userans[$('.active').children('a').text()][0]);
+    $('.spanA').text(userans[$('.active').children('a').text()][1]);
+    $('.spanB').text(userans[$('.active').children('a').text()][2]);
+    $('.spanC').text(userans[$('.active').children('a').text()][3]);
+    $('.spanD').text(userans[$('.active').children('a').text()][4]);
 }
 
 function calculatescore() {
@@ -254,6 +272,6 @@ function cleanradio() {
     var all_rbl = $("input[type=radio]");
     all_rbl.each(function() {
         var rbl_name = $(this).attr("name");
-        $("input[type=radio][name*='" + rbl_name + "']:first").attr("checked", false)
+        $("input[type=radio][name*='" + rbl_name + "']").attr("checked", false);
     });
 }
