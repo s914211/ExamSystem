@@ -46,7 +46,7 @@ html, body {
   
   .exam_title{
     font-size: 40px;
-    margin: 20px;
+    padding: 20px;
     text-align: center;
   }
 
@@ -220,101 +220,71 @@ button {
 
 
 
+//中間內容==========================
 
 
+.testnumber{
+  margin: 20px;
+}
 
+#bigdiv{
+  position: relative;
+  padding: 20px;
+  display: -webkit-flex;
+  display: flex;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  .testnumber{
-    margin: 20px;
+  .question_content{
+    -webkit-flex:1;
+    flex:1;
+    display: -webkit-flex;
+    display: flex;
+    
+    .qussmall{
+        margin:auto;
+    }
   }
 
-  #bigdiv{
-    position: relative;
+  .options_list{
+    -webkit-flex:1;
+    flex:1;
+    text-align: left;
 
-    .question_content{
-      position: absolute;
-      left:0px;
-      width: 500px;
-      height: 100%;
+    .answer{
       display: -webkit-flex;
       display: flex;
-    }
-    .qussmall{
-      margin: auto;
-    }
+      margin: 20px;
+    
+      label {
+        flex:none;
+        width: 50px;
+        line-height: 50px;
+        text-align: center;
+        border: 1px solid #999;
+        border-radius: 50%;
+        box-shadow: 0 0 0 45px #FFF inset;
+        transition: 200ms all;
+        cursor: pointer;
+      }
 
-    .options_list{
-      margin-left: 500px;
-      text-align: left;
-
-      .answer{
-        margin: 20px;
+      input {
+        display: none;
         
-
-        label {
-            display: inline-block; //為啥一定要這個哩...
-            width: 50px;
-            line-height: 50px;
-            text-align: center;
-            border: 1px solid #999;
-            border-radius: 50%;
-            box-shadow: 0 0 0 45px #FFF inset;
-            transition: 200ms all;
-            cursor: pointer;
+        &:checked + label{
+          box-shadow: 0 0 0 -1px #FFF inset;
+          color: #FFF;
+          background: #7EB634;
+          border-color: #7EB634;  
         }
 
-        input:checked + label {
-            box-shadow: 0 0 0 -1px #FFF inset;
-            color: #FFF;
-            background: #7EB634;
-            border-color: #7EB634;
-        }
-        input {
-            display: none;
+        span {
+          flex:1;
+          line-height: 52px;
         }
       }
+    }
   }
 }
+
 
 .line{
   width: 80%;
@@ -464,3 +434,10 @@ button {
   color: rgb(0,0,0);
 }
 
+//footer=======================================
+.footer{
+  margin: 20px;
+  li{
+    cursor: pointer;
+  }
+}
