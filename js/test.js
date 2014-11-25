@@ -61,6 +61,7 @@ $(document).ready(function() {
     });
     save();
     radioclick();
+    rightclickout();
     $('#bigdiv,.arrow').fadeOut(100);
     $('.notification').fadeIn(100);
     $('.notification').fadeOut(2000);
@@ -316,4 +317,27 @@ function cleanradio() {
         "cursor": "pointer",
         "color": "#000"
     });
+}
+
+function rightclickout() {
+    var omitformtags=["input", "textarea", "select"]
+
+omitformtags=omitformtags.join("|")
+
+function disableselect(e){
+if (omitformtags.indexOf(e.target.tagName.toLowerCase())==-1)
+return false
+}
+
+function reEnable(){
+return true
+}
+
+if (typeof document.onselectstart!="undefined")
+document.onselectstart=new Function ("return false")
+else{
+document.onmousedown=disableselect
+document.onmouseup=reEnable
+}
+
 }
