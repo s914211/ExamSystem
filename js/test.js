@@ -9,31 +9,31 @@
 $('.pagination li').on('click', function(e) {
     $(".pagination li").removeClass('active');
     $(this).addClass('active');
-})
+});
 
 
 
 // =================================================================pagination-arrows
 
-var pr = document.querySelector('.paginate.left');
-var pl = document.querySelector('.paginate.right');
+// var pr = document.querySelector('.paginate.left');
+// var pl = document.querySelector('.paginate.right');
 
-pr.onclick = slide.bind(this, -1);
-pl.onclick = slide.bind(this, 1);
+// pr.onclick = slide.bind(this, -1);
+// pl.onclick = slide.bind(this, 1);
 
-var index = 0,
-    total = 5;
+// var index = 0,
+//     total = 5;
 
-function slide(offset) {
-    index = Math.min(Math.max(index + offset, 0), total - 1);
+// function slide(offset) {
+//     index = Math.min(Math.max(index + offset, 0), total - 1);
 
-    document.querySelector('.counter').innerHTML = (index + 1) + ' / ' + total;
+//     document.querySelector('.counter').innerHTML = (index + 1) + ' / ' + total;
 
-    pr.setAttribute('data-state', index === 0 ? 'disabled' : '');
-    pl.setAttribute('data-state', index === total - 1 ? 'disabled' : '');
-}
+//     pr.setAttribute('data-state', index === 0 ? 'disabled' : '');
+//     pl.setAttribute('data-state', index === total - 1 ? 'disabled' : '');
+// }
 
-slide(0);
+// slide(0);
 
 
 
@@ -60,6 +60,7 @@ $(document).ready(function() {
         }
     });
     save();
+    radioclick();
     $('#bigdiv,.arrow').fadeOut(100);
     $('.notification').fadeIn(100);
     $('.notification').fadeOut(2000);
@@ -76,15 +77,9 @@ $(document).ready(function() {
 
     $('body').delegate('.pagination>li,#pre,#next', 'click', function() {
 
-        // for (i = 1; i <= 40; i++) {
-        //     if (userans[i][5]) {
-        //         $('.number').eq(i - 1).addClass('ansslecet');
-        //     }
-        // }
         $('.span,.qussmall').fadeOut(10);
-        $('.span,.qussmall').fadeIn(100);        
+        $('.span,.qussmall').fadeIn(100);
         $('.testnumber').text("");
-        cleanradio();
         useranswer();
         content();
     });
@@ -103,7 +98,6 @@ $(document).ready(function() {
             $('.Q1_Q20 li').last().addClass('activetoken');
             $('.active').removeClass('active');
             $('.activetoken').addClass('active').removeClass('activetoken');
-            cleanradio();
             useranswer();
             content();
         } else {
@@ -113,7 +107,6 @@ $(document).ready(function() {
             $('.active').prev().addClass('activetoken');
             $('.active').removeClass('active');
             $('.activetoken').addClass('active').removeClass('activetoken');
-            cleanradio();
             useranswer();
             content();
         }
@@ -129,7 +122,6 @@ $(document).ready(function() {
             $('.Q21_Q40 li').first().addClass('activetoken');
             $('.active').removeClass('active');
             $('.activetoken').addClass('active').removeClass('activetoken');
-            cleanradio();
             useranswer();
             content();
         } else {
@@ -139,7 +131,6 @@ $(document).ready(function() {
             $('.active').next().addClass('activetoken');
             $('.active').removeClass('active');
             $('.activetoken').addClass('active').removeClass('activetoken');
-            cleanradio();
             useranswer();
             content();
         }
@@ -180,19 +171,51 @@ function useranswer() {
     if (userans[$('.active').children('a').text()][5]) {
         switch (userans[$('.active').children('a').text()][5]) {
             case "A":
-            $("input[type=radio][id='options_A']").attr("checked", true);
+                cleanradio();
+
+                $("#options_A").attr("checked", true);
+                $('#options_A + label').css({
+                    "background": "#7EB634",
+                    "border-color": "#7EB634",
+                    "box-shadow": "0 0 0 -1px #FFF inset",
+                    "color": "#FFF"
+                });
                 break;
             case "B":
-            $("input[type=radio][id='options_B']").attr("checked", true);
+                cleanradio();
+                $("#options_B").attr("checked", true);
+                $('#options_B + label').css({
+                    "background": "#7EB634",
+                    "border-color": "#7EB634",
+                    "box-shadow": "0 0 0 -1px #FFF inset",
+                    "color": "#FFF"
+                });
                 break;
             case "C":
-            $("input[type=radio][id='options_C']").attr("checked", true);
+                cleanradio();
+                $("#options_C").attr("checked", true);
+                $('#options_C + label').css({
+                    "background": "#7EB634",
+                    "border-color": "#7EB634",
+                    "box-shadow": "0 0 0 -1px #FFF inset",
+                    "color": "#FFF"
+                });
                 break;
             case "D":
-            $("input[type=radio][id='options_D']").attr("checked", true);
+                cleanradio();
+                $("#options_D").attr("checked", true);
+                $('#options_D + label').css({
+                    "background": "#7EB634",
+                    "border-color": "#7EB634",
+                    "box-shadow": "0 0 0 -1px #FFF inset",
+                    "color": "#FFF"
+                });
                 break;
         }
 
+    } else {
+        cleanradio();
+        $("input[type=radio]").attr("checked", false);
     }
 }
 
@@ -268,10 +291,29 @@ function calculatescore() {
     })
 }
 
+function radioclick() {
+    $("input[type=radio]").click(function() {
+        cleanradio();
+        $(this).next('.choice').css({
+                    "background": "#7EB634",
+                    "border-color": "#7EB634",
+                    "box-shadow": "0 0 0 -1px #FFF inset",
+                    "color": "#FFF"
+                });
+    })
+}
+
 function cleanradio() {
-    var all_rbl = $("input[type=radio]");
-    all_rbl.each(function() {
-        var rbl_name = $(this).attr("name");
-        $("input[type=radio][name*='" + rbl_name + "']").attr("checked", false);
+    $('label').css({
+        "display": "inline-block",
+        "width": "50px",
+        "line-height": "50px",
+        "text-align": "center",
+        "border": "1px solid #999",
+        "border-radius": "50%",
+        "box-shadow": "0 0 0 45px #FFF inset",
+        "transition": "200ms all",
+        "cursor": "pointer",
+        "color": "#000"
     });
 }
