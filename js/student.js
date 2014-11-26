@@ -59,7 +59,6 @@ $(document).ready(function() {
 
 
 
-
     //=========================================================================刪除考試，按下垃圾桶
     $(document).on("click", ".red", Show_Confirm);
 
@@ -210,6 +209,26 @@ function checkenroll() {
 
 function showscore() {
 	$('.tab_questions').delegate('.green','click',function(){
+        var examname = $(this).parent('.blocks').children('.blocks_text').children('.blocks_title').text();
+        var exam = Parse.Object.extend('ExamRecord');
+        var query = new Parse.Query(exam);
+        query.include('exam');
+        query.equalTo('user',Parse.User.current());
+        query.find({
+            success: function(scores) {
+                for(i = 0; i < scores.length; i++) {
+                    var name = scores[i].get('exam').get('examname');
+                    var score = scores[i].get('score');
+                    if(name == examname) {
+                        $('.score').children('span').text(score);                     
+                    }
+                    else {
+                        $('.score').children('span').text("?");
+                    }
+
+                }
+            }
+        });
 		$('.checkscore').fadeIn(500);
 	});
 	$('.checkscore').click(function(){
