@@ -48,11 +48,12 @@ $(document).ready(function() {
                     examrecord.save(null, {
                         success: function(result) {
                             alert("attend exam success!");
+                            scoresearch();
                         }
                     });
                 }
             });
-            
+             
         }
     });
 
@@ -155,7 +156,10 @@ function getexam() {
     });
 }
 
+
+
 function scoresearch() {
+    $(".tab_questions").html("");
     var examrecord = Parse.Object.extend('ExamRecord');
     var query = new Parse.Query(examrecord);
     query.include('exam');
