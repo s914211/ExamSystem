@@ -219,12 +219,13 @@ function showscore() {
                 for(i = 0; i < scores.length; i++) {
                     var name = scores[i].get('exam').get('examname');
                     var score = scores[i].get('score');
-                    if(name == examname) {
-                        $('.score').children('span').text(score);                     
-                    }
-                    else {
+                    if(score == undefined){
                         $('.score').children('span').text("?");
                     }
+                    else if(name == examname) {
+                        $('.score').children('span').text(score);                     
+                    }
+                    
 
                 }
             }
