@@ -153,6 +153,9 @@ $(document).ready(function() {
         $(click).show();
     });
 
+    $('.handin').click(function(){
+        calculatescore();
+    });
 
 });
 
@@ -261,16 +264,16 @@ function calculatescore() {
     query.find({
         success: function(examquestion) {
             var correctnum = 0;
-            for (var i = 1; i <= examquestion.length; i++) {
+            for (var i = 0; i < examquestion.length; i++) {
                 var quesanswer = examquestion[i].get('Answer');
-                if (quesanswer == userans[i][5]) {
+                if (quesanswer == userans[i+1][5]) {
                     correctnum++;
                 }
             }
             var exam = Parse.Object.extend('Exams');
             var query = new Parse.Query(exam);
             query.equalTo("examname", localexamname);
-            query.find({
+            query.first({
                 success: function(exam) {
                     var examrecord = Parse.Object.extend('ExamRecord');
                     var query = new Parse.Query(examrecord);
@@ -282,8 +285,14 @@ function calculatescore() {
                             userrecord.save(null, {
                                 success: function(result) {
                                     console.log("User exam score save success!");
+                                },
+                                error:function(error){
+                                    console.log(error.toString());
                                 }
                             })
+                        },
+                        error:function(){
+                            console.log("userrecord isn't in!");
                         }
                     })
                 }
