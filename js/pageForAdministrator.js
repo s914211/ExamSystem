@@ -187,7 +187,7 @@ $(document).on("click",".btn_submitModal",function(){
                     else{
                         setTimeout(function(){
                             if(localStorage.getItem("sign") != "no"){
-                                addnewexam(exam_name, time_needed, exam_date);
+                                addnewexam(exam_name, time_needed, exam_date, numhard, numnormal, numeasy);
                                 /*blocks_number++;
                                 AddExam();
                                 $("#blocks_added_"+blocks_number+" div:eq(3)").append('<p class="blocks_title">'+exam_name+'</p><p>'+time_needed+'  minutes</p><p>'+exam_date+'</p>');*/
@@ -310,7 +310,6 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
                     })
                 }
                 if(easynum != 0){
-                    alert("EasyQues query success!");
                     var sign = "ok";
                     return sign;  
                 }     
@@ -370,7 +369,7 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
                     })
                 }
                 if(normalnum != 0){
-                    alert("NormalQues query success!");
+
                 }
             }
         }
@@ -428,19 +427,22 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
                     })
                 }
                 if(hardnum != 0){
-                    alert("HardQues query success!");
+
                 }
             }
         }
     })
 }
 
-addnewexam = function(examname, examtime, examdate){
+addnewexam = function(examname, examtime, examdate, hard, normal, easy){
     var Exams = Parse.Object.extend('Exams');
     var exams = new Exams();
     exams.set('examname', examname);
     exams.set('examtime', parseInt(examtime));
     exams.set('examdate', examdate.toString());
+    exams.set('hardnum', hard);
+    exams.set('normalnum', normal);
+    exams.set('easynum', easy);
     exams.save(null, {
         success:function(){
             alert("Add new exam success!");
