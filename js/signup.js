@@ -33,7 +33,7 @@ $(document).ready(function(){
     if(userid == "admin" && userpassword =="admin"){
         Parse.User.logIn(userid,userpassword,{
         success:function(){
-          window.location.assign("attendexam.html");
+          window.location.assign("pageForAdministrator.html");
         },
         error:function(user, error){
           alert("Error: " + error.code + " " + error.message);

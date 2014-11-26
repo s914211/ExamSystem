@@ -100,7 +100,7 @@ html, body {
 /* line 47, ../sass/test.scss */
 .sheet .exam_title {
   font-size: 40px;
-  margin: 20px;
+  padding: 20px;
   text-align: center;
 }
 /* line 53, ../sass/test.scss */
@@ -307,40 +307,44 @@ button {
   right: -50px;
 }
 
-/* line 267, ../sass/test.scss */
+/* line 226, ../sass/test.scss */
 .testnumber {
   margin: 20px;
 }
 
-/* line 271, ../sass/test.scss */
+/* line 230, ../sass/test.scss */
 #bigdiv {
   position: relative;
-}
-/* line 274, ../sass/test.scss */
-#bigdiv .question_content {
-  position: absolute;
-  left: 0px;
-  width: 500px;
-  height: 100%;
+  padding: 20px;
   display: -webkit-flex;
   display: flex;
 }
-/* line 282, ../sass/test.scss */
-#bigdiv .qussmall {
+/* line 236, ../sass/test.scss */
+#bigdiv .question_content {
+  -webkit-flex: 1;
+  flex: 1;
+  display: -webkit-flex;
+  display: flex;
+}
+/* line 242, ../sass/test.scss */
+#bigdiv .question_content .qussmall {
   margin: auto;
 }
-/* line 286, ../sass/test.scss */
+/* line 247, ../sass/test.scss */
 #bigdiv .options_list {
-  margin-left: 500px;
+  -webkit-flex: 1;
+  flex: 1;
   text-align: left;
 }
-/* line 290, ../sass/test.scss */
+/* line 252, ../sass/test.scss */
 #bigdiv .options_list .answer {
+  display: -webkit-flex;
+  display: flex;
   margin: 20px;
 }
-/* line 294, ../sass/test.scss */
+/* line 257, ../sass/test.scss */
 #bigdiv .options_list .answer label {
-  display: inline-block;
+  flex: none;
   width: 50px;
   line-height: 50px;
   text-align: center;
@@ -350,19 +354,24 @@ button {
   transition: 200ms all;
   cursor: pointer;
 }
-/* line 306, ../sass/test.scss */
+/* line 269, ../sass/test.scss */
+#bigdiv .options_list .answer input {
+  display: none;
+}
+/* line 272, ../sass/test.scss */
 #bigdiv .options_list .answer input:checked + label {
   box-shadow: 0 0 0 -1px #FFF inset;
   color: #FFF;
   background: #7EB634;
   border-color: #7EB634;
 }
-/* line 312, ../sass/test.scss */
-#bigdiv .options_list .answer input {
-  display: none;
+/* line 279, ../sass/test.scss */
+#bigdiv .options_list .answer input span {
+  flex: 1;
+  line-height: 52px;
 }
 
-/* line 319, ../sass/test.scss */
+/* line 289, ../sass/test.scss */
 .line {
   width: 80%;
   height: 1px;
@@ -371,7 +380,7 @@ button {
 }
 
 /*===========================================================================================fab=*/
-/* line 337, ../sass/test.scss */
+/* line 307, ../sass/test.scss */
 .fab {
   position: absolute;
   overflow: hidden;
@@ -382,7 +391,7 @@ button {
   cursor: pointer;
   color: #d6ce85;
 }
-/* line 347, ../sass/test.scss */
+/* line 317, ../sass/test.scss */
 .fab.green {
   background-color: #0f9d58;
   right: 10px;
@@ -392,59 +401,59 @@ button {
   height: 56px;
   border-radius: 50%;
 }
-/* line 357, ../sass/test.scss */
+/* line 327, ../sass/test.scss */
 .fab:active {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
   transition-delay: 0s;
 }
-/* line 362, ../sass/test.scss */
+/* line 332, ../sass/test.scss */
 .fab > core-icon {
   margin: 16px;
 }
-/* line 366, ../sass/test.scss */
+/* line 336, ../sass/test.scss */
 .fab > core-icon::shadow path {
   fill: #fff;
 }
 
 /* ==========================================================Icon Button=*/
-/* line 375, ../sass/test.scss */
+/* line 345, ../sass/test.scss */
 .icon-button {
   position: absolute;
   width: 56px;
   height: 56px;
 }
-/* line 380, ../sass/test.scss */
+/* line 350, ../sass/test.scss */
 .icon-button core-icon {
   margin: 13px;
   transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* line 386, ../sass/test.scss */
+/* line 356, ../sass/test.scss */
 .icon-button:hover core-icon {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
-/* line 391, ../sass/test.scss */
+/* line 361, ../sass/test.scss */
 .icon-button paper-ripple {
   overflow: hidden;
   color: #646464;
 }
 
-/* line 403, ../sass/test.scss */
+/* line 373, ../sass/test.scss */
 .pagination {
   display: block;
   width: 980px;
   margin: 0 auto;
   text-align: center;
 }
-/* line 408, ../sass/test.scss */
+/* line 378, ../sass/test.scss */
 .pagination li {
   display: inline-block;
   list-style: none;
   font-family: Helvetica, Helvetica Neue,sans-serif;
   color: #444;
 }
-/* line 413, ../sass/test.scss */
+/* line 383, ../sass/test.scss */
 .pagination li a {
   display: block;
   width: 40px;
@@ -455,7 +464,7 @@ button {
   text-decoration: none;
 }
 
-/* line 435, ../sass/test.scss */
+/* line 405, ../sass/test.scss */
 .pagination li a:before {
   position: absolute;
   content: '';
@@ -469,24 +478,33 @@ button {
   -webkit-transition: all 0.25s;
 }
 
-/* line 449, ../sass/test.scss */
+/* line 419, ../sass/test.scss */
 .pagination li a:hover {
   color: transparent;
 }
 
-/* line 453, ../sass/test.scss */
+/* line 423, ../sass/test.scss */
 .pagination li a:hover:before {
   -webkit-transform: scale(0.3);
   box-shadow: inset 0 0 0 4px rgba(0, 0, 0, 0.75);
 }
 
-/* line 458, ../sass/test.scss */
+/* line 428, ../sass/test.scss */
 .pagination li.active a:before {
   -webkit-transform: scale(1);
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.75);
 }
 
-/* line 463, ../sass/test.scss */
+/* line 433, ../sass/test.scss */
 .pagination li.active a:hover {
   color: black;
+}
+
+/* line 438, ../sass/test.scss */
+.footer {
+  margin: 20px;
+}
+/* line 440, ../sass/test.scss */
+.footer li {
+  cursor: pointer;
 }
