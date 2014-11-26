@@ -45,7 +45,7 @@ html, body {
   font-size: 20px;
   
   .exam_title{
-    font-size: 40px;
+    font-size: 36px;
     padding: 20px;
     text-align: center;
   }
@@ -56,118 +56,8 @@ html, body {
 }
 
 
-
-$size: 25px;
-$thickness: 2px;
-$angle: 40deg;
-$angleHover: 30deg;
-$angleActive: 25deg;
-
-@mixin arrowTransform( $angle, $x: 0, $y: 0 ) {
-  i:first-child {
-    transform: translate( $x, $y ) rotate( $angle );
-  }
-
-  i:last-child {
-    transform: translate( $x, -$y ) rotate( -$angle );
-  }
-}
-
-
-#pagination_arrows{
-  text-align: right;
-  right:0;
-  span{
-    color: transparent;
-  }
-}
-
-button {
-  -webkit-appearance: none;
-  background: transparent;
-  border: 0;
-  outline: 0;
-}
-
-.paginate {
-  width: $size !important;
-  height: $size !important;  
-  cursor: pointer;
-  transform: translate3d(0,0,0); // fixes flicker in webkit
-
-  i {
-    position: absolute;
-    width: $size ;
-    height: $thickness ; 
-    border-radius: $thickness / 2;
-    background: $greenDark;
-    transition: all 0.15s ease;
-  }
-
-  &.left {
-
-    i {
-      transform-origin: 0% 50%
-    }
-
-    @include arrowTransform( $angle, 0, -1px );
-
-    &:hover {
-      @include arrowTransform( $angleHover, 0, -1px );
-    }
-
-    &:active {
-      @include arrowTransform( $angleActive, 1px, -1px );
-    }
-
-    &[data-state=disabled] {
-      @include arrowTransform( 0deg, -5px, 0 );
-
-      &:hover {
-        @include arrowTransform( 0deg, -5px, 0 );
-      }
-    }
-  }
-
-  &.right {
-
-    i {
-      transform-origin: 100% 50%
-    }
-
-    @include arrowTransform( $angle, 0, 1px );
-
-    &:hover {
-      @include arrowTransform( $angleHover, 0, 1px );
-    }
-
-    &:active {
-      @include arrowTransform( $angleActive, 1px, 1px );
-    }
-
-    &[data-state=disabled] {
-      @include arrowTransform( 0deg, 5px, 0 );
-
-      &:hover {
-        @include arrowTransform( 0deg, 5px, 0 );
-      }
-    }
-  }
-
-  &[data-state=disabled] {
-    opacity: 0.3;
-    cursor: default;
-  }
-}
-
-
-
-.counter {
-  line-height: 100px;
-  color: $green;
-  display: inline;
-  font-size: $size;
-  font-family: Helvetica, sans-serif;
+.testnumber{
+  position: absolute;
 }
 
 /*---Page Switcher
