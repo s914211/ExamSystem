@@ -161,28 +161,32 @@ a {
 /*====add_button==============================================================*/
 /* line 115, ../sass/pageForAdministrator.scss */
 .add_blocks {
-  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
   cursor: pointer;
-  vertical-align: baseline;
-  margin: 20px;
-  width: 200px;
   height: 200px;
+  width: 200px;
+  margin: 20px;
   overflow: hidden;
   display: inline-block;
-  position: relative;
   box-shadow: none;
   border-radius: 5%;
+  position: relative;
 }
-/* line 129, ../sass/pageForAdministrator.scss */
-.add_blocks .icon_add {
-  height: 200px;
-  width: 200px;
-  color: #d6d1a3;
+/* line 128, ../sass/pageForAdministrator.scss */
+.add_blocks core-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -25px;
+  margin-top: -25px;
+  height: 50px;
+  width: 50px;
 }
-
-/* line 140, ../sass/pageForAdministrator.scss */
-.ripple_add {
-  cursor: pointer;
+/* line 138, ../sass/pageForAdministrator.scss */
+.add_blocks div {
+  text-align: center;
+  margin-top: 75%;
 }
 
 /*============fab================================================================================*/
