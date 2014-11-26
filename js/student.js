@@ -67,9 +67,12 @@ $(document).ready(function() {
             Show_ConfirmWrapper();
             // ------------------------------------------------------------刪除block
             var div_clicked = $(e.target).parent('.blocks');
+            var examname = $(this).parent('.blocks').children('.blocks_text').children('.blocks_title').text();
+            localStorage.setItem("examname", examname);
             $(".inner-square.left").click(function() { //點左邊，確認刪除
                 div_clicked.remove();
                 Close_ConfirmWrapper();
+                window.location.assign("test.html");
             });
         }
         //----------------------------------------------------------------點右邊沒事        (我先註解掉，你要用就改)

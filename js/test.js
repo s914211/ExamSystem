@@ -48,7 +48,7 @@ $(document).ready(function() {
     var localexamname = localStorage.getItem("examname");
     var question = Parse.Object.extend('QuesBank');
     var query = new Parse.Query(question);
-    query.equalTo("examname", "測試用");
+    query.equalTo("examname", localexamname);
     query.equalTo("no", "01");
     query.first({
         success: function(examquestion) {
