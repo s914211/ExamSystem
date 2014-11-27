@@ -255,6 +255,7 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
     easyques.find({
         success:function(easyquestion){
             if(easyquestion.length<easynum){
+                    deleteunsuccessques(examname);
                     unsealed(1);
                     localStorage.setItem("sign", "no");
                     alert("There's no enough questions in question bank. Unsealing now~");
@@ -328,6 +329,7 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
     normalques.find({
         success:function(normalquestion){
             if(normalquestion.length<normalnum){
+                    deleteunsuccessques(examname);
                     unsealed(2);
                     localStorage.setItem("sign", "no");
                     alert("There's no enough questions in question bank. Unsealing now~");           
@@ -386,6 +388,7 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
     hardques.find({
         success:function(hardquestion){
             if(hardquestion.length<hardnum){
+                deleteunsuccessques(examname);
                 unsealed(3);
                 localStorage.setItem("sign", "no");
                 alert("There's no enough questions in question bank. Unsealing now~");
@@ -480,29 +483,22 @@ unsealed = function(degree){
     })
 }
 
-//about attend a exam
-
-/*$(document).on("click","#attendbtn",function(){
-    var examid = $(this).parent().attr('id');
-    var exam = Parse.Object.extend("Exams");
-    var query = new Parse.Query(exam);
-    query.equalTo("objectId", examid);
-    query.first({
-        success:function(exam){
-            var Examrecord = Parse.Object.extend("ExamRecord");
-            var examrecord = new Examrecord();
-            examrecord.set("user", Parse.User.current());
-            examrecord.set("exam", exam);
-            examrecord.save(null,{
-                success:function(result){
-                    console.log("attend exam success!");
-                }
-            })
+deleteunsuccessques = function(examname){
+    var questions= Parse.Object.extend('QuesBank');
+    var query = new Parse.Query(questions);
+    query.equalTo('examname', examname);
+    query.find({
+        success:function(uselessques){
+            for(var i = 0; i<uselessques.length; i++){
+                uselessques[i].destroy({
+                    success:function(){
+                        console.log("delete ques success!");
+                    }
+                })
+            }
         }
     })
-});*/
-
-//show test
+}
 
 $(document).on("click","#attendbtn",function(){
     var examid = $(this).parent().attr('id');
