@@ -30,7 +30,7 @@ $(document).ready(function() {
 
 	function AddExam(id){
 	    var newExamBlock=$('<div class ="blocks" id="'+id+'"><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="icon-button trash_can"><core-icon icon="delete"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div> <div class="fab green" id="attendbtn"><core-icon icon="create"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"></div><div class="img_container"><img src   ="assets/1.jpg" /></div></div>');
-	    $("#blocks_container").prepend(newExamBlock);
+	    $(".blocks_container").prepend(newExamBlock);
 	 }
 
 
@@ -174,6 +174,9 @@ $(document).on("click",".btn_nextModal",function(){
 
 blocks_number=0;
 $(document).on("click",".btn_submitModal",function(){
+           var exam_name=$("#exam_name").val();
+           var time_needed=$("#exam_time").val();
+           var exam_date=$("#exam_date").val();
 	var hard=$("#hardnum").val();
 	var normal=$("#normalnum").val();
 	var easy=$("#easynum").val();
