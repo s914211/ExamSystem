@@ -281,7 +281,7 @@ function calculatescore() {
                     query.equalTo("exam", exam);
                     query.first({
                         success: function(userrecord) {
-                            userrecord.set("score", correctnum);
+                            userrecord.set("score", correctnum * 2.5);
                             userrecord.save(null, {
                                 success: function(result) {
                                     console.log("User exam score save success!");
