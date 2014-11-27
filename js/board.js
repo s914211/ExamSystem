@@ -214,3 +214,13 @@ addq = function(ques, optiona, optionb, optionc, optiond, degree, ans){
         }
     })
 }
+
+
+
+
+
+
+
+
+
+
