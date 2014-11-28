@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*題庫表格部分*/
-/* line 28, ../sass/board.scss */
+/* line 19, ../sass/board.scss */
 .tablediv {
   display: flex;
   position: relative;
@@ -8,82 +8,82 @@
   padding-bottom: 10px;
 }
 
-/* line 34, ../sass/board.scss */
+/* line 25, ../sass/board.scss */
 .qusselect {
   margin: auto;
   height: 100%;
 }
 
-/* line 39, ../sass/board.scss */
+/* line 29, ../sass/board.scss */
 tbody {
   height: 300px;
   overflow: auto;
   display: block;
 }
 
-/* line 45, ../sass/board.scss */
+/* line 34, ../sass/board.scss */
 .thead {
   background-color: #eee;
   width: 150px;
   display: table-header-group;
 }
 
-/* line 52, ../sass/board.scss */
+/* line 39, ../sass/board.scss */
 .trnormal {
   width: 150px;
   border: 1px solid #000;
   background-color: white;
 }
 
-/* line 57, ../sass/board.scss */
+/* line 44, ../sass/board.scss */
 .trnormal:hover {
   cursor: pointer;
 }
 
-/* line 60, ../sass/board.scss */
+/* line 47, ../sass/board.scss */
 td {
   width: 200px;
   border: 1px solid #555;
   word-break: keep-all;
 }
 
-/* line 66, ../sass/board.scss */
+/* line 52, ../sass/board.scss */
 .tdsmall {
   width: 80px;
 }
 
-/* line 70, ../sass/board.scss */
+/* line 55, ../sass/board.scss */
 .tdanswer {
   width: 97px;
 }
 
-/* line 74, ../sass/board.scss */
+/* line 58, ../sass/board.scss */
 .trclick {
   background-color: yellow;
 }
 
 /*按鈕選項部分*/
-/* line 91, ../sass/board.scss */
+/* line 66, ../sass/board.scss */
 .editdiv {
   width: 980px;
   margin: auto;
   display: flex;
   display: -webkit-flex;
 }
-/* line 97, ../sass/board.scss */
+/* line 71, ../sass/board.scss */
 .editdiv textarea {
   margin-bottom: 10px;
   text-align: center;
-  width: 70%;
-  max-width: 70%;
-  padding: 25px 20px 25px 90px;
+  width: 100%;
+  max-width: 100%;
+  padding: 25px 25px 25px 90px;
   border-radius: 14px;
   background-color: white;
   border: 2px solid #e9322d;
   overflow: hidden;
   resize: none;
 }
-/* line 112, ../sass/board.scss */
+/* line 83, ../sass/board.scss */
 .editdiv label {
   border-radius: 14px 0px 14px 0px;
   padding: 14px 10px;
@@ -95,23 +95,23 @@ td {
   background: #e9322d;
   color: white;
 }
-/* line 124, ../sass/board.scss */
+/* line 94, ../sass/board.scss */
 .editdiv .question {
   flex: 1;
   -webkit-flex: 1;
 }
-/* line 128, ../sass/board.scss */
+/* line 97, ../sass/board.scss */
 .editdiv .question .Qcontent {
-  width: 80%;
+  width: 100%;
   position: relative;
 }
-/* line 132, ../sass/board.scss */
+/* line 101, ../sass/board.scss */
 .editdiv .question .Qcontent textarea {
-  right: 0px;
-  height: 80px;
-  max-height: 80px;
+  margin: auto;
+  height: 192px;
+  max-height: 192px;
 }
-/* line 147, ../sass/board.scss */
+/* line 109, ../sass/board.scss */
 .editdiv .question .seconddiv .btns .icon-button {
   margin: 20px;
   cursor: pointer;
@@ -124,16 +124,76 @@ td {
   border-radius: 60px;
   float: left;
 }
-/* line 159, ../sass/board.scss */
+/* line 121, ../sass/board.scss */
 .editdiv .question .seconddiv .btns .icon-button core-icon {
   margin: auto;
 }
-/* line 167, ../sass/board.scss */
+/* line 128, ../sass/board.scss */
 .editdiv .option_list {
   flex: 1;
   -webkit-flex: 1;
 }
-/* line 170, ../sass/board.scss */
+/* line 131, ../sass/board.scss */
 .editdiv .option_list .option {
   position: relative;
+}
+
+/* Variables */
+/* Dropdown style */
+/* line 147, ../sass/board.scss */
+.dropdown dt a {
+  display: block;
+  border: 1px solid grey;
+  border-radius: 30px;
+  text-decoration: none;
+}
+/* line 153, ../sass/board.scss */
+.dropdown dt a:hover, .dropdown dt a:active {
+  border-color: white;
+}
+/* line 157, ../sass/board.scss */
+.dropdown dt span {
+  display: block;
+  padding: 0 1em;
+  line-height: 2.5em;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAYAAACALL/6AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHo+AACAQQAA+MoAAIC0AAB48QAA9RwAADw3AAAbzhlfIT4AAACJSURBVHjajNAxCsJAEEbhb5cU4i0sbHIaL6IQTxFPo4VeROwXQs4gKW1cWJZEM90wj5l5f0jDeMXBunqENIw7vLD9A09oIxL6FdsvSCENI2zwxH4BTmgxxeJc92P76cuIpRBuc6K45yZWwzPeleixBOLMr30tWgJZuqwcQJNFy2GzkHeHUMPwGQChFSPmzlJ1WgAAAABJRU5ErkJggg==) no-repeat scroll right center;
+  border-right: 1em solid transparent;
+  cursor: pointer;
+}
+/* line 166, ../sass/board.scss */
+.dropdown dd {
+  position: relative;
+}
+/* line 168, ../sass/board.scss */
+.dropdown dd ul {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: -2.5em;
+  width: 100%;
+  list-style: none;
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid grey;
+  border-radius: 30px;
+}
+/* line 178, ../sass/board.scss */
+.dropdown dd ul li:first-child a:hover {
+  border-radius: 30px 30px 0 0;
+}
+/* line 181, ../sass/board.scss */
+.dropdown dd ul li:last-child a:hover {
+  border-radius: 0 0 30px 30px;
+}
+/* line 185, ../sass/board.scss */
+.dropdown dd li a {
+  display: block;
+  padding: 0 1em;
+  line-height: 2.5em;
+  text-decoration: none;
+}
+/* line 190, ../sass/board.scss */
+.dropdown dd li a:hover {
+  background-color: #87d3b7;
+  color: #fff;
+  cursor: pointer;
 }

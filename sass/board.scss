@@ -1,28 +1,19 @@
-@charset "utf-8";//UTF-8編碼必須，為了可以打中文!
+@charset "utf-8"; //UTF-8編碼必須，為了可以打中文!
 @import "compass/css3";
-
 // color
 $green: #87d3b7;
 $green2:#0f9d58;
-
 $grey:#d6d1a3;
 $greenDark:#32ab86;
 $greenMid:#75bd82;
 $greenLight:#b3c785;
 $greyLight:#d6ce85;
-
-
 $core: #13A7D7;
 $white: #fff;
 $grey:#777;
 $red: #e9322d;
 $darkgrey: #333;
 $lightgrey: #ccc;
-
-
-
-
-
 /*題庫表格部分*/
 
 .tablediv {
@@ -33,22 +24,18 @@ $lightgrey: #ccc;
 }
 .qusselect {
     margin: auto;
-        height: 100%;
+    height: 100%;
 }
-
 tbody {
     height: 300px;
     overflow: auto;
     display: block;
 }
-
 .thead {
     background-color: #eee;
     width: 150px;
-    display:table-header-group;
-
+    display: table-header-group;
 }
-
 .trnormal {
     width: 150px;
     border: 1px solid #000;
@@ -60,118 +47,154 @@ tbody {
 td {
     width: 200px;
     border: 1px solid #555;
-    word-break:keep-all;
+    word-break: keep-all;
 }
-
 .tdsmall {
     width: 80px;
 }
-
 .tdanswer {
     width: 97px;
 }
-
 .trclick {
     background-color: yellow;
 }
-
-
-
-
-
 /*按鈕選項部分*/
-
-
 
 //=========================================================
 $iconHeight:60px;
 $iconWidth:60px;
-
-
-.editdiv{
-	width: 980px;
-	margin: auto;
-	display: flex;
+.editdiv {
+    width: 980px;
+    margin: auto;
+    display: flex;
     display: -webkit-flex;
-
-	textarea{
-		margin-bottom: 10px;
-		text-align: center;
-		width: 70%;
-		max-width: 70%;
-		padding: 25px 20px 25px 90px;
-		border-radius:14px;
+    textarea {
+		margin-bottom   : 10px;
+		text-align      : center;
+		width           : 100%;
+		max-width       : 100%;
+		padding         : 25px 25px 25px 90px;
+		border-radius   : 14px;
 		background-color: white;
-		border:2px solid $red;
-		overflow: hidden;
-		resize: none;
-
-	}
-
-
-	label{
-		border-radius:14px 0px 14px 0px;
-		padding: 14px 10px;
-		text-align: center;
-		position: absolute;
-		left:0;
-		top:0;
-		cursor: text;
-		background:$red;
-		color: white;
-	}
-
-    .question{
-    	flex:1;
-    	-webkit-flex:1;
-
-    	.Qcontent{
-    		width: 80%;
-    		position: relative;
-    		
-    		textarea{
-    			right: 0px;
-    			height: 80px;
-				max-height:80px;
-    		}
-    	}
-
-
-    	.seconddiv{
-    		.drops{
-
-    		}
-
-    		.btns{
-
-    			.icon-button{
-    				margin: 20px;
-    				cursor: pointer;
-    				height: $iconHeight;
-    				width: $iconWidth;
-    				position: static;
-					display: -webkit-flex;
-					display: flex;
-    				background: white;
-    				border-radius:$iconHeight;
-    				float: left;
-
-    				core-icon{
-    					margin: auto;
-    				}
-    			}
-    		}
-    	}
-
+		border          : 2px solid $red;
+		overflow        : hidden;
+		resize          : none;
     }
-    .option_list{
-    	flex:1;
-    	-webkit-flex:1;
-    	.option{
-    		position: relative;
-    	}
+    label {
+        border-radius: 14px 0px 14px 0px;
+        padding: 14px 10px;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        cursor: text;
+        background: $red;
+        color: white;
+    }
+    .question {
+        flex: 1;
+        -webkit-flex: 1;
+        .Qcontent {	
+            width: 100%;
+            position: relative;
+
+            textarea {
+                margin: auto;
+                height: 192px;
+                max-height: 192px;
+            }
+        }
+        .seconddiv {           
+            .btns {
+                .icon-button {
+                    margin: 20px;
+                    cursor: pointer;
+                    height: $iconHeight;
+                    width: $iconWidth;
+                    position: static;
+                    display: -webkit-flex;
+                    display: flex;
+                    background: white;
+                    border-radius: $iconHeight;
+                    float: left;
+                    
+                    core-icon {
+                        margin: auto;
+                    }
+                }
+            }
+        }
+    }
+    .option_list {
+        flex: 1;
+        -webkit-flex: 1;
+        .option {
+            position: relative;
+        }
     }
 }
-
-
 // dropdown===============================================
+/* Variables */
+
+$width: 15em; // dropdown width
+$height: 2.5em; // dropdown height
+$ajust: 1em; // left & right padding in dropdown menu
+$radius: 30px;
+/* Dropdown style */
+
+.dropdown {
+    dt {
+        a {
+            display: block;
+            border: 1px solid grey;
+            border-radius: $radius;
+            text-decoration: none;
+
+            &:hover, &:active {
+                border-color: white;
+            }
+        }
+        span {
+            display: block;
+            padding: 0 $ajust;
+            line-height: $height;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAYAAACALL/6AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHo+AACAQQAA+MoAAIC0AAB48QAA9RwAADw3AAAbzhlfIT4AAACJSURBVHjajNAxCsJAEEbhb5cU4i0sbHIaL6IQTxFPo4VeROwXQs4gKW1cWJZEM90wj5l5f0jDeMXBunqENIw7vLD9A09oIxL6FdsvSCENI2zwxH4BTmgxxeJc92P76cuIpRBuc6K45yZWwzPeleixBOLMr30tWgJZuqwcQJNFy2GzkHeHUMPwGQChFSPmzlJ1WgAAAABJRU5ErkJggg==) no-repeat scroll right center;
+            border-right: $ajust solid transparent;
+            cursor: pointer;
+        }
+    }
+    dd {
+        position: relative;
+        ul {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: -$height;
+            width: 100%;
+            list-style: none;
+            background: #fff none repeat scroll 0 0;
+            border: 1px solid grey;
+            border-radius: $radius;
+            li:first-child a:hover {
+                border-radius: $radius $radius 0 0;
+            }
+            li:last-child a:hover {
+                border-radius: 0 0 $radius $radius;
+            }
+        }
+        li a {
+            display: block;
+            padding: 0 $ajust;
+            line-height: $height;
+            text-decoration: none;
+            &:hover {
+                background-color: $green;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+    }
+}
+.selected {
+
+}
