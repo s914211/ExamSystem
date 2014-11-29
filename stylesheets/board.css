@@ -112,7 +112,11 @@ td {
   max-height: 192px;
 }
 /* line 109, ../sass/board.scss */
-.editdiv .question .seconddiv .btns .icon-button {
+.editdiv .question .seconddiv .btns .btn {
+  float: left;
+}
+/* line 112, ../sass/board.scss */
+.editdiv .question .seconddiv .btns .btn .icon-button {
   margin: 20px;
   cursor: pointer;
   height: 60px;
@@ -122,36 +126,39 @@ td {
   display: flex;
   background: white;
   border-radius: 60px;
-  float: left;
 }
-/* line 121, ../sass/board.scss */
-.editdiv .question .seconddiv .btns .icon-button core-icon {
+/* line 123, ../sass/board.scss */
+.editdiv .question .seconddiv .btns .btn .icon-button core-icon {
   margin: auto;
 }
 /* line 128, ../sass/board.scss */
+.editdiv .question .seconddiv .btns .btn .btn_name {
+  text-align: center;
+}
+/* line 136, ../sass/board.scss */
 .editdiv .option_list {
   flex: 1;
   -webkit-flex: 1;
 }
-/* line 131, ../sass/board.scss */
+/* line 139, ../sass/board.scss */
 .editdiv .option_list .option {
   position: relative;
 }
 
 /* Variables */
 /* Dropdown style */
-/* line 147, ../sass/board.scss */
+/* line 156, ../sass/board.scss */
 .dropdown dt a {
   display: block;
   border: 1px solid grey;
   border-radius: 30px;
   text-decoration: none;
 }
-/* line 153, ../sass/board.scss */
+/* line 162, ../sass/board.scss */
 .dropdown dt a:hover, .dropdown dt a:active {
   border-color: white;
 }
-/* line 157, ../sass/board.scss */
+/* line 166, ../sass/board.scss */
 .dropdown dt span {
   display: block;
   padding: 0 1em;
@@ -160,12 +167,13 @@ td {
   border-right: 1em solid transparent;
   cursor: pointer;
 }
-/* line 166, ../sass/board.scss */
+/* line 175, ../sass/board.scss */
 .dropdown dd {
   position: relative;
 }
-/* line 168, ../sass/board.scss */
+/* line 177, ../sass/board.scss */
 .dropdown dd ul {
+  z-index: 10;
   display: none;
   position: absolute;
   left: 0;
@@ -176,22 +184,22 @@ td {
   border: 1px solid grey;
   border-radius: 30px;
 }
-/* line 178, ../sass/board.scss */
+/* line 188, ../sass/board.scss */
 .dropdown dd ul li:first-child a:hover {
   border-radius: 30px 30px 0 0;
 }
-/* line 181, ../sass/board.scss */
+/* line 191, ../sass/board.scss */
 .dropdown dd ul li:last-child a:hover {
   border-radius: 0 0 30px 30px;
 }
-/* line 185, ../sass/board.scss */
+/* line 195, ../sass/board.scss */
 .dropdown dd li a {
   display: block;
   padding: 0 1em;
   line-height: 2.5em;
   text-decoration: none;
 }
-/* line 190, ../sass/board.scss */
+/* line 200, ../sass/board.scss */
 .dropdown dd li a:hover {
   background-color: #87d3b7;
   color: #fff;

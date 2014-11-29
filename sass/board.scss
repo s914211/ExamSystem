@@ -106,25 +106,33 @@ $iconWidth:60px;
         }
         .seconddiv {           
             .btns {
-                .icon-button {
-                    margin: 20px;
-                    cursor: pointer;
-                    height: $iconHeight;
-                    width: $iconWidth;
-                    position: static;
-                    display: -webkit-flex;
-                    display: flex;
-                    background: white;
-                    border-radius: $iconHeight;
-                    float: left;
-                    
-                    core-icon {
-                        margin: auto;
-                    }
+            	.btn{
+            		float: left;
+
+                	.icon-button {
+                    	margin: 20px;
+                    	cursor: pointer;
+                    	height: $iconHeight;
+                    	width: $iconWidth;
+                    	position: static;
+                    	display: -webkit-flex;
+                    	display: flex;
+                    	background: white;
+                    	border-radius: $iconHeight;
+	                    
+	                    core-icon {
+	                        margin: auto;
+	                    }
+	                } 					
+
+            		.btn_name {
+            			text-align: center;
+            		}  
                 }
             }
         }
     }
+
     .option_list {
         flex: 1;
         -webkit-flex: 1;
@@ -143,6 +151,7 @@ $radius: 30px;
 /* Dropdown style */
 
 .dropdown {
+
     dt {
         a {
             display: block;
@@ -166,6 +175,7 @@ $radius: 30px;
     dd {
         position: relative;
         ul {
+        	z-index: 10;
             display: none;
             position: absolute;
             left: 0;
