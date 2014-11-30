@@ -52,6 +52,7 @@ $(document).ready(function() {
     query.equalTo("no", "01");
     query.first({
         success: function(examquestion) {
+            console.log("1489");
             $('.qussmall').text(examquestion.get('Question'));
             $('.spanA').text(examquestion.get('OptionA'));
             $('.spanB').text(examquestion.get('OptionB'));
@@ -230,11 +231,12 @@ function save() {
     var localexamname = localStorage.getItem("examname");
     var question = Parse.Object.extend('QuesBank');
     var query = new Parse.Query(question);
-    query.equalTo("examname", "測試用");
+    query.equalTo("examname", localexamname);
     query.ascending("no");
     query.find({
         success: function(examquestion) {
             for (var i = 1; i <= examquestion.length; i++) {
+                console.log("1489");
 
                 userans[i][0] = examquestion[i - 1].get('Question');
                 userans[i][1] = examquestion[i - 1].get('OptionA');

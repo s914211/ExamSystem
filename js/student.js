@@ -152,6 +152,8 @@ function getexam() {
                 var examtime = exams[i].get('examtime');
                 var examblock = '<div class="blocks" ' + 'id="' + examid + '"' + '><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="fab green"><core-icon icon="assignment"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"><p class="blocks_title">' + examname + '</p><p class"blocks_date">' + examdate + '</p><p class="blocks_time">' + examtime + '分鐘' + '</p></div><div class="img_container"><img src="assets/1.jpg" /></div></div>';
 
+
+
                 $(".tab_exams").append(examblock);
             }
         }
@@ -230,9 +232,9 @@ function showscore() {
                 }
             }
         });
-		$('.checkscore').fadeIn(500);
+		$('.checkscore').delay(150).fadeIn(500);
 	});
-	$('.checkscore').click(function(){
+	$('.checkscore,.tabs').click(function(){
 		$('.checkscore').fadeOut(500);
 	});
 }
