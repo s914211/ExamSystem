@@ -350,3 +350,21 @@ document.onmouseup=reEnable
 }
 
 }
+
+
+//countdown
+var localexamtime = localStorage.getItem("examtime");
+var seconds_left = localexamtime * 60;
+ 
+setInterval(function () {
+    if(seconds_left != 0){
+        var countdown = document.getElementById("countdown");
+        var minutes = parseInt(seconds_left / 60);
+        var seconds = parseInt(seconds_left % 60);
+        seconds_left--;    
+        countdown.innerHTML = minutes + "分 " + seconds + "秒 ";  
+    }
+    else{
+        alert("時間到!");
+    }
+}, 1000);

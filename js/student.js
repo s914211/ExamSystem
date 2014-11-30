@@ -67,6 +67,9 @@ $(document).ready(function() {
             // ------------------------------------------------------------刪除block
             var div_clicked = $(e.target).parent('.blocks');
             var examname = $(this).parent('.blocks').children('.blocks_text').children('.blocks_title').text();
+            var examtimestring = $(this).parent('.blocks').children('.blocks_text').children('.blocks_time').text();
+            var examtime = parseInt(examtimestring);
+            localStorage.setItem("examtime", examtime);
             localStorage.setItem("examname", examname);
             $(".inner-square.left").click(function() { //點左邊，確認刪除
                 div_clicked.remove();
