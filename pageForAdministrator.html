@@ -1,19 +1,16 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
 
 <head>
 
     <meta charset="UTF-8">
-
-
     <title>Administrator</title>
-    <link href="css/reset.css" rel="stylesheet" />
-    <link href="css/board.css" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheets/pageForAdministrator.css" media="screen" type="text/css" />
+    <!-- css -->
+    <link rel="stylesheet" href="stylesheets/pageForAdministrator.css" />
+    <link href="stylesheets/board.css" rel="stylesheet">
+    <!-- import -->
     <link rel="import" href="http://www.polymer-project.org/components/core-icons/core-icons.html">
     <link rel="import" href="http://www.polymer-project.org/components/paper-ripple/paper-ripple.html">
-
-
 
 </head>
 
@@ -71,8 +68,8 @@
             </div>
         </div>
         <div class="add_blocks">
-            <core-icon icon="add-box" class="icon_add"></core-icon>
-            <paper-ripple class="recenteringTouch ripple_add" fit></paper-ripple>
+            <core-icon icon="add" class="icon_add"></core-icon>
+            <div>Add a new exam</div>
         </div>
       </div>
     </div>
@@ -92,21 +89,21 @@
             <div class="form_newExam">
                 <form class="form_step1">
                     <div class="Form_Question">
-                        <input type="text" required id="examname">
+                        <input type="text" required id="exam_name">
                         <span class="highlight"></span>
                         <span class="bar"></span>
                         <label>Examination Name</label>
                     </div>
 
                     <div class="Form_Question">
-                        <input type="text" required id="examtime" onkeydown="onlyNum()">
+                        <input type="text" required id="exam_time" onkeydown="onlyNum()">
                         <span class="highlight"></span>
                         <span class="bar"></span>
                         <label>Time Needed</label>
                     </div>
 
                     <div class="Form_Question">
-                        <input type="date" required id="examdate" onkeydown="onlyNum()">
+                        <input type="date" required id="exam_date" onkeydown="onlyNum()">
                         <span class="highlight"></span>
                         <span class="bar"></span>
                         <label class="date_label">Examination Date</label>
@@ -290,53 +287,114 @@
             </div>
         </div>
     </div>
-
+<!-- =============TAB2=============================== -->
     <div class="tab_questions">
-        <div class="editdiv">
+    <div class="editdiv">
+        <div class="question">
+            <div class="Qcontent">
+                <textarea class="text"></textarea>
+                <label>題目內容</label>
+            </div>
+            <div class="seconddiv">
+                <div class="drops">
+                    <dl class="dropdown">
+                        <dt>
+                            <a><span>選擇難易度</span></a>
+                        </dt>
+                        <dd>
+                            <ul>
+                                <li><a class="default">選擇難易度</a></li>
+                                <li><a>難</a></li>
+                                <li><a>中</a></li>
+                                <li><a>易</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    
+                    <dl class="dropdown">
+                        <dt>
+                            <a><span>選擇答案</span></a>
+                        </dt>
+                        <dd>
+                            <ul>
+                                <li><a class="default">選擇答案</a></li>
+                                <li><a>A</a></li>
+                                <li><a>B</a></li>
+                                <li><a>C</a></li>
+                                <li><a>D</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+<!--                     <div class="difficulty">
+                        <span>難易度</span>
+                        <select id="dif">
+                            <option>請選擇</option>
+                            <option>難</option>
+                            <option>中</option>
+                            <option>易</option>
+                        </select>
 
-    <span>題目</span>
-    <textarea class="text"></textarea>
+                        <span>答案</span>
+                        <select id="ans">
+                            <option>請選擇</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                        </select>
+                    </div> -->
+                </div>
+                
+                <div class="btns">
+                    <div class="btn">
+                        <div class="icon-button" id="editbtn">
+                            <core-icon icon="add"></core-icon>
+                        </div>
+                        <div class="btn_name">修改</div>
+                    </div>
+                    <div class="btn">
+                        <div class="icon-button" id="newbtn">
+                            <core-icon icon="create"></core-icon>
+                        </div>
+                        <div class="btn_name">新增</div>
+                    </div>
+                    <div class="btn">
+                        <div class="icon-button" id="deletebtn">
+                            <core-icon icon="delete"></core-icon>
+                        </div>
+                        <div class="btn_name">刪除</div>
+                    </div>
+                    <div class="btn">
+                        <div class="icon-button" onclick="clean()">
+                            <core-icon icon="clear"></core-icon>
+                        </div>
+                        <div class="btn_name">清空</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <span>選項A</span>
-    <textarea class="text"></textarea>
-
-    <span>選項B</span>
-    <textarea class="text"></textarea>
-
-    <span>選項C</span>
-    <textarea class="text"></textarea>
-
-    <span>選項D</span>
-    <textarea class="text"></textarea>
-
-  </div>
-  <div class="seconddiv">
-    <div class="difficulty">
-
-      <span>難易度</span>
-      <select id="dif">
-        <option>請選擇</option>
-        <option>難</option>
-        <option>中</option>
-        <option>易</option>
-      </select>
-
-      <span>答案</span>
-      <select id="ans">
-        <option>請選擇</option>
-        <option>A</option>
-        <option>B</option>
-        <option>C</option>
-        <option>D</option>
-      </select>
-
+        <div class="option_list">
+            <div class="option">
+                <textarea class="text" id="A"></textarea>
+                <label for="A">選項A</label>
+            </div>
+            <div class="option">
+                <textarea class="text" id="B"></textarea>
+                <label for="B">選項B</label>
+            </div>
+            <div class="option">
+                <textarea class="text" id="C"></textarea>
+                <label for="C">選項C</label>
+            </div>
+            <div class="option">
+                <textarea class="text" id="C"></textarea>
+                <label for="D">選項D</label>
+            </div>
+        </div>
     </div>
+    
 
-    <button class="btn" id="editbtn">修改</button>
-    <button class="btn" id="newbtn">新增</button>
-    <button class="btn" id="deletebtn">刪除</button>
-    <button class="btn" onclick="clean()">清空</button>
-  </div>
 
   <div class="tablediv">
     <table class="qusselect">
@@ -362,8 +420,6 @@
           <td class="tdsmall">A</td>
         </tr>
       </tbody>
-
-
     </table>
   </div>
         </div>

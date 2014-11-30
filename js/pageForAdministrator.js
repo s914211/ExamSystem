@@ -30,7 +30,7 @@ $(document).ready(function() {
 
 	function AddExam(id){
 	    var newExamBlock=$('<div class ="blocks" id="'+id+'"><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="icon-button trash_can"><core-icon icon="delete"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div> <div class="fab green" id="attendbtn"><core-icon icon="create"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"></div><div class="img_container"><img src   ="assets/1.jpg" /></div></div>');
-	    $("#blocks_container").prepend(newExamBlock);
+	    $(".blocks_container").prepend(newExamBlock);
 	 }
 
 
@@ -174,6 +174,9 @@ $(document).on("click",".btn_nextModal",function(){
 
 blocks_number=0;
 $(document).on("click",".btn_submitModal",function(){
+           var exam_name=$("#exam_name").val();
+           var time_needed=$("#exam_time").val();
+           var exam_date=$("#exam_date").val();
 	var hard=$("#hardnum").val();
 	var normal=$("#normalnum").val();
 	var easy=$("#easynum").val();
@@ -187,7 +190,7 @@ $(document).on("click",".btn_submitModal",function(){
                     else{
                         setTimeout(function(){
                             if(localStorage.getItem("sign") != "no"){
-                                addnewexam(exam_name, time_needed, exam_date);
+                                addnewexam(exam_name, time_needed, exam_date, numhard, numnormal, numeasy);
                                 /*blocks_number++;
                                 AddExam();
                                 $("#blocks_added_"+blocks_number+" div:eq(3)").append('<p class="blocks_title">'+exam_name+'</p><p>'+time_needed+'  minutes</p><p>'+exam_date+'</p>');*/
@@ -252,6 +255,7 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
     easyques.find({
         success:function(easyquestion){
             if(easyquestion.length<easynum){
+                    deleteunsuccessques(examname);
                     unsealed(1);
                     localStorage.setItem("sign", "no");
                     alert("There's no enough questions in question bank. Unsealing now~");
@@ -310,7 +314,6 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
                     })
                 }
                 if(easynum != 0){
-                    alert("EasyQues query success!");
                     var sign = "ok";
                     return sign;  
                 }     
@@ -326,6 +329,7 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
     normalques.find({
         success:function(normalquestion){
             if(normalquestion.length<normalnum){
+                    deleteunsuccessques(examname);
                     unsealed(2);
                     localStorage.setItem("sign", "no");
                     alert("There's no enough questions in question bank. Unsealing now~");           
@@ -370,7 +374,7 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
                     })
                 }
                 if(normalnum != 0){
-                    alert("NormalQues query success!");
+
                 }
             }
         }
@@ -384,6 +388,7 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
     hardques.find({
         success:function(hardquestion){
             if(hardquestion.length<hardnum){
+                deleteunsuccessques(examname);
                 unsealed(3);
                 localStorage.setItem("sign", "no");
                 alert("There's no enough questions in question bank. Unsealing now~");
@@ -428,19 +433,22 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
                     })
                 }
                 if(hardnum != 0){
-                    alert("HardQues query success!");
+
                 }
             }
         }
     })
 }
 
-addnewexam = function(examname, examtime, examdate){
+addnewexam = function(examname, examtime, examdate, hard, normal, easy){
     var Exams = Parse.Object.extend('Exams');
     var exams = new Exams();
     exams.set('examname', examname);
     exams.set('examtime', parseInt(examtime));
     exams.set('examdate', examdate.toString());
+    exams.set('hardnum', hard);
+    exams.set('normalnum', normal);
+    exams.set('easynum', easy);
     exams.save(null, {
         success:function(){
             alert("Add new exam success!");
@@ -475,29 +483,22 @@ unsealed = function(degree){
     })
 }
 
-//about attend a exam
-
-/*$(document).on("click","#attendbtn",function(){
-    var examid = $(this).parent().attr('id');
-    var exam = Parse.Object.extend("Exams");
-    var query = new Parse.Query(exam);
-    query.equalTo("objectId", examid);
-    query.first({
-        success:function(exam){
-            var Examrecord = Parse.Object.extend("ExamRecord");
-            var examrecord = new Examrecord();
-            examrecord.set("user", Parse.User.current());
-            examrecord.set("exam", exam);
-            examrecord.save(null,{
-                success:function(result){
-                    console.log("attend exam success!");
-                }
-            })
+deleteunsuccessques = function(examname){
+    var questions= Parse.Object.extend('QuesBank');
+    var query = new Parse.Query(questions);
+    query.equalTo('examname', examname);
+    query.find({
+        success:function(uselessques){
+            for(var i = 0; i<uselessques.length; i++){
+                uselessques[i].destroy({
+                    success:function(){
+                        console.log("delete ques success!");
+                    }
+                })
+            }
         }
     })
-});*/
-
-//show test
+}
 
 $(document).on("click","#attendbtn",function(){
     var examid = $(this).parent().attr('id');
