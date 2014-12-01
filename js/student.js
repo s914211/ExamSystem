@@ -5,6 +5,11 @@ $(document).ready(function() {
         window.location.assign("index.html");
     }*/
 
+    $('.logout').click(function(){
+        Parse.User.logOut();
+        window.location.assign("index.html");
+    })
+
     getexam();
     scoresearch();
     checkenroll();
