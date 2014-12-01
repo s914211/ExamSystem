@@ -14,6 +14,7 @@ $(document).ready(function() {
     scoresearch();
     checkenroll();
     showscore();
+    
 
 
 
@@ -162,12 +163,13 @@ function getexam() {
                 var examname = exams[i].get('examname');
                 var examdate = exams[i].get('examdate');
                 var examtime = exams[i].get('examtime');
-                var examblock = '<div class="blocks" ' + 'id="' + examid + '"' + '><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="fab green"><core-icon icon="assignment"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"><p class="blocks_title">' + examname + '</p><p class"blocks_date">' + examdate + '</p><p class="blocks_time">' + examtime + '分鐘' + '</p></div><div class="img_container"><img src="assets/1.jpg" /></div></div>';
-
+                var examblock = '<div class="blocks" ' + 'id="' + examid + '"' + 'style="display:none"><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="fab green"><core-icon icon="assignment"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"><p class="blocks_title">' + examname + '</p><p class"blocks_date">' + examdate + '</p><p class="blocks_time">' + examtime + '分鐘' + '</p></div><div class="img_container"><img src="assets/1.jpg" /></div></div>';
 
 
                 $(".tab_exams").append(examblock);
+                removeexam();                
             }
+            $('.blocks').fadeIn(2000).css("display","inline-block");
         }
     });
 }
@@ -249,4 +251,31 @@ function showscore() {
 	$('.checkscore,.tabs').click(function(){
 		$('.checkscore').fadeOut(500);
 	});
+}
+
+function removeexam() {
+    var exam = Parse.Object.extend('ExamRecord');
+    var query = new Parse.Query(exam);
+    query.include('exam');
+    query.equalTo('user',Parse.User.current());
+    query.find({
+        success: function(exam){
+            for(i = 0; i < exam.length; i++) {
+                var id = exam[i].get('exam').id;
+                var score = exam[i].get('score');                
+                
+                for(j = 0; j < $('.blocks').length; j++) {
+                    if(id == $('.blocks').eq(j).attr('id')) {
+                        if(score == undefined) {
+
+                        }
+                        else {
+                            $('.blocks').eq(j).remove();
+                        }
+                    }
+                }
+                
+            }
+        }
+    });
 }
