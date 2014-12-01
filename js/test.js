@@ -57,7 +57,6 @@ $(document).ready(function() {
     query.equalTo("no", "01");
     query.first({
         success: function(examquestion) {
-            console.log("1489");
             $('.qussmall').text(examquestion.get('Question'));
             $('.spanA').text(examquestion.get('OptionA'));
             $('.spanB').text(examquestion.get('OptionB'));
@@ -160,12 +159,17 @@ $(document).ready(function() {
                 emptyans.push(i);
             }
         }
-        if(emptyans != []){
+        if(emptyans.length != 0){
             var string = emptyans.join("、");
             alert("第"+ string + "題未作答，請填入答案！");
         }
         else{
-            calculatescore();
+            var r = confirm("確認交卷？");
+            if (r == true) {
+                calculatescore();
+            } else {
+                alert("還有時間，請繼續作答！");
+            }
         }
     });
 
@@ -247,8 +251,6 @@ function save() {
     query.find({
         success: function(examquestion) {
             for (var i = 1; i <= examquestion.length; i++) {
-                console.log("1489");
-
                 userans[i][0] = examquestion[i - 1].get('Question');
                 userans[i][1] = examquestion[i - 1].get('OptionA');
                 userans[i][2] = examquestion[i - 1].get('OptionB');
