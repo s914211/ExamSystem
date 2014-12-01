@@ -45,6 +45,11 @@ $('.pagination li').on('click', function(e) {
 
 $(document).ready(function() {
     Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa7ryzTSmMjP3ZB4fYJNFqty");
+    /*if(Parse.User.current() == null){
+        alert("您尚未登入！前往登入頁面！");
+        window.location.assign("index.html");
+    }*/
+
     var localexamname = localStorage.getItem("examname");
     var question = Parse.Object.extend('QuesBank');
     var query = new Parse.Query(question);
@@ -287,6 +292,7 @@ function calculatescore() {
                             userrecord.save(null, {
                                 success: function(result) {
                                     console.log("User exam score save success!");
+                                    window.location.assign("pageForStudent.html");
                                 },
                                 error:function(error){
                                     console.log(error.toString());
@@ -367,6 +373,7 @@ setInterval(function () {
         countdown.innerHTML = minutes + "分 " + seconds + "秒 ";  
     }
     else{
+        calculatescore();
         alert("時間到!");
     }
 }, 1000);
