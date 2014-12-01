@@ -18,14 +18,19 @@ $greyLight:#d6ce85;
 html, body {
   min-height: 100%;
   height:100%;
-  overflow:hidden;
-    font-family: "Roboto";
+  font-family: "Roboto";
 }
 
 * {
   text-decoration: none;
-  box-sizing:border-box;
+ -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+ -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+ box-sizing: border-box;         /* Opera/IE 8+ */
+}
 
+.tab_questions,.tab_exams{
+    width: 980px;
+    margin: auto;
 }
 
 
@@ -78,24 +83,24 @@ html, body {
 }
 
 
-.bg_picture{
+.bgpic{
   width: 100%;
   height: 100%;
   z-index: -10;
   position: fixed;
 
-  background    : url("../assets/road.jpg"); 
+  background    : url("../assets/books.jpg"); 
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-;
 
-  -webkit-filter: blur(3px);
-  -moz-filter: blur(3px);
-  -o-filter: blur(3px);
-  -ms-filter: blur(3px);
-  filter: blur(3px);
+
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
 }
 
 .tab_exams,.tab_questions{

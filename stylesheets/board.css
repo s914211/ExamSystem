@@ -1,89 +1,24 @@
-@charset "UTF-8";
-/*題庫表格部分*/
-/* line 19, ../sass/board.scss */
-.tablediv {
-  display: flex;
-  position: relative;
-  margin-top: 10px;
-  padding-bottom: 10px;
-}
-
-/* line 25, ../sass/board.scss */
-.qusselect {
-  margin: auto;
-  height: 100%;
-}
-
-/* line 29, ../sass/board.scss */
-tbody {
-  height: 300px;
-  overflow: auto;
-  display: block;
-}
-
-/* line 34, ../sass/board.scss */
-.thead {
-  background-color: #eee;
-  width: 150px;
-  display: table-header-group;
-}
-
-/* line 39, ../sass/board.scss */
-.trnormal {
-  width: 150px;
-  border: 1px solid #000;
-  background-color: white;
-}
-
-/* line 44, ../sass/board.scss */
-.trnormal:hover {
-  cursor: pointer;
-}
-
-/* line 47, ../sass/board.scss */
-td {
-  width: 200px;
-  border: 1px solid #555;
-  word-break: keep-all;
-}
-
-/* line 52, ../sass/board.scss */
-.tdsmall {
-  width: 80px;
-}
-
-/* line 55, ../sass/board.scss */
-.tdanswer {
-  width: 97px;
-}
-
-/* line 58, ../sass/board.scss */
-.trclick {
-  background-color: yellow;
-}
-
-/*按鈕選項部分*/
-/* line 66, ../sass/board.scss */
+/* line 24, ../sass/board.scss */
 .editdiv {
   width: 980px;
   margin: auto;
   display: flex;
   display: -webkit-flex;
 }
-/* line 71, ../sass/board.scss */
+/* line 30, ../sass/board.scss */
 .editdiv textarea {
   margin-bottom: 10px;
-  text-align: center;
-  width: 100%;
-  max-width: 100%;
   padding: 25px 25px 25px 90px;
+  text-align: center;
+  font-size: 1.5em;
+  height: 100px;
+  width: 100%;
   border-radius: 14px;
   background-color: white;
   border: 2px solid #e9322d;
-  overflow: hidden;
   resize: none;
 }
-/* line 83, ../sass/board.scss */
+/* line 42, ../sass/board.scss */
 .editdiv label {
   border-radius: 14px 0px 14px 0px;
   padding: 14px 10px;
@@ -95,29 +30,34 @@ td {
   background: #e9322d;
   color: white;
 }
-/* line 94, ../sass/board.scss */
+/* line 53, ../sass/board.scss */
 .editdiv .question {
   flex: 1;
   -webkit-flex: 1;
+  margin-right: 5px;
 }
-/* line 97, ../sass/board.scss */
+/* line 57, ../sass/board.scss */
 .editdiv .question .Qcontent {
   width: 100%;
   position: relative;
 }
-/* line 101, ../sass/board.scss */
+/* line 61, ../sass/board.scss */
 .editdiv .question .Qcontent textarea {
-  margin: auto;
-  height: 192px;
-  max-height: 192px;
+  height: 212px;
+  max-height: 212px;
 }
-/* line 109, ../sass/board.scss */
+/* line 67, ../sass/board.scss */
+.editdiv .question .seconddiv .dropdown {
+  margin-bottom: 10px;
+}
+/* line 71, ../sass/board.scss */
 .editdiv .question .seconddiv .btns .btn {
   float: left;
+  margin: 0 20px 0 20px;
 }
-/* line 112, ../sass/board.scss */
+/* line 75, ../sass/board.scss */
 .editdiv .question .seconddiv .btns .btn .icon-button {
-  margin: 20px;
+  margin: 10px;
   cursor: pointer;
   height: 60px;
   width: 60px;
@@ -127,51 +67,52 @@ td {
   background: white;
   border-radius: 60px;
 }
-/* line 123, ../sass/board.scss */
+/* line 86, ../sass/board.scss */
 .editdiv .question .seconddiv .btns .btn .icon-button core-icon {
   margin: auto;
 }
-/* line 128, ../sass/board.scss */
+/* line 91, ../sass/board.scss */
 .editdiv .question .seconddiv .btns .btn .btn_name {
   text-align: center;
 }
-/* line 136, ../sass/board.scss */
+/* line 99, ../sass/board.scss */
 .editdiv .option_list {
   flex: 1;
   -webkit-flex: 1;
+  margin-left: 5px;
 }
-/* line 139, ../sass/board.scss */
+/* line 103, ../sass/board.scss */
 .editdiv .option_list .option {
   position: relative;
 }
 
 /* Variables */
 /* Dropdown style */
-/* line 156, ../sass/board.scss */
+/* line 121, ../sass/board.scss */
 .dropdown dt a {
+  background-color: white;
   display: block;
   border: 1px solid grey;
-  border-radius: 30px;
+  border-radius: 15px;
   text-decoration: none;
 }
-/* line 162, ../sass/board.scss */
+/* line 128, ../sass/board.scss */
 .dropdown dt a:hover, .dropdown dt a:active {
   border-color: white;
 }
-/* line 166, ../sass/board.scss */
+/* line 132, ../sass/board.scss */
 .dropdown dt span {
   display: block;
   padding: 0 1em;
   line-height: 2.5em;
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAYAAACALL/6AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHo+AACAQQAA+MoAAIC0AAB48QAA9RwAADw3AAAbzhlfIT4AAACJSURBVHjajNAxCsJAEEbhb5cU4i0sbHIaL6IQTxFPo4VeROwXQs4gKW1cWJZEM90wj5l5f0jDeMXBunqENIw7vLD9A09oIxL6FdsvSCENI2zwxH4BTmgxxeJc92P76cuIpRBuc6K45yZWwzPeleixBOLMr30tWgJZuqwcQJNFy2GzkHeHUMPwGQChFSPmzlJ1WgAAAABJRU5ErkJggg==) no-repeat scroll right center;
   border-right: 1em solid transparent;
   cursor: pointer;
 }
-/* line 175, ../sass/board.scss */
+/* line 140, ../sass/board.scss */
 .dropdown dd {
   position: relative;
 }
-/* line 177, ../sass/board.scss */
+/* line 142, ../sass/board.scss */
 .dropdown dd ul {
   z-index: 10;
   display: none;
@@ -180,28 +121,198 @@ td {
   top: -2.5em;
   width: 100%;
   list-style: none;
-  background: #fff none repeat scroll 0 0;
   border: 1px solid grey;
-  border-radius: 30px;
+  border-radius: 15px;
+  background-color: white;
 }
-/* line 188, ../sass/board.scss */
+/* line 153, ../sass/board.scss */
 .dropdown dd ul li:first-child a:hover {
-  border-radius: 30px 30px 0 0;
+  border-radius: 15px 15px 0 0;
 }
-/* line 191, ../sass/board.scss */
+/* line 156, ../sass/board.scss */
 .dropdown dd ul li:last-child a:hover {
-  border-radius: 0 0 30px 30px;
+  border-radius: 0 0 15px 15px;
 }
-/* line 195, ../sass/board.scss */
+/* line 160, ../sass/board.scss */
 .dropdown dd li a {
   display: block;
   padding: 0 1em;
   line-height: 2.5em;
   text-decoration: none;
 }
-/* line 200, ../sass/board.scss */
+/* line 165, ../sass/board.scss */
 .dropdown dd li a:hover {
   background-color: #87d3b7;
   color: #fff;
   cursor: pointer;
+}
+
+/* line 180, ../sass/board.scss */
+.table {
+  width: 980px;
+  max-width: 980px;
+  background-color: #ffffff;
+}
+/* line 184, ../sass/board.scss */
+.table thead {
+  color: #757575;
+  vertical-align: bottom;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+/* line 190, ../sass/board.scss */
+.table tr {
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+/* line 194, ../sass/board.scss */
+.table tr th, .table tr td {
+  padding: 0.5rem;
+  vertical-align: top;
+  border-top: 0;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/* line 208, ../sass/board.scss */
+.table-bordered {
+  border: 0;
+}
+
+/* line 211, ../sass/board.scss */
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border: 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* line 220, ../sass/board.scss */
+.table-bordered > thead > tr > th,
+.table-bordered > thead > tr > td {
+  border-bottom-width: 2px;
+}
+
+/* line 224, ../sass/board.scss */
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #f5f5f5;
+}
+
+/* line 228, ../sass/board.scss */
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+@media screen and (max-width: 768px) {
+  /* line 233, ../sass/board.scss */
+  .table-responsive-vertical > .table {
+    margin-bottom: 0;
+    background-color: transparent;
+  }
+
+  /* line 237, ../sass/board.scss */
+  .table-responsive-vertical > .table > thead,
+  .table-responsive-vertical > .table > tfoot {
+    display: none;
+  }
+
+  /* line 241, ../sass/board.scss */
+  .table-responsive-vertical > .table > tbody {
+    display: block;
+  }
+
+  /* line 244, ../sass/board.scss */
+  .table-responsive-vertical > .table > tbody > tr {
+    display: block;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    margin-bottom: 1.6rem;
+  }
+
+  /* line 250, ../sass/board.scss */
+  .table-responsive-vertical > .table > tbody > tr > td {
+    background-color: #ffffff;
+    display: block;
+    vertical-align: middle;
+    text-align: right;
+  }
+
+  /* line 256, ../sass/board.scss */
+  .table-responsive-vertical > .table > tbody > tr > td[data-title]:before {
+    content: attr(data-title);
+    float: left;
+    font-size: inherit;
+    font-weight: 400;
+    color: #757575;
+  }
+
+  /* line 263, ../sass/board.scss */
+  .table-responsive-vertical.shadow-z-1 {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+
+  /* line 268, ../sass/board.scss */
+  .table-responsive-vertical.shadow-z-1 > .table > tbody > tr {
+    border: none;
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+  }
+
+  /* line 274, ../sass/board.scss */
+  .table-responsive-vertical > .table-bordered {
+    border: 0;
+  }
+
+  /* line 277, ../sass/board.scss */
+  .table-responsive-vertical > .table-bordered > tbody > tr > td {
+    border: 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  /* line 281, ../sass/board.scss */
+  .table-responsive-vertical > .table-bordered > tbody > tr > td:last-child {
+    border-bottom: 0;
+  }
+
+  /* line 284, ../sass/board.scss */
+  .table-responsive-vertical > .table-striped > tbody > tr > td,
+  .table-responsive-vertical > .table-striped > tbody > tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+
+  /* line 288, ../sass/board.scss */
+  .table-responsive-vertical > .table-striped > tbody > tr > td:nth-child(odd) {
+    background-color: #f5f5f5;
+  }
+
+  /* line 291, ../sass/board.scss */
+  .table-responsive-vertical > .table-hover > tbody > tr:hover > td,
+  .table-responsive-vertical > .table-hover > tbody > tr:hover {
+    background-color: #ffffff;
+  }
+
+  /* line 295, ../sass/board.scss */
+  .table-responsive-vertical > .table-hover > tbody > tr > td:hover {
+    background-color: rgba(0, 0, 0, 0.12);
+  }
+}
+/* line 299, ../sass/board.scss */
+.table-striped.table-mc-red > tbody > tr:nth-child(odd) > td,
+.table-striped.table-mc-red > tbody > tr:nth-child(odd) > th {
+  background-color: #fde0dc;
+}
+
+/* line 303, ../sass/board.scss */
+.table-hover.table-mc-red > tbody > tr:hover > td,
+.table-hover.table-mc-red > tbody > tr:hover > th {
+  background-color: #f9bdbb;
 }

@@ -16,7 +16,7 @@
 
 <body>
 
-    <div class="bg_picture"></div>
+    <div class="bgpic"></div>
     <div class="header">
 
         <div class="navbar">
@@ -289,6 +289,7 @@
     </div>
 <!-- =============TAB2=============================== -->
     <div class="tab_questions">
+<!--     <div class="bgpic questions"></div> -->
     <div class="editdiv">
         <div class="question">
             <div class="Qcontent">
@@ -396,33 +397,33 @@
     
 
 
-  <div class="tablediv">
-    <table class="qusselect">
+  <div class="tablediv shadow-z-1 table-responsive-vertical" >
+    <table id="table" class="qusselect table table-hover table-mc-light-blue">
       <thead>
         <tr class="thead">
-          <td>題目</td>
-          <td>選項A</td>
-          <td>選項B</td>
-          <td>選項C</td>
-          <td>選項D</td>
-          <td class="tdsmall">難易度</td>
-          <td class="tdanswer">答案</td>
+          <th>題目</th>
+          <th>選項A</th>
+          <th>選項B</th>
+          <th>選項C</th>
+          <th>選項D</th>
+          <th class="tdsmall">難易度</th>
+          <th class="tdanswer">答案</th>
         </tr>
       </thead>
       <tbody class="Questions">
         <tr class="trnormal">
-          <td>test1</td>
-          <td>test2</td>
-          <td>test3</td>
-          <td>test4</td>
-          <td>test5</td>
-          <td class="tdsmall">難</td>
-          <td class="tdsmall">A</td>
+          <td data-title="題目">test1</td>
+          <td data-title="選項A">test2</td>
+          <td data-title="選項B">test3</td>
+          <td data-title="選項C">test4</td>
+          <td data-title="選項D">test5</td>
+          <td data-title="難易度" class="tdsmall">難</td>
+          <td data-title="答案" class="tdsmall">A</td>
         </tr>
       </tbody>
     </table>
   </div>
-        </div>
+</div>
 
 
 <script src="https://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
