@@ -147,12 +147,6 @@ $(document).ready(function() {
     var con = ".header,.exam,.question,.content,.footer";
     var click = ".number,.arrow,.answer";
 
-    $('.handin').click(function() {
-        $(con).addClass('opacity');
-        $('.handlog').slideDown(200);
-        $(click).hide();
-    });
-
     $('.handno').click(function() {
         $(con).toggleClass('opacity');
         $('.handlog').slideUp(200);
@@ -160,7 +154,19 @@ $(document).ready(function() {
     });
 
     $('.handin').click(function(){
-        calculatescore();
+        var emptyans = [];
+        for(var i = 1; i<=40; i++){
+            if(userans[i][5] == undefined){
+                emptyans.push(i);
+            }
+        }
+        if(emptyans != []){
+            var string = emptyans.join("、");
+            alert("第"+ string + "題未作答，請填入答案！");
+        }
+        else{
+            calculatescore();
+        }
     });
 
 });
