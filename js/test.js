@@ -164,12 +164,30 @@ $(document).ready(function() {
             swal("第"+ string + "題未作答，請填入答案！");
         }
         else{
-            var r = confirm("確認交卷？");
+            /*var r = confirm("確認交卷？");
             if (r == true) {
                 calculatescore();
             } else {
                 swal("還有時間，請繼續作答！");
-            }
+            }*/
+            swal({
+               title: "確認交卷",   
+               text: "你還有時間可以作答，你是否要交卷？",   
+               type: "warning",   
+               showCancelButton: true,   
+               confirmButtonColor: "#DD6B55",   
+               confirmButtonText: "是的，我要交卷。",   
+               cancelButtonText: "不，我還需要檢查。",   
+               closeOnConfirm: false,   
+               closeOnCancel: false }, 
+               function(isConfirm){   
+                if (isConfirm) {     
+                    calculatescore();
+                } 
+                else {     
+                    swal("還有時間，請繼續作答！");  
+                } 
+            })
         }
     });
 
