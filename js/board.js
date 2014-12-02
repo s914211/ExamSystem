@@ -25,39 +25,39 @@ $('table').delegate('.trnormal','click', function() {
 
         $('.text').eq(i).val($('.trclick > td').eq(i).text());
     };
-    $('#dif').val($('.trclick > td').eq(5).text());
-    $('#ans').val($('.trclick > td').eq(6).text());
+    $('#dif').html($('.trclick > td').eq(5).text());
+    $('#ans').html($('.trclick > td').eq(6).text());
     var id = $(this).attr('id');
     localStorage['quesid'] = id;
 });
 
 $('#editbtn').click(function() {
-	if($('#dif').val()=="請選擇" || $('#ans').val()=="請選擇"){
+	if($('#dif').html()=="選擇難易度" || $('#ans').html()=="選擇答案"){
 
 	}
 	else{
                 for (i = 0; i <= 4; i++) {
                     $('.trclick > td').eq(i).text($('.text').eq(i).val());
                 };
-                $('.trclick > td').eq(5).text($('#dif').val());
-                $('.trclick > td').eq(6).text($('#ans').val());
+                $('.trclick > td').eq(5).text($('#dif').html());
+                $('.trclick > td').eq(6).text($('#ans').html());
                 var quesid = localStorage.getItem('quesid');
                 var degree = 0;
-                if($('#dif').val() == "難")
+                if($('#dif').html() == "難")
                     degree = 3;
-                else if($('#dif').val() == "中")
+                else if($('#dif').html() == "中")
                     degree = 2;
-                else if($('#dif').val() == "易")
+                else if($('#dif').html() == "易")
                     degree = 1;
 
-                modifyq(quesid, $('.text').eq(0).val(), $('.text').eq(1).val(), $('.text').eq(2).val(), $('.text').eq(3).val(), $('.text').eq(4).val(), degree, $('#ans').val());
+                modifyq(quesid, $('.text').eq(0).val(), $('.text').eq(1).val(), $('.text').eq(2).val(), $('.text').eq(3).val(), $('.text').eq(4).val(), degree, $('#ans').html());
             }
 });
 
 
 
 $('#newbtn').click(function() {
-	if($('#dif').val()=="請選擇" || $('#ans').val()=="請選擇"){
+	if($('#dif').html()=="請選擇" || $('#ans').html()=="請選擇"){
 
 	}
 	else
@@ -69,19 +69,19 @@ $('#newbtn').click(function() {
     	        	+ "<td>" + $('.text').eq(2).val() + "</td>" 
     	        	+ "<td>" + $('.text').eq(3).val() + "</td>" 
     	        	+ "<td>" + $('.text').eq(4).val() + "</td>" 
-    	        	+ "<td class=\"tdsmall\">" + $('#dif').val() + "</td>"
-    	        	+ "<td class=\"tdsmall\">" + $('#ans').val() + "</td>"
+    	        	+ "<td class=\"tdsmall\">" + $('#dif').html() + "</td>"
+    	        	+ "<td class=\"tdsmall\">" + $('#ans').html() + "</td>"
     	        	+ "</tr>");
     	
     	       	$('table').append(tr);
                        var degree = 0;
-                       if($('#dif').val() == "難")
+                       if($('#dif').html() == "難")
                            degree = 3;
-                       else if($('#dif').val() == "中")
+                       else if($('#dif').html() == "中")
                            degree = 2;
-                       else if($('#dif').val() == "易")
+                       else if($('#dif').html() == "易")
                            degree = 1;
-                       addq($('.text').eq(0).val(), $('.text').eq(1).val(), $('.text').eq(2).val(), $('.text').eq(3).val(), $('.text').eq(4).val(), degree, $('#ans').val());
+                       addq($('.text').eq(0).val(), $('.text').eq(1).val(), $('.text').eq(2).val(), $('.text').eq(3).val(), $('.text').eq(4).val(), degree, $('#ans').html());
     	 	};
 
 
@@ -98,8 +98,8 @@ $('#newbtn').click(function() {
  	if(confirm("確定刪除？")){
  	    $('.trclick').remove();  
  	    $('.text').val("");
- 	    $('#dif').val("請選擇");
- 	    $('#ans').val("請選擇");};
+ 	    $('#dif').html("選擇難易度");
+ 	    $('#ans').html("選擇答案");};
            var quesid = localStorage.getItem('quesid');
            deleteq(quesid);
 });
@@ -111,8 +111,8 @@ $('#newbtn').click(function() {
 
 function clean(){
 	$('.text').val("");
-    $('#dif').val("請選擇");
-    $('#ans').val("請選擇");
+    $('#dif').html("選擇難易度");
+    $('#ans').html("選擇答案");
     $('.trnormal').removeClass('trclick');
 };
 
@@ -163,7 +163,7 @@ modifyq = function(questionid, ques, optiona, optionb, optionc, optiond, degree,
             question.set('Answer', ans);
                           question.save(null, {
                                     success:function(){
-                                            alert("modify question success!");
+                                            alert("修改題目成功!");
                                     },
                                     error:function(error){
                                             console.log(error.toString());
@@ -181,7 +181,7 @@ deleteq = function(questionid){
         success:function(question){
             question.destroy({
                 success:function(results){
-                    alert("delete question success!");
+                    alert("刪除題目成功!");
                 },
                 error:function(error){
                     console.log(error.toString());
@@ -207,7 +207,8 @@ addq = function(ques, optiona, optionb, optionc, optiond, degree, ans){
     question.set('Answer', ans);
     question.save(null, {
         success:function(){
-            alert("add question success!");
+            alert("新增題目成功!為了與伺服器同步將自動刷新頁面。");
+            window.location.assign("pageForAdministrator.html");
         },
         error:function(error){
             console.log(error.toString());
