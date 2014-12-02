@@ -173,6 +173,10 @@ $(document).ready(function() {
         }
     });
 
+    $('.lastpage').click(function(){
+        window.location.assign("pageForAdministrator.html");
+    })
+
 });
 
 $(window).resize(function() {

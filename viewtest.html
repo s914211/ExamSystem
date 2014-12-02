@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv ="Content-Type" content="text/html; charset=utf-8" />
+    <title>題目</title>
+    <!-- js -->
+    <script src      ="js/jquery.min.js"></script>
+    <script src      ="https://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
+    <!-- CSS -->
+    <link href       ="css/reset.css" rel="stylesheet" />
+    <link href       ="stylesheets/test.css" rel="stylesheet" />
+    <!-- import -->
+    <link rel        ="import" href="http://www.polymer-project.org/components/core-icons/core-icons.html">
+    <link rel        ="import" href="http://www.polymer-project.org/components/paper-ripple/paper-ripple.html">
+</head>
+
+<body>
+    <div class="header">
+        <div class="left_button">
+          <div class="icon-button">
+            <core-icon icon="menu"></core-icon>
+            <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
+          </div>
+        </div>
+        <h1 id="countdown"></h1>
+        <!-- <button class="handin">交卷</button> -->
+        <button class="lastpage">返回上一頁</button>
+    </div>
+
+    <div class="sheet">
+
+        <div class="exam_title">動力小船考試</div>
+        <div class="line"></div>
+        <div class="testnumber">第1題</div>      
+
+        <div id="bigdiv">
+            <div class="question_content">
+                <p class="qussmall"></p>
+            </div>
+
+            <div class="options_list">
+                <div class="answer A">
+                    <input type="radio" name="amount" value="A" id="options_A" />
+                    <label for="options_A" class="choice">A</label>
+                    <span class="spanA span"></span>
+                </div>
+                <div class="answer B">
+                    <input type="radio" name="amount" value="B" id="options_B" />
+                    <label for="options_B" class="choice">B</label>
+                    <span class="spanB span"></span>
+                </div>
+
+                <div class="answer C">
+                    <input type="radio" name="amount" value="C" id="options_C" />
+                    <label for="options_C" class="choice">C</label>
+                    <span class="spanC span"></span>
+                </div>
+                <div class="answer D">
+                    <input type="radio" name="amount" value="D" id="options_D" />
+                    <label for="options_D" class="choice">D</label>
+                    <span class="spanD span"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- page switcher -->
+    <div id="pre">
+        <a>&lt;</a>
+    </div>
+    <div id="next">
+        <a>&gt;</a>
+    </div>
+
+
+
+
+    <div class="footer">
+        <div class="Q1_Q20">
+            <ul class="pagination">
+                <li class="active"><a>1</a>
+                </li>
+                <li><a>2</a>
+                </li>
+                <li><a>3</a>
+                </li>
+                <li><a>4</a>
+                </li>
+                <li><a>5</a>
+                </li>
+                <li><a>6</a>
+                </li>
+                <li><a>7</a>
+                </li>
+                <li><a>8</a>
+                </li>
+                <li><a>9</a>
+                </li>
+                <li><a>10</a>
+                </li>
+                <li><a>11</a>
+                </li>
+                <li><a>12</a>
+                </li>
+                <li><a>13</a>
+                </li>
+                <li><a>14</a>
+                </li>
+                <li><a>15</a>
+                </li>
+                <li><a>16</a>
+                </li>
+                <li><a>17</a>
+                </li>
+                <li><a>18</a>
+                </li>
+                <li><a>19</a>
+                </li>
+                <li><a>20</a>
+                </li>
+            </ul>
+        </div>
+        <div class="Q21_Q40">
+            <ul class="pagination">
+                <li><a>21</a>
+                </li>
+                <li><a>22</a>
+                </li>
+                <li><a>23</a>
+                </li>
+                <li><a>24</a>
+                </li>
+                <li><a>25</a>
+                </li>
+                <li><a>26</a>
+                </li>
+                <li><a>27</a>
+                </li>
+                <li><a>28</a>
+                </li>
+                <li><a>29</a>
+                </li>
+                <li><a>30</a>
+                </li>
+                <li><a>31</a>
+                </li>
+                <li><a>32</a>
+                </li>
+                <li><a>33</a>
+                </li>
+                <li><a>34</a>
+                </li>
+                <li><a>35</a>
+                </li>
+                <li><a>36</a>
+                </li>
+                <li><a>37</a>
+                </li>
+                <li><a>38</a>
+                </li>
+                <li><a>39</a>
+                </li>
+                <li><a>40</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+<!--     <div class="arrow">
+        <img src="assets/left.jpg" class="left">
+        <img src="assets/right.jpg" class="right">
+    </div>
+    <div class="notification">載入中，請稍後</div>
+    <div class="handlog">
+        <span class="handtext">確定交卷？</span>
+        <br/>
+        <span class="handyes">YES</span>
+        <span class="handno">NO</span>
+    </div> -->
+</body>
+    <script src="js/test.js"></script>
+</html>

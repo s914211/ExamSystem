@@ -108,6 +108,10 @@ html, body {
   float: right;
 }
 
+.lastpage {
+  float: right;
+}
+
 /* line 59, ../sass/test.scss */
 .testnumber {
   position: absolute;

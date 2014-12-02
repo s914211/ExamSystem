@@ -98,6 +98,9 @@ function Close_ThreePointsWrapper(){
 
 
 
+$("#viewtest").click(function(){
+    window.location.assign("viewtest.html");
+})
 
 
 //=========================================================================刪除考試，按下垃圾桶
