@@ -165,11 +165,12 @@ function getexam() {
                 var examtime = exams[i].get('examtime');
                 var examblock = '<div class="blocks" ' + 'id="' + examid + '"' + 'style="display:none"><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="fab green"><core-icon icon="assignment"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"><p class="blocks_title">' + examname + '</p><p class"blocks_date">' + examdate + '</p><p class="blocks_time">' + examtime + '分鐘' + '</p></div><div class="img_container"><img src="assets/1.jpg" /></div></div>';
 
-
                 $(".tab_exams").append(examblock);
-                removeexam();                
+                removeexam();              
             }
-            $('.blocks').fadeIn(2000).css("display","inline-block");
+    
+
+            $('.blocks').css("display","inline-block").fadeIn(3000);
         }
     });
 }
@@ -209,7 +210,7 @@ function checkenroll() {
                 var id = exams[i].get('exam').id;
 
                 var sid = "#" + id + " .green";
-                console.log(id + blocksid + sid);
+                // console.log(id + blocksid + sid);
                 for (j = 0; j < $('.blocks').length; j++) {
                     var blocksid = $('.blocks').eq(j).attr('id');
                     if (id == blocksid) {
@@ -260,9 +261,9 @@ function removeexam() {
     query.equalTo('user',Parse.User.current());
     query.find({
         success: function(exam){
-            for(i = 0; i < exam.length; i++) {
-                var id = exam[i].get('exam').id;
-                var score = exam[i].get('score');                
+            for(k = 0; k < exam.length; k++) {
+                var id = exam[k].get('exam').id;
+                var score = exam[k].get('score');                
                 
                 for(j = 0; j < $('.blocks').length; j++) {
                     if(id == $('.blocks').eq(j).attr('id')) {
@@ -278,4 +279,14 @@ function removeexam() {
             }
         }
     });
+}
+
+
+function test99() {
+    for(i = 1; i <=9; i++) {
+        for(j = 1; j<=9; j++){
+            console.log(i+"*"+j+"="+i*j);
+
+        }
+    }
 }
