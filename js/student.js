@@ -170,7 +170,7 @@ function getexam() {
             }
     
 
-            $('.blocks').css("display","inline-block").fadeIn(3000);
+            $('.blocks').fadeIn(3000).css("display","inline-block");
         }
     });
 }
