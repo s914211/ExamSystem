@@ -42,7 +42,7 @@ $(document).ready(function() {
     });
 
     $('.tab_exams').delegate('.green', 'click', function() {
-        /*if (confirm("確定報名？")) {
+        if (confirm("確定報名？")) {
             $(this).removeClass('green').addClass('red').html('<core-icon icon="create" aria-label="create" role="img"><svg viewBox="0 0 24 24" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" fit="" style="pointer-events: none; display: block;"><g><path d="M3 17.25v3.75h3.75l11.06-11.06-3.75-3.75-11.06 11.06zm17.71-10.21c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></g></svg></core-icon>');
 
             var examid = $(this).parent().attr('id');
@@ -63,8 +63,8 @@ $(document).ready(function() {
                     });
                 }
             });            
-        }*/
-        swal({
+        }
+        /*swal({
            title: "確認報名",   
            text: "你是否確定要報名這次考試？",   
            type: "warning",   
@@ -100,7 +100,7 @@ $(document).ready(function() {
             else {     
                 swal("Canceled", "確認不報名。", "error");   
             } 
-        })
+        })*/
 
     });
 
