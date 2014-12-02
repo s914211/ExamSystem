@@ -1,17 +1,7 @@
 @charset "utf-8";//UTF-8編碼必須，為了可以打中文!
-@import "compass/reset";
-@import "compass/css3";
-@import url(http://fonts.googleapis.com/css?family=Roboto:300);
-
+@import "base/base";
 // color
-$green: #87d3b7;
-$green2:#0f9d58;
-
-$grey:#d6d1a3;
-$greenDark:#32ab86;
-$greenMid:#75bd82;
-$greenLight:#b3c785;
-$greyLight:#d6ce85;
+@import "base/color";
 
 
 * {

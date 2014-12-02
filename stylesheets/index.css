@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
+@import url(http://fonts.googleapis.com/css?family=Roboto:300);
 /* line 5, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -65,21 +66,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 18, ../sass/index.scss */
+/* line 8, ../sass/base/_base.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
-/* line 25, ../sass/index.scss */
+/* line 10, ../sass/index.scss */
 html, body {
   min-height: 100%;
   height: 100%;
-  font-family: "微軟正黑體", "Microsoft JhengHei";
+  font-family: "Roboto" ,"微軟正黑體" , "Microsoft JhengHei";
 }
 
-/* line 32, ../sass/index.scss */
+/* line 24, ../sass/index.scss */
 .bg_picture {
   position: absolute;
   width: 100%;
@@ -89,11 +92,14 @@ html, body {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  -webkit-filter: blur(3px);
   z-index: 0;
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
 }
 
-/* line 49, ../sass/index.scss */
+/* line 40, ../sass/index.scss */
 .grad {
   position: absolute;
   width: 100%;
@@ -104,7 +110,7 @@ html, body {
   opacity: 0.7;
 }
 
-/* line 58, ../sass/index.scss */
+/* line 49, ../sass/index.scss */
 .header {
   font-family: 'Exo', sans-serif;
   position: absolute;
@@ -112,17 +118,17 @@ html, body {
   left: calc(50% - 255px);
   z-index: 2;
 }
-/* line 65, ../sass/index.scss */
+/* line 56, ../sass/index.scss */
 .header #title {
   color: #87d3b7;
   font-size: 35px;
   font-weight: 200;
 }
-/* line 71, ../sass/index.scss */
+/* line 61, ../sass/index.scss */
 .header #title span {
   color: white;
 }
-/* line 76, ../sass/index.scss */
+/* line 66, ../sass/index.scss */
 .header #noaccount {
   text-align: center;
   margin-top: 26px;
@@ -130,7 +136,7 @@ html, body {
   cursor: pointer;
 }
 
-/* line 88, ../sass/index.scss */
+/* line 76, ../sass/index.scss */
 .login {
   position: absolute;
   top: calc(50% - 75px);
@@ -141,13 +147,13 @@ html, body {
   z-index: 2;
   margin-left: 15px;
 }
-/* line 98, ../sass/index.scss */
+/* line 86, ../sass/index.scss */
 .login .textbox {
   position: relative;
   margin-bottom: 45px;
 }
 
-/* line 109, ../sass/index.scss */
+/* line 97, ../sass/index.scss */
 input {
   font-size: 18px;
   padding: 10px 10px 10px 5px;
@@ -156,15 +162,17 @@ input {
   border-bottom: 1px solid #87d3b7;
   background-color: transparent;
   position: relative;
+  color: #FFF;
+  font-family: 'Exo', sans-serif;
 }
-/* line 118, ../sass/index.scss */
+/* line 108, ../sass/index.scss */
 input:focus {
   outline: none;
   /*focus時會跑出outline，要隱藏掉*/
 }
 
 /*  =====LABEL======================================================================= */
-/* line 128, ../sass/index.scss */
+/* line 116, ../sass/index.scss */
 label {
   color: #87d3b7;
   font-size: 18px;
@@ -178,21 +186,21 @@ label {
 }
 
 /* active state */
-/* line 145, ../sass/index.scss */
+/* line 133, ../sass/index.scss */
 input:focus ~ label, input:valid ~ label {
   top: -10px;
   font-size: 14px;
-  color: white;
+  color: #d6d1a3;
 }
 
 /* BOTTOM BARS ================================= */
-/* line 152, ../sass/index.scss */
+/* line 140, ../sass/index.scss */
 .bar {
   position: relative;
   display: block;
   width: 300px;
 }
-/* line 157, ../sass/index.scss */
+/* line 145, ../sass/index.scss */
 .bar::before, .bar::after {
   content: '';
   height: 2px;
@@ -201,26 +209,24 @@ input:focus ~ label, input:valid ~ label {
   position: absolute;
   background: #87d3b7;
   transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
 }
-/* line 170, ../sass/index.scss */
+/* line 155, ../sass/index.scss */
 .bar::before {
   left: 50%;
 }
-/* line 174, ../sass/index.scss */
+/* line 159, ../sass/index.scss */
 .bar::after {
   right: 50%;
 }
 
 /* active state */
-/* line 181, ../sass/index.scss */
+/* line 166, ../sass/index.scss */
 input:focus ~ .bar::before, input:focus ~ .bar::after {
   width: 50%;
 }
 
 /* HIGHLIGHTER ================================== */
-/* line 186, ../sass/index.scss */
+/* line 171, ../sass/index.scss */
 .highlight {
   position: absolute;
   height: 60%;
@@ -232,7 +238,7 @@ input:focus ~ .bar::before, input:focus ~ .bar::after {
 }
 
 /* active state */
-/* line 197, ../sass/index.scss */
+/* line 182, ../sass/index.scss */
 input:focus ~ .highlight {
   -webkit-animation: inputHighlighter 0.3s ease;
   -moz-animation: inputHighlighter 0.3s ease;
@@ -267,32 +273,32 @@ input:focus ~ .highlight {
     background: transparent;
   }
 }
-/* line 220, ../sass/index.scss */
+/* line 205, ../sass/index.scss */
 .icon-button {
   display: inline-block;
   z-index: 2;
   cursor: pointer;
-  color: white;
+  color: #d6d1a3;
   height: 25px;
   width: 25px;
 }
-/* line 228, ../sass/index.scss */
+/* line 213, ../sass/index.scss */
 .icon-button core-icon {
   transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* line 233, ../sass/index.scss */
+/* line 218, ../sass/index.scss */
 .icon-button:hover core-icon {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
-/* line 238, ../sass/index.scss */
+/* line 223, ../sass/index.scss */
 .icon-button paper-ripple {
   overflow: hidden;
   color: #646464;
 }
 
-/* line 245, ../sass/index.scss */
+/* line 230, ../sass/index.scss */
 .blur {
   -webkit-filter: blur(5px);
   -moz-filter: blur(5px);
@@ -301,7 +307,7 @@ input:focus ~ .highlight {
   filter: blur(5px);
 }
 
-/* line 253, ../sass/index.scss */
+/* line 238, ../sass/index.scss */
 .modal-wrapper {
   width: 100%;
   height: 100%;
@@ -317,18 +323,18 @@ input:focus ~ .highlight {
   -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
-/* line 268, ../sass/index.scss */
+/* line 253, ../sass/index.scss */
 .modal-wrapper.open {
   opacity: 1;
   visibility: visible;
 }
-/* line 272, ../sass/index.scss */
+/* line 257, ../sass/index.scss */
 .modal-wrapper.open .modal {
   margin-top: 50px;
   opacity: 1;
 }
 
-/* line 280, ../sass/index.scss */
+/* line 265, ../sass/index.scss */
 .modal {
   position: relative;
   margin-top: 50%;
@@ -343,14 +349,14 @@ input:focus ~ .highlight {
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
-/* line 294, ../sass/index.scss */
+/* line 279, ../sass/index.scss */
 .modal span {
   text-align: center;
   font-size: 150%;
   color: white;
 }
 
-/* line 302, ../sass/index.scss */
+/* line 287, ../sass/index.scss */
 .modal_header {
   font-family: 'Exo', sans-serif;
   font-weight: 200;
@@ -359,7 +365,7 @@ input:focus ~ .highlight {
   background: #87d3b7;
 }
 
-/* line 312, ../sass/index.scss */
+/* line 297, ../sass/index.scss */
 .btn_close {
   width: 32px;
   height: 32px;
@@ -367,39 +373,39 @@ input:focus ~ .highlight {
   float: right;
 }
 
-/* line 320, ../sass/index.scss */
+/* line 305, ../sass/index.scss */
 .form_register {
   padding: 5%;
 }
-/* line 322, ../sass/index.scss */
+/* line 307, ../sass/index.scss */
 .form_register input:focus ~ label, .form_register input:valid ~ label {
   top: -10px;
   font-size: 14px;
   color: grey;
 }
-/* line 327, ../sass/index.scss */
+/* line 312, ../sass/index.scss */
 .form_register .Form_Question {
   position: relative;
   margin-bottom: 45px;
 }
-/* line 330, ../sass/index.scss */
+/* line 315, ../sass/index.scss */
 .form_register .Form_Question.lastOne {
   margin-bottom: 0px;
 }
-/* line 334, ../sass/index.scss */
+/* line 319, ../sass/index.scss */
 .form_register label {
   top: 10px;
   left: 5px;
 }
 
-/* line 341, ../sass/index.scss */
+/* line 326, ../sass/index.scss */
 .modal_footer .icon-button {
   padding-left: 85%;
   color: #0f9d58;
   width: 40px;
   height: 40px;
 }
-/* line 347, ../sass/index.scss */
+/* line 332, ../sass/index.scss */
 .modal_footer .icon-button core-icon {
   width: 40px;
   height: 40px;
