@@ -25,13 +25,13 @@
     <br>
     <div class="login">
         <div class="form">
-            <div class="textbox">
+            <div class="textbox" id="account">
                 <input type="text" id="username" name="username" required />
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label>User Name</label>
             </div>
-            <div class="textbox">
+            <div class="textbox" id="loginpass">
                 <input type="password" id="password" name="password" required />
                 <div class="icon-button" id="loginbtn">
                     <core-icon icon="input"></core-icon>
@@ -71,14 +71,14 @@
                     </div>
 
                     <div class="Form_Question">
-                        <input type="text" required id="signuppassword" onkeydown="onlyNum()">
+                        <input type="password" required id="signuppassword">
                         <span class="highlight"></span>
                         <span class="bar"></span>
                         <label>Password</label>
                     </div>
 
                     <div class="Form_Question lastOne">
-                        <input type="text" required id="signupcpassword" onkeydown="onlyNum()">
+                        <input type="password" required id="signupcpassword">
                         <span class="highlight"></span>
                         <span class="bar"></span>
                         <label class="date_label">Confirm Password</label>

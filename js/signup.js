@@ -55,4 +55,11 @@ $(document).ready(function(){
 
 
   document.getElementById("loginbtn").addEventListener("click", login);
+
+  $("#account, #loginpass").keyup(function(event){
+      if(event.keyCode == 13){
+          $("#loginbtn").click();
+      }
+  });
+
 })
