@@ -97,7 +97,7 @@ $(document).ready(function() {
 
     $(document).delegate('#pre', 'click', function() {
         if ($('.active').children('a').text() == "1") {
-            alert('這是第一題');
+            swal("這是第一題。");
         } else if ($('.active').children('a').text() == "21") {
             $('.testnumber').text("");
 
@@ -121,7 +121,7 @@ $(document).ready(function() {
 
     $(document).delegate('#next', 'click', function() {
         if ($('.active').children('a').text() == "40") {
-            alert("已經是最後一題");
+            swal("已經是最後一題。");
         } else if ($('.active').children('a').text() == "20") {
             $('.testnumber').text("");
 
@@ -161,14 +161,14 @@ $(document).ready(function() {
         }
         if(emptyans.length != 0){
             var string = emptyans.join("、");
-            alert("第"+ string + "題未作答，請填入答案！");
+            swal("第"+ string + "題未作答，請填入答案！");
         }
         else{
             var r = confirm("確認交卷？");
             if (r == true) {
                 calculatescore();
             } else {
-                alert("還有時間，請繼續作答！");
+                swal("還有時間，請繼續作答！");
             }
         }
     });
@@ -386,6 +386,6 @@ setInterval(function () {
     }
     else{
         calculatescore();
-        alert("時間到!");
+        swal("時間到！");
     }
 }, 1000);

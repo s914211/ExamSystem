@@ -57,7 +57,7 @@ $(document).ready(function() {
                     examrecord.set("exam", exam);
                     examrecord.save(null, {
                         success: function(result) {
-                            alert("attend exam success!");
+                            swal("Good job!", "報名考試成功！", "success");
                             scoresearch();
                         }
                     });
