@@ -90,18 +90,38 @@ $('#newbtn').click(function() {
 
  });
 
-
-
-
-
  $('#deletebtn').click(function() {
- 	if(confirm("確定刪除？")){
+        swal({
+           title: "確認刪除",   
+           text: "你是否確定要刪除這個題目？",   
+           type: "warning",   
+           showCancelButton: true,   
+           confirmButtonColor: "#DD6B55",   
+           confirmButtonText: "是的，我要刪除。",   
+           cancelButtonText: "不，我不要刪除。",   
+           closeOnConfirm: false,   
+           closeOnCancel: false }, 
+           function(isConfirm){   
+            if (isConfirm) {     
+                $('.trclick').remove();  
+                $('.text').val("");
+                $('#dif').html("選擇難易度");
+                $('#ans').html("選擇答案");
+                var quesid = localStorage.getItem('quesid');
+                deleteq(quesid);
+            } 
+            else {     
+                swal("Canceled", "確認不刪除。", "error");
+            } 
+        })
+ 	/*if(confirm("確定刪除？")){
  	    $('.trclick').remove();  
  	    $('.text').val("");
  	    $('#dif').html("選擇難易度");
- 	    $('#ans').html("選擇答案");};
+ 	    $('#ans').html("選擇答案");
+            };
            var quesid = localStorage.getItem('quesid');
-           deleteq(quesid);
+           deleteq(quesid);*/
 });
 
  
@@ -163,7 +183,7 @@ modifyq = function(questionid, ques, optiona, optionb, optionc, optiond, degree,
             question.set('Answer', ans);
                           question.save(null, {
                                     success:function(){
-                                            alert("修改題目成功!");
+                                            swal("Good job!", "修改題目成功!", "success");
                                     },
                                     error:function(error){
                                             console.log(error.toString());
@@ -181,7 +201,7 @@ deleteq = function(questionid){
         success:function(question){
             question.destroy({
                 success:function(results){
-                    alert("刪除題目成功!");
+                    swal("Good job!", "刪除題目成功!", "success");
                 },
                 error:function(error){
                     console.log(error.toString());
@@ -207,8 +227,10 @@ addq = function(ques, optiona, optionb, optionc, optiond, degree, ans){
     question.set('Answer', ans);
     question.save(null, {
         success:function(){
-            alert("新增題目成功!為了與伺服器同步將自動刷新頁面。");
-            window.location.assign("pageForAdministrator.html");
+            swal("Good job!", "新增題目成功!為了與伺服器同步將自動刷新頁面。", "success");
+            setTimeout(function(){
+                window.location.assign("pageForAdministrator.html");
+            },1500); 
         },
         error:function(error){
             console.log(error.toString());
