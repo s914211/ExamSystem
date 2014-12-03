@@ -66,7 +66,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 8, ../sass/base/_base.scss */
+/* line 6, ../sass/base/_base.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -152,27 +152,30 @@ html, body {
   position: relative;
   margin-bottom: 45px;
 }
+/* line 89, ../sass/index.scss */
+.login .textbox input {
+  color: #fff;
+}
 
-/* line 97, ../sass/index.scss */
+/* line 100, ../sass/index.scss */
 input {
   font-size: 18px;
   padding: 10px 10px 10px 5px;
   width: 300px;
   border: none;
-  border-bottom: 1px solid #87d3b7;
+  border-bottom: 1px solid #32ab86;
   background-color: transparent;
   position: relative;
-  color: #FFF;
   font-family: 'Exo', sans-serif;
 }
-/* line 108, ../sass/index.scss */
+/* line 110, ../sass/index.scss */
 input:focus {
   outline: none;
   /*focus時會跑出outline，要隱藏掉*/
 }
 
 /*  =====LABEL======================================================================= */
-/* line 116, ../sass/index.scss */
+/* line 118, ../sass/index.scss */
 label {
   color: #87d3b7;
   font-size: 18px;
@@ -186,7 +189,7 @@ label {
 }
 
 /* active state */
-/* line 133, ../sass/index.scss */
+/* line 135, ../sass/index.scss */
 input:focus ~ label, input:valid ~ label {
   top: -10px;
   font-size: 14px;
@@ -194,13 +197,13 @@ input:focus ~ label, input:valid ~ label {
 }
 
 /* BOTTOM BARS ================================= */
-/* line 140, ../sass/index.scss */
+/* line 142, ../sass/index.scss */
 .bar {
   position: relative;
   display: block;
   width: 300px;
 }
-/* line 145, ../sass/index.scss */
+/* line 147, ../sass/index.scss */
 .bar::before, .bar::after {
   content: '';
   height: 2px;
@@ -210,23 +213,23 @@ input:focus ~ label, input:valid ~ label {
   background: #87d3b7;
   transition: 0.2s ease all;
 }
-/* line 155, ../sass/index.scss */
+/* line 157, ../sass/index.scss */
 .bar::before {
   left: 50%;
 }
-/* line 159, ../sass/index.scss */
+/* line 161, ../sass/index.scss */
 .bar::after {
   right: 50%;
 }
 
 /* active state */
-/* line 166, ../sass/index.scss */
+/* line 168, ../sass/index.scss */
 input:focus ~ .bar::before, input:focus ~ .bar::after {
   width: 50%;
 }
 
 /* HIGHLIGHTER ================================== */
-/* line 171, ../sass/index.scss */
+/* line 173, ../sass/index.scss */
 .highlight {
   position: absolute;
   height: 60%;
@@ -238,7 +241,7 @@ input:focus ~ .bar::before, input:focus ~ .bar::after {
 }
 
 /* active state */
-/* line 182, ../sass/index.scss */
+/* line 184, ../sass/index.scss */
 input:focus ~ .highlight {
   -webkit-animation: inputHighlighter 0.3s ease;
   -moz-animation: inputHighlighter 0.3s ease;
@@ -248,7 +251,7 @@ input:focus ~ .highlight {
 /* ANIMATIONS ================ */
 @-webkit-keyframes inputHighlighter {
   from {
-    background: #87d3b7;
+    background: #32ab86;
   }
   to {
     width: 0;
@@ -273,7 +276,7 @@ input:focus ~ .highlight {
     background: transparent;
   }
 }
-/* line 205, ../sass/index.scss */
+/* line 207, ../sass/index.scss */
 .icon-button {
   display: inline-block;
   z-index: 2;
@@ -282,23 +285,23 @@ input:focus ~ .highlight {
   height: 25px;
   width: 25px;
 }
-/* line 213, ../sass/index.scss */
+/* line 215, ../sass/index.scss */
 .icon-button core-icon {
   transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* line 218, ../sass/index.scss */
+/* line 220, ../sass/index.scss */
 .icon-button:hover core-icon {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
-/* line 223, ../sass/index.scss */
+/* line 225, ../sass/index.scss */
 .icon-button paper-ripple {
   overflow: hidden;
   color: #646464;
 }
 
-/* line 230, ../sass/index.scss */
+/* line 232, ../sass/index.scss */
 .blur {
   -webkit-filter: blur(5px);
   -moz-filter: blur(5px);
@@ -307,7 +310,7 @@ input:focus ~ .highlight {
   filter: blur(5px);
 }
 
-/* line 238, ../sass/index.scss */
+/* line 240, ../sass/index.scss */
 .modal-wrapper {
   width: 100%;
   height: 100%;
@@ -323,18 +326,18 @@ input:focus ~ .highlight {
   -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
-/* line 253, ../sass/index.scss */
+/* line 255, ../sass/index.scss */
 .modal-wrapper.open {
   opacity: 1;
   visibility: visible;
 }
-/* line 257, ../sass/index.scss */
+/* line 259, ../sass/index.scss */
 .modal-wrapper.open .modal {
   margin-top: 50px;
   opacity: 1;
 }
 
-/* line 265, ../sass/index.scss */
+/* line 267, ../sass/index.scss */
 .modal {
   position: relative;
   margin-top: 50%;
@@ -349,23 +352,23 @@ input:focus ~ .highlight {
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
-/* line 279, ../sass/index.scss */
+/* line 281, ../sass/index.scss */
 .modal span {
   text-align: center;
   font-size: 150%;
   color: white;
 }
 
-/* line 287, ../sass/index.scss */
+/* line 289, ../sass/index.scss */
 .modal_header {
   font-family: 'Exo', sans-serif;
   font-weight: 200;
   padding: 1.5em 5%;
   overflow: hidden;
-  background: #87d3b7;
+  background: #32ab86;
 }
 
-/* line 297, ../sass/index.scss */
+/* line 299, ../sass/index.scss */
 .btn_close {
   width: 32px;
   height: 32px;
@@ -373,39 +376,39 @@ input:focus ~ .highlight {
   float: right;
 }
 
-/* line 305, ../sass/index.scss */
+/* line 307, ../sass/index.scss */
 .form_register {
   padding: 5%;
 }
-/* line 307, ../sass/index.scss */
+/* line 309, ../sass/index.scss */
 .form_register input:focus ~ label, .form_register input:valid ~ label {
   top: -10px;
   font-size: 14px;
   color: grey;
 }
-/* line 312, ../sass/index.scss */
+/* line 314, ../sass/index.scss */
 .form_register .Form_Question {
   position: relative;
   margin-bottom: 45px;
 }
-/* line 315, ../sass/index.scss */
+/* line 317, ../sass/index.scss */
 .form_register .Form_Question.lastOne {
   margin-bottom: 0px;
 }
-/* line 319, ../sass/index.scss */
+/* line 321, ../sass/index.scss */
 .form_register label {
   top: 10px;
   left: 5px;
 }
 
-/* line 326, ../sass/index.scss */
+/* line 328, ../sass/index.scss */
 .modal_footer .icon-button {
   padding-left: 85%;
   color: #0f9d58;
   width: 40px;
   height: 40px;
 }
-/* line 332, ../sass/index.scss */
+/* line 334, ../sass/index.scss */
 .modal_footer .icon-button core-icon {
   width: 40px;
   height: 40px;

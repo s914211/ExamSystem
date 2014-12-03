@@ -66,7 +66,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 8, ../sass/base/_base.scss */
+/* line 6, ../sass/base/_base.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -103,7 +103,7 @@ html, body {
   height: 56px;
   text-align: center;
   font-size: 150%;
-  background-color: #87d3b7;
+  background-color: #32ab86;
 }
 /* line 34, ../sass/pageForAdministrator.scss */
 .navbar .tabs div {
@@ -125,7 +125,7 @@ html, body {
 }
 /* line 52, ../sass/pageForAdministrator.scss */
 .navbar .tabs .current a {
-  color: #87d3b7;
+  color: #32ab86;
   background-color: white;
 }
 
@@ -347,7 +347,7 @@ html, body {
   height: 32px;
   padding: 1.5em 5%;
   overflow: hidden;
-  background: #87d3b7;
+  background: #32ab86;
 }
 
 /* line 301, ../sass/pageForAdministrator.scss */
