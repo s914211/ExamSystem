@@ -283,7 +283,6 @@ html, body {
   
   span{
     text-align: center;
-    width: 100%;
     font-size: 150%;
     color: white;
   }
@@ -292,7 +291,6 @@ html, body {
 
 .modal_header{
   width:100%;
-  height:32px;
   padding:1.5em 5%;
   overflow:hidden;
   background:$green;
@@ -366,7 +364,7 @@ label          {
 	-moz-transition:0.2s ease all; 
 	-webkit-transition:0.2s ease all;
 
-  .date_label{
+  &[class="date_label"]{
     background-color:white;
     padding:2px;
   }

@@ -336,21 +336,19 @@ html, body {
 /* line 284, ../sass/pageForAdministrator.scss */
 .modal span {
   text-align: center;
-  width: 100%;
   font-size: 150%;
   color: white;
 }
 
-/* line 293, ../sass/pageForAdministrator.scss */
+/* line 292, ../sass/pageForAdministrator.scss */
 .modal_header {
   width: 100%;
-  height: 32px;
   padding: 1.5em 5%;
   overflow: hidden;
   background: #32ab86;
 }
 
-/* line 301, ../sass/pageForAdministrator.scss */
+/* line 299, ../sass/pageForAdministrator.scss */
 .btn_close {
   width: 32px;
   height: 32px;
@@ -358,21 +356,21 @@ html, body {
   float: right;
 }
 
-/* line 310, ../sass/pageForAdministrator.scss */
+/* line 308, ../sass/pageForAdministrator.scss */
 .form_newExam {
   padding: 5%;
 }
 
-/* line 314, ../sass/pageForAdministrator.scss */
+/* line 312, ../sass/pageForAdministrator.scss */
 .form_step2 {
   display: none;
 }
-/* line 317, ../sass/pageForAdministrator.scss */
+/* line 315, ../sass/pageForAdministrator.scss */
 .form_step2.state2 {
   display: block;
 }
 
-/* line 322, ../sass/pageForAdministrator.scss */
+/* line 320, ../sass/pageForAdministrator.scss */
 .form_step1.state2 {
   /*  .XXX.XXX  => class ="XXX XXX"              */
   display: none;
@@ -380,13 +378,13 @@ html, body {
 }
 
 /* -------------------------------form starting stylings  */
-/* line 328, ../sass/pageForAdministrator.scss */
+/* line 326, ../sass/pageForAdministrator.scss */
 .Form_Question {
   position: relative;
   margin-bottom: 45px;
 }
 
-/* line 333, ../sass/pageForAdministrator.scss */
+/* line 331, ../sass/pageForAdministrator.scss */
 input {
   font-size: 18px;
   padding: 10px 10px 10px 5px;
@@ -395,13 +393,13 @@ input {
   border: none;
   border-bottom: 1px solid #757575;
 }
-/* line 341, ../sass/pageForAdministrator.scss */
+/* line 339, ../sass/pageForAdministrator.scss */
 input:focus {
   outline: none;
   /*focus時會跑出outline，要隱藏掉*/
 }
 
-/* line 348, ../sass/pageForAdministrator.scss */
+/* line 346, ../sass/pageForAdministrator.scss */
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -409,7 +407,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 /*  ==========================================================================LABEL== */
-/* line 357, ../sass/pageForAdministrator.scss */
+/* line 355, ../sass/pageForAdministrator.scss */
 label {
   color: #999;
   font-size: 18px;
@@ -422,14 +420,14 @@ label {
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-/* line 369, ../sass/pageForAdministrator.scss */
-label .date_label {
+/* line 367, ../sass/pageForAdministrator.scss */
+label[class="date_label"] {
   background-color: white;
   padding: 2px;
 }
 
 /* active state */
-/* line 379, ../sass/pageForAdministrator.scss */
+/* line 377, ../sass/pageForAdministrator.scss */
 input:focus ~ label, input:valid ~ label {
   top: -20px;
   font-size: 14px;
@@ -437,13 +435,13 @@ input:focus ~ label, input:valid ~ label {
 }
 
 /* BOTTOM BARS ================================= */
-/* line 386, ../sass/pageForAdministrator.scss */
+/* line 384, ../sass/pageForAdministrator.scss */
 .bar {
   position: relative;
   display: block;
   width: 300px;
 }
-/* line 391, ../sass/pageForAdministrator.scss */
+/* line 389, ../sass/pageForAdministrator.scss */
 .bar::before, .bar::after {
   content: '';
   height: 2px;
@@ -455,23 +453,23 @@ input:focus ~ label, input:valid ~ label {
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-/* line 403, ../sass/pageForAdministrator.scss */
+/* line 401, ../sass/pageForAdministrator.scss */
 .bar::before {
   left: 50%;
 }
-/* line 407, ../sass/pageForAdministrator.scss */
+/* line 405, ../sass/pageForAdministrator.scss */
 .bar::after {
   right: 50%;
 }
 
 /* active state */
-/* line 414, ../sass/pageForAdministrator.scss */
+/* line 412, ../sass/pageForAdministrator.scss */
 input:focus ~ .bar::before, input:focus ~ .bar::after {
   width: 50%;
 }
 
 /* HIGHLIGHTER ================================== */
-/* line 419, ../sass/pageForAdministrator.scss */
+/* line 417, ../sass/pageForAdministrator.scss */
 .highlight {
   position: absolute;
   height: 60%;
@@ -483,7 +481,7 @@ input:focus ~ .bar::before, input:focus ~ .bar::after {
 }
 
 /* active state */
-/* line 430, ../sass/pageForAdministrator.scss */
+/* line 428, ../sass/pageForAdministrator.scss */
 input:focus ~ .highlight {
   -webkit-animation: inputHighlighter 0.3s ease;
   -moz-animation: inputHighlighter 0.3s ease;
@@ -518,22 +516,22 @@ input:focus ~ .highlight {
     background: transparent;
   }
 }
-/* line 450, ../sass/pageForAdministrator.scss */
+/* line 448, ../sass/pageForAdministrator.scss */
 .btn_submitModal {
   display: none;
 }
-/* line 453, ../sass/pageForAdministrator.scss */
+/* line 451, ../sass/pageForAdministrator.scss */
 .btn_submitModal.state2 {
   display: inline;
 }
 
-/* line 458, ../sass/pageForAdministrator.scss */
+/* line 456, ../sass/pageForAdministrator.scss */
 .btn_nextModal.state2 {
   display: none;
 }
 
 /* =================================================================================blocks css */
-/* line 463, ../sass/pageForAdministrator.scss */
+/* line 461, ../sass/pageForAdministrator.scss */
 .blocks {
   color: #494441;
   margin: 20px;
@@ -546,36 +544,36 @@ input:focus ~ .highlight {
   border-radius: 5%;
   background-color: #d6d1a3;
 }
-/* line 475, ../sass/pageForAdministrator.scss */
+/* line 473, ../sass/pageForAdministrator.scss */
 .blocks .img_container {
   height: 100px;
   background-color: white;
 }
-/* line 480, ../sass/pageForAdministrator.scss */
+/* line 478, ../sass/pageForAdministrator.scss */
 .blocks img {
   width: 200px;
   margin-top: 18.5px;
 }
 
-/* line 486, ../sass/pageForAdministrator.scss */
+/* line 484, ../sass/pageForAdministrator.scss */
 .blocks_title {
   padding-top: 20px;
   font-size: 20px;
   margin-bottom: 10px;
 }
 
-/* line 492, ../sass/pageForAdministrator.scss */
+/* line 490, ../sass/pageForAdministrator.scss */
 .blocks_text {
   height: 100px;
   padding-left: 20px;
 }
 
-/* line 512, ../sass/pageForAdministrator.scss */
+/* line 510, ../sass/pageForAdministrator.scss */
 .confirm_circle {
   display: none;
 }
 
-/* line 516, ../sass/pageForAdministrator.scss */
+/* line 514, ../sass/pageForAdministrator.scss */
 .square {
   z-index: 2;
   height: 250px;
@@ -591,22 +589,22 @@ input:focus ~ .highlight {
   margin: auto;
 }
 
-/* line 531, ../sass/pageForAdministrator.scss */
+/* line 529, ../sass/pageForAdministrator.scss */
 .confirm_main {
   text-align: center;
 }
-/* line 534, ../sass/pageForAdministrator.scss */
+/* line 532, ../sass/pageForAdministrator.scss */
 .confirm_main .icon-button {
   position: static;
   margin: 0 auto;
 }
-/* line 538, ../sass/pageForAdministrator.scss */
+/* line 536, ../sass/pageForAdministrator.scss */
 .confirm_main .icon-button core-icon {
   color: white;
   height: 30px;
   width: 30px;
 }
-/* line 553, ../sass/pageForAdministrator.scss */
+/* line 551, ../sass/pageForAdministrator.scss */
 .confirm_main strong {
   color: #fff;
   display: block;
@@ -614,13 +612,13 @@ input:focus ~ .highlight {
   margin-top: 5px;
   text-transform: uppercase;
 }
-/* line 561, ../sass/pageForAdministrator.scss */
+/* line 559, ../sass/pageForAdministrator.scss */
 .confirm_main p {
   font-size: 14px;
   color: #a9a9a9;
 }
 
-/* line 567, ../sass/pageForAdministrator.scss */
+/* line 565, ../sass/pageForAdministrator.scss */
 .inner-square {
   height: 125px;
   width: 125px;
@@ -631,31 +629,31 @@ input:focus ~ .highlight {
   font-size: 40px;
   color: #fff;
 }
-/* line 577, ../sass/pageForAdministrator.scss */
+/* line 575, ../sass/pageForAdministrator.scss */
 .inner-square .icon-button {
   left: 62.5px;
   margin-left: -28px;
   top: 20px;
 }
-/* line 581, ../sass/pageForAdministrator.scss */
+/* line 579, ../sass/pageForAdministrator.scss */
 .inner-square .icon-button core-icon {
   height: 30px;
   width: 30px;
 }
 
-/* line 589, ../sass/pageForAdministrator.scss */
+/* line 587, ../sass/pageForAdministrator.scss */
 .left {
   left: 0;
   background: #8dc058;
 }
 
-/* line 594, ../sass/pageForAdministrator.scss */
+/* line 592, ../sass/pageForAdministrator.scss */
 .right {
   right: 0;
   background: #d35454;
 }
 
-/* line 604, ../sass/pageForAdministrator.scss */
+/* line 602, ../sass/pageForAdministrator.scss */
 .confirmCircle_wrapper {
   width: 100%;
   height: 100%;
@@ -670,17 +668,17 @@ input:focus ~ .highlight {
   -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
-/* line 618, ../sass/pageForAdministrator.scss */
+/* line 616, ../sass/pageForAdministrator.scss */
 .confirmCircle_wrapper.open {
   opacity: 1;
   visibility: visible;
 }
-/* line 622, ../sass/pageForAdministrator.scss */
+/* line 620, ../sass/pageForAdministrator.scss */
 .confirmCircle_wrapper.open .confirm_circle {
   display: block;
 }
 
-/* line 628, ../sass/pageForAdministrator.scss */
+/* line 626, ../sass/pageForAdministrator.scss */
 .confirmPreview_wrapper {
   width: 100%;
   height: 100%;
@@ -695,12 +693,12 @@ input:focus ~ .highlight {
   -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
-/* line 642, ../sass/pageForAdministrator.scss */
+/* line 640, ../sass/pageForAdministrator.scss */
 .confirmPreview_wrapper.open {
   opacity: 1;
   visibility: visible;
 }
-/* line 646, ../sass/pageForAdministrator.scss */
+/* line 644, ../sass/pageForAdministrator.scss */
 .confirmPreview_wrapper.open .confirm_circle {
   display: block;
 }
