@@ -1,69 +1,389 @@
-/*
-Error: Undefined variable: "$greyLight".
-        on line 22 of C:/Users/New/ExamSystem/sass/test.scss
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
+@import url(http://fonts.googleapis.com/css?family=Roboto:300);
+/* line 5, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
 
-17:   font-family     : "微軟正黑體", "Microsoft JhengHei";
-18:   background-color: $grey;
-19: }
-20: 
-21: .header{
-22:   background-color: $greyLight;
-23:   height          : 10%;
-24:   top             : 0px;
-25: }
-26: 
-27: .sheet{
+/* line 22, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
 
-Backtrace:
-C:/Users/New/ExamSystem/sass/test.scss:22
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/script/tree/variable.rb:49:in `_perform'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/script/tree/node.rb:50:in `perform'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:384:in `visit_prop'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/stack.rb:79:in `block in with_base'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/stack.rb:115:in `with_frame'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/stack.rb:79:in `with_base'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:158:in `visit'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:420:in `block (2 levels) in visit_rule'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:420:in `map'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:420:in `block in visit_rule'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:418:in `visit_rule'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/stack.rb:79:in `block in with_base'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/stack.rb:115:in `with_frame'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/stack.rb:79:in `with_base'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:158:in `visit'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:157:in `visit'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:8:in `visit'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/tree/root_node.rb:20:in `render'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/engine.rb:268:in `render'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:491:in `update_stylesheet'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:209:in `each'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:469:in `on_file_changed'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:328:in `block in watch'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/vendor/listen/lib/listen/listener.rb:252:in `call'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
-C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/sass-3.4.5/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Undefined variable: \"$greyLight\".\A         on line 22 of C:/Users/New/ExamSystem/sass/test.scss\A \A 17:   font-family     : \"微軟正黑體\", \"Microsoft JhengHei\";\A 18:   background-color: $grey;\A 19: }\A 20: \A 21: .header{\A 22:   background-color: $greyLight;\A 23:   height          : 10%;\A 24:   top             : 0px;\A 25: }\A 26: \A 27: .sheet{"; }
+/* line 24, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 6, ../sass/base/_base.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/* line 7, ../sass/test.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 14, ../sass/test.scss */
+html, body {
+  min-height: 100%;
+  height: 100%;
+  font-family: "微軟正黑體", "Microsoft JhengHei";
+  background-color: #d6d1a3;
+}
+
+/* line 21, ../sass/test.scss */
+.header {
+  background-color: #d6d1a3;
+  height: 10%;
+  top: 0px;
+}
+
+/* line 27, ../sass/test.scss */
+.sheet {
+  position: relative;
+  margin: 0 auto;
+  width: 980px;
+  margin-top: 30px;
+  background-color: white;
+  box-shadow: 6px 6px 11px 0px rgba(0, 0, 0, 0.67);
+  border-radius: 5%;
+  font-size: 20px;
+}
+/* line 37, ../sass/test.scss */
+.sheet .exam_title {
+  font-size: 36px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* line 43, ../sass/test.scss */
+.testnumber {
+  position: absolute;
+}
+
+/*---Page Switcher
+--------------------------------------*/
+/* line 49, ../sass/test.scss */
+#pre, #next {
+  position: fixed;
+  top: 45%;
+  text-align: center;
+  height: 90px;
+  width: 90px;
+  background: #000;
+  opacity: 0.75;
+  color: #fff;
+  transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+  cursor: pointer;
+}
+
+/* line 62, ../sass/test.scss */
+#pre {
+  left: -70px;
+  border-radius: 0px 100% 100% 0px;
+}
+
+/* line 67, ../sass/test.scss */
+#next {
+  right: -70px;
+  border-radius: 100% 0px 0px 100%;
+}
+
+/* line 71, ../sass/test.scss */
+#pre a, #next a {
+  display: block;
+  max-width: 100%;
+  font-size: 20px;
+  color: #fff;
+  position: relative;
+  top: 39%;
+  cursor: pointer;
+}
+
+/* line 80, ../sass/test.scss */
+#pre a {
+  left: 17%;
+}
+
+/* line 83, ../sass/test.scss */
+#next a {
+  right: 17%;
+}
+
+/* line 86, ../sass/test.scss */
+#pre:hover {
+  transition: 0.2s ease-in;
+  left: -50px;
+}
+
+/* line 90, ../sass/test.scss */
+#next:hover {
+  transition: 0.2s ease-in;
+  right: -50px;
+}
+
+/* line 100, ../sass/test.scss */
+.testnumber {
+  margin: 20px;
+}
+
+/* line 104, ../sass/test.scss */
+#bigdiv {
+  position: relative;
+  padding: 20px;
+  display: -webkit-flex;
+  display: flex;
+}
+/* line 110, ../sass/test.scss */
+#bigdiv .question_content {
+  -webkit-flex: 1;
+  flex: 1;
+  display: -webkit-flex;
+  display: flex;
+}
+/* line 116, ../sass/test.scss */
+#bigdiv .question_content .qussmall {
+  margin: auto;
+}
+/* line 121, ../sass/test.scss */
+#bigdiv .options_list {
+  -webkit-flex: 1;
+  flex: 1;
+  text-align: left;
+}
+/* line 126, ../sass/test.scss */
+#bigdiv .options_list .answer {
+  display: -webkit-flex;
+  display: flex;
+  margin: 20px;
+}
+/* line 131, ../sass/test.scss */
+#bigdiv .options_list .answer label {
+  flex: none;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  border: 1px solid #999;
+  border-radius: 50%;
+  box-shadow: 0 0 0 45px #FFF inset;
+  transition: 200ms all;
+  cursor: pointer;
+}
+/* line 143, ../sass/test.scss */
+#bigdiv .options_list .answer input {
+  display: none;
+}
+/* line 146, ../sass/test.scss */
+#bigdiv .options_list .answer input:checked + label {
+  box-shadow: 0 0 0 -1px #FFF inset;
+  color: #FFF;
+  background: #0f9d58;
+  border-color: #0f9d58;
+}
+/* line 153, ../sass/test.scss */
+#bigdiv .options_list .answer input span {
+  flex: 1;
+  line-height: 52px;
+}
+
+/* line 163, ../sass/test.scss */
+.line {
+  width: 80%;
+  height: 1px;
+  margin: 0 auto;
+  background-color: #87d3b7;
+}
+
+/*===========================================================================================fab=*/
+/* line 173, ../sass/test.scss */
+.fab {
+  position: absolute;
+  overflow: hidden;
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0.2s;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  z-index: 10;
+  cursor: pointer;
+  color: #d6d1a3;
+}
+/* line 183, ../sass/test.scss */
+.fab.green {
+  background-color: #32ab86;
+  right: 10px;
+  top: 50%;
+  margin-top: -28px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+/* line 193, ../sass/test.scss */
+.fab:active {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+  transition-delay: 0s;
+}
+/* line 198, ../sass/test.scss */
+.fab > core-icon {
+  margin: 16px;
+}
+/* line 202, ../sass/test.scss */
+.fab > core-icon::shadow path {
+  fill: #fff;
+}
+
+/* ==========================================================Icon Button=*/
+/* line 211, ../sass/test.scss */
+.icon-button {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+}
+/* line 215, ../sass/test.scss */
+.icon-button.handin {
+  right: 30;
+}
+/* line 219, ../sass/test.scss */
+.icon-button core-icon {
+  margin: 13px;
+  transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* line 225, ../sass/test.scss */
+.icon-button:hover core-icon {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+/* line 230, ../sass/test.scss */
+.icon-button paper-ripple {
+  overflow: hidden;
+  color: #646464;
+}
+
+/* line 242, ../sass/test.scss */
+.pagination {
+  display: block;
+  width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+/* line 247, ../sass/test.scss */
+.pagination li {
+  display: inline-block;
+  list-style: none;
+  font-family: Helvetica, Helvetica Neue,sans-serif;
+  color: #444;
+}
+/* line 252, ../sass/test.scss */
+.pagination li a {
+  display: block;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  position: relative;
+  margin-right: 1px;
+  text-decoration: none;
+}
+
+/* line 267, ../sass/test.scss */
+.pagination li a:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.75);
+  border-radius: 100px;
+  -webkit-transform: scale(0);
+  -webkit-transition: all 0.25s;
+}
+
+/* line 281, ../sass/test.scss */
+.pagination li a:hover {
+  color: transparent;
+}
+
+/* line 285, ../sass/test.scss */
+.pagination li a:hover:before {
+  -webkit-transform: scale(0.3);
+  box-shadow: inset 0 0 0 4px rgba(0, 0, 0, 0.75);
+}
+
+/* line 290, ../sass/test.scss */
+.pagination li.active a:before {
+  -webkit-transform: scale(1);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.75);
+}
+
+/* line 295, ../sass/test.scss */
+.pagination li.active a:hover {
+  color: black;
+}
+
+/* line 300, ../sass/test.scss */
+.footer {
+  margin: 20px;
+}
+/* line 302, ../sass/test.scss */
+.footer li {
+  cursor: pointer;
+}

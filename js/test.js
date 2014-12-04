@@ -343,8 +343,8 @@ function radioclick() {
     $("input[type=radio]").click(function() {
         cleanradio();
         $(this).next('.choice').css({
-                    "background": "#7EB634",
-                    "border-color": "#7EB634",
+                    "background": "#32ab86",
+                    "border-color": "#32ab86",
                     "box-shadow": "0 0 0 -1px #FFF inset",
                     "color": "#FFF"
                 });
