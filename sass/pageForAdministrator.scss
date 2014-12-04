@@ -286,6 +286,9 @@ html, body {
     font-size: 150%;
     color: white;
   }
+
+
+
 }
 
 
@@ -351,7 +354,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 
-/*  ==========================================================================LABEL== */
+/*  ====LABEL========================================= */
 label          {
 	color:#999; 
 	font-size:18px;
@@ -377,47 +380,46 @@ label          {
 input:focus ~ label, input:valid ~ label    {
   top:-20px;
   font-size:14px;
-  color:#5264AE;
+  color:$green2;
 }
 
 /* BOTTOM BARS ================================= */
 .bar  { 
 	position:relative;
 	display:block;
-	width:300px; 
 
 	&::before, &::after{
 		content:'';
 		height:2px; 
 		width:0;
-		bottom:1px; 
+		// bottom:2px; 
 		position:absolute;
-		background:#5264AE; 
+		background:$green2; 
 		transition:0.2s ease all; 
 		-moz-transition:0.2s ease all; 
 		-webkit-transition:0.2s ease all;
 	}
 
 	&::before{
-		left: 50%;
+		left: 25%;
 	}
 
 	&::after{
-		right: 50%
+		right: 75%
 	}
 }
 
 
 /* active state */
 input:focus ~ .bar::before, input:focus ~ .bar::after {
-  width:50%;
+  width:25%;
 }
 
 /* HIGHLIGHTER ================================== */
 .highlight {
   position:absolute;
   height:60%; 
-  width:100px; 
+  width:50%; 
   top:25%; 
   left:0;
   pointer-events:none;
@@ -433,15 +435,15 @@ input:focus ~ .highlight {
 
 /* ANIMATIONS ================ */
 @-webkit-keyframes inputHighlighter {
-  from { background:#5264AE; }
+  from { background:$green2; }
   to  { width:0; background:transparent; }
 }
 @-moz-keyframes inputHighlighter {
-  from { background:#5264AE; }
+  from { background:$green2; }
   to  { width:0; background:transparent; }
 }
 @keyframes inputHighlighter {
-  from { background:#5264AE; }
+  from { background:$green2; }
   to  { width:0; background:transparent; }
 }
 
