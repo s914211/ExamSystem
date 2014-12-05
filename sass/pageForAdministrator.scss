@@ -57,6 +57,12 @@ html, body {
 	}
 }
 
+@mixin BlurBg($Xpx,$X){
+  -webkit-filter: blur($Xpx) sepia($X);
+  -moz-filter: blur($Xpx) sepia($X);
+  -ms-filter: blur($Xpx) sepia($X);
+  -o-filter: blur($Xpx) sepia($X);
+}
 
 .bgpic{
   width: 100%;
@@ -64,18 +70,13 @@ html, body {
   z-index: -10;
   position: fixed;
 
-  background    : url("../assets/books.jpg"); 
+  background    : url("../assets/desk.jpg"); 
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
 
-
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
+  @include BlurBg(3px,0.5);
 }
 
 .tab_exams,.tab_questions{

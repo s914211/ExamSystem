@@ -14,26 +14,25 @@ html, body {
 }
 
 
-@mixin BlurBg($degree){
-  -webkit-filter: blur($degree);
-  -moz-filter: blur($degree);
-  -ms-filter: blur($degree);
-  -o-filter: blur($degree);
+@mixin BlurBg($Xpx,$X){
+  -webkit-filter: blur($Xpx) sepia($X);
+  -moz-filter: blur($Xpx) sepia($X);
+  -ms-filter: blur($Xpx) sepia($X);
+  -o-filter: blur($Xpx) sepia($X);
 }
 
 .bg_picture{
   position: absolute;
   width: 100%;
   height: 100%;
-  background    : url("../assets/old_books.jpg"); 
+  background    : url("../assets/macpro.jpg"); 
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
   z-index: 0;
 
-  @include BlurBg(3px) ;
-
+  @include BlurBg(5px,0.5) ;
 }
 
 
@@ -126,6 +125,7 @@ label          {
   transition:0.2s ease all; 
   -moz-transition:0.2s ease all; 
   -webkit-transition:0.2s ease all;
+
 }
 
 
@@ -321,6 +321,7 @@ input:focus ~ .highlight {
   label{
     top: 10px;
     left:5px;
+    color: $green;
   }
 }
 
