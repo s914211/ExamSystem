@@ -1,23 +1,10 @@
-@charset "utf-8"; //UTF-8編碼必須，為了可以打中文!
-@import "compass/css3";
+@charset "utf-8";//UTF-8編碼必須，為了可以打中文!
 // color
-$green: #87d3b7;
-$green2:#0f9d58;
-$grey:#d6d1a3;
-$greenDark:#32ab86;
-$greenMid:#75bd82;
-$greenLight:#b3c785;
-$greyLight:#d6ce85;
-$core: #13A7D7;
-$white: #fff;
-$grey:#777;
-$red: #e9322d;
-$darkgrey: #333;
-$lightgrey: #ccc;
+@import "base/color";
 
 
 
-//=========================================================
+
 $iconHeight:60px;
 $iconWidth:60px;
 
@@ -28,16 +15,16 @@ $iconWidth:60px;
     display: -webkit-flex;
     
     textarea {
-		margin-bottom   : 10px;
-        padding         : 25px 25px 25px 90px;
-        text-align:center;
-        font-size: 1.5em;
-        height: 100px;
-		width           : 100%;
-		border-radius   : 14px;
-		background-color: white;
-		border          : 2px solid $red;
-		resize          : none;
+    margin-bottom   : 10px;
+    padding         : 25px 25px 25px 90px;
+    text-align      :center;
+    font-size       : 1.5em;
+    height          : 100px;
+    width           : 100%;
+    border-radius   : 14px;
+    background-color: white;
+    border          : 2px solid $red;
+    resize          : none;
     }
     label {
         border-radius: 14px 0px 14px 0px;
@@ -90,6 +77,7 @@ $iconWidth:60px;
 
             		.btn_name {
             			text-align: center;
+                  color:#fff;
             		}  
                 }
             }

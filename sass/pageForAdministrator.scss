@@ -1,31 +1,13 @@
 @charset "utf-8";//UTF-8編碼必須，為了可以打中文!
-@import "compass/reset";
-@import "compass/css3";
-@import url(http://fonts.googleapis.com/css?family=Roboto:300);
-
+@import "base/base";
 // color
-$green: #87d3b7;
-$green2:#0f9d58;
-$grey:#d6d1a3;
-
-
-$greenDark:#32ab86;
-$greenMid:#75bd82;
-$greenLight:#b3c785;
-$greyLight:#d6ce85;
+@import "base/color";
 
 
 html, body {
   min-height: 100%;
   height:100%;
-  font-family: "Roboto";
-}
-
-* {
-  text-decoration: none;
- -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
- -moz-box-sizing: border-box;    /* Firefox, other Gecko */
- box-sizing: border-box;         /* Opera/IE 8+ */
+  font-family:"Roboto" ,"微軟正黑體" , "Microsoft JhengHei";
 }
 
 .tab_questions,.tab_exams{
@@ -33,13 +15,7 @@ html, body {
     margin: auto;
 }
 
-
-
-.left_button{
-  color: white;
-}
-
-/* NAVBAR */
+/* NAVBAR=================== */
 
 .navbar {
   top       : 0;
@@ -71,7 +47,6 @@ html, body {
       -webkit-transition: all 0.2s ease-in-out;
       -moz-transition   : all 0.2s ease-in-out;
       transition        : all 0.2s ease-in-out;
-
 		}
 
     .current a {
@@ -82,6 +57,12 @@ html, body {
 	}
 }
 
+@mixin BlurBg($Xpx,$X){
+  -webkit-filter: blur($Xpx) sepia($X);
+  -moz-filter: blur($Xpx) sepia($X);
+  -ms-filter: blur($Xpx) sepia($X);
+  -o-filter: blur($Xpx) sepia($X);
+}
 
 .bgpic{
   width: 100%;
@@ -89,18 +70,13 @@ html, body {
   z-index: -10;
   position: fixed;
 
-  background    : url("../assets/books.jpg"); 
+  background    : url("../assets/desk.jpg"); 
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
 
-
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
+  @include BlurBg(3px,0.5);
 }
 
 .tab_exams,.tab_questions{
@@ -305,18 +281,20 @@ html, body {
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+  
   span{
     text-align: center;
-    width: 100%;
     font-size: 150%;
     color: white;
   }
+
+
+
 }
 
 
 .modal_header{
-  width:90%;
-  height:32px;
+  width:100%;
   padding:1.5em 5%;
   overflow:hidden;
   background:$green;
@@ -377,7 +355,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 
-/*  ==========================================================================LABEL== */
+/*  ====LABEL========================================= */
 label          {
 	color:#999; 
 	font-size:18px;
@@ -390,7 +368,7 @@ label          {
 	-moz-transition:0.2s ease all; 
 	-webkit-transition:0.2s ease all;
 
-  .date_label{
+  &[class="date_label"]{
     background-color:white;
     padding:2px;
   }
@@ -403,47 +381,46 @@ label          {
 input:focus ~ label, input:valid ~ label    {
   top:-20px;
   font-size:14px;
-  color:#5264AE;
+  color:$green2;
 }
 
 /* BOTTOM BARS ================================= */
 .bar  { 
 	position:relative;
 	display:block;
-	width:300px; 
 
 	&::before, &::after{
 		content:'';
 		height:2px; 
 		width:0;
-		bottom:1px; 
+		// bottom:2px; 
 		position:absolute;
-		background:#5264AE; 
+		background:$green2; 
 		transition:0.2s ease all; 
 		-moz-transition:0.2s ease all; 
 		-webkit-transition:0.2s ease all;
 	}
 
 	&::before{
-		left: 50%;
+		left: 25%;
 	}
 
 	&::after{
-		right: 50%
+		right: 75%
 	}
 }
 
 
 /* active state */
 input:focus ~ .bar::before, input:focus ~ .bar::after {
-  width:50%;
+  width:25%;
 }
 
 /* HIGHLIGHTER ================================== */
 .highlight {
   position:absolute;
   height:60%; 
-  width:100px; 
+  width:50%; 
   top:25%; 
   left:0;
   pointer-events:none;
@@ -459,15 +436,15 @@ input:focus ~ .highlight {
 
 /* ANIMATIONS ================ */
 @-webkit-keyframes inputHighlighter {
-  from { background:#5264AE; }
+  from { background:$green2; }
   to  { width:0; background:transparent; }
 }
 @-moz-keyframes inputHighlighter {
-  from { background:#5264AE; }
+  from { background:$green2; }
   to  { width:0; background:transparent; }
 }
 @keyframes inputHighlighter {
-  from { background:#5264AE; }
+  from { background:$green2; }
   to  { width:0; background:transparent; }
 }
 
@@ -575,7 +552,6 @@ input:focus ~ .highlight {
 	// }
 
 	strong{
-		font-family: 'Open Sans Condensed', sans-serif;
 		color:#fff;
 		display:block;
 		font-size:18px;
@@ -584,7 +560,7 @@ input:focus ~ .highlight {
 	}
 
 	p{
-		font-size: 12px;
+		font-size: 14px;
 		color: #a9a9a9;
 	}
 }

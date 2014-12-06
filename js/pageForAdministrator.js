@@ -175,7 +175,7 @@ $(document).on("click",".btn_nextModal",function(){
 		$(".btn_nextModal").toggleClass(nowState);
 	}
 	else{
-		alert("請確認每個欄位皆有輸入值！");
+        swal("請確認每個欄位皆有輸入值！");
 	}
 });
 
@@ -210,7 +210,7 @@ $(document).on("click",".btn_submitModal",function(){
                     }
 	}
 	else{
-		alert("抽題總數不為40，請重新輸入抽題數目！");
+        swal("抽題總數不為40，請重新輸入抽題數目！");
 	}
 });
 $(document).on("click",".btn_close",function(){
@@ -265,7 +265,7 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
                     deleteunsuccessques(examname);
                     unsealed(1);
                     localStorage.setItem("sign", "no");
-                    alert("There's no enough questions in question bank. Unsealing now~");
+                    sweetAlert("Oops...", "並沒有足夠的題目可以抽取，進行解封中！", "error");
             }
             else{
                 for(var i = 0; i<easyquestion.length; i++){
@@ -339,7 +339,7 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
                     deleteunsuccessques(examname);
                     unsealed(2);
                     localStorage.setItem("sign", "no");
-                    alert("There's no enough questions in question bank. Unsealing now~");           
+                    sweetAlert("Oops...", "並沒有足夠的題目可以抽取，進行解封中！", "error");           
             }
             else{
                 for(var i = 0; i<normalquestion.length; i++){
@@ -398,7 +398,7 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
                 deleteunsuccessques(examname);
                 unsealed(3);
                 localStorage.setItem("sign", "no");
-                alert("There's no enough questions in question bank. Unsealing now~");
+                sweetAlert("Oops...", "並沒有足夠的題目可以抽取，進行解封中！", "error");
             }
             else{
                 for(var i = 0; i<hardquestion.length; i++){
@@ -458,9 +458,9 @@ addnewexam = function(examname, examtime, examdate, hard, normal, easy){
     exams.set('easynum', easy);
     exams.save(null, {
         success:function(){
-            alert("Add new exam success!");
+            swal("Good job!", "新增考試成功！", "success");
             setTimeout(function(){
-                alert("Auto refresh the page!");
+                swal("自動刷新頁面！");
                 location.reload();
             },3500); 
         },
@@ -484,8 +484,10 @@ unsealed = function(degree){
                     }
                 })
             }
-            alert("Unsealed success! Please enter exam data again!");
-            Close_ModalWrapper();
+            swal("解封完成，請重新創建考試。");
+            setTimeout(function(){
+                Close_ModalWrapper();
+            },1500); 
         }
     })
 }

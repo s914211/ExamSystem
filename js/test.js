@@ -97,7 +97,7 @@ $(document).ready(function() {
 
     $(document).delegate('#pre', 'click', function() {
         if ($('.active').children('a').text() == "1") {
-            alert('這是第一題');
+            swal("這是第一題。");
         } else if ($('.active').children('a').text() == "21") {
             $('.testnumber').text("");
 
@@ -121,7 +121,7 @@ $(document).ready(function() {
 
     $(document).delegate('#next', 'click', function() {
         if ($('.active').children('a').text() == "40") {
-            alert("已經是最後一題");
+            swal("已經是最後一題。");
         } else if ($('.active').children('a').text() == "20") {
             $('.testnumber').text("");
 
@@ -161,15 +161,33 @@ $(document).ready(function() {
         }
         if(emptyans.length != 0){
             var string = emptyans.join("、");
-            alert("第"+ string + "題未作答，請填入答案！");
+            swal("第"+ string + "題未作答，請填入答案！");
         }
         else{
-            var r = confirm("確認交卷？");
+            /*var r = confirm("確認交卷？");
             if (r == true) {
                 calculatescore();
             } else {
-                alert("還有時間，請繼續作答！");
-            }
+                swal("還有時間，請繼續作答！");
+            }*/
+            swal({
+               title: "確認交卷",   
+               text: "你還有時間可以作答，你是否要交卷？",   
+               type: "warning",   
+               showCancelButton: true,   
+               confirmButtonColor: "#DD6B55",   
+               confirmButtonText: "是的，我要交卷。",   
+               cancelButtonText: "不，我還需要檢查。",   
+               closeOnConfirm: false,   
+               closeOnCancel: false }, 
+               function(isConfirm){   
+                if (isConfirm) {     
+                    calculatescore();
+                } 
+                else {     
+                    swal("還有時間，請繼續作答！");  
+                } 
+            })
         }
     });
 
@@ -325,8 +343,8 @@ function radioclick() {
     $("input[type=radio]").click(function() {
         cleanradio();
         $(this).next('.choice').css({
-                    "background": "#7EB634",
-                    "border-color": "#7EB634",
+                    "background": "#32ab86",
+                    "border-color": "#32ab86",
                     "box-shadow": "0 0 0 -1px #FFF inset",
                     "color": "#FFF"
                 });
@@ -386,6 +404,6 @@ setInterval(function () {
     }
     else{
         calculatescore();
-        alert("時間到!");
+        swal("時間到！");
     }
 }, 1000);

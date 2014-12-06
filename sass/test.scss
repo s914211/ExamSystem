@@ -1,17 +1,7 @@
 @charset "utf-8";//UTF-8編碼必須，為了可以打中文!
-@import "compass/reset";
-@import "compass/css3";
-@import url(http://fonts.googleapis.com/css?family=Roboto:300);
-
+@import "base/base";
 // color
-$green: #87d3b7;
-$green2:#0f9d58;
-
-$grey:#d6d1a3;
-$greenDark:#32ab86;
-$greenMid:#75bd82;
-$greenLight:#b3c785;
-$greyLight:#d6ce85;
+@import "base/color";
 
 
 * {
@@ -29,19 +19,19 @@ html, body {
 }
 
 .header{
-  background-color: $greyLight;
+  background-color: $grey;
   height          : 10%;
   top             : 0px;
 }
 
 .sheet{
+  position: relative;
   margin       : 0 auto;
   width        : 980px;
   margin-top: 30px;
   background-color: white;
   box-shadow   : 6px 6px 11px 0px rgba(0,0,0,0.67);
   border-radius: 5%;
-  // text-align: center;
   font-size: 20px;
   
   .exam_title{
@@ -49,13 +39,7 @@ html, body {
     padding: 20px;
     text-align: center;
   }
-
-  .handin{
-    float:right;
-  }
 }
-
-
 .testnumber{
   position: absolute;
 }
@@ -162,8 +146,8 @@ html, body {
         &:checked + label{
           box-shadow: 0 0 0 -1px #FFF inset;
           color: #FFF;
-          background: #7EB634;
-          border-color: #7EB634;  
+          background: $green2;
+          border-color: $green2;  
         }
 
         span {
@@ -180,16 +164,8 @@ html, body {
   width: 80%;
   height: 1px;
   margin: 0 auto;
-  background-color: $grey;
+  background-color: $green3;
 }
-
-
-
-
-
-
-
-
 
 /*===========================================================================================fab=*/
 
@@ -202,10 +178,10 @@ html, body {
 	box-shadow      : 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 	z-index         : 10;
 	cursor          :pointer;
-	color           : $greyLight;
+	color           : $grey;
 	
 	&.green{
-		background-color: #0f9d58;
+		background-color: $green;
 		right           : 10px;
 		top             : 50%;
 		margin-top      : -28px;
@@ -236,6 +212,9 @@ html, body {
 	position: absolute;
 	width   : 56px;
 	height  : 56px;
+  &.handin{
+    right:30;
+  }
 
 	core-icon {
 		margin: 13px;
@@ -281,13 +260,6 @@ html, body {
     }
   }
 }
-
-
-
-
-
-
-
 
 
 

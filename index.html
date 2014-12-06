@@ -9,7 +9,9 @@
     <link href="stylesheets/index.css" rel="stylesheet" />
     <link rel="import" href="http://www.polymer-project.org/components/core-icons/core-icons.html">
     <link rel="import" href="http://www.polymer-project.org/components/paper-ripple/paper-ripple.html">
-
+<!--    <script src="js/sweet-alert.min.js"></script> 
+    <link rel="stylesheet" type="text/css" href="stylesheets/sweet-alert.css">
+-->
 
 </head>
 
@@ -20,18 +22,18 @@
 </div>    
     <div class="header">
         <div id="title">Member<span>Login</span></div>
-        <div id="noaccount">No accounts yet ?</div>
+        <div id="noaccount">NO ACCOUNT YET?</div>
     </div>
     <br>
     <div class="login">
         <div class="form">
-            <div class="textbox">
+            <div class="textbox" id="account">
                 <input type="text" id="username" name="username" required />
                 <span class="highlight"></span>
                 <span class="bar"></span>
                 <label>User Name</label>
             </div>
-            <div class="textbox">
+            <div class="textbox" id="loginpass">
                 <input type="password" id="password" name="password" required />
                 <div class="icon-button" id="loginbtn">
                     <core-icon icon="input"></core-icon>
@@ -71,14 +73,14 @@
                     </div>
 
                     <div class="Form_Question">
-                        <input type="text" required id="signuppassword" onkeydown="onlyNum()">
+                        <input type="password" required id="signuppassword">
                         <span class="highlight"></span>
                         <span class="bar"></span>
                         <label>Password</label>
                     </div>
 
                     <div class="Form_Question lastOne">
-                        <input type="text" required id="signupcpassword" onkeydown="onlyNum()">
+                        <input type="password" required id="signupcpassword">
                         <span class="highlight"></span>
                         <span class="bar"></span>
                         <label class="date_label">Confirm Password</label>
@@ -97,12 +99,13 @@
         </div>
     </div>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.transit.min.js"></script>
-    <script src="js/index.js"></script>
-    <script src="https://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
-    <script src="js/signup.js"></script>
-
+    <script src ="js/jquery.min.js"></script>
+    <script src ="js/jquery.transit.min.js"></script>
+    <script src ="js/index.js"></script>
+    <script src ="https://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
+    <script src ="js/signup.js"></script>
+<!--    <script src ="http://leaverou.github.com/prefixfree/prefixfree.min.js"></script>
+-->
 </body>
 
 </html>

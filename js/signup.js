@@ -4,7 +4,8 @@ $(document).ready(function(){
   signup = function(){
               
         if(document.getElementById('signuppassword').value != document.getElementById('signupcpassword').value){
-              alert('密碼不一樣，請確認密碼是一樣的！！');
+              //alert('密碼不一樣，請確認密碼是一樣的！！');
+              sweetAlert("Oops...", "密碼不一樣，請確認密碼是一樣的！", "error");
         }
         else{
           var user = new Parse.User();
@@ -14,11 +15,13 @@ $(document).ready(function(){
               user.set("email", document.getElementById('signupemail').value);
               user.signUp(null, {
                   success: function(user){
-                    alert('success!!');
-                    window.location.assign("index.html");
+                    swal("Good job!", "註冊成功！", "success");
+                    setTimeout(function(){
+                      window.location.assign("index.html");      
+                    },1500); 
                   },
                   error: function(user, error){
-                    alert("You have the wrong email or password!");
+                    sweetAlert("Oops...", "Email格式或是密碼有錯誤喔！", "error");
                     //alert("Error: " + error.code + " " + error.message);
                   }
               });
@@ -46,7 +49,7 @@ $(document).ready(function(){
             window.location.assign("pageForStudent.html");
           },
           error:function(user, error){
-            alert("You have the wrong email or password!");
+            sweetAlert("Oops...", "帳號或是密碼有錯誤喔！", "error");
             //alert("Error: " + error.code + " " + error.message);
           }
         })
@@ -55,4 +58,11 @@ $(document).ready(function(){
 
 
   document.getElementById("loginbtn").addEventListener("click", login);
+
+  $("#account, #loginpass").keyup(function(event){
+      if(event.keyCode == 13){
+          $("#loginbtn").click();
+      }
+  });
+
 })
