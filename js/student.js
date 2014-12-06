@@ -238,9 +238,16 @@ function showscore() {
                     var score = scores[i].get('score');
                     if(score == undefined){
                         $('.score').children('span').text("?");
+                        $('.pass').children('span').text("無成績");
                     }
                     else if(name == examname) {
-                        $('.score').children('span').text(score);                     
+                        $('.score').children('span').text(score); 
+                        if(score >= 60) {
+                            $('.pass').children('span').text("PASS");
+                        }
+                        else {
+                            $('.pass').children('span').text("FAIL");
+                        }                
                     }
                     
 
