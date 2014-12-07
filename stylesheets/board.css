@@ -74,7 +74,7 @@
 /* line 78, ../sass/board.scss */
 .editdiv .question .seconddiv .btns .btn .btn_name {
   text-align: center;
-  color: #fff;
+  color: #333;
 }
 /* line 87, ../sass/board.scss */
 .editdiv .option_list {

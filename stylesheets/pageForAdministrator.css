@@ -601,7 +601,7 @@ input:focus ~ .highlight {
   height: 30px;
   width: 30px;
 }
-/* line 554, ../sass/pageForAdministrator.scss */
+/* line 546, ../sass/pageForAdministrator.scss */
 .confirm_main strong {
   color: #fff;
   display: block;
@@ -609,13 +609,13 @@ input:focus ~ .highlight {
   margin-top: 5px;
   text-transform: uppercase;
 }
-/* line 562, ../sass/pageForAdministrator.scss */
+/* line 554, ../sass/pageForAdministrator.scss */
 .confirm_main p {
   font-size: 14px;
   color: #a9a9a9;
 }
 
-/* line 568, ../sass/pageForAdministrator.scss */
+/* line 560, ../sass/pageForAdministrator.scss */
 .inner-square {
   height: 125px;
   width: 125px;
@@ -626,31 +626,31 @@ input:focus ~ .highlight {
   font-size: 40px;
   color: #fff;
 }
-/* line 578, ../sass/pageForAdministrator.scss */
+/* line 570, ../sass/pageForAdministrator.scss */
 .inner-square .icon-button {
   left: 62.5px;
   margin-left: -28px;
   top: 20px;
 }
-/* line 582, ../sass/pageForAdministrator.scss */
+/* line 574, ../sass/pageForAdministrator.scss */
 .inner-square .icon-button core-icon {
   height: 30px;
   width: 30px;
 }
 
-/* line 590, ../sass/pageForAdministrator.scss */
+/* line 582, ../sass/pageForAdministrator.scss */
 .left {
   left: 0;
   background: #8dc058;
 }
 
-/* line 595, ../sass/pageForAdministrator.scss */
+/* line 587, ../sass/pageForAdministrator.scss */
 .right {
   right: 0;
   background: #d35454;
 }
 
-/* line 605, ../sass/pageForAdministrator.scss */
+/* line 597, ../sass/pageForAdministrator.scss */
 .confirmCircle_wrapper {
   width: 100%;
   height: 100%;
@@ -665,17 +665,17 @@ input:focus ~ .highlight {
   -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
-/* line 619, ../sass/pageForAdministrator.scss */
+/* line 611, ../sass/pageForAdministrator.scss */
 .confirmCircle_wrapper.open {
   opacity: 1;
   visibility: visible;
 }
-/* line 623, ../sass/pageForAdministrator.scss */
+/* line 615, ../sass/pageForAdministrator.scss */
 .confirmCircle_wrapper.open .confirm_circle {
   display: block;
 }
 
-/* line 629, ../sass/pageForAdministrator.scss */
+/* line 621, ../sass/pageForAdministrator.scss */
 .confirmPreview_wrapper {
   width: 100%;
   height: 100%;
@@ -690,12 +690,30 @@ input:focus ~ .highlight {
   -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
-/* line 643, ../sass/pageForAdministrator.scss */
+/* line 635, ../sass/pageForAdministrator.scss */
 .confirmPreview_wrapper.open {
   opacity: 1;
   visibility: visible;
 }
-/* line 647, ../sass/pageForAdministrator.scss */
+/* line 639, ../sass/pageForAdministrator.scss */
 .confirmPreview_wrapper.open .confirm_circle {
   display: block;
+}
+
+/* line 646, ../sass/pageForAdministrator.scss */
+.go-top {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  text-decoration: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 12px;
+  padding: 1em;
+  display: none;
+}
+
+/* line 658, ../sass/pageForAdministrator.scss */
+.go-top:hover {
+  background-color: rgba(0, 0, 0, 0.6);
 }

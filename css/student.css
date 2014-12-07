@@ -48,3 +48,21 @@
     text-align: center;
     font-size: 2em;
 }
+
+.bgpic{
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  position: fixed;
+
+  background    : url("../assets/macpro.jpg"); 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.logout{
+    position: absolute;
+    right: 25px;
+}

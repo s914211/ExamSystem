@@ -293,140 +293,126 @@
 <!-- =============TAB2=============================== -->
     <div class="tab_questions">
 <!--     <div class="bgpic questions"></div> -->
-    <div class="editdiv">
-        <div class="question">
-            <div class="Qcontent">
-                <textarea class="text"></textarea>
-                <label>題目內容</label>
-            </div>
-            <div class="seconddiv">
-                <div class="drops">
-                    <dl class="dropdown">
-                        <dt>
-                            <a><span id="dif">選擇難易度</span></a>
-                        </dt>
-                        <dd>
-                            <ul>
-                                <li><a class="default">選擇難易度</a></li>
-                                <li><a>難</a></li>
-                                <li><a>中</a></li>
-                                <li><a>易</a></li>
-                            </ul>
-                        </dd>
-                    </dl>
+        <div class="editdiv">
+            <div class="question">
+                <div class="Qcontent">
+                    <textarea class="text"></textarea>
+                    <label>題目內容</label>
+                </div>
+                <div class="seconddiv">
+                    <div class="drops">
+                        <dl class="dropdown">
+                            <dt>
+                                <a><span id="dif">選擇難易度</span></a>
+                            </dt>
+                            <dd>
+                                <ul>
+                                    <li><a class="default">選擇難易度</a></li>
+                                    <li><a>難</a></li>
+                                    <li><a>中</a></li>
+                                    <li><a>易</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        
+                        <dl class="dropdown">
+                            <dt>
+                                <a><span id="ans">選擇答案</span></a>
+                            </dt>
+                            <dd>
+                                <ul>
+                                    <li><a class="default">選擇答案</a></li>
+                                    <li><a>A</a></li>
+                                    <li><a>B</a></li>
+                                    <li><a>C</a></li>
+                                    <li><a>D</a></li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
                     
-                    <dl class="dropdown">
-                        <dt>
-                            <a><span id="ans">選擇答案</span></a>
-                        </dt>
-                        <dd>
-                            <ul>
-                                <li><a class="default">選擇答案</a></li>
-                                <li><a>A</a></li>
-                                <li><a>B</a></li>
-                                <li><a>C</a></li>
-                                <li><a>D</a></li>
-                            </ul>
-                        </dd>
-                    </dl>
-<!--                     <div class="difficulty">
-                        <span>難易度</span>
-                        <select id="dif">
-                            <option>請選擇</option>
-                            <option>難</option>
-                            <option>中</option>
-                            <option>易</option>
-                        </select>
-
-                        <span>答案</span>
-                        <select id="ans">
-                            <option>請選擇</option>
-                            <option>A</option>
-                            <option>B</option>
-                            <option>C</option>
-                            <option>D</option>
-                        </select>
-                    </div> -->
-                </div>
-                
-                <div class="btns">
-                    <div class="btn">
-                        <div class="icon-button" id="editbtn">
-                            <core-icon icon="add"></core-icon>
+                    <div class="btns">
+                        <div class="btn">
+                            <div class="icon-button" id="editbtn">
+                                <core-icon icon="add"></core-icon>
+                            </div>
+                            <div class="btn_name">修改</div>
                         </div>
-                        <div class="btn_name">修改</div>
-                    </div>
-                    <div class="btn">
-                        <div class="icon-button" id="newbtn">
-                            <core-icon icon="create"></core-icon>
+                        <div class="btn">
+                            <div class="icon-button" id="newbtn">
+                                <core-icon icon="create"></core-icon>
+                            </div>
+                            <div class="btn_name">新增</div>
                         </div>
-                        <div class="btn_name">新增</div>
-                    </div>
-                    <div class="btn">
-                        <div class="icon-button" id="deletebtn">
-                            <core-icon icon="delete"></core-icon>
+                        <div class="btn">
+                            <div class="icon-button" id="deletebtn">
+                                <core-icon icon="delete"></core-icon>
+                            </div>
+                            <div class="btn_name">刪除</div>
                         </div>
-                        <div class="btn_name">刪除</div>
-                    </div>
-                    <div class="btn">
-                        <div class="icon-button" onclick="clean()">
-                            <core-icon icon="clear"></core-icon>
+                        <div class="btn">
+                            <div class="icon-button" onclick="clean()">
+                                <core-icon icon="clear"></core-icon>
+                            </div>
+                            <div class="btn_name">清空</div>
                         </div>
-                        <div class="btn_name">清空</div>
                     </div>
                 </div>
             </div>
+
+            <div class="option_list">
+                <div class="option">
+                    <textarea class="text" id="A"></textarea>
+                    <label for="A">選項A</label>
+                </div>
+                <div class="option">
+                    <textarea class="text" id="B"></textarea>
+                    <label for="B">選項B</label>
+                </div>
+                <div class="option">
+                    <textarea class="text" id="C"></textarea>
+                    <label for="C">選項C</label>
+                </div>
+                <div class="option">
+                    <textarea class="text" id="C"></textarea>
+                    <label for="D">選項D</label>
+                </div>
+            </div>
+        </div>
+        
+
+
+        <div class="tablediv shadow-z-1 table-responsive-vertical" >
+            <table id="table" class="qusselect table table-hover table-mc-light-blue">
+              <thead>
+                <tr class="thead">
+                  <th>題目</th>
+                  <th>選項A</th>
+                  <th>選項B</th>
+                  <th>選項C</th>
+                  <th>選項D</th>
+                  <th class="tdsmall">難易度</th>
+                  <th class="tdanswer">答案</th>
+                </tr>
+              </thead>
+              <tbody class="Questions">
+                <tr class="trnormal">
+                  <td data-title="題目">test1</td>
+                  <td data-title="選項A">test2</td>
+                  <td data-title="選項B">test3</td>
+                  <td data-title="選項C">test4</td>
+                  <td data-title="選項D">test5</td>
+                  <td data-title="難易度" class="tdsmall">難</td>
+                  <td data-title="答案" class="tdsmall">A</td>
+                </tr>
+              </tbody>
+            </table>
         </div>
 
-        <div class="option_list">
-            <div class="option">
-                <textarea class="text" id="A"></textarea>
-                <label for="A">選項A</label>
-            </div>
-            <div class="option">
-                <textarea class="text" id="B"></textarea>
-                <label for="B">選項B</label>
-            </div>
-            <div class="option">
-                <textarea class="text" id="C"></textarea>
-                <label for="C">選項C</label>
-            </div>
-            <div class="option">
-                <textarea class="text" id="C"></textarea>
-                <label for="D">選項D</label>
-            </div>
-        </div>
+        <footer>
+            <a href="#" class="go-top">Go Top</a>
+        </footer>
     </div>
-    
-
-
-  <div class="tablediv shadow-z-1 table-responsive-vertical" >
-    <table id="table" class="qusselect table table-hover table-mc-light-blue">
-      <thead>
-        <tr class="thead">
-          <th>題目</th>
-          <th>選項A</th>
-          <th>選項B</th>
-          <th>選項C</th>
-          <th>選項D</th>
-          <th class="tdsmall">難易度</th>
-          <th class="tdanswer">答案</th>
-        </tr>
-      </thead>
-      <tbody class="Questions">
-        <tr class="trnormal">
-          <td data-title="題目">test1</td>
-          <td data-title="選項A">test2</td>
-          <td data-title="選項B">test3</td>
-          <td data-title="選項C">test4</td>
-          <td data-title="選項D">test5</td>
-          <td data-title="難易度" class="tdsmall">難</td>
-          <td data-title="答案" class="tdsmall">A</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
 
 
 <script src="https://www.parsecdn.com/js/parse-1.2.18.min.js"></script>

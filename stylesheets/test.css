@@ -254,85 +254,55 @@ html, body {
   background-color: #87d3b7;
 }
 
-/*===========================================================================================fab=*/
-/* line 173, ../sass/test.scss */
-.fab {
+/* ==========================================================Icon Button=*/
+/* line 179, ../sass/test.scss */
+.handin {
   position: absolute;
-  overflow: hidden;
-  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0.2s;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  z-index: 10;
-  cursor: pointer;
-  color: #d6d1a3;
+  right: 50px;
 }
 /* line 183, ../sass/test.scss */
-.fab.green {
-  background-color: #32ab86;
-  right: 10px;
-  top: 50%;
-  margin-top: -28px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
+.handin .icon-button {
+  display: flex;
+  display: -webkit-flex;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
 }
-/* line 193, ../sass/test.scss */
-.fab:active {
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
-  transition-delay: 0s;
-}
-/* line 198, ../sass/test.scss */
-.fab > core-icon {
-  margin: 16px;
-}
-/* line 202, ../sass/test.scss */
-.fab > core-icon::shadow path {
-  fill: #fff;
-}
-
-/* ==========================================================Icon Button=*/
-/* line 211, ../sass/test.scss */
-.icon-button {
-  position: absolute;
-  width: 56px;
-  height: 56px;
-}
-/* line 215, ../sass/test.scss */
-.icon-button.handin {
-  right: 30;
-}
-/* line 219, ../sass/test.scss */
-.icon-button core-icon {
-  margin: 13px;
+/* line 189, ../sass/test.scss */
+.handin .icon-button core-icon {
+  height: 50px;
+  width: 50px;
+  margin: auto;
+  color: #0f9d58;
   transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* line 225, ../sass/test.scss */
-.icon-button:hover core-icon {
+/* line 198, ../sass/test.scss */
+.handin .icon-button:hover core-icon {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
-/* line 230, ../sass/test.scss */
-.icon-button paper-ripple {
-  overflow: hidden;
-  color: #646464;
+/* line 204, ../sass/test.scss */
+.handin .btn_text {
+  color: #0f9d58;
+  text-align: center;
 }
 
-/* line 242, ../sass/test.scss */
+/* line 215, ../sass/test.scss */
 .pagination {
   display: block;
   width: 980px;
   margin: 0 auto;
   text-align: center;
 }
-/* line 247, ../sass/test.scss */
+/* line 220, ../sass/test.scss */
 .pagination li {
   display: inline-block;
   list-style: none;
   font-family: Helvetica, Helvetica Neue,sans-serif;
   color: #444;
 }
-/* line 252, ../sass/test.scss */
+/* line 225, ../sass/test.scss */
 .pagination li a {
   display: block;
   width: 40px;
@@ -343,7 +313,7 @@ html, body {
   text-decoration: none;
 }
 
-/* line 267, ../sass/test.scss */
+/* line 240, ../sass/test.scss */
 .pagination li a:before {
   position: absolute;
   content: '';
@@ -357,33 +327,33 @@ html, body {
   -webkit-transition: all 0.25s;
 }
 
-/* line 281, ../sass/test.scss */
+/* line 254, ../sass/test.scss */
 .pagination li a:hover {
   color: transparent;
 }
 
-/* line 285, ../sass/test.scss */
+/* line 258, ../sass/test.scss */
 .pagination li a:hover:before {
   -webkit-transform: scale(0.3);
   box-shadow: inset 0 0 0 4px rgba(0, 0, 0, 0.75);
 }
 
-/* line 290, ../sass/test.scss */
+/* line 263, ../sass/test.scss */
 .pagination li.active a:before {
   -webkit-transform: scale(1);
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.75);
 }
 
-/* line 295, ../sass/test.scss */
+/* line 268, ../sass/test.scss */
 .pagination li.active a:hover {
   color: black;
 }
 
-/* line 300, ../sass/test.scss */
+/* line 273, ../sass/test.scss */
 .footer {
   margin: 20px;
 }
-/* line 302, ../sass/test.scss */
+/* line 275, ../sass/test.scss */
 .footer li {
   cursor: pointer;
 }

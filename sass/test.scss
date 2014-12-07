@@ -167,71 +167,44 @@ html, body {
   background-color: $green3;
 }
 
-/*===========================================================================================fab=*/
-
-
-.fab {	
-	position        : absolute;
-	overflow        : hidden;
-	transition      : box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-	transition-delay: 0.2s;
-	box-shadow      : 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-	z-index         : 10;
-	cursor          :pointer;
-	color           : $grey;
-	
-	&.green{
-		background-color: $green;
-		right           : 10px;
-		top             : 50%;
-		margin-top      : -28px;
-		width           : 56px;
-		height          : 56px;
-		border-radius   : 50%;
-	}
-
-	&:active{
-		box-shadow      : 0 8px 17px 0 rgba(0, 0, 0, 0.2);
-		transition-delay: 0s;
-	}
-
-	> core-icon {
-		margin: 16px;
-	}
-
-	> core-icon::shadow path {
-		fill: #fff;
-	}
-
-}
-
 
 
 /* ==========================================================Icon Button=*/
-.icon-button {
-	position: absolute;
-	width   : 56px;
-	height  : 56px;
-  &.handin{
-    right:30;
+
+@mixin icon_size($size){
+  height: $size;
+  width: $size;
+}
+
+.handin{
+  position: absolute;
+  right:50px;
+  
+  .icon-button {
+    display: flex;
+    display: -webkit-flex;
+    @include icon_size(50px);
+    cursor: pointer;
+
+  	core-icon {
+  		@include icon_size(50px);
+      margin: auto;
+      color: $green2;
+
+  		transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  		transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  	}
+
+  	&:hover core-icon{
+  		-webkit-transform: scale(1.2);
+    		transform: scale(1.2);
+  	}
   }
-
-	core-icon {
-		margin: 13px;
-		transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-		transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-		}
-
-	&:hover core-icon{
-		-webkit-transform: scale(1.2);
-  		transform: scale(1.2);
-	}
-
-	paper-ripple{
-		overflow: hidden;
-		color: #646464;
-	}
-
+  
+  .btn_text{
+  color: $green2;   
+  text-align: center;
+  }
 }
 
 

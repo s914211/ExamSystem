@@ -7,43 +7,39 @@
 
     <title>Student</title>
 
-    <link href="css/reset.css" rel="stylesheet" />
-
     <script src="https://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/student.js"></script>
-    <link rel="stylesheet" href="stylesheets/screen.css" type="text/css" /><link rel="stylesheet" href="stylesheets/pageForAdministrator.css" media="screen" type="text/css" />    
+    <link rel="stylesheet" href="stylesheets/pageForAdministrator.css" media="screen" type="text/css" />    
     <link rel="stylesheet" type="text/css" href="css/student.css">
     <link rel="import" href="http://www.polymer-project.org/components/core-icons/core-icons.html">
     <link rel="import" href="http://www.polymer-project.org/components/paper-ripple/paper-ripple.html">
+    <!--
     <script src="js/sweet-alert.min.js"></script> 
     <link rel="stylesheet" type="text/css" href="stylesheets/sweet-alert.css">
+    -->
 
 
 
 </head>
 
 <body>
-
+    <div class="bgpic"></div>
     <div class="header">
 
         <div class="navbar">
-            <div class="left_button">
+            <div class="logout">
                 <div class="icon-button">
-                    <core-icon icon="menu"></core-icon>
+                    <core-icon icon="open-in-new"></core-icon>
                     <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
                 </div>
+                <div>Log out</div>
             </div>
 
             <div class="tabs">
-                <div><a href="#">參加考試</a></div><!----><div>
-                <a href="#">成績查詢</a></div><!----><!--註解符號是為了讓Tab中間沒有縫隙 -->
+                <div><a href="#">Attend Exams</a></div><!----><div>
+                <a href="#">Score Inquiry</a></div><!----><!--註解符號是為了讓Tab中間沒有縫隙 -->
             </div>
-
-            <div>
-                <button class="logout">登出</button>
-            </div>
-
         </div>
     </div>
 
