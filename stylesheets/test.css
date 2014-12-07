@@ -259,6 +259,7 @@ html, body {
 .handin {
   position: absolute;
   right: 50px;
+  top:5px;
 }
 /* line 183, ../sass/test.scss */
 .handin .icon-button {
@@ -356,4 +357,20 @@ html, body {
 /* line 275, ../sass/test.scss */
 .footer li {
   cursor: pointer;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Oswald:700);
+
+#countdown{
+  width:220px;
+  text-align: center;
+  color: #3d3d3d;
+  font-family: "Oswald";
+  font-weight: 700;
+  font-size: 35px;
+  border: .1em solid;
+  position:absolute;
+  left:50%;
+  margin-left: -110px;
+  top:25px;
 }
