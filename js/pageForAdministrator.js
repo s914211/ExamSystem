@@ -2,9 +2,6 @@
 $(document).ready(function() {
 	Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa7ryzTSmMjP3ZB4fYJNFqty"); 
     localStorage.removeItem("sign");
-    localStorage.removeItem("examname");
-    localStorage.removeItem("examtime");
-    localStorage.removeItem("quesid");
     if(Parse.User.current().id != "PqxCNSyjZ7"){
         alert("你沒有權限進入此頁！");
         window.location.assign("index.html");
@@ -516,18 +513,6 @@ deleteunsuccessques = function(examname){
 }
 
 $(document).on("click","#attendbtn",function(){
-    var examid = $(this).parent().attr('id');
-    var exam = Parse.Object.extend("Exams");
-    var query = new Parse.Query(exam);
-    query.equalTo("objectId", examid);
-    query.first({
-        success:function(exam){
-            var examname = exam.get("examname");
-            localStorage.setItem("examname", examname);
-        }
-    })    
-});
-
-$(document).on("click","#confirmexam",function(){
-    window.location.assign("test.html");
+    var examname = $(this).parent().children(".blocks_text").children(".blocks_title").text();
+    localStorage.setItem("examname", examname);  
 });

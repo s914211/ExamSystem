@@ -717,3 +717,11 @@ input:focus ~ .highlight {
 .go-top:hover {
   background-color: rgba(0, 0, 0, 0.6);
 }
+
+.logout{
+    position: absolute;
+    right: 25px;
+}
+#logoutbtn{
+    margin-top:35%;
+}

@@ -66,3 +66,12 @@
     position: absolute;
     right: 25px;
 }
+
+.main{
+    margin-top: 20%;
+    margin-left: 20%;
+}
+
+#logoutbtn{
+    margin-top:35%;
+}

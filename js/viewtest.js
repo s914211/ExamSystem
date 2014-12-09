@@ -152,45 +152,6 @@ $(document).ready(function() {
         $(click).show();
     });
 
-    $('.handin').click(function(){
-        var emptyans = [];
-        for(var i = 1; i<=40; i++){
-            if(userans[i][5] == undefined){
-                emptyans.push(i);
-            }
-        }
-        if(emptyans.length != 0){
-            var string = emptyans.join("、");
-            swal("第"+ string + "題未作答，請填入答案！");
-        }
-        else{
-            /*var r = confirm("確認交卷？");
-            if (r == true) {
-                calculatescore();
-            } else {
-                swal("還有時間，請繼續作答！");
-            }*/
-            swal({
-               title: "確認交卷",   
-               text: "你還有時間可以作答，你是否要交卷？",   
-               type: "warning",   
-               showCancelButton: true,   
-               confirmButtonColor: "#DD6B55",   
-               confirmButtonText: "是的，我要交卷。",   
-               cancelButtonText: "不，我還需要檢查。",   
-               closeOnConfirm: false,   
-               closeOnCancel: false }, 
-               function(isConfirm){   
-                if (isConfirm) {     
-                    calculatescore();
-                } 
-                else {     
-                    swal("還有時間，請繼續作答！");  
-                } 
-            })
-        }
-    });
-
     $('.lastpage').click(function(){
         window.location.assign("pageForAdministrator.html");
     })
@@ -292,56 +253,6 @@ function content() {
     $('.spanD').text(userans[$('.active').children('a').text()][4]);
 }
 
-function calculatescore() {
-    var localexamname = localStorage.getItem("examname");
-    var question = Parse.Object.extend('QuesBank');
-    var query = new Parse.Query(question);
-    query.equalTo("examname", localexamname);
-    query.ascending("no");
-    query.find({
-        success: function(examquestion) {
-            var correctnum = 0;
-            for (var i = 0; i < examquestion.length; i++) {
-                var quesanswer = examquestion[i].get('Answer');
-                if (quesanswer == userans[i+1][5]) {
-                    correctnum++;
-                }
-            }
-            var exam = Parse.Object.extend('Exams');
-            var query = new Parse.Query(exam);
-            query.equalTo("examname", localexamname);
-            query.first({
-                success: function(exam) {
-                    var examrecord = Parse.Object.extend('ExamRecord');
-                    var query = new Parse.Query(examrecord);
-                    query.equalTo("user", Parse.User.current());
-                    query.equalTo("exam", exam);
-                    query.first({
-                        success: function(userrecord) {
-                            userrecord.set("score", correctnum * 2.5);
-                            userrecord.save(null, {
-                                success: function(result) {
-                                    localStorage.removeItem("examname");
-                                    localStorage.removeItem("examtime");
-                                    localStorage.removeItem("quesid");
-                                    console.log("User exam score save success!");
-                                    window.location.assign("pageForStudent.html");
-                                },
-                                error:function(error){
-                                    console.log(error.toString());
-                                }
-                            })
-                        },
-                        error:function(){
-                            console.log("userrecord isn't in!");
-                        }
-                    })
-                }
-            })
-        }
-    })
-}
-
 function radioclick() {
     $("input[type=radio]").click(function() {
         cleanradio();
@@ -391,22 +302,3 @@ document.onmouseup=reEnable
 }
 
 }
-
-
-//countdown
-var localexamtime = localStorage.getItem("examtime");
-var seconds_left = localexamtime * 60;
- 
-setInterval(function () {
-    if(seconds_left != 0){
-        var countdown = document.getElementById("countdown");
-        var minutes = parseInt(seconds_left / 60);
-        var seconds = parseInt(seconds_left % 60);
-        seconds_left--;    
-        countdown.innerHTML = minutes + "分 " + seconds + "秒 ";  
-    }
-    else{
-        calculatescore();
-        swal("時間到！");
-    }
-}, 1000);
