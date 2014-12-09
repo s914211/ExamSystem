@@ -7,6 +7,15 @@
     height: 56px;
     border-radius: 50%;
 }
+.black{
+    background-color: #707070;
+    right: 10px;
+    top: 50%;
+    margin-top: -28px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+}
 .checkscore {
     position: fixed;
     display: none;

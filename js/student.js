@@ -41,10 +41,22 @@ $(document).ready(function() {
         // g.preventDefault();                                 //不確定幹嘛...
     });
 
+var today = new Date();
+                    var dd = today.getDate();
+                    var mm = today.getMonth()+1; //January is 0!
+                    var yyyy = today.getFullYear();
+
+                    if(dd<10) {
+                        dd='0'+dd
+                    } 
+
+                    if(mm<10) {
+                        mm='0'+mm
+                    } 
+                    today = yyyy + '-' + mm + '-' + dd;
+
     $('.tab_exams').delegate('.green', 'click', function() {
         if (confirm("確定報名？")) {
-            $(this).removeClass('green').addClass('red').html('<core-icon icon="create" aria-label="create" role="img"><svg viewBox="0 0 24 24" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" fit="" style="pointer-events: none; display: block;"><g><path d="M3 17.25v3.75h3.75l11.06-11.06-3.75-3.75-11.06 11.06zm17.71-10.21c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></g></svg></core-icon>');
-
             var examid = $(this).parent().attr('id');
             var exam = Parse.Object.extend("Exams");
             var query = new Parse.Query(exam);
@@ -62,7 +74,14 @@ $(document).ready(function() {
                         }
                     });
                 }
-            });            
+            });
+            var date = $(this).parent().children('.blocks_text').children('.blocks_date').text();
+            if(date!= today){
+                $(this).removeClass('green').addClass('black').html('<core-icon icon="create" aria-label="create" role="img"><svg viewBox="0 0 24 24" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" fit="" style="pointer-events: none; display: block;"><g><path d="M3 17.25v3.75h3.75l11.06-11.06-3.75-3.75-11.06 11.06zm17.71-10.21c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></g></svg></core-icon>');
+            }
+            else{
+                $(this).removeClass('green').addClass('red').html('<core-icon icon="create" aria-label="create" role="img"><svg viewBox="0 0 24 24" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" fit="" style="pointer-events: none; display: block;"><g><path d="M3 17.25v3.75h3.75l11.06-11.06-3.75-3.75-11.06 11.06zm17.71-10.21c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></g></svg></core-icon>');
+            }            
         }
         /*swal({
            title: "確認報名",   
@@ -200,7 +219,7 @@ function getexam() {
                 var examname = exams[i].get('examname');
                 var examdate = exams[i].get('examdate');
                 var examtime = exams[i].get('examtime');
-                var examblock = '<div class="blocks" ' + 'id="' + examid + '"' + 'style="display:none"><div class="fab green"><core-icon icon="assignment"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"><p class="blocks_title">' + examname + '</p><p class"blocks_date">' + examdate + '</p><p class="blocks_time">' + examtime + '分鐘' + '</p></div><div class="img_container"><img src="assets/1.jpg" /></div></div>';
+                var examblock = '<div class="blocks" ' + 'id="' + examid + '"' + 'style="display:none"><div class="fab green"><core-icon icon="assignment"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"><p class="blocks_title">' + examname + '</p><p class="blocks_date">' + examdate + '</p><p class="blocks_time">' + examtime + '分鐘' + '</p></div><div class="img_container"><img src="assets/1.jpg" /></div></div>';
 
                 $(".tab_exams").append(examblock);
                 removeexam();              
@@ -226,7 +245,7 @@ function scoresearch() {
                 var examname = exams[i].get('exam').get('examname');
                 var examdate = exams[i].get('exam').get('examdate');
                 var score = exams[i].get('score');
-                var examblock = '<div class="blocks"><div class="fab green"><core-icon icon="search"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"><p class="blocks_title">' + examname + '</p><p class"blocks_date">' + examdate + '</p><p class="blocks_time"></p></div><div class="img_container"><img src="assets/1.jpg" /></div></div>';
+                var examblock = '<div class="blocks"><div class="fab green"><core-icon icon="search"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"><p class="blocks_title">' + examname + '</p><p class="blocks_date">' + examdate + '</p><p class="blocks_time"></p></div><div class="img_container"><img src="assets/1.jpg" /></div></div>';
 
                 $(".tab_questions").append(examblock);
 
@@ -237,6 +256,19 @@ function scoresearch() {
 }
 
 function checkenroll() {
+    var today = new Date();
+                    var dd = today.getDate();
+                    var mm = today.getMonth()+1; //January is 0!
+                    var yyyy = today.getFullYear();
+
+                    if(dd<10) {
+                        dd='0'+dd
+                    } 
+
+                    if(mm<10) {
+                        mm='0'+mm
+                    } 
+                    today = yyyy + '-' + mm + '-' + dd;   
     var examrecord = Parse.Object.extend('ExamRecord');
     var query = new Parse.Query(examrecord);
     query.include('exam');
@@ -245,13 +277,18 @@ function checkenroll() {
         success: function(exams) {
             for (i = 0; i < exams.length; i++) {
                 var id = exams[i].get('exam').id;
-
+                var examdate = exams[i].get('examdate');
                 var sid = "#" + id + " .green";
                 // console.log(id + blocksid + sid);
                 for (j = 0; j < $('.blocks').length; j++) {
                     var blocksid = $('.blocks').eq(j).attr('id');
                     if (id == blocksid) {
-                        $(sid).removeClass('green').addClass('red').html('<core-icon icon="create" aria-label="create" role="img"><svg viewBox="0 0 24 24" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" fit="" style="pointer-events: none; display: block;"><g><path d="M3 17.25v3.75h3.75l11.06-11.06-3.75-3.75-11.06 11.06zm17.71-10.21c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></g></svg></core-icon>');
+                        if(examdate != today){
+                            $(sid).removeClass('green').addClass('black').html('<core-icon icon="create" aria-label="create" role="img"><svg viewBox="0 0 24 24" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" fit="" style="pointer-events: none; display: block;"><g><path d="M3 17.25v3.75h3.75l11.06-11.06-3.75-3.75-11.06 11.06zm17.71-10.21c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></g></svg></core-icon>');
+                        }
+                        else{
+                            $(sid).removeClass('green').addClass('red').html('<core-icon icon="create" aria-label="create" role="img"><svg viewBox="0 0 24 24" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" fit="" style="pointer-events: none; display: block;"><g><path d="M3 17.25v3.75h3.75l11.06-11.06-3.75-3.75-11.06 11.06zm17.71-10.21c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></g></svg></core-icon>');
+                        }
                     }
                 }
 
