@@ -83,11 +83,12 @@ function Close_ConfirmPreview(){
 // ------------------------------------------------------------------------------threePoints
 
 $(document).on('click', '.three_points', function(event) {
+    var examname = $(this).parent().children('.blocks_text').children('.blocks_title').text();
+    localStorage.setItem("reviseexamname", examname);
     Show_ThreePointsWrapper();
 });
 
 $(document).on('click', '#threePointsWrapper_closeBtn', function(){
-    console.log("123");
     Close_ThreePointsWrapper();
 });
 
@@ -168,7 +169,7 @@ function Close_ConfirmWrapper(){
 $(document).on("click",".add_blocks",function(){
 	Open_ModalWrapper();
 });
-$(document).on("click",".btn_nextModal",function(){
+$(document).on("click","#btn_nextModal",function(){
 	var exam_name=$("#exam_name").val();
 	var time_needed=$("#exam_time").val();
 	var exam_date=$("#exam_date").val();
@@ -182,6 +183,36 @@ $(document).on("click",".btn_nextModal",function(){
 	else{
         swal("請確認每個欄位皆有輸入值！");
 	}
+});
+
+$(document).on("click","#reviseexam",function(){
+    var examname = $("#examname").val().toString();
+    var Examtime = $("#examtime").val();
+    var examtime = parseInt(Examtime);
+    var examdate = $("#examdate").val().toString();
+    var localname = localStorage.getItem("reviseexamname");
+    var exam = Parse.Object.extend("Exams");
+    var query = new Parse.Query(exam);
+    query.equalTo("examname", localname);
+    query.first({
+        success:function(exam){
+            exam.set("examname", examname);
+            exam.set("examtime", examtime);
+            exam.set("examdate", examdate);
+            exam.save();
+            swal("Good job!", "修改考試成功！", "success");
+            setTimeout(function(){
+                Close_ThreePointsWrapper();
+            },1000);
+            setTimeout(function(){
+                swal({   
+                    title: "一秒後自動刷新頁面！",   
+                    text: "I will close in 1 seconds.",   
+                    timer: 3000 });
+                location.reload();
+            },3000);
+        }
+    })
 });
 
 blocks_number=0;
@@ -466,8 +497,8 @@ addnewexam = function(examname, examtime, examdate, hard, normal, easy){
             swal("Good job!", "新增考試成功！", "success");
             setTimeout(function(){
                 swal({   
-                    title: "三秒後自動刷新頁面！",   
-                    text: "I will close in 3 seconds.",   
+                    title: "一秒後自動刷新頁面！",   
+                    text: "I will close in 1 seconds.",   
                     timer: 3000 });
                 location.reload();
             },3000); 
