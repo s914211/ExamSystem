@@ -488,7 +488,7 @@ unsealed = function(degree){
                 examquestion[i].set('sealed', false);
                 examquestion[i].save(null, {
                     success:function(){
-                        console.log("unsealed success!");
+                        //console.log("unsealed success!");
                     }
                 })
             }

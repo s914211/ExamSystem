@@ -181,7 +181,7 @@ $(document).ready(function() {
     }
 
     function AddExam() {
-        var newExamBlock = $('<div class ="blocks"><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="icon-button trash_can"><core-icon icon="delete"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div> <div class="fab green"><core-icon icon="create"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div></div>');
+        var newExamBlock = $('<div class ="blocks"><div class="fab green"><core-icon icon="create"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div></div>');
         $(".tab_exams").append(newExamBlock);
     }
 
@@ -200,7 +200,7 @@ function getexam() {
                 var examname = exams[i].get('examname');
                 var examdate = exams[i].get('examdate');
                 var examtime = exams[i].get('examtime');
-                var examblock = '<div class="blocks" ' + 'id="' + examid + '"' + 'style="display:none"><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="fab green"><core-icon icon="assignment"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"><p class="blocks_title">' + examname + '</p><p class"blocks_date">' + examdate + '</p><p class="blocks_time">' + examtime + '分鐘' + '</p></div><div class="img_container"><img src="assets/1.jpg" /></div></div>';
+                var examblock = '<div class="blocks" ' + 'id="' + examid + '"' + 'style="display:none"><div class="fab green"><core-icon icon="assignment"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"><p class="blocks_title">' + examname + '</p><p class"blocks_date">' + examdate + '</p><p class="blocks_time">' + examtime + '分鐘' + '</p></div><div class="img_container"><img src="assets/1.jpg" /></div></div>';
 
                 $(".tab_exams").append(examblock);
                 removeexam();              
@@ -226,7 +226,7 @@ function scoresearch() {
                 var examname = exams[i].get('exam').get('examname');
                 var examdate = exams[i].get('exam').get('examdate');
                 var score = exams[i].get('score');
-                var examblock = '<div class="blocks"><div class="icon-button three_points"><core-icon icon="more-vert"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="fab green"><core-icon icon="search"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"><p class="blocks_title">' + examname + '</p><p class"blocks_date">' + examdate + '</p><p class="blocks_time"></p></div><div class="img_container"><img src="assets/1.jpg" /></div></div>';
+                var examblock = '<div class="blocks"><div class="fab green"><core-icon icon="search"></core-icon><paper-ripple class="circle recenteringTouch" fit></paper-ripple></div><div class="blocks_text"><p class="blocks_title">' + examname + '</p><p class"blocks_date">' + examdate + '</p><p class="blocks_time"></p></div><div class="img_container"><img src="assets/1.jpg" /></div></div>';
 
                 $(".tab_questions").append(examblock);
 
