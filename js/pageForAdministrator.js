@@ -2,10 +2,10 @@
 $(document).ready(function() {
 	Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa7ryzTSmMjP3ZB4fYJNFqty"); 
     localStorage.removeItem("sign");
-    /*if(Parse.User.current().id != "PqxCNSyjZ7"){
+    if(Parse.User.current().id != "PqxCNSyjZ7"){
         alert("你沒有權限進入此頁！");
         window.location.assign("index.html");
-    }*/
+    }
 
 
 

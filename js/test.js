@@ -45,10 +45,10 @@ $('.pagination li').on('click', function(e) {
 
 $(document).ready(function() {
     Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa7ryzTSmMjP3ZB4fYJNFqty");
-    /*if(Parse.User.current() == null){
+    if(Parse.User.current() == null){
         alert("您尚未登入！前往登入頁面！");
         window.location.assign("index.html");
-    }*/
+    }
 
     var localexamname = localStorage.getItem("examname");
     var question = Parse.Object.extend('QuesBank');
