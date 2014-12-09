@@ -2,6 +2,9 @@
 $(document).ready(function() {
 	Parse.initialize("c1V2V3BZTN1lPM7G3L8cLNeI8EAV7XnlvOH4F5CG", "6ddAWuezFW3Bg3xOJa7ryzTSmMjP3ZB4fYJNFqty"); 
     localStorage.removeItem("sign");
+    localStorage.removeItem("examname");
+    localStorage.removeItem("examtime");
+    localStorage.removeItem("quesid");
     if(Parse.User.current().id != "PqxCNSyjZ7"){
         alert("你沒有權限進入此頁！");
         window.location.assign("index.html");
@@ -460,9 +463,12 @@ addnewexam = function(examname, examtime, examdate, hard, normal, easy){
         success:function(){
             swal("Good job!", "新增考試成功！", "success");
             setTimeout(function(){
-                swal("自動刷新頁面！");
+                swal({   
+                    title: "三秒後自動刷新頁面！",   
+                    text: "I will close in 3 seconds.",   
+                    timer: 3000 });
                 location.reload();
-            },3500); 
+            },3000); 
         },
         error:function(error){
             console.log("Error: " + error.code + " " + error.message);
