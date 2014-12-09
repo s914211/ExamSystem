@@ -4,8 +4,8 @@ $(document).ready(function(){
   signup = function(){
               
         if(document.getElementById('signuppassword').value != document.getElementById('signupcpassword').value){
-              //alert('密碼不一樣，請確認密碼是一樣的！！');
-              sweetAlert("Oops...", "密碼不一樣，請確認密碼是一樣的！", "error");
+              alert('密碼不一樣，請確認密碼是一樣的！！');
+              //sweetAlert("Oops...", "密碼不一樣，請確認密碼是一樣的！", "error");
         }
         else{
           var user = new Parse.User();
@@ -15,14 +15,16 @@ $(document).ready(function(){
               user.set("email", document.getElementById('signupemail').value);
               user.signUp(null, {
                   success: function(user){
-                    swal("Good job!", "註冊成功！", "success");
+                    /*swal("Good job!", "註冊成功！", "success");
                     setTimeout(function(){
                       window.location.assign("index.html");      
-                    },1500); 
+                    },1500);*/
+                    alert("註冊成功！");
+                    window.location.assign("index.html"); 
                   },
                   error: function(user, error){
-                    sweetAlert("Oops...", "Email格式或是密碼有錯誤喔！", "error");
-                    //alert("Error: " + error.code + " " + error.message);
+                    //sweetAlert("Oops...", "Email格式或是密碼有錯誤喔！", "error");
+                    alert("Email格式或是密碼有錯誤喔！");
                   }
               });
         }
@@ -49,8 +51,8 @@ $(document).ready(function(){
             window.location.assign("pageForStudent.html");
           },
           error:function(user, error){
-            sweetAlert("Oops...", "帳號或是密碼有錯誤喔！", "error");
-            //alert("Error: " + error.code + " " + error.message);
+            //sweetAlert("Oops...", "帳號或是密碼有錯誤喔！", "error");
+            alert("Email格式或是密碼有錯誤喔！");
           }
         })
     }
