@@ -242,7 +242,7 @@ $(document).on("click",".btn_submitModal",function(){
                             else{
                                 Close_ModalWrapper();
                             }
-                        },1000); 
+                        },3000); 
                     }
 	}
 	else{
@@ -526,7 +526,7 @@ unsealed = function(degree){
             swal("解封完成，請重新創建考試。");
             setTimeout(function(){
                 Close_ModalWrapper();
-            },1500); 
+            },3000); 
         }
     })
 }
