@@ -336,6 +336,21 @@ function showscore() {
 }
 
 function removeexam() {
+
+    var today = new Date();
+                    var dd = today.getDate();
+                    var mm = today.getMonth()+1; //January is 0!
+                    var yyyy = today.getFullYear();
+
+                    if(dd<10) {
+                        dd='0'+dd
+                    } 
+
+                    if(mm<10) {
+                        mm='0'+mm
+                    } 
+                    today = yyyy + '-' + mm + '-' + dd;
+
     var exam = Parse.Object.extend('ExamRecord');
     var query = new Parse.Query(exam);
     query.include('exam');
@@ -360,14 +375,25 @@ function removeexam() {
             }
         }
     });
-}
 
+    var exams = Parse.Object.extend('Exams');
+    var query1 = new Parse.Query(exams);
+    query1.find({
+        success:function(exams){
+            for(var i = 0; i < exams.length; i++){
+                var examid = exams[i].id;
+                var date = exams[i].get('examdate');
+                var d = new Date(date);
+                var todaydate = new Date(today);
 
-function test99() {
-    for(i = 1; i <=9; i++) {
-        for(j = 1; j<=9; j++){
-            console.log(i+"*"+j+"="+i*j);
-
+                for(j = 0; j<$('.blocks').length; j++){
+                    if(examid == $('.blocks').eq(j).attr('id')){
+                        if(d.getTime()<todaydate.getTime()){
+                            $('.blocks').eq(j).remove();
+                        }
+                    }
+                }
+            }
         }
-    }
+    })
 }
