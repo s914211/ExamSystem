@@ -499,9 +499,9 @@ addnewexam = function(examname, examtime, examdate, hard, normal, easy){
                 swal({   
                     title: "一秒後自動刷新頁面！",   
                     text: "I will close in 1 seconds.",   
-                    timer: 3000 });
+                    timer: 5000 });
                 location.reload();
-            },3000); 
+            },5000); 
         },
         error:function(error){
             console.log("Error: " + error.code + " " + error.message);
