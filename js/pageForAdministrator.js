@@ -191,6 +191,19 @@ $(document).on("click","#reviseexam",function(){
     var examtime = parseInt(Examtime);
     var examdate = $("#examdate").val().toString();
     var localname = localStorage.getItem("reviseexamname");
+
+    var quesbank = Parse.Object.extend("QuesBank");
+    var query = new Parse.Query(quesbank);
+    query.equalTo("examname", localname);
+    query.find({
+        success:function(ques){
+            for(var i = 0; i<ques.length; i++){
+                ques[i].set("examname", examname);
+                ques[i].save();
+            }
+        }
+    })
+
     var exam = Parse.Object.extend("Exams");
     var query = new Parse.Query(exam);
     query.equalTo("examname", localname);
@@ -213,6 +226,7 @@ $(document).on("click","#reviseexam",function(){
             },3000);
         }
     })
+
 });
 
 blocks_number=0;
