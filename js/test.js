@@ -1271,7 +1271,3 @@ setInterval(function () {
         swal("時間到！");
     }
 }, 1000);
-
-function test(){
-    
-}
