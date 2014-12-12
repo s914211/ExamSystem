@@ -50,6 +50,9 @@ $(document).ready(function() {
         window.location.assign("index.html");
     }
 
+    var examtitle = localStorage.getItem("examname");
+    $('.exam_title').text(examtitle);
+
     var localexamname = localStorage.getItem("examname");
     var question = Parse.Object.extend('QuesBank');
     var query = new Parse.Query(question);
