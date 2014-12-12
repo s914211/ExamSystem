@@ -343,6 +343,864 @@ function calculatescore() {
             })
         }
     })
+    
+    var questionstatistic = Parse.Object.extend("RealQuestions");
+    var query1 = new Parse.Query(questionstatistic);
+    query1.limit(400);
+    query1.find({
+        success:function(question){
+            for(var i = 0; i<question.length; i++){
+                var questionbody = question[i];
+                var counta = question[i].get('CountA');
+                var countb = question[i].get('CountB');
+                var countc = question[i].get('CountC');
+                var countd = question[i].get('CountD');
+                var ques = question[i].get('Question');
+
+                if(userans[1][0] == ques){
+                    var userchoice = userans[1][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[2][0] == ques){
+                    var userchoice = userans[2][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[3][0] == ques){
+                    var userchoice = userans[3][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[4][0] == ques){
+                    var userchoice = userans[4][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[5][0] == ques){
+                    var userchoice = userans[5][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[6][0] == ques){
+                    var userchoice = userans[6][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[7][0] == ques){
+                    var userchoice = userans[7][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[8][0] == ques){
+                    var userchoice = userans[8][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[9][0] == ques){
+                    var userchoice = userans[9][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[10][0] == ques){
+                    var userchoice = userans[10][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[11][0] == ques){
+                    var userchoice = userans[11][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[12][0] == ques){
+                    var userchoice = userans[12][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[13][0] == ques){
+                    var userchoice = userans[13][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[14][0] == ques){
+                    var userchoice = userans[14][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[15][0] == ques){
+                    var userchoice = userans[15][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[16][0] == ques){
+                    var userchoice = userans[16][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[17][0] == ques){
+                    var userchoice = userans[17][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[18][0] == ques){
+                    var userchoice = userans[18][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[19][0] == ques){
+                    var userchoice = userans[19][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[20][0] == ques){
+                    var userchoice = userans[20][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[21][0] == ques){
+                    var userchoice = userans[21][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[22][0] == ques){
+                    var userchoice = userans[22][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[23][0] == ques){
+                    var userchoice = userans[23][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[24][0] == ques){
+                    var userchoice = userans[24][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[25][0] == ques){
+                    var userchoice = userans[25][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[26][0] == ques){
+                    var userchoice = userans[26][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[27][0] == ques){
+                    var userchoice = userans[27][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[28][0] == ques){
+                    var userchoice = userans[28][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[29][0] == ques){
+                    var userchoice = userans[29][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[30][0] == ques){
+                    var userchoice = userans[30][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[31][0] == ques){
+                    var userchoice = userans[31][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[32][0] == ques){
+                    var userchoice = userans[32][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[33][0] == ques){
+                    var userchoice = userans[33][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[34][0] == ques){
+                    var userchoice = userans[34][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[35][0] == ques){
+                    var userchoice = userans[35][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[36][0] == ques){
+                    var userchoice = userans[36][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[37][0] == ques){
+                    var userchoice = userans[37][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[38][0] == ques){
+                    var userchoice = userans[38][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[39][0] == ques){
+                    var userchoice = userans[39][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+                else if(userans[40][0] == ques){
+                    var userchoice = userans[40][5];
+                    switch(userchoice) {
+                            case "A":
+                                questionbody.set("CountA", counta+1);
+                                questionbody.save();
+                                break;
+                            case "B":
+                                questionbody.set("CountB", countb+1);
+                                questionbody.save();
+                                break;
+                            case "C":
+                                questionbody.set("CountC", countc+1);
+                                questionbody.save();
+                                break;
+                            case "D":
+                                questionbody.set("CountD", countd+1);
+                                questionbody.save();
+                                break;
+                        }
+                }
+            }
+        }
+    })
+
 }
 
 function radioclick() {
@@ -413,3 +1271,7 @@ setInterval(function () {
         swal("時間到！");
     }
 }, 1000);
+
+function test(){
+    
+}

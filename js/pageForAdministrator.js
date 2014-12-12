@@ -306,7 +306,7 @@ function onlyNum(){  //限制input輸入數字
 // ==================================================================================back end
 addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum){
     var count = 0;
-    var questions = Parse.Object.extend('Questions');
+    var questions = Parse.Object.extend('RealQuestions');
     var easyques = new Parse.Query(questions);
     easyques.equalTo('degree', 1);
     easyques.equalTo('sealed', false);
@@ -380,7 +380,7 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
         }
     })
 
-    var questions = Parse.Object.extend('Questions');
+    var questions = Parse.Object.extend('RealQuestions');
     var normalques = new Parse.Query(questions);
     normalques.equalTo('degree', 2);
     normalques.equalTo('sealed', false);
@@ -439,7 +439,7 @@ addnewques = function(examname, examtime, examdate, easynum, normalnum, hardnum)
         }
     })
 
-    var questions = Parse.Object.extend('Questions');
+    var questions = Parse.Object.extend('RealQuestions');
     var hardques = new Parse.Query(questions);
     hardques.equalTo('degree', 3);
     hardques.equalTo('sealed', false);
@@ -526,7 +526,7 @@ addnewexam = function(examname, examtime, examdate, hard, normal, easy){
 }
 
 unsealed = function(degree){
-    var questions = Parse.Object.extend('Questions');
+    var questions = Parse.Object.extend('RealQuestions');
     var query = new Parse.Query(questions);
     query.equalTo('degree', degree);
     query.find({
@@ -542,7 +542,8 @@ unsealed = function(degree){
             swal("解封完成，請重新創建考試。");
             setTimeout(function(){
                 Close_ModalWrapper();
-            },3000); 
+                localStorage.removeItem("sign");
+            },5000); 
         }
     })
 }
