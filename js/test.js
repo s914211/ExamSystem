@@ -1281,16 +1281,9 @@ setInterval(function () {
 
 window.onbeforeunload = function() {
     if (window.event.clientX < 40 && window.event.clientY < 0) { 
-        return "back button is clicked";    
+        return "返回上一頁視同放棄考試。";    
     }
     else{
-        return "refresh button is clicked";
-    }
-
-  // if(window.event.clientX >= 1300){
-  //   return "Get out! Bitch!";
-  // }
-  // else{
-  //   return "Refresh! Bitch!";
-  // }      
+        return "重整頁面視同放棄考試。";
+    }    
 }
