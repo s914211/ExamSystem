@@ -84,7 +84,7 @@ var today = new Date();
             }            
         }
         else{
-                   
+
         }
         /*swal({
            title: "確認報名",   
@@ -280,7 +280,7 @@ function checkenroll() {
         success: function(exams) {
             for (i = 0; i < exams.length; i++) {
                 var id = exams[i].get('exam').id;
-                var examdate = exams[i].get('examdate');
+                var examdate = exams[i].get('exam').get('examdate');
                 var sid = "#" + id + " .green";
                 // console.log(id + blocksid + sid);
                 for (j = 0; j < $('.blocks').length; j++) {
