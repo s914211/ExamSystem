@@ -1279,4 +1279,18 @@ setInterval(function () {
     }
 }, 1000);
 
-//已作答題目
+window.onbeforeunload = function() {
+    if (window.event.clientX < 40 && window.event.clientY < 0) { 
+        return "back button is clicked";    
+    }
+    else{
+        return "refresh button is clicked";
+    }
+
+  // if(window.event.clientX >= 1300){
+  //   return "Get out! Bitch!";
+  // }
+  // else{
+  //   return "Refresh! Bitch!";
+  // }      
+}
