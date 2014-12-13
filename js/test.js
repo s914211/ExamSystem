@@ -1284,6 +1284,6 @@ window.onbeforeunload = function() {
         return "返回上一頁視同放棄考試。";    
     }
     else{
-        return "重整頁面視同放棄考試。";
+        return "離開頁面視同放棄考試。";
     }    
 }
