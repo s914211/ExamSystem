@@ -265,6 +265,14 @@ html, body {
   color: rgb(0,0,0);
 }
 
+.answered{
+  background-color:#333;
+  border-radius:100%;
+  a{
+    color:#fff;
+    }
+}
+
 //footer=======================================
 .footer{
   margin: 20px;

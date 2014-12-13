@@ -96,10 +96,10 @@ $(document).ready(function() {
 
 
     function Color_Answered(){
-         for(var i = 1; i<=40; i++){
+        for(var i = 1; i<=40; i++){
             nu = i -1;
             if(userans[i][5] != undefined){
-                $(".Q1_Q20 ul li:eq("+nu+")").css("background-color","green");
+                $(".Q1_Q20 ul li:eq("+nu+")").addClass('answered');
             }
         }
     }

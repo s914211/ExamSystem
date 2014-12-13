@@ -348,11 +348,21 @@ html, body {
   color: black;
 }
 
-/* line 269, ../sass/test.scss */
+/* line 268, ../sass/test.scss */
+.answered {
+  background-color: #333;
+  border-radius: 100%;
+}
+/* line 271, ../sass/test.scss */
+.answered a {
+  color: #fff;
+}
+
+/* line 277, ../sass/test.scss */
 .footer {
   margin: 20px;
 }
-/* line 271, ../sass/test.scss */
+/* line 279, ../sass/test.scss */
 .footer li {
   cursor: pointer;
 }
