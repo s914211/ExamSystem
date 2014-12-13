@@ -312,7 +312,7 @@ function showscore() {
                     var score = scores[i].get('score');
                     if(score == undefined){
                         $('.score').children('span').text("?");
-                        $('.pass').children('span').text("無成績");
+                        $('.pass').children('span').text("NO grade");
                     }
                     else if(name == examname) {
                         $('.score').children('span').text(score); 
@@ -328,12 +328,24 @@ function showscore() {
                 }
             }
         });
-		$('.checkscore').delay(150).fadeIn(500);
+		Open_ModalWrapper();
+        $(".modal").removeAttr('height');
 	});
 	$('.checkscore,.tabs').click(function(){
-		$('.checkscore').fadeOut(500);
+		Close_ModalWrapper();
 	});
 }
+
+function Open_ModalWrapper(){
+    $('#modal_score').toggleClass('open');
+    $('.tab_exams').toggleClass('blur');    
+}
+function Close_ModalWrapper(){
+    $("#modal_score").removeClass("open");
+    $(".tab_exams").removeClass("blur");
+}
+
+
 
 function removeexam() {
 

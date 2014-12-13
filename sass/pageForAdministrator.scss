@@ -658,3 +658,66 @@ input:focus ~ .highlight {
 .go-top:hover {
   background-color: rgba(0, 0, 0, 0.6);
 }
+
+
+
+//=For Score===========================
+#modal_score{
+  z-index:9999999;
+  .modal{
+    height:300px;
+  }
+
+
+  .score_content{
+    padding:20px;
+    font-size:150%;
+
+    .score{
+      text-align:center;
+      color:black;
+      margin:30px 0px 30px 0px;
+    }
+
+    .pass {
+    text-align:right;
+    }
+  }
+
+  #score, #pass{
+    color:$red;
+    font-size:200%;
+  }
+
+
+}
+
+// .checkscore {
+//     position        : fixed;
+//     display         : none;
+//     min-width:40%;
+//     padding:25px;
+//     background-color: $lightgrey;
+//     top             : 17%;
+//     left            : 37.5%;
+//     border-radius   : 2%;
+//     z-index         : 500;
+//     box-shadow      : 6px 6px 11px 0px rgba(0,0,0,0.67);
+    
+
+// }
+// .score {
+//     text-align:center;
+//     margin:0px 0px 20px 0px;
+// }
+
+// .score span {
+//     margin: auto;
+//     text-align: center;
+//     font-size: 5em;
+// }
+// .pass span {
+//     margin: auto;
+//     text-align: center;
+//     font-size: 2em;
+// }

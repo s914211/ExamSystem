@@ -14,9 +14,9 @@
     <link rel="stylesheet" type="text/css" href="css/student.css">
     <link rel="import" href="http://www.polymer-project.org/components/core-icons/core-icons.html">
     <link rel="import" href="http://www.polymer-project.org/components/paper-ripple/paper-ripple.html">
-    
+<!--     
     <script src="js/sweet-alert.min.js"></script> 
-    <link rel="stylesheet" type="text/css" href="stylesheets/sweet-alert.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/sweet-alert.css"> -->
     
 
 
@@ -101,11 +101,23 @@
 
     <div class="tab_questions">
     </div>
-    <div class="checkscore">
-        <div class="score"><span></span></div>
-        <div class="pass"><span></span></div>
 
-
+    <div class="modal-wrapper" id="modal_score">
+        <div class="modal">
+            <div class="modal_header">
+                <a class="btn_close">
+                    <div class="icon-button">
+                        <core-icon icon="close"></core-icon>
+                        <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
+                    </div>
+                </a>
+            </div>
+            <div class="score_content">
+                <div class="score_title"> You got the grade :</div>
+                <div class="score"><span id="score"></span>/100</div>
+                <div class="pass"><span id="pass"></span> the exam.</div>
+            </div>
+        </div>
     </div>
 
 </body>

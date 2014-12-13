@@ -718,10 +718,31 @@ input:focus ~ .highlight {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.logout{
-    position: absolute;
-    right: 25px;
+/* line 665, ../sass/pageForAdministrator.scss */
+#modal_score {
+  z-index: 9999999;
 }
-#logoutbtn{
-    margin-top:35%;
+/* line 667, ../sass/pageForAdministrator.scss */
+#modal_score .modal {
+  height: 300px;
+}
+/* line 672, ../sass/pageForAdministrator.scss */
+#modal_score .score_content {
+  padding: 20px;
+  font-size: 150%;
+}
+/* line 676, ../sass/pageForAdministrator.scss */
+#modal_score .score_content .score {
+  text-align: center;
+  color: black;
+  margin: 30px 0px 30px 0px;
+}
+/* line 682, ../sass/pageForAdministrator.scss */
+#modal_score .score_content .pass {
+  text-align: right;
+}
+/* line 687, ../sass/pageForAdministrator.scss */
+#modal_score #score, #modal_score #pass {
+  color: #e9322d;
+  font-size: 200%;
 }
