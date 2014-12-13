@@ -746,3 +746,12 @@ input:focus ~ .highlight {
   color: #e9322d;
   font-size: 200%;
 }
+
+#logoutbtn{
+    margin-top:35%;
+}
+
+.logout{
+    position: absolute;
+    right: 25px;
+}
