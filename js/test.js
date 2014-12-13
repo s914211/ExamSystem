@@ -91,8 +91,18 @@ $(document).ready(function() {
         $('.testnumber').text("");
         useranswer();
         content();
+        Color_Answered();
     });
 
+
+    function Color_Answered(){
+         for(var i = 1; i<=40; i++){
+            nu = i -1;
+            if(userans[i][5] != undefined){
+                $(".Q1_Q20 ul li:eq("+nu+")").css("background-color","green");
+            }
+        }
+    }
 
     $('.left,.right').width($(window).width() * 0.07);
     $('.left,.right').height($(window).width() * 0.07);
@@ -220,8 +230,8 @@ function useranswer() {
 
                 $("#options_A").attr("checked", true);
                 $('#options_A + label').css({
-                    "background": "#7EB634",
-                    "border-color": "#7EB634",
+                    "background": "#32ab86",
+                    "border-color": "#32ab86",
                     "box-shadow": "0 0 0 -1px #FFF inset",
                     "color": "#FFF"
                 });
@@ -230,8 +240,8 @@ function useranswer() {
                 cleanradio();
                 $("#options_B").attr("checked", true);
                 $('#options_B + label').css({
-                    "background": "#7EB634",
-                    "border-color": "#7EB634",
+                    "background": "#32ab86",
+                    "border-color": "#32ab86",
                     "box-shadow": "0 0 0 -1px #FFF inset",
                     "color": "#FFF"
                 });
@@ -240,8 +250,8 @@ function useranswer() {
                 cleanradio();
                 $("#options_C").attr("checked", true);
                 $('#options_C + label').css({
-                    "background": "#7EB634",
-                    "border-color": "#7EB634",
+                    "background": "#32ab86",
+                    "border-color": "#32ab86",
                     "box-shadow": "0 0 0 -1px #FFF inset",
                     "color": "#FFF"
                 });
@@ -250,8 +260,8 @@ function useranswer() {
                 cleanradio();
                 $("#options_D").attr("checked", true);
                 $('#options_D + label').css({
-                    "background": "#7EB634",
-                    "border-color": "#7EB634",
+                    "background": "#32ab86",
+                    "border-color": "#32ab86",
                     "box-shadow": "0 0 0 -1px #FFF inset",
                     "color": "#FFF"
                 });
@@ -265,9 +275,6 @@ function useranswer() {
 }
 
 function save() {
-
-
-
     var localexamname = localStorage.getItem("examname");
     var question = Parse.Object.extend('QuesBank');
     var query = new Parse.Query(question);
@@ -1271,3 +1278,5 @@ setInterval(function () {
         swal("時間到！");
     }
 }, 1000);
+
+//已作答題目

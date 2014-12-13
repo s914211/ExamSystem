@@ -218,8 +218,8 @@ html, body {
   margin: 0 auto;
   text-align: center;
   li {
+    margin-top:5px;
     display: inline-block;
-    list-style: none;
     font-family: Helvetica, Helvetica Neue,sans-serif;
     color: #444;
     a{
@@ -229,13 +229,9 @@ html, body {
       line-height: 40px;
       position: relative;
       margin-right: 1px;
-      text-decoration: none;
     }
   }
 }
-
-
-
 
 .pagination li a:before {
   position: absolute;
