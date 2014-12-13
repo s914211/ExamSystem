@@ -86,44 +86,6 @@ var today = new Date();
         else{
 
         }
-        /*swal({
-           title: "確認報名",   
-           text: "你是否確定要報名這次考試？",   
-           type: "warning",   
-           showCancelButton: true,   
-           confirmButtonColor: "#DD6B55",   
-           confirmButtonText: "是的，我要報名。",   
-           cancelButtonText: "不，我不要報名。",   
-           closeOnConfirm: false,   
-           closeOnCancel: false }, 
-           function(isConfirm){   
-            if (isConfirm) {     
-                $(this).removeClass('green').addClass('red').html('<core-icon icon="create" aria-label="create" role="img"><svg viewBox="0 0 24 24" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" fit="" style="pointer-events: none; display: block;"><g><path d="M3 17.25v3.75h3.75l11.06-11.06-3.75-3.75-11.06 11.06zm17.71-10.21c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></g></svg></core-icon>');
-
-                var examid = $(this).parent().attr('id');
-                var exam = Parse.Object.extend("Exams");
-                var query = new Parse.Query(exam);
-                query.equalTo("objectId", examid);
-                query.first({
-                    success: function(exam) {
-                        var Examrecord = Parse.Object.extend("ExamRecord");
-                        var examrecord = new Examrecord();
-                        examrecord.set("user", Parse.User.current());
-                        examrecord.set("exam", exam);
-                        examrecord.save(null, {
-                            success: function(result) {
-                                swal("Good job!", "報名考試成功！", "success");
-                                scoresearch();
-                            }
-                        });
-                    }
-                });    
-            } 
-            else {     
-                swal("Canceled", "確認不報名。", "error");   
-            } 
-        })*/
-
     });
 
 
