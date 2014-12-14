@@ -249,11 +249,8 @@ $(document).on("click",".btn_submitModal",function(){
                     else{
                         setTimeout(function(){
                             if(localStorage.getItem("sign") != "no"){
-                                addnewexam(exam_name, time_needed, exam_date, numhard, numnormal, numeasy);
-                                /*blocks_number++;
-                                AddExam();
-                                $("#blocks_added_"+blocks_number+" div:eq(3)").append('<p class="blocks_title">'+exam_name+'</p><p>'+time_needed+'  minutes</p><p>'+exam_date+'</p>');*/
                                 Close_ModalWrapper();
+                                addnewexam(exam_name, time_needed, exam_date, numhard, numnormal, numeasy);
                             }
                             else{
                                 Close_ModalWrapper();
