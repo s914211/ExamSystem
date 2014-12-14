@@ -111,15 +111,7 @@ $(document).ready(function() {
     $(document).delegate('#pre', 'click', function() {
         if ($('.active').children('a').text() == "1") {
             swal("這是第一題。");
-        } else if ($('.active').children('a').text() == "21") {
-            $('.testnumber').text("");
-
-            $('.Q1_Q20 li').last().addClass('activetoken');
-            $('.active').removeClass('active');
-            $('.activetoken').addClass('active').removeClass('activetoken');
-            useranswer();
-            content();
-        } else {
+        }  else {
 
             $('.testnumber').text("");
 
@@ -135,15 +127,7 @@ $(document).ready(function() {
     $(document).delegate('#next', 'click', function() {
         if ($('.active').children('a').text() == "40") {
             swal("已經是最後一題。");
-        } else if ($('.active').children('a').text() == "20") {
-            $('.testnumber').text("");
-
-            $('.Q21_Q40 li').first().addClass('activetoken');
-            $('.active').removeClass('active');
-            $('.activetoken').addClass('active').removeClass('activetoken');
-            useranswer();
-            content();
-        } else {
+        }  else {
 
             $('.testnumber').text("");
 
