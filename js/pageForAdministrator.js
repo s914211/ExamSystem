@@ -539,7 +539,9 @@ unsealed = function(degree){
                     }
                 })
             }
-            swal("解封完成，請重新創建考試。");
+            setTimeout(function(){
+                swal("解封完成，請重新創建考試。");
+            },6000);
             setTimeout(function(){
                 Close_ModalWrapper();
                 localStorage.removeItem("sign");
