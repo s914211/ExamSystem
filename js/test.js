@@ -1267,7 +1267,7 @@ window.onbeforeunload = function() {
     if (window.event.clientX < 40 && window.event.clientY < 0) { 
         return "返回上一頁視同放棄考試。";    
     }
-    else{
-        return "離開頁面視同放棄考試。";
-    }    
+    // else{
+    //     return "離開頁面視同放棄考試。";
+    // }    
 }
